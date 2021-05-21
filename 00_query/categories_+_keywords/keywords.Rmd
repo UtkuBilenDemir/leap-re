@@ -1,0 +1,179 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Considered Keywords
+
+## 1. Physical Sciences & Technology (Obtained from the Journal *Renewable Energy* and various publications) 
+
+```
+Solar energy,
+Wind energy,
+Hydro energy,
+Tidal energy,
+Geothermal energy,
+Biomass energy,
+Marine energy,
+Photovoltaic,
+Concentrating solar power,
+Solar thermal heating and cooling,
+Biomass, 
+Tidal power,
+Wave power,
+Fuel Cells, 
+Low Energy Architecture,
+Low Energy Buildings,
+Ocean Energy,
+Solar Thermal Systems,
+Desalination
+
+```
+
+
+
+# 2. Selected keywords from *urban renewable energy* topics
+```
+Energy Efficiency,
+Sustainable Development,
+Energy Utilization,
+Renewable Energy Resources,
+Solar Energy,
+Energy Conservation,
+Biomass,
+Renewable Resource,
+Energy Policy,
+Renewable Energies,
+Environmental Impact,
+Renewable Energy,
+Greenhouse Gases,
+Wind Power,
+Carbon Footprint,
+Emission Control,
+```
+
+
+
+# 3. Keywords obtained from the other keywords in the publications with keywords related to *renewable energy*
+
+
+```
+wind turbines,
+wind turbine,
+wind technologies,
+wind system,
+wind industry,
+wind hybrid,
+wind farm,
+wind energy,
+wind driven,
+water turbine,
+water treatment,
+water storage,
+wastewater treatments,
+wastewater reuse,
+wind farm,
+wind farming,
+urbanization decarbonization,
+decarbonization,
+understanding renewable,
+turbulent flow,
+turbines technology,
+trends renewable energies,
+treatment biomass,
+transition green,
+transition fuel,
+transition evolution,
+transition electricity,
+green transition dynamics,
+energy transition,
+torrefied biomass,
+torrefaction review,
+torrefaction phases,
+torrefaction application,
+tidal turbine,
+renewable thermal electricity,
+renewable thermal energy,
+energy biofuel,
+biofuel energy,
+biodiesel,
+technology renewable,
+renewable energy technologies,
+sustainability biomass,
+sustainability bioenergy,
+sustainability energy,
+sustainable energy,
+storage hydropower,
+storage electrolyte,
+storage solar,
+storage wind,
+storage osemosys,
+states renewable energy,
+solvents depolymerization,
+solar wind,
+solar water,
+solar thermal,
+solar storage,
+solar renewable,
+carbon emissions,
+renewable energy-consumption,
+nonrenewable energy,
+biofuels,
+climate change mitigation,
+renewable energy technology,
+greenhouse gas emission,
+environmental degradation,
+degradation,
+carbon footprint,
+renewable energy consumption,
+bio-oil,
+solar dryers,
+sustainability transitions,
+green electricity,
+energy sustainability,
+renewable energy sources,
+wind-pv,
+hybrid renewable energy system,
+hydrokinetic,
+pumped hydro storage,
+lignocellulosic biomass,
+bio-digestion,
+green energy,
+renewable energy policy,
+solar pv,
+hydrolysis,
+solar home systems,
+concentrating solar power,
+bio-energy,
+renewable energy capacity,
+renewable energy projects,
+biogas technology,
+renewable energy foreign direct investment,
+enzymatic saccharification,
+lignocellulosic biomass,
+innovation in renewable energy technologies,
+co2 mitigation,
+solarfuel cell (fc),
+renewable sources of energy,
+wind farm,
+graphitic carbon nitride,
+perovskite solar-cells,
+halide perovskites,
+photocatalyst,
+optoelectronicsphotovoltaic cells,
+micro-gas turbine
+```
+
+
+
+# Initial Web of Science Query
+
+(TS=("Solar energy" OR "Wind energy" OR "Hydro energy" OR "Tidal energy" OR "Geothermal energy" OR "Biomass energy" OR "Marine energy" OR "Photovoltaic" OR "Concentrating solar power" OR "Solar thermal heating and cooling" OR "Biomass," OR "Tidal power" OR "Wave power" OR "Fuel Cells," OR "Low Energy Architecture" OR "Low Energy Buildings" OR "Ocean Energy" OR "Solar Thermal Systems" OR "Energy Efficiency" OR "Energy Utilization" OR "Renewable Energy Resources" OR "Solar Energy" OR "Energy Conservation" OR "Biomass Energy" OR "Renewable Resource" OR "Renewable Energies" OR "Environmental Impact" OR "Renewable Energy" OR "Wind Power" OR "Carbon Footprint" OR "Polar Panels" OR "wind turbines" OR "wind turbine" OR "wind technologies" OR "wind farm" OR "wind energy" OR "wind driven" OR "water turbine" OR "wastewater reuse" OR "wind farm" OR "wind farming" OR "urbanization decarbonization" OR "decarbonization" OR "understanding renewable" OR "trends renewable energies" OR "treatment biomass" OR "transition green" OR "transition fuel" OR "transition evolution" OR "transition electricity" OR "green transition dynamics" OR "energy transition" OR "tidal turbine" OR "renewable thermal electricity" OR "renewable thermal energy" OR "technology renewable" OR "renewable energy technologies" OR "solar wind" OR "solar water" OR "solar thermal" OR "solar renewable" OR "renewable energy-consumption" OR "renewable energy technology" OR "carbon footprint" OR "renewable energy consumption" OR "renewable energy sources" OR "wind-pv" OR "hybrid renewable energy system" OR "hydrokinetic" OR "renewable energy policy" OR "concentrating solar power" OR "renewable energy capacity" OR "renewable energy projects" OR "renewable energy foreign direct investment" OR "innovation in renewable energy technologies" OR "renewable sources of energy" OR "wind farm") OR AB=("Solar energy" OR "Wind energy" OR "Hydro energy" OR "Tidal energy" OR "Geothermal energy" OR "Biomass energy" OR "Marine energy" OR "Photovoltaic" OR "Concentrating solar power" OR "Solar thermal heating and cooling" OR "Biomass," OR "Tidal power" OR "Wave power" OR "Fuel Cells," OR "Low Energy Architecture" OR "Low Energy Buildings" OR "Ocean Energy" OR "Solar Thermal Systems" OR "Energy Efficiency" OR "Energy Utilization" OR "Renewable Energy Resources" OR "Solar Energy" OR "Energy Conservation" OR "Biomass Energy" OR "Renewable Resource" OR "Renewable Energies" OR "Environmental Impact" OR "Renewable Energy" OR "Wind Power" OR "Carbon Footprint" OR "Polar Panels" OR "wind turbines" OR "wind turbine" OR "wind technologies" OR "wind farm" OR "wind energy" OR "wind driven" OR "water turbine" OR "wastewater reuse" OR "wind farm" OR "wind farming" OR "urbanization decarbonization" OR "decarbonization" OR "understanding renewable" OR "trends renewable energies" OR "treatment biomass" OR "transition green" OR "transition fuel" OR "transition evolution" OR "transition electricity" OR "green transition dynamics" OR "energy transition" OR "tidal turbine" OR "renewable thermal electricity" OR "renewable thermal energy" OR "technology renewable" OR "renewable energy technologies" OR "solar wind" OR "solar water" OR "solar thermal" OR "solar renewable" OR "renewable energy-consumption" OR "renewable energy technology" OR "carbon footprint" OR "renewable energy consumption" OR "renewable energy sources" OR "wind-pv" OR "hybrid renewable energy system" OR "hydrokinetic" OR "renewable energy policy" OR "concentrating solar power" OR "renewable energy capacity" OR "renewable energy projects" OR "renewable energy foreign direct investment" OR "innovation in renewable energy technologies" OR "renewable sources of energy" OR "wind farm") OR AK=("Solar energy" OR "Wind energy" OR "Hydro energy" OR "Tidal energy" OR "Geothermal energy" OR "Biomass energy" OR "Marine energy" OR "Photovoltaic" OR "Concentrating solar power" OR "Solar thermal heating and cooling" OR "Biomass," OR "Tidal power" OR "Wave power" OR "Fuel Cells," OR "Low Energy Architecture" OR "Low Energy Buildings" OR "Ocean Energy" OR "Solar Thermal Systems" OR "Energy Efficiency" OR "Energy Utilization" OR "Renewable Energy Resources" OR "Solar Energy" OR "Energy Conservation" OR "Biomass Energy" OR "Renewable Resource" OR "Renewable Energies" OR "Environmental Impact" OR "Renewable Energy" OR "Wind Power" OR "Carbon Footprint" OR "Polar Panels" OR "wind turbines" OR "wind turbine" OR "wind technologies" OR "wind farm" OR "wind energy" OR "wind driven" OR "water turbine" OR "wastewater reuse" OR "wind farm" OR "wind farming" OR "urbanization decarbonization" OR "decarbonization" OR "understanding renewable" OR "trends renewable energies" OR "treatment biomass" OR "transition green" OR "transition fuel" OR "transition evolution" OR "transition electricity" OR "green transition dynamics" OR "energy transition" OR "tidal turbine" OR "renewable thermal electricity" OR "renewable thermal energy" OR "technology renewable" OR "renewable energy technologies" OR "solar wind" OR "solar water" OR "solar thermal" OR "solar renewable" OR "renewable energy-consumption" OR "renewable energy technology" OR "carbon footprint" OR "renewable energy consumption" OR "renewable energy sources" OR "wind-pv" OR "hybrid renewable energy system" OR "hydrokinetic" OR "renewable energy policy" OR "concentrating solar power" OR "renewable energy capacity" OR "renewable energy projects" OR "renewable energy foreign direct investment" OR "innovation in renewable energy technologies" OR "renewable sources of energy" OR "wind farm") OR TI=("Solar energy" OR "Wind energy" OR "Hydro energy" OR "Tidal energy" OR "Geothermal energy" OR "Biomass energy" OR "Marine energy" OR "Photovoltaic" OR "Concentrating solar power" OR "Solar thermal heating and cooling" OR "Biomass," OR "Tidal power" OR "Wave power" OR "Fuel Cells," OR "Low Energy Architecture" OR "Low Energy Buildings" OR "Ocean Energy" OR "Solar Thermal Systems" OR "Energy Efficiency" OR "Energy Utilization" OR "Renewable Energy Resources" OR "Solar Energy" OR "Energy Conservation" OR "Biomass Energy" OR "Renewable Resource" OR "Renewable Energies" OR "Environmental Impact" OR "Renewable Energy" OR "Wind Power" OR "Carbon Footprint" OR "Polar Panels" OR "wind turbines" OR "wind turbine" OR "wind technologies" OR "wind farm" OR "wind energy" OR "wind driven" OR "water turbine" OR "wastewater reuse" OR "wind farm" OR "wind farming" OR "urbanization decarbonization" OR "decarbonization" OR "understanding renewable" OR "trends renewable energies" OR "treatment biomass" OR "transition green" OR "transition fuel" OR "transition evolution" OR "transition electricity" OR "green transition dynamics" OR "energy transition" OR "tidal turbine" OR "renewable thermal electricity" OR "renewable thermal energy" OR "technology renewable" OR "renewable energy technologies" OR "solar wind" OR "solar water" OR "solar thermal" OR "solar renewable" OR "renewable energy-consumption" OR "renewable energy technology" OR "carbon footprint" OR "renewable energy consumption" OR "renewable energy sources" OR "wind-pv" OR "hybrid renewable energy system" OR "hydrokinetic" OR "renewable energy policy" OR "concentrating solar power" OR "renewable energy capacity" OR "renewable energy projects" OR "renewable energy foreign direct investment" OR "innovation in renewable energy technologies" OR "renewable sources of energy" OR "wind farm")) AND (CU=NIGERIA OR CU=ETHIOPIA OR CU=EGYPT OR CU=DEM REP CONGO OR CU=TANZANIA OR CU=SOUTH AFRICA OR CU=KENYA OR CU=UGANDA OR CU=ALGERIA OR CU=SUDAN OR CU=MOROCCO OR CU=ANGOLA OR CU=MOZAMBIQUE OR CU=GHANA OR CU=MADAGASCAR OR CU=CAMEROON OR CU=COTE IVOIRE OR CU=NIGER OR CU=BURKINA FASO OR CU=MALI OR CU=MALAWI OR CU=ZAMBIA OR CU=SENEGAL OR CU=CHAD OR CU=SOMALIA OR CU=ZIMBABWE OR CU=GUINEA OR CU=GUINEA BISSAU OR CU=EQUAT GUINEA OR CU=RWANDA OR CU=BENIN OR CU=BURUNDI OR CU=TUNISIA OR CU=SOUTH SUDAN OR CU=TOGO OR CU=SIERRA LEONE OR CU=LIBYA OR CU=REP CONGO OR CU=LIBERIA OR CU=CENT AFR REPUBL OR CU=MAURITANIA OR CU=ERITREA OR CU=NAMIBIA OR CU=GAMBIA OR CU=BOTSWANA OR CU=GABON OR CU=LESOTHO OR CU=MAURITIUS OR CU=ESWATINI OR CU=DJIBOUTI OR CU=COMOROS OR CU=CAPE VERDE OR CU=SAO TOME PRIN OR CU=SEYCHELLES)
+
+
+
+
+
+
+
+
