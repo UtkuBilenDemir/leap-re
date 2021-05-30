@@ -1,15 +1,16 @@
 library(tidyr)
 library(dplyr) 
 # The following comes with rownames :(
-## M <- readRDS(file = "01_data/02_bibliometrix/02_bib_dataframe_noab.Rds")
-
-M <- read.csv(file = "01_data/02_bibliometrix/02_bib_dataframe_noab.csv", sep = "\t")
+M_02rds <- readRDS(file = "01_data/02_bibliometrix/02_bib_dataframe_noab.Rds")
+rownames(M_02rds) <- c()
+## M_02 <- read.csv(file="01_data/02_bibliometrix/02_bib_dataframe_noab.csv", sep="|")
 
 # Split C1 column at ";"s
 # and create the affiliations column.
 # Each affiliation needs to have its own row
-M_exp <- M %>%
-  mutate(Affiliation =  strsplit(C1 ,split=';', fixed=TRUE) ) %>%
+M_exp <- M_02rds %>%
+  mutate(Affiliation =  strsplit(C1 ,split=';')) %>%
+  ## mutate(Affiliation = sapply(C1, strsplit, ";")) %>%
   unnest(c(Affiliation)) %>%
   mutate(Affiliation = trimws(Affiliation))
 
@@ -53,3 +54,5 @@ M_aff <- cbind(M_exp,
 View(M_aff)
 write.csv(M_aff, file = "01_data/02_bibliometrix/04_bib_dataframe_seperated-aff.csv",
              row.names = F)
+# Save a single object without abstracts
+saveRDS(M_aff, file = "01_data/02_bibliometrix/04_dataframe_seperated-aff.Rds")
