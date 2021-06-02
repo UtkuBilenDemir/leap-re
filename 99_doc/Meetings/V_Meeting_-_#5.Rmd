@@ -1,8 +1,6 @@
 ---
 title: "LEAP-RE T5.3. | Scientometric Analysis"
-output: 
-  revealjs::revealjs_presentation:
-    self_contained: FALSE
+output: revealjs::revealjs_presentation
 ---
 
 ```{r setup, include=FALSE}

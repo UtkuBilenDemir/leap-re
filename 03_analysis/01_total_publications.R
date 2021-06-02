@@ -22,6 +22,7 @@ t_abs_rel_oty <- transpose(abs_rel_oty)
 colnames(t_abs_rel_oty) <- rownames(abs_rel_oty)
 rownames(t_abs_rel_oty) <- colnames(abs_rel_oty)
 colnames(t_abs_rel_oty) <- abs_rel_oty$Var1
+rownames(t_abs_rel_oty) <- c("Years", "# of pub.", "Relative growth (cumulative)")
 
 abs_rel_plt <- canvasXpress(
   data = t_abs_rel_oty,
@@ -30,7 +31,7 @@ abs_rel_plt <- canvasXpress(
   graphOrientation = "vertical",
   graphType = "BarLine",
   
-  colorScheme = "Wall Street",
+  ##colorScheme = "Wall Street",
   ## legendColumns = 2,
   ## legendPosition = "bottom",
   lineThickness = 2,
@@ -39,26 +40,16 @@ abs_rel_plt <- canvasXpress(
   smpLabelRotate = 45,
   ## smpTitle = "Collection of Samples",
   ## subtitle = "Random Data",
-  #theme = "CanvasXpress",
-  title = "Absolute numbers and relative growth of RE-related publications from African countries between 2011-2020",
-  xAxis = "Freq",
-  xAxisTitle = "# of pub.",
-  xAxis2 = "relative_growth",
-  xAxis2Title = "(Cumulative) Relative growth ",
+  theme = "wallStreetJournal",
+  title = "RE-related publications in African countries                          \nbetween 2011-2020",
+  ## subtitle = "Absolute numbers and relative growth of publications between 2011-2020 ",
+  xAxis = "# of pub.", 
+  ## xAxisTitle = "# of pub.",
+  xAxis2 = "Relative growth (cumulative)",
+  ## xAxis2Title = "(Cumulative) Relative growth ",
+  legendPosition = "top",
   ## xAxis2TickFormat = "%.0f T",
   ## xAxisTickFormat = "%.0f M"
-  afterRender = list(
-    list(
-      "setDimensions",
-      list(613,613,TRUE)
-    ),
-    list(
-      "changeTheme",
-      list("wallStreetJournal",NULL),
-      list(),
-      1622600413487
-    )
-  )
 )
 
 
