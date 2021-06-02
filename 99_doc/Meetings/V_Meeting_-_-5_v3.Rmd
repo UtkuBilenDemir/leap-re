@@ -1,0 +1,44 @@
+---
+title: "LEAP-RE T5.3. | Scientometric Analysis"
+
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+library(widgetframe)
+```
+
+## Completed Steps
+
+- Keyword collection
+- Keyword unification (MESRS - ZSI)
+- Query optimization
+- Accuracy test of the results through sampling 
+- Data download, dataset preparation, pre-processing, data cleaning
+- Initial data exploration
+- Distribution of tasks between partners
+
+
+
+## Dataset
+
+- ~ 31.000 publications
+- 10 years range (2011-2020)
+- Identification RE-related publications: ~80% accuracy
+
+```{r echo=FALSE}
+library(canvasXpress)
+abs_rel_plt <- readRDS(file = "../../01_data/03_visualisations/abs_rel_plt.Rds")
+abs_rel_plt
+```
+
+## Further tasks
+- Selection of a subset of countries from each region.
+- Analysis and visualisation of:
+  * Connections between African countries as well as with other regions.
+  * Interactions between organisations.
+- Report.
+```{r echo=FALSE}
+afr_cou_plt <- readRDS(file = "../../01_data/03_visualisations/afr_cou_plt.Rds")
+afr_cou_plt
+```

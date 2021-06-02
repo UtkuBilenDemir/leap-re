@@ -3,7 +3,12 @@ library(dplyr)
 # The following comes with rownames :(
 M_02rds <- readRDS(file = "01_data/02_bibliometrix/02_bib_dataframe_noab.Rds")
 rownames(M_02rds) <- c()
-## M_02 <- read.csv(file="01_data/02_bibliometrix/02_bib_dataframe_noab.csv", sep="|")
+# Remove 2021 and NA years
+M_02rds <- M_02rds[-c(which(is.na(M_02rds$PY))), ]
+M_02rds <- M_02rds[-c(which(M_02rds$PY == "2021")),]
+# Update M_02
+saveRDS(M_02rds, file = "01_data/02_bibliometrix/02_bib_dataframe_noab.Rds")
+write.table(M_02rds, file = "01_data/02_bibliometrix/02_bib_dataframe_noab.csv", sep="|", row.names = F)
 
 # Split C1 column at ";"s
 # and create the affiliations column.

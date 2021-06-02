@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LEAP-RE T5.3. | Scientometric Analysis</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="generator" content="pandoc" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <base target="_blank">
+
+  <script type="text/javascript">
+    var SLIDE_CONFIG = {
+      // Slide settings
+      settings: {
+                title: 'LEAP-RE T5.3. | Scientometric Analysis',
+                        useBuilds: true,
+        usePrettify: true,
+        enableSlideAreas: true,
+        enableTouch: true,
+                      },
+
+      // Author information
+      presenters: [
+            ]
+    };
+  </script>
+
+  <script src="V_Meeting_-_-5_v2_files/header-attrs-2.8/header-attrs.js"></script>
+  <link href="V_Meeting_-_-5_v2_files/ioslides-13.5.1/fonts/fonts.css" rel="stylesheet" />
+  <link href="V_Meeting_-_-5_v2_files/ioslides-13.5.1/theme/css/default.css" rel="stylesheet" />
+  <link href="V_Meeting_-_-5_v2_files/ioslides-13.5.1/theme/css/phone.css" rel="stylesheet" />
+  <script src="V_Meeting_-_-5_v2_files/ioslides-13.5.1/js/modernizr.custom.45394.js"></script>
+  <script src="V_Meeting_-_-5_v2_files/ioslides-13.5.1/js/prettify/prettify.js"></script>
+  <script src="V_Meeting_-_-5_v2_files/ioslides-13.5.1/js/prettify/lang-r.js"></script>
+  <script src="V_Meeting_-_-5_v2_files/ioslides-13.5.1/js/prettify/lang-yaml.js"></script>
+  <script src="V_Meeting_-_-5_v2_files/ioslides-13.5.1/js/hammer.js"></script>
+  <script src="V_Meeting_-_-5_v2_files/ioslides-13.5.1/js/slide-controller.js"></script>
+  <script src="V_Meeting_-_-5_v2_files/ioslides-13.5.1/js/slide-deck.js"></script>
+  <script src="V_Meeting_-_-5_v2_files/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <link href="V_Meeting_-_-5_v2_files/canvasXpress-32.9/canvasXpress.css" rel="stylesheet" />
+  <script src="V_Meeting_-_-5_v2_files/canvasXpress-32.9/canvasXpress.min.js"></script>
+  <script src="V_Meeting_-_-5_v2_files/canvasXpress-binding-1.32.9/canvasXpress.js"></script>
+
+  <style type="text/css">
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    summary {
+      display: list-item;
+    }
+
+    slides > slide {
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .auto-fadein {
+      -webkit-transition: opacity 0.6s ease-in;
+      -webkit-transition-delay: 0.4s;
+      -moz-transition: opacity 0.6s ease-in 0.4s;
+      -o-transition: opacity 0.6s ease-in 0.4s;
+      transition: opacity 0.6s ease-in 0.4s;
+      opacity: 0;
+    }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+            
+  </style>
+
+
+</head>
+
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+          </hgroup>
+  </slide>
+
+<slide class=""><hgroup><h2>Completed Steps</h2></hgroup><article  id="completed-steps" class="smaller ">
+
+<ul>
+<li>Keyword collection</li>
+<li>Keyword unification (MESRS - ZSI)</li>
+<li>Query optimization</li>
+<li>Accuracy test of the results through sampling</li>
+<li>Data download, dataset preparation, pre-processing, data cleaning</li>
+<li>Initial data exploration</li>
+<li>Distribution of tasks between partners</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Dataset</h2></hgroup><article  id="dataset" class="smaller ">
+
+<ul>
+<li>~ 31.000 publications</li>
+<li>10 years range (2011-2020)</li>
+<li>Identification RE-related publications: ~80% accuracy</li>
+</ul>
+
+<div id="htmlwidget-cdf1ce4d9fab13e38b69" style="width:600px;height:400px;" class="canvasXpress html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cdf1ce4d9fab13e38b69">{"x":{"data":{"y":{"vars":["Years","# of pub.","Relative growth (cumulative)"],"smps":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"data":[["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],["1147","1398","1793","2347","2802","3392","3960","4525","4906","4835"],["1","2.21883173496077","3.78204010462075","5.82824760244115","8.27114210985179","11.2284219703575","14.6809067131648","18.6259808195292","22.9032258064516","27.1185701830863"]]},"x":null,"z":null},"config":{"graphType":"BarLine","isR":true,"graphOrientation":"vertical","lineThickness":2,"smpLabelRotate":45,"theme":"wallStreetJournal","title":"RE-related publications in African countries                          \nbetween 2011-2020","xAxis":"# of pub.","xAxis2":"Relative growth (cumulative)","legendPosition":"top"},"events":null,"afterRender":null},"evals":[],"jsHooks":[]}</script>
+
+</article></slide><slide class=""><hgroup><h2>Further tasks</h2></hgroup><article  id="further-tasks" class="smaller ">
+
+<ul>
+<li>Selection of a subset of countries from each region.</li>
+<li>Analysis and visualisation of:
+
+<ul>
+<li>Connections between African countries as well as with other regions.</li>
+<li>Interactions between organisations.</li>
+</ul></li>
+<li>Report.</li>
+</ul>
+
+<div id="htmlwidget-c40fc876253fc8052a8e" style="width:600px;height:400px;" class="canvasXpress html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c40fc876253fc8052a8e">{"x":{"data":{"y":{"vars":["# of Publications"],"smps":["SOUTH AFRICA","EGYPT","ALGERIA","TUNISIA","MOROCCO","NIGERIA","ETHIOPIA","KENYA","GHANA","TANZANIA","CAMEROON","UGANDA","SENEGAL","LIBYA","ZIMBABWE"],"data":[[6893,6689,4093,3240,3101,2252,940,871,696,435,379,308,259,233,230]]},"x":{"UNSD Region":["Southern Africa","Northern Africa","Northern Africa","Northern Africa","Northern Africa","Western Africa","Eastern Africa","Eastern Africa","Western Africa","Eastern Africa","Middle Africa","Eastern Africa","Western Africa","Northern Africa","Eastern Africa"]},"z":null},"config":{"graphType":"Bar","isR":true,"axisTitleFontStyle":"italic","smpLabelRotate":30,"colorBy":"UNSD Region","colorScheme":"canvasXpress","decorationScaleFontFactor":1.3,"graphOrientation":"vertical","legendBox":true,"showFunctionNamesAfterRender":false,"title":"Most visible 15 African countries in RE-related                           \npublications between 2011-2020","xAxis2Show":false,"theme":"wallStreetJournal","legendPosition":"top-right"},"events":null,"afterRender":null},"evals":[],"jsHooks":[]}</script></article></slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!-- map slide visiblity events into shiny -->
+<script>
+  (function() {
+    if (window.jQuery) {
+       window.jQuery(document).on('slideleave', function(e) {
+         window.jQuery(e.target).trigger('hidden');
+      });
+       window.jQuery(document).on('slideenter', function(e) {
+         window.jQuery(e.target).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
