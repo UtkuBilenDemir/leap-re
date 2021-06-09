@@ -46,3 +46,13 @@ abs_rel_plt
 afr_cou_plt <- readRDS(file = "../../01_data/03_visualisations/afr_cou_plt.Rds")
 afr_cou_plt
 ```
+
+## Test
+
+- BLANK
+- Lorem ipsum
+
+```{r echo=FALSE}
+map_pub_freq <- readRDS(file = "../../01_data/03_visualisations/map_pub_freq.Rds")
+map_pub_freq
+```
