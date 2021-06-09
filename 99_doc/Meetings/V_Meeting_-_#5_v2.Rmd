@@ -56,3 +56,10 @@ afr_cou_plt
 map_pub_freq <- readRDS(file = "../../01_data/03_visualisations/map_pub_freq.Rds")
 map_pub_freq
 ```
+
+## Test
+
+```{r echo=FALSE}
+country_chord <- readRDS(file = "../../01_data/03_visualisations/country_chord.Rds")
+country_chord
+```

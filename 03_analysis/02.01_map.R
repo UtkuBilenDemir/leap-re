@@ -1,6 +1,8 @@
 library(canvasXpress)
 library(bannerCommenter)
 library(stringr)
+library(htmlwidgets)
+library(htmltools)
 M_05 <- readRDS(file = "01_data/02_bibliometrix/05_dataframe_seperated-aff_-_cou_cleaned.Rds")
 unsd_regions <- readRDS(file = "01_data/02_bibliometrix/unsd_regions_dict.Rds")
 
@@ -342,7 +344,7 @@ m %>% addPolygons(
   fillColor = ~pal(freq),
   weight = 2,
   opacity = 1,
-  color = "white",
+  color = "black",
   dashArray = "3",
   fillOpacity = 0.7,
   highlight = highlightOptions(
@@ -362,7 +364,7 @@ m <- m %>% addPolygons(
   fillColor = ~pal(freq),
   weight = 2,
   opacity = 1,
-  color = "white",
+  color = "black",
   dashArray = "3",
   fillOpacity = 0.7,
   highlight = highlightOptions(
@@ -377,17 +379,54 @@ m <- m %>% addPolygons(
     textsize = "15px",
     direction = "auto"))
 
-m %>% addLegend(pal = pal, values = ~freq, opacity = 0.7, title = NULL,
-                position = "bottomright")
+
+rr <- tags$div(
+  HTML('<strong>Number of RE-related publications in African countries between 2011-2020</strong>')
+)  
+map_pub_freq <- m %>% addLegend(pal = pal, title="Amount of pub.", values = ~freq, opacity = 0.7,
+                position = "bottomright") %>%
+  addControl(rr, position = "bottomleft")
+
+saveWidget(map_pub_freq, file="01_data/03_visualisations/map_pub_freq.html")
+saveRDS(map_pub_freq, file = "01_data/03_visualisations/map_pub_freq.Rds")
 
 
+
+reg_color <- c("#BF9983", "#FFFFFF", "#AF8DA5", "#54B195", "#DDDDDD")
+
+r <- leaflet(au_carto) %>%
+  # setView(-96, 37.8, 4) %>%
+  addProviderTiles("MapBox", options = providerTileOptions(
+    id = "mapbox.light",
+    accessToken = Sys.getenv('pk.eyJ1IjoidWRvZTIxMzEyIiwiYSI6ImNrcG9sa2o5cTMwMm8ycHJpem1jaTBrN2wifQ.2EjPIn-cmD1xzsjY-jQO0A')))
+
+
+r %>% addPolygons()
 # Regions
-m %>% addPolygons(
+r <- r %>% addPolygons(
   fillColor = ~pal2(region_num),
   weight = 2,
   opacity = 1,
-  color = "white",
+  color = "black",
   dashArray = "3",
-  fillOpacity = 0.7)
+  fillOpacity = 0.7,
+  highlight = highlightOptions(
+    weight = 5,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE),
+  label = labels,
+  labelOptions = labelOptions(
+    style = list("font-weight" = "normal", padding = "3px 8px"),
+    textsize = "15px",
+    direction = "auto"))
 
+rrr <- tags$div(
+  HTML('<strong>United Nations geoscheme for Africa</strong>')
+)  
+map_cou_reg <- r %>% addLegend(colors = cou_col[1:6], labels=unique(au_carto$region), title="UNSD Regions", values = ~region_num, opacity = 0.7,
+                position = "bottomright") %>%
+  addControl(rr, position = "bottomleft")
+?addLegend
 

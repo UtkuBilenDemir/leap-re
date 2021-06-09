@@ -26,7 +26,7 @@ library(widgetframe)
 - 10 years range (2011-2020)
 - Identification RE-related publications: ~80% accuracy
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="100%"}
 library(canvasXpress)
 abs_rel_plt <- readRDS(file = "../../01_data/03_visualisations/abs_rel_plt.Rds")
 abs_rel_plt
@@ -37,19 +37,40 @@ abs_rel_plt
 - Analysis and visualisation of:
   * Connections between African countries as well as with other regions.
   * Interactions between organisations.
-- Report.
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="100%"}
 afr_cou_plt <- readRDS(file = "../../01_data/03_visualisations/afr_cou_plt.Rds")
 afr_cou_plt
 ```
 
 
-## Test
+## Selection criteria
 
-- BLANK
-- Lorem ipsum
+- Publication output
+- Relative growth in the number of pub. 
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="100%"}
+map_cou_reg <- readRDS(file = "../../01_data/03_visualisations/map_cou_reg.Rds")
+map_cou_reg
+```
+
+## Selection criteria
+
+- Publication output
+- Relative growth in the number of pub. 
+
+```{r echo=FALSE, out.width="100%"}
 map_pub_freq <- readRDS(file = "../../01_data/03_visualisations/map_pub_freq.Rds")
 map_pub_freq
+```
+
+
+## Co-publication and citation networks
+
+- (Interactive) Network presentation
+- Report
+
+```{r echo=FALSE, out.width="100%"}
+
+country_chord <- readRDS(file = "../../01_data/03_visualisations/country_chord.Rds")
+country_chord
 ```
