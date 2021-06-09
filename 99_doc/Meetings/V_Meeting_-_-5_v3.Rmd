@@ -1,11 +1,15 @@
 ---
 title: "LEAP-RE T5.3. | Scientometric Analysis"
-
-output: slidy_presentation
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
 library(widgetframe)
+library(leaflet)
+library(leaflet.providers)
 ```
 
 ## Completed Steps
