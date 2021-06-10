@@ -18,7 +18,8 @@ unsd_regions$au_regions[22] <-  "Southern Africa"
 unsd_regions$au_regions[26] <-  "Southern Africa"
 unsd_regions$au_regions[32] <-  "Central Africa"
 unsd_regions$au_regions[41] <-  "Northern Africa"
-
+unsd_regions[nrow(unsd_regions) + 1, ] <- c( "Eastern Africa", "Eastern Africa", "Somaliland")
+rownames(unsd_regions[61]) <- "SOMALILAND"
  
 ## -------------------------------------------------------------------------------
 
@@ -88,7 +89,7 @@ unsd_regions$carto_names[53] <- au_carto$name[41]
 unsd_regions$carto_names[55] <- au_carto$name[52]
 unsd_regions$carto_names[56] <- au_carto$name[27]
 
-M_05$Country_names <- unsd_regions[M_05$Country,2]
+M_05$Country_names <- unsd_regions[M_05$Country,3]
 au_freq <- as.data.frame(as.data.frame(table(M_05$Country_names))$Freq)
 rownames(au_freq) <- as.data.frame(table(M_05$Country_names))$Var1
 
@@ -204,7 +205,7 @@ r <- r %>% addPolygons(
     direction = "auto"))
 
 rrr <- tags$div(
-  HTML('<strong>United Nations geoscheme for Africa</strong>')
+  HTML('<strong>African Union geographic regions</strong>')
 )  
 map_cou_reg <- r %>% addLegend(colors = reg_color, labels=names(reg_color), title="AU Regions", values = ~region_num, opacity = 0.7,
                 position = "bottomright") %>%

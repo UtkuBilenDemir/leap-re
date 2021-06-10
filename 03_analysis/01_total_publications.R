@@ -30,7 +30,6 @@ abs_rel_plt <- canvasXpress(
   ## varAnnot = datz,
   graphOrientation = "vertical",
   graphType = "BarLine",
-  
   ##colorScheme = "Wall Street",
   ## legendColumns = 2,
   ## legendPosition = "bottom",
@@ -40,7 +39,7 @@ abs_rel_plt <- canvasXpress(
   smpLabelRotate = 45,
   ## smpTitle = "Collection of Samples",
   ## subtitle = "Random Data",
-  theme = "wallStreetJournal",
+  #theme = "wallStreetJournal",
   title = "RE-related publications in African countries                          \nbetween 2011-2020",
   ## subtitle = "Absolute numbers and relative growth of publications between 2011-2020 ",
   xAxis = "# of pub.", 

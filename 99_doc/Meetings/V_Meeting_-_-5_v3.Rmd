@@ -2,8 +2,6 @@
 title: "LEAP-RE T5.3. | Scientometric Analysis"
 output:
   slidy_presentation: default
-  beamer_presentation: default
-  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}

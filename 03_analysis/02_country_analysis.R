@@ -19,13 +19,15 @@ datx = as.data.frame(matrix(unsd, nrow = 1, byrow = TRUE, dimnames = list("UNSD 
 country_data_sorted <- sort(country_data, decreasing=TRUE)
 datx_sorted <-  as.data.frame(matrix(unsd_regions[colnames(country_data_sorted),], nrow = 1, byrow = TRUE, dimnames = list("UNSD Region", colnames(country_data_sorted))))
 
+what <-c("#BF9983", "#898989", "#AF8DA5", "#54B195", "#D8B04C")
 afr_cou_plt <- canvasXpress(
   data = country_data_sorted[,1:15],
   smpAnnot = datx_sorted[,1:15],
   axisTitleFontStyle = "italic",
   smpLabelRotate = 30,
   colorBy = "UNSD Region",
-  colorScheme = "canvasXpress",
+  #colorScheme = reg_color,
+  colors = what[c(4,3,1,5,2)],
   decorationScaleFontFactor = 1.3,
   graphOrientation = "vertical",
   graphType = "Bar",
@@ -33,10 +35,12 @@ afr_cou_plt <- canvasXpress(
   showFunctionNamesAfterRender = FALSE,
   title = "Most visible 15 African countries in RE-related                           \npublications between 2011-2020",
   xAxis2Show = FALSE,
-  theme = "wallStreetJournal",
+  #theme = "wallStreetJournal",
    legendPosition = "top-right"
   
 )
+
+?canvasXpress
 
 
 saveRDS(afr_cou_plt, file = "01_data/03_visualisations/afr_cou_plt.Rds")
