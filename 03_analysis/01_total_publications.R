@@ -13,16 +13,17 @@ sprintf("Total number of publications: %d", tot_pub)
 
 # Absolute and relative growth over the years
 abs_rel_oty <- as.data.frame(table(M_02$PY))
-abs_rel_oty.cumul_sum <- cumsum(abs_rel_oty$Freq)
-abs_rel_oty.cumul_growth <- abs_rel_oty.cumul_sum / nrow(abs_rel_oty)
-abs_rel_oty$relative_growth <- abs_rel_oty.cumul_growth / abs_rel_oty.cumul_growth[1]
-
+## abs_rel_oty.cumul_sum <- cumsum(abs_rel_oty$Freq)
+## abs_rel_oty.cumul_growth <- abs_rel_oty.cumul_sum / nrow(abs_rel_oty)
+## abs_rel_oty$relative_growth <- abs_rel_oty.cumul_growth / abs_rel_oty.cumul_growth[1]
+a <- abs_rel_oty["Freq"] / abs_rel_oty[1,"Freq"]
+abs_rel_oty$relative_growth <- as.vector(unlist(a))
 # We need to transpose the dataframe
 t_abs_rel_oty <- transpose(abs_rel_oty)
 colnames(t_abs_rel_oty) <- rownames(abs_rel_oty)
 rownames(t_abs_rel_oty) <- colnames(abs_rel_oty)
 colnames(t_abs_rel_oty) <- abs_rel_oty$Var1
-rownames(t_abs_rel_oty) <- c("Years", "# of pub.", "Relative growth (cumulative)")
+rownames(t_abs_rel_oty) <- c("Years", "# of pub.", "Relative growth")
 
 abs_rel_plt <- canvasXpress(
   data = t_abs_rel_oty,
@@ -44,7 +45,7 @@ abs_rel_plt <- canvasXpress(
   ## subtitle = "Absolute numbers and relative growth of publications between 2011-2020 ",
   xAxis = "# of pub.", 
   ## xAxisTitle = "# of pub.",
-  xAxis2 = "Relative growth (cumulative)",
+  xAxis2 = "Relative growth",
   ## xAxis2Title = "(Cumulative) Relative growth ",
   legendPosition = "top",
   ## xAxis2TickFormat = "%.0f T",

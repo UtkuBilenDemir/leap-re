@@ -45,3 +45,7 @@ afr_cou_plt <- canvasXpress(
 
 saveRDS(afr_cou_plt, file = "01_data/03_visualisations/afr_cou_plt.Rds")
 ?canvasXpress
+
+
+
+length(unique(M_05$ID[M_05$Country == "EGYPT"]))
