@@ -1,4 +1,5 @@
 library(bannerCommenter)
+library(canvasXpress)
 M_05 <- readRDS(file = "01_data/02_bibliometrix/05_dataframe_seperated-aff_-_cou_cleaned.Rds")
 unsd_regions <- readRDS(file = "01_data/02_bibliometrix/unsd_regions_dict.Rds")
 rownames(M_05) <- c()
@@ -19,7 +20,7 @@ datx = as.data.frame(matrix(unsd, nrow = 1, byrow = TRUE, dimnames = list("UNSD 
 country_data_sorted <- sort(country_data, decreasing=TRUE)
 datx_sorted <-  as.data.frame(matrix(unsd_regions[colnames(country_data_sorted),], nrow = 1, byrow = TRUE, dimnames = list("UNSD Region", colnames(country_data_sorted))))
 
-what <-c("#BF9983", "#898989", "#AF8DA5", "#54B195", "#D8B04C")
+what <-c("#BF9983", "#898989","#54B195", "#AF8DA5",  "#D8B04C")
 afr_cou_plt <- canvasXpress(
   data = country_data_sorted[,1:15],
   smpAnnot = datx_sorted[,1:15],
@@ -49,3 +50,4 @@ saveRDS(afr_cou_plt, file = "01_data/03_visualisations/afr_cou_plt.Rds")
 
 
 length(unique(M_05$ID[M_05$Country == "EGYPT"]))
+

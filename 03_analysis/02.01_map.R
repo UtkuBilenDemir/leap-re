@@ -90,8 +90,20 @@ unsd_regions$carto_names[55] <- au_carto$name[52]
 unsd_regions$carto_names[56] <- au_carto$name[27]
 
 M_05$Country_names <- unsd_regions[M_05$Country,3]
-au_freq <- as.data.frame(as.data.frame(table(M_05$Country_names))$Freq)
-rownames(au_freq) <- as.data.frame(table(M_05$Country_names))$Var1
+
+# Create a column with total publication numbers
+cou_tot_pub <- c(rep(NA, length(M_05$Country)))
+for(i in unique(M_05$Country)){
+  indexes <- M_05$Country == i 
+  cou_tot_pub[indexes] <- length(unique(M_05$ID[indexes]))
+}
+M_05$cou_tot_pub <- cou_tot_pub
+cou_tot_df <- as.data.frame(unique(M_05[M_05[, "African"] == TRUE,][, c("Country_names", "cou_tot_pub")]))
+rownames(cou_tot_df) <- 1:nrow(cou_tot_df)
+
+au_freq <- as.data.frame(cou_tot_df[,"cou_tot_pub"])
+row.names(au_freq) <- cou_tot_df[,"Country_names"]
+colnames(au_freq) <- "Freq"
 
 ### au_regions <- as.data.frame(unsd_regions$unsd_region[-c(56)])
 au_regions <- as.data.frame(unsd_regions$au_region[-c(56)])
@@ -112,7 +124,7 @@ m %>% addPolygons()
 
 au_carto$name
 
-bins <- c(0, 40, 100, 200, 500, 1000, 5000, 10000, Inf)
+bins <- c(0, 40, 100, 200, 400, 600, 800, 1000, 3000, 5000, Inf)
 pal <- colorBin("YlOrRd", domain = au_carto$adm0_a3, bins = bins)
 
 bins2 <- c(1,2,3,4, 5)
@@ -213,3 +225,6 @@ map_cou_reg <- r %>% addLegend(colors = reg_color, labels=names(reg_color), titl
 
 saveWidget(map_cou_reg, file="01_data/03_visualisations/map_cou_reg.html")
 saveRDS(map_cou_reg, file = "01_data/03_visualisations/map_cou_reg.Rds")
+
+
+saveRDS(M_05, file = "01_data/02_bibliometrix/05.01_dataframe_seperated-aff_-_cou_cleaned_-_cou_freq.Rds")

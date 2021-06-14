@@ -8,6 +8,8 @@ output:
 library(widgetframe)
 library(leaflet)
 library(leaflet.providers)
+library(htmlwidgets)
+library(htmltools)
 ```
 
 ## Completed Steps
@@ -30,7 +32,7 @@ library(leaflet.providers)
 
 ```{r echo=FALSE, out.width="100%"}
 library(canvasXpress)
-abs_rel_plt <- readRDS(file = "../../01_data/03_visualisations/abs_rel_plt.Rds")
+abs_rel_plt <- readRDS(file = "../01_data/03_visualisations/abs_rel_plt.Rds")
 abs_rel_plt
 ```
 
@@ -40,7 +42,7 @@ abs_rel_plt
   * Connections between African countries as well as with other regions.
   * Interactions between organisations.
 ```{r echo=FALSE, out.width="100%"}
-afr_cou_plt <- readRDS(file = "../../01_data/03_visualisations/afr_cou_plt.Rds")
+afr_cou_plt <- readRDS(file = "../01_data/03_visualisations/afr_cou_plt.Rds")
 afr_cou_plt
 ```
 
@@ -51,7 +53,7 @@ afr_cou_plt
 - Relative growth in the number of pub. 
 
 ```{r echo=FALSE, out.width="100%"}
-map_cou_reg <- readRDS(file = "../../01_data/03_visualisations/map_cou_reg.Rds")
+map_cou_reg <- readRDS(file = "../01_data/03_visualisations/map_cou_reg.Rds")
 map_cou_reg
 ```
 
@@ -61,7 +63,7 @@ map_cou_reg
 - Relative growth in the number of pub. 
 
 ```{r echo=FALSE, out.width="100%"}
-map_pub_freq <- readRDS(file = "../../01_data/03_visualisations/map_pub_freq.Rds")
+map_pub_freq <- readRDS(file = "../01_data/03_visualisations/map_pub_freq.Rds")
 map_pub_freq
 ```
 
@@ -73,6 +75,6 @@ map_pub_freq
 
 ```{r echo=FALSE, out.width="100%"}
 
-country_chord <- readRDS(file = "../../01_data/03_visualisations/country_chord.Rds")
+country_chord <- readRDS(file = "../01_data/03_visualisations/country_chord.Rds")
 country_chord
 ```
