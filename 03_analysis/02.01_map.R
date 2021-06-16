@@ -4,6 +4,8 @@ library(stringr)
 library(htmlwidgets)
 library(htmltools)
 library(leaflet)
+library(geojsonio)
+
 M_05 <- readRDS(file = "01_data/02_bibliometrix/05_dataframe_seperated-aff_-_cou_cleaned.Rds")
 unsd_regions <- readRDS(file = "01_data/02_bibliometrix/unsd_regions_dict.Rds")
 unsd_regions$carto_names
@@ -25,55 +27,40 @@ rownames(unsd_regions[61]) <- "SOMALILAND"
 
 
 
-au_countries <- geojsonio::geojson_read("01_data/99_supplementary/africa.geo.json", what = "sp")
-names(au_countries)
-
-au_map <- geojsonio::geojson_read("01_data/99_supplementary/au.geojson", what = "sp")
+## spdf <- geojson_read("https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/communes.geojson",  what = "sp")
+## au_countries <- geojsonio::geojson_read("01_data/99_supplementary/africa.geo.json", what = "sp")
+## au_map <- geojsonio::geojson_read("01_data/99_supplementary/au.geojson", what = "sp")
 au_carto <- geojsonio::geojson_read("01_data/99_supplementary/africa_adm0.geojson", what = "sp")
 
-library(geojsonio)
-spdf <- geojson_read("https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/communes.geojson",  what = "sp")
 
-str(spdf)
+## # Read this shape file with the rgdal library. 
+## library(rgdal)
+## my_spdf <- readOGR( 
+##   dsn= paste0(getwd(),"/") , 
+##   layer="TM_WORLD_BORDERS_SIMPL-0.3",
+##   verbose=FALSE
+## )
 
-# Read this shape file with the rgdal library. 
-library(rgdal)
-my_spdf <- readOGR( 
-  dsn= paste0(getwd(),"/") , 
-  layer="TM_WORLD_BORDERS_SIMPL-0.3",
-  verbose=FALSE
-)
+## # Keep only data concerning Africa
+## africa <- my_spdf[my_spdf@data$REGION==2 , ]
+## 
+## # Plot africa
+## par(mar=c(0,0,0,0))
+## plot(africa , xlim=c(-20,60) , ylim=c(-40,35), col="steelblue", lwd=0.5 )
 
-# Keep only data concerning Africa
-africa <- my_spdf[my_spdf@data$REGION==2 , ]
-
-# Plot africa
-par(mar=c(0,0,0,0))
-plot(africa , xlim=c(-20,60) , ylim=c(-40,35), col="steelblue", lwd=0.5 )
-
-
-
-au_carto$adm0_a3
-
-
-
-canvasXpress(
-  data=pfn,
-  # varAnnot=rownames(pubf),
-  colorBy="freq",
-  graphType="Map",
-  # legendOrder=list(Winner=list("Republican", "Democrat")),
-  mapId="freq",
-  # mapProjection="albers",
-  theme="wallStreetJournal",
-  title="2000 Presidential Elections",
-  topoJSON="https://www.canvasxpress.org/data/africa.geo.json"
-)
-
-
-
-class(au_carto)
-states <- geojsonio::geojson_read("https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json", what = "sp")
+## canvasXpress(
+##   data=pfn,
+##   # varAnnot=rownames(pubf),
+##   colorBy="freq",
+##   graphType="Map",
+##   # legendOrder=list(Winner=list("Republican", "Democrat")),
+##   mapId="freq",
+##   # mapProjection="albers",
+##   theme="wallStreetJournal",
+##   title="2000 Presidential Elections",
+##   topoJSON="https://www.canvasxpress.org/data/africa.geo.json"
+## )
+## states <- geojsonio::geojson_read("https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json", what = "sp")
 
 not_match <- which(!(str_to_title(rownames(unsd_regions)) %in% au_carto$name))
 unsd_regions$carto_names <- str_to_title(rownames(unsd_regions))
