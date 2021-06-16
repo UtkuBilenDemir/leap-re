@@ -52,6 +52,8 @@ au_off$freq <- unsd_regions$tot_pub[match(au_off$name, unsd_regions$au_off_names
 au_off$region <- unsd_regions$au_regions[match(au_off$name, unsd_regions$au_off_names)]
 au_off$region_num <- as.numeric(as.factor(unsd_regions$au_regions[match(au_off$name, unsd_regions$au_off_names)]))
 
+au_off$region_unsd <- unsd_regions$unsd_region[match(au_off$name, unsd_regions$au_off_names)]
+au_off$region_unsd_num <- as.numeric(as.factor(unsd_regions$unsd_region[match(au_off$name, unsd_regions$au_off_names)]))
 # Create initial mapbox drawing
 m <- leaflet(au_off) %>%
   addProviderTiles("MapBox", options = providerTileOptions(
@@ -143,3 +145,53 @@ rrr <- tags$div(
 map_cou_reg <- r %>% addLegend(colors = reg_color, labels=names(reg_color), title="AU Regions", values = ~region_num, opacity = 0.7,
                 position = "bottomright") %>%
   addControl(rrr, position = "bottomleft")
+
+
+saveWidget(map_cou_reg, file="01_data/03_visualisations/map_cou_reg_-_2.html")
+saveRDS(map_cou_reg, file = "01_data/03_visualisations/map_cou_reg_-_2.Rds")
+
+
+
+# Same with the unsd regions
+# Regional map
+reg_color_unsd <- c("#BF9983", "#898989", "#54B195", "#AF8DA5", "#D8B04C")
+names(reg_color_unsd) <- unique(au_off$region_unsd)[c(1,3,5,2,6)]
+
+unsd_r <- leaflet(au_off) %>%
+  # setView(-96, 37.8, 4) %>%
+  addProviderTiles("MapBox", options = providerTileOptions(
+    id = "mapbox.light",
+    accessToken = Sys.getenv('pk.eyJ1IjoidWRvZTIxMzEyIiwiYSI6ImNrcG9sa2o5cTMwMm8ycHJpem1jaTBrN2wifQ.2EjPIn-cmD1xzsjY-jQO0A')))
+
+
+unsd_r %>% addPolygons()
+# Regions
+unsd_r <- unsd_r %>% addPolygons(
+  fillColor = ~pal2(region_unsd_num),
+  weight = 2,
+  opacity = 1,
+  color = "black",
+  dashArray = "1",
+  fillOpacity = 0.7,
+  highlight = highlightOptions(
+    weight = 2,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE),
+  label = labels,
+  labelOptions = labelOptions(
+    style = list("font-weight" = "normal", padding = "3px 8px"),
+    textsize = "15px",
+    direction = "auto"))
+
+unsd_rrr <- tags$div(
+  HTML('<strong>UNSD regions</strong>')
+)  
+unsd_map_cou_reg <- unsd_r %>% addLegend(colors = reg_color_unsd, labels=names(reg_color_unsd), title="UNSD Regions", values = ~region_unsd_num, opacity = 0.7,
+                position = "bottomright") %>%
+  addControl(unsd_rrr, position = "bottomleft")
+
+
+saveWidget(unsd_map_cou_reg, file="01_data/03_visualisations/unsd_map_cou_reg_-_2.html")
+saveRDS(unsd_map_cou_reg, file = "01_data/03_visualisations/unsd_map_cou_reg_-_2.Rds")
