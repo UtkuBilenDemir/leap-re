@@ -40,6 +40,22 @@ rel_pub[rel_pub == Inf] <- NA
 M_05$Country_relative <- rel_pub
 M_05[, c("Country_names", "cou_tot_pub","Country_relative")]
 
-saveRDS(M_05, file = "01_data/02_bibliometrix/05.02_dataframe_seperated-aff_-_cou_refactored.Rds")
-
 # Add it to the country table
+
+cou_rel <-  rep(NA, nrow(cou_table))
+citat <-  rep(NA, nrow(cou_table))
+for(i in 1:nrow(cou_table)){
+  cou_rel[i] <- M_05$Country_relative[cou_table$au_off_names[i] == M_05$Country_names][1]
+}
+
+cou_table$rel_pub <- cou_rel
+
+# TODO: Times Cited?
+
+
+
+
+# ---
+
+saveRDS(M_05, file = "01_data/02_bibliometrix/05.02_dataframe_seperated-aff_-_cou_refactored.Rds")
+saveRDS(unsd_regions, file = "01_data/0201_tables/country_table_-_2.Rds")
