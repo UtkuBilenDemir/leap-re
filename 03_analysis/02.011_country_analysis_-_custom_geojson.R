@@ -195,3 +195,7 @@ unsd_map_cou_reg <- unsd_r %>% addLegend(colors = reg_color_unsd, labels=names(r
 
 saveWidget(unsd_map_cou_reg, file="01_data/03_visualisations/unsd_map_cou_reg_-_2.html")
 saveRDS(unsd_map_cou_reg, file = "01_data/03_visualisations/unsd_map_cou_reg_-_2.Rds")
+
+
+saveRDS(au_off, file = "01_data/04_geospatial_data/au_official_boundaries.Rds")
+saveRDS(unsd_regions, file = "01_data/0201_tables/country_table.Rds")
