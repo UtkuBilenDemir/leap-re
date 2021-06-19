@@ -101,12 +101,20 @@ wos_dict <- wos_dict[-c(wos_dict.na), ]
 rownames(wos_dict) <-  wos_dict$res_areas
 wos_dict.row <- wos_dict$res_areas
 wos_dict <- as.data.frame(wos_dict[,"row"])
-rownames(wos_dict) <- wos_dict.row
-saveRDS(wos_dict, "../bibliometry_module/00_data/research_areas/wos_dictionary.Rds")
+rownames(wos_dict) <- str_to_title(wos_dict.row)
+
 
 # Create a proper column with proper names
 M_05$res_areas <- str_to_title(M_05$WC)
+M_05$res_areas[M_05$res_areas == "Materials Science, Biomaterials"] <- "Materials Science"
+M_05$res_areas[M_05$res_areas == "Agriculture, Multidisciplinary"] <- "Agriculture"
+M_05$res_areas[M_05$res_areas == "Engineering, Multidisciplinary"] <- "Engineering"
+M_05$res_areas[M_05$res_areas == "Business, Finance"] <- "Business & Economics"
+M_05$res_areas[M_05$res_areas == "Materials Science, Composites"] <- "Materials Science"
+M_05$res_areas[M_05$res_areas == "Materials Science, Textiles"] <- "Materials Science"
+M_05$res_areas[M_05$res_areas == "Engineering, Multidisciplinary"] <- "Engineering"
 
+M_05$res_areas <- M_05$res_areas %>% gsub("Business;", "Business & Economics;", .)
 
 research_domain <- rep(NA, nrow(M_05))
 for(i in 1:length(M_05$res_areas)){
@@ -116,11 +124,21 @@ for(i in 1:length(M_05$res_areas)){
     temp <- rep(NA, length(wc_list))
     for(k in 1:length(wc_list)){
       temp[k] <- wos_dict[wc_list[k],]
-      if(is.na(temp[k])){print(wc_list[k])}
+      if(is.na(temp[k])){
+        temp[k] <- wos_dict[str_split(wc_list[k], ",")[[1]][1], ]
+        if(is.na(temp[k])){
+        print(paste0("-> ", wc_list[k]))
+        }
+        }
     } 
     temp <- paste(temp, collapse = ";")
     } else {
       temp <- wos_dict[wc_list[1],]
     }
-    research_domain[i] <- temp
+    research_domain[i] <- unique(temp)
   }
+
+
+
+saveRDS(wos_dict, "../bibliometry_module/00_data/research_areas/wos_dictionary.Rds")
+saveRDS(M_05, file = "01_data/02_bibliometrix/05.03_dataframe_seperated-aff_-_res_areas.Rds")
