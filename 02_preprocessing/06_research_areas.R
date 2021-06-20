@@ -120,6 +120,7 @@ research_domain <- rep(NA, nrow(M_05))
 for(i in 1:length(M_05$res_areas)){
   wc_list <- str_split(M_05$res_areas[i], "; ")
   wc_list <- wc_list[[1]]
+  # If there more than one areas/domains
   if(length(wc_list) > 1){
     temp <- rep(NA, length(wc_list))
     for(k in 1:length(wc_list)){
@@ -131,13 +132,15 @@ for(i in 1:length(M_05$res_areas)){
         }
         }
     } 
+    temp <- unique(temp)
     temp <- paste(temp, collapse = ";")
     } else {
       temp <- wos_dict[wc_list[1],]
     }
-    research_domain[i] <- unique(temp)
+    research_domain[i] <- temp
   }
 
+M_05$res_domains <- research_domain
 
 
 saveRDS(wos_dict, "../bibliometry_module/00_data/research_areas/wos_dictionary.Rds")
