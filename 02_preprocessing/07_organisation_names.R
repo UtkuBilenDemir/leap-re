@@ -47,4 +47,16 @@ colnames(M_05)[c(1:78, 97, 79, 82, 80:81, 83:96 )]
 # Reorder columns
 M_06 <- M_05[, c(1:78, 97, 79, 82, 80:81, 83:96 )]
 
+# Rownames are different than nrow range
+rownames(M_06) <- 1:nrow(M_06)
+# Also create an affilliation index
+aff_ID <- 1:nrow(M_06)
+M_06 <- cbind(aff_ID, M_06)
+
 saveRDS(M_06, file = "01_data/02_bibliometrix/06_dataframe_-_improved_affiliations.Rds")
+write.csv(M_06, file = "01_data/02_bibliometrix/06_dataframe_-_improved_affiliations.csv")
+
+### Just import and export the new files
+
+M_0602 <- read.csv("01_data/02_bibliometrix/0602_after_refine.csv")
+saveRDS(M_0602, file = "01_data/02_bibliometrix/0602_after_refine.RDS")
