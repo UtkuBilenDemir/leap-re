@@ -1,10 +1,11 @@
 library(canvasXpress)
 library(data.table)
-M_05 <- readRDS(file = "01_data/02_bibliometrix/05_dataframe_seperated-aff_-_cou_cleaned.Rds")
+# Using deprecated df, change it
+M_05 <- readRDS(file = "01_data/9999_deprecated/05.01_dataframe_seperated-aff_-_cou_cleaned_-_cou_freq.Rds")
 rownames(M_05) <- c()
 # Following one is better because 1ID = 1Publication here
-M_02 <- readRDS(file = "01_data/02_bibliometrix/02_bib_dataframe_noab.Rds")
-rownames(M_02) <- c()
+M_02 <- readRDS(file = "01_data/9999_deprecated/02_bib_dataframe_noab.Rds")
+## rownames(M_02) <- c()
 
 # Total number of publications
 tot_pub <- length(unique(M_02$ID))

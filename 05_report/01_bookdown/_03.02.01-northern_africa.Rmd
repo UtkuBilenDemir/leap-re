@@ -1,0 +1,8 @@
+### Northern Africa 
+
+
+
+```{r natable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Northern African countries"}
+na_table <- readRDS(file = "../../04_visualisation/04_tables/table_test.Rds")
+na_table
+```

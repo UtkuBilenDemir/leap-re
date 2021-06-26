@@ -1,7 +1,3 @@
-#%%
-import pyreadr
-import pandas as pd
-
 # %%
 import pyreadr
 import pandas as pd
@@ -9,9 +5,10 @@ from nltk.tokenize import word_tokenize
 from fuzzywuzzy import fuzz
 
 #%%
-M_06 = pyreadr.read_r('../../01_data/02_bibliometrix/0602_after_refine.RDS') # also works for RData
+## M_06 = pyreadr.read_r('../../01_data/02_bibliometrix/0602_after_refine.RDS') # also works for RData
 ## M_06 = pd.read_csv('../../01_data/02_bibliometrix/0602_after_refine.csv')
-M_06 = M_06[None]
+## M_06 = M_06[None]
+M_06 = pd.read_pickle(r'../../01_data/02_bibliometrix/0603_GRID_au-off_names.pickle')
 
 # %%
 grid = pd.read_csv('../../01_data/05_org_names/grid.csv') 
@@ -47,7 +44,7 @@ for i,x in enumerate(un_org_names):
     print(f'{i}/{len(un_org_names)}')
     indexes = x == M_06["Organisation"]
     cou = M_06.loc[indexes, "Country"].unique()
-    prop_cou = M_06.loc[indexes, "Country_names"].unique()
+    prop_cou = M_06.loc[indexes, "GRID_country_name"].unique()
     city = M_06.loc[indexes, "City"].unique()
     pub_freq = len(set(M_06.loc[indexes, "ID"]))
     unique_country.append(cou)
@@ -223,13 +220,17 @@ matched_org_df
 # %%
 import _pickle as cPickle
 # %%
-with open(r"./org_df.pickle", "wb") as output_file:
+with open(r"./02_org_df.pickle", "wb") as output_file:
     cPickle.dump(org_df, output_file)
-org_df.to_csv("org_df.csv")
+org_df.to_csv("02_org_df.csv")
 # %%
-with open(r"./0899_matched_org_df.pickle", "wb") as output_file:
+with open(r"./08999_matched_org_df.pickle", "wb") as output_file:
     cPickle.dump(matched_org_df, output_file)
-matched_org_df["df"].to_csv("./0899_matched_org_df.csv")
-# %%
+matched_org_df["df"].to_csv("./08999_matched_org_df.csv")
 
+# %% Make script properly importable
+def main():
+    print("IMPORTED!")
 # %%
+if __name__ == "__main__":
+    main()

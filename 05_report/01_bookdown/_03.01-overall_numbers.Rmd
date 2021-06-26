@@ -1,0 +1,58 @@
+## Overall Figures
+
+This sub-chapter mainly deals with number of RE-related publication outputs in
+African countries in the 10 years period between 2011-2020. 
+
+```{r}
+# Addition: In order to put numbers
+# in perspective, number of publication in the EU-27 countries has been added analysed
+# as well.
+# TODO: Add EU-27 absolute numbers and relative growth 
+
+# TODO: Add global partners as tree map like here? https://www.canvasxpress.org/examples/treemap-1.html
+```
+
+
+```{r puboty, echo=FALSE, out.width="200%", fig.cap="Number of RE-related publications in African countries over the years between 2011-2020"}
+abs_rel_plt <- readRDS(file = "../../01_data/03_visualisations/abs_rel_plt.Rds")
+abs_rel_plt
+```
+
+
+The number of RE-related publications from African countries has been constantly
+increasing between 2011-2019. Slightly declining publication numbers between 2019
+and 2020 (see \@ref(fig:puboty)), as Web of Science team also often emphasises,
+is caused by the latency in the database entries [^1]. Even after including the 
+incomplete amount of publications in 2020, number of RE-related publications from 
+the African countries in total increases from ~1.1k in 2011 to ~4.8k in 
+2020 which is an increment by factor ~4.2. 
+
+```{r}
+# TODO: Research Areas?
+```
+
+
+```{r choropleth, echo=FALSE, out.width="100%", fig.cap="Total number of RE-related publications in African countries between 2011-2020"}
+map_pub_freq <- readRDS(file = "../../04_visualisation/02_maps/03_results/choropleth.Rds")
+map_pub_freq
+```
+
+```{r}
+# TODO: Edit the following text
+```
+
+As \@ref(fig:choropleth) shows, South Africa and Egypt are the most visible countries with 6.8k and 6.6k publications respectively. 20 countries stay under 40 RE-related publications in total between 2011-2020, the most visible countries distributed diversely on the continent.  
+
+Although total publication output is a strong indicator of the most visible countries, it does not show the growth rate in the number of Publications. African countries that show high increment rate in the number of publications despite having relatively lower total amount of publications will be analysed in the following chapter.
+  
+
+
+
+
+
+
+
+
+
+
+[^1]: As Web of Science support service informs, it might take up to 2 years for a document to be entered into the Web of Science databases.

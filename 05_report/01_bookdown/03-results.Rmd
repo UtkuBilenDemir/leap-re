@@ -1,0 +1,29 @@
+# Results
+
+Following clarification of  the motivation and methodology of the 
+scientometric analysis on the renewable energy (RE) related research in Africa, 
+this chapter is aiming to present the results of the study with the help of useful
+visualisations and tables in following sub-chapters:
+
+```{r}
+# TODO: Bullet point chapters
+```
+
+Some of the re-occurring concepts, however, require a clear definition before 
+the discussion of the results to avoid any possible misconceptions between
+readers and authors:
+
+
+* An *affiliation* defines one of the collaborator organisation in a specific 
+publication process.
+
+
+* A  *co-publication* is a publication that have been produced
+with collaboration of at least two organisations. Therefore, a co-publication 
+contains at least two affiliations.
+
+```{r child="_03.01-overall_numbers.Rmd", echo=FALSE}
+```
+
+```{r child="_03.02-regional_analysis.Rmd", echo=FALSE}
+```
