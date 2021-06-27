@@ -1,7 +1,8 @@
 library(visNetwork)
 
-nodes <- read_csv("04_visualisation/01_networks/88_network_method/test_nodes.csv")
-edges <- read_csv("04_visualisation/01_networks/88_network_method/test_edges.csv")
+
+nodes <- read.csv("./04_visualisation/03_networks/88_network_method/test_nodes.csv")
+edges <- read.csv("./04_visualisation/03_networks/88_network_method/test_edges.csv")
 
 
 sum(edges$value < 10)

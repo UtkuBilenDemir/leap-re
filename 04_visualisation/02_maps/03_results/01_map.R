@@ -120,3 +120,8 @@ map_cou_reg <- r %>% addLegend(colors = reg_color, labels=names(reg_color), titl
 saveRDS(map_cou_reg, file = "./04_visualisation/02_maps/03_results/au_regions.Rds")
 
 
+length(unique(na_df$ID)) / length(unique(M_06$ID))
+unique(M_06[order(M_06$Country_relative, decreasing = TRUE), c("au_off_country")])[1:10]
+M_06[, "au_off_country"]
+
+

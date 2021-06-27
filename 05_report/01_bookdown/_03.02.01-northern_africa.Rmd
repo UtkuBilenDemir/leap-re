@@ -6,3 +6,40 @@
 na_table <- readRDS(file = "../../04_visualisation/04_tables/table_test.Rds")
 na_table
 ```
+
+Countries of Northern Africa have collaborated approximately in the half of the 
+total number of renewable energy related publications (17116 publications out of 31099).
+4 of the 5 most visible African countries in RE-related publications are from the 
+northern region; namely Egypt, Algeria, Tunisia and Morocco. As table \@ref(fig:natable) 
+presents all of the Northern Africa countries increased their number of RE-related
+publications. Although, as discussed in the previous chapter, slight declines in the 
+number of publications between 2019-2020 are most likely caused by the delay of 
+document entry into the Web of Science databases, Algeria and Tunisia show a 
+decline in their number of publications starting 2017 and 2018 respectively. In the
+cases of Libya and Mauritania, however, volatility in the number of publications 
+is expected as their total publication outputs are relatively lower. Another 
+important observation is in the relative growth rates [^3211], Morocco's number of 
+RE-related publications in 2020 is approximately 16 times higher the number in 2011. 
+This growth rate is not only the highest in Northern Africa but in the whole continent. 
+
+Following the given analysis of RE-related publication outputs in the Northern Africa; 
+Egypt, Algeria and Morocco have been chosen for the deeper analysis of the individual countries. 
+While Egypt and Algeria hold the highest numbers of RE-related publications in the northern
+region, Morocco has been mainly chosen for the high growth rate in the number of publications.
+
+
+
+```{r nanet, echo=FALSE, out.width="100%", fig.cap="TEST"}
+na_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/na_net.Rds")
+na_net
+```
+
+
+
+
+
+
+
+
+[^3211]: Relative growth rate value in this report does not indicate a percentage as
+it is usually calculated, instead the equation is simply $end\_value/start\_value = growth\_rate$.
