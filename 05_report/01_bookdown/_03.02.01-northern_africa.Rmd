@@ -33,11 +33,24 @@ region, Morocco has been mainly chosen for the high growth rate in the number of
 na_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/na_net.Rds")
 na_net
 ```
+```{r}
+# links with fewer than 25 publications have been removed
+```
+
+
+#### Egypt
 
 
 
 
+```{r egyptnet, echo=FALSE, out.width="100%", fig.cap="TEST"}
+egypt_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/egypt_net.Rds")
+egypt_net
 
+```
+```{r}
+# Links with less than 20 publications have been removed
+```
 
 
 

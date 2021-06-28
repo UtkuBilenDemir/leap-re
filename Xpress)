@@ -1,0 +1,1140 @@
+treemap                package:treemap                 R Documentation
+
+_C_r_e_a_t_e _a _t_r_e_e_m_a_p
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     A treemap is a space-filling visualization of hierarchical
+     structures. This function offers great flexibility to draw
+     treemaps. Required is a data.frame (‘dtf’) that contains one or
+     more hierarchical index columns given by ‘index’, a column that
+     determines the rectangle area sizes (‘vSize’), and optionally a
+     column that determines the rectangle colors (‘vColor’). The way
+     how rectangles are colored is determined by the argument ‘type’.
+
+_U_s_a_g_e:
+
+     treemap(dtf, index, vSize, vColor = NULL, stdErr = NULL, type = "index",
+       fun.aggregate = "sum", title = NA, title.legend = NA,
+       algorithm = "pivotSize", sortID = "-size", mirror.x = FALSE,
+       mirror.y = FALSE, palette = NA, palette.HCL.options = NULL,
+       range = NA, mapping = NA, n = 7, fontsize.title = 14,
+       fontsize.labels = 11, fontsize.legend = 12, fontcolor.labels = NULL,
+       fontface.labels = c("bold", rep("plain", length(index) - 1)),
+       fontfamily.title = "sans", fontfamily.labels = "sans",
+       fontfamily.legend = "sans", border.col = "black",
+       border.lwds = c(length(index) + 1, (length(index) - 1):1),
+       lowerbound.cex.labels = 0.4, inflate.labels = FALSE, bg.labels = NULL,
+       force.print.labels = FALSE, overlap.labels = 0.5,
+       align.labels = c("center", "center"), xmod.labels = 0, ymod.labels = 0,
+       eval.labels = FALSE, position.legend = NULL, format.legend = NULL,
+       drop.unused.levels = TRUE, aspRatio = NA, vp = NULL, draw = TRUE, ...)
+     
+_A_r_g_u_m_e_n_t_s:
+
+     dtf: a data.frame. Required.
+
+   index: vector of column names in ‘dtf’ that specify the aggregation
+          indices. It could contain only one column name, which results
+          in a treemap without hierarchy. If multiple column names are
+          provided, the first name is the highest aggregation level,
+          the second name the second-highest aggregation level, and so
+          on. Required.
+
+   vSize: name of the column in ‘dtf’ that specifies the sizes of the
+          rectangles. Required.
+
+  vColor: name of the column that, in combination with ‘type’,
+          determines the colors of the rectangles. The variable can be
+          scaled by the addition of "*<scale factor>" or "/<scale
+          factor>". Note: when omitted for ‘"value"’ treemaps, a
+          contant value of 1 is taken.
+
+  stdErr: name of the column that contains standard errors. These are
+          not used for the treemaps, but only aggregated accordingly
+          and returned as item of the output list.
+
+    type: type of the treemap, which determines how the rectangles are
+          colored:
+
+          ‘"index"’: colors are determined by the ‘index’ variables.
+              Different branches in the hierarchical tree get different
+              colors. For this type, ‘vColor’ is not needed.
+
+          ‘"value"’: the numeric ‘vColor’-column is directly mapped to
+              a color palette. This palette is diverging, so that
+              values of 0 are assigned to the mid color (white or
+              yellow), and negative and positive values are assigned to
+              color based on two different hues colors (by default reds
+              for negative and greens for positive values). For more
+              freedom, see ‘"manual"’.
+
+          ‘"comp"’: colors indicate change of the ‘vSize’-column with
+              respect to the numeric ‘vColor’-column in percentages.
+              Note: the negative scale may be different from the
+              positive scale in order to compensate for the ratio
+              distribution.
+
+          ‘"dens"’: colors indicate density. This is analogous to a
+              population density map where ‘vSize’-values are area
+              sizes, ‘vColor’-values are populations per area, and
+              colors are computed as densities (i.e. population per
+              squared km).
+
+          ‘"depth"’: each aggregation level (defined by ‘index’) has a
+              distinct color. For this type, ‘vColor’ is not needed.
+
+          ‘"categorical"’: ‘vColor’ is a factor column that determines
+              the color.
+
+          ‘"color"’: ‘vColor’ is a vector of colors in the hexadecimal
+              (#RRGGBB) format
+
+          ‘"manual"’: The numeric ‘vColor’-column is directly mapped to
+              a color palette. Both palette and range should be
+              provided. The palette is mapped linearly to the range.
+
+fun.aggregate: aggregation function, only used in ‘"value"’ treemaps.
+          This function determines how values of the lowest aggregation
+          level are aggregated. By default, it takes the ‘sum’. Other
+          sensible functions are ‘mean’ and ‘weighted.mean’. In the
+          latter case, the weights are determined by the ‘vSize’
+          variable. Other arguments can be passed on. For
+          ‘weighted.mean’, it is possible to assign a variable name for
+          its ‘w’ argument.
+
+   title: title of the treemap.
+
+title.legend: title of the legend.
+
+algorithm: name of the used algorithm: ‘"squarified"’ or ‘"pivotSize"’.
+          The squarified treemap algorithm (Bruls et al., 2000)
+          produces good aspect ratios, but ignores the sorting order of
+          the rectangles (‘sortID’). The ordered treemap,
+          pivot-by-size, algorithm (Bederson et al., 2002) takes the
+          sorting order (‘sortID’) into account while aspect ratios are
+          still acceptable.
+
+  sortID: name of the variable that determines the order in which the
+          rectangles are placed from top left to bottom right. Only
+          applicable when ‘algorithm=="pivotSize"’. Also the values
+          "size" and "color" can be used, which refer to ‘vSize’ and
+          ‘vColor’ respectively. To inverse the sorting order, use "-"
+          in the prefix. By default, large rectangles are placed top
+          left.
+
+mirror.x: logical that determines whether the rectangles are mirrored
+          horizontally
+
+mirror.y: logical that determines whether the rectangles are mirrored
+          vertically
+
+ palette: one of the following:
+
+          a color palette: i.e., a vector of hexadecimal colors
+              (#RRGGBB)
+
+          a name of a Brewer palette: See
+              ‘RColorBrewer::display.brewer.all()’ for the options. The
+              palette can be reversed by prefixing with a "-". For
+              treemap types "value" and "comp", a diverging palette
+              should be chosen (default="RdYlGn"), for type "dens" a
+              sequential (default="OrRd"). The default value for
+              "depth" is "Set2".
+
+          "HCL": Tree Colors are color schemes derived from the
+              Hue-Chroma-Luminance color space model. This is only
+              applicable for qualitative palettes, which are applied to
+              the treemap types "index", "depth", and "categorical".
+              For "index" and "categorical" this is the default value.
+
+palette.HCL.options: list of advanced options to obtain Tree Colors
+          from the HCL space (when ‘palette="HCL"’). This list
+          contains:
+
+          ‘hue_start’: number between 0 and 360 that determines the
+              starting hue value (default: 30)
+
+          ‘hue_end’: number between ‘hue_start’ and ‘hue_start + 360’
+              that determines the ending hue value (default: 390)
+
+          ‘hue_perm’: boolean that determines whether the colors are
+              permuted such that adjacent levels get more
+              distinguishable colors. If ‘FALSE’, then the colors are
+              equally distributed from ‘hue_start’ to ‘hue_end’
+              (default: TRUE)
+
+          ‘hue_rev’: boolean that determines whether the colors of
+              even-numbered branched are reversed (to increase
+              discrimination among branches)
+
+          ‘hue_fraction’: number between 0 and 1 that determines the
+              fraction of the hue circle that is used for recursive
+              color picking: if 1 then the full hue circle is used,
+              which means that the hue of the colors of lower-level
+              nodes are spread maximally. If 0, then the hue of the
+              colors of lower-level nodes are identical of the hue of
+              their parents. (default: .5)
+
+          ‘chroma’: chroma value of colors of the first-level nodes,
+              that are determined by the first index variable (default:
+              60)
+
+          ‘luminance’: luminance value of colors of the first-level
+              nodes, i.e. determined by the first index variable
+              (default: 70)
+
+          ‘chroma_slope’: slope value for chroma of the non-first-level
+              nodes. The chroma values for the second-level nodes are
+              ‘chroma+chroma_slope’, for the third-level nodes
+              ‘chroma+2*chroma_slope’, etc. (default: 5)
+
+          ‘luminance_slope’: slope value for luminance of the
+              non-first-level nodes (default: -10)
+
+          For "depth" and "categorical" types, only the first two items
+          are used. Use ‘treecolors’ to experiment with these
+          parameters.
+
+   range: range of values (so vector of two) that correspond to the
+          color legend. By default, the range of actual values,
+          determined by ‘vColor’, is used. Only applicable for numeric
+          types, i.e. "value", "comp", "dens", and "manual". Note that
+          the range doesn't affect the colors in the treemap itself for
+          "value" and "manual" types; this is controlled by ‘mapping’.
+
+ mapping: vector of three values that specifies the mapping of the
+          actual values, determined by ‘vColor’, to ‘palette’. The
+          three values are respectively the minimum value, the mid
+          value, and the maximum value. The mid value is particularly
+          useful for diverging color palettes, where it defined the
+          middle, neutral, color which is typically white or yellow.
+          The ‘mapping’ should cover the ‘range’. By default, for
+          "value" treemaps, it is ‘c(-max(abs(values)), 0,
+          max(abs(values)))’, where values are the actual values
+          defined by ‘vColor’. For "manual" treemaps, the default
+          setting is ‘c(min(values), mean(range(values)),
+          max(values))’. A vector of two can also be specified. In that
+          case, the mid value will be the average of those.  Only
+          applicable for "value" and "manual" type treemaps.
+
+       n: preferred number of categories by which numeric variables are
+          discretized.
+
+fontsize.title: font size of the title
+
+fontsize.labels: font size(s) of the data labels, which is either a
+          single number that specifies the font size for all
+          aggregation levels, or a vector that specifies the font size
+          for each aggregation level. Use value ‘0’ to omit the labels
+          for the corresponding aggregation level.
+
+fontsize.legend: font size for the legend
+
+fontcolor.labels: Specifies the label colors. Either a single color
+          value, or a vector of color values one for each aggregation
+          level. By default, white and black colors are used, depending
+          on the background (‘bg.labels’).
+
+fontface.labels: either a single value, or a vector of values one for
+          each aggregation level. Values can be integers If an integer,
+          following the R base graphics standard: 1 = plain, 2 = bold,
+          3 = italic, 4 = bold italic, or characters: ‘"plain"’,
+          ‘"bold"’, ‘"italic"’, ‘"oblique"’, and ‘"bold.italic"’.
+
+fontfamily.title: font family of the title. Standard values are
+          "serif", "sans", "mono", "symbol". Mapping is device
+          dependent.
+
+fontfamily.labels: font family of the labels in each rectangle.
+          Standard values are "serif", "sans", "mono", "symbol".
+          Mapping is device dependent.
+
+fontfamily.legend: font family of the legend. Standard values are
+          "serif", "sans", "mono", "symbol". Mapping is device
+          dependent.
+
+border.col: color of borders drawn around each rectangle. Either one
+          color for all rectangles or a vector of colors, or one for
+          each aggregation level
+
+border.lwds: thicknesses of border lines. Either one number specifies
+          the line thicknesses (widths) for all rectangles or a vector
+          of line thicknesses for each aggregation level.
+
+lowerbound.cex.labels: multiplier between 0 and 1 that sets the
+          lowerbound for the data label font sizes: 0 means draw all
+          data labels, and 1 means only draw data labels if they fit
+          (given ‘fontsize.labels’).
+
+inflate.labels: logical that determines whether data labels are
+          inflated inside the rectangles. If ‘TRUE’, ‘fontsize.labels’
+          does not determine the fontsize anymore, but it still
+          determines the minimum fontsize in combination with
+          ‘lowerbound.cex.labels’.
+
+bg.labels: background color of high aggregation labels. Either a color,
+          or a number between 0 and 255 that determines the
+          transparency of the labels. In the latter case, the color
+          itself is determined by the color of the underlying
+          rectangle. For "value" and "categorical" treemaps, the
+          default is (slightly) transparent grey (‘"#CCCCCCDC"’), and
+          for the other types slightly transparent: ‘220’.
+
+force.print.labels: logical that determines whether data labels are
+          being forced to be printed if they don't fit.
+
+overlap.labels: number between 0 and 1 that determines the tolerance of
+          the overlap between labels. 0 means that labels of lower
+          levels are not printed if higher level labels overlap, 1
+          means that labels are always printed. In-between values, for
+          instance the default value .5, means that lower level labels
+          are printed if other labels do not overlap with more than .5
+          times their area size.
+
+align.labels: object that specifies the alignment of the labels. Either
+          a character vector of two values specifying the horizontal
+          alignment (‘"left"’, ‘"center"’, or ‘"right"’) and the
+          vertical alignment (‘"top"’, ‘"center"’, or ‘"bottom"’), or a
+          list of sush character vectors, one for each aggregation
+          level.
+
+xmod.labels: the horizontal position modification of the labels in
+          inches. Either a single value, or a vector that specifies the
+          modification for each aggregation level.
+
+ymod.labels: the vertical position modification of the labels in
+          inches. Either a single value, or a vector that specifies the
+          modification for each aggregation level.
+
+eval.labels: should the text labels, i.e. the factor labels of the
+          ‘index’ variables, be evaluated as expressions? Useful for
+          printing mathematical symbols or equations.
+
+position.legend: position of the legend: ‘"bottom"’, ‘"right"’, or
+          ‘"none"’. For "categorical" and "index" treemaps, ‘"right"’
+          is the default value, for "index" treemap, ‘"none"’, and for
+          the other types, ‘"bottom"’.
+
+format.legend: a list of additional arguments for the formatting of
+          numbers in the legend to pass to ‘format()’; only applies if
+          ‘type’ is ‘"value"’, ‘"dens"’ or ‘"manual"’.
+
+drop.unused.levels: logical that determines whether unused levels (if
+          any) are shown in the legend. Applicable for "categorical"
+          treemap type.
+
+aspRatio: preferred aspect ratio of the main rectangle, defined by
+          width/height. When set to ‘NA’, the available window size is
+          used.
+
+      vp: ‘viewport’ to draw in. By default it is not specified, which
+          means that a new plot is created. Useful when drawing small
+          multiples, or when placing a treemap in a custom grid based
+          plot.
+
+    draw: logical that determines whether to draw the treemap.
+
+     ...: arguments to be passed to other functions. Currently, only
+          ‘fun.aggregate’ takes optional arguments.
+
+_V_a_l_u_e:
+
+     A list is silently returned:
+
+      tm: a ‘data.frame’ containing information about the rectangles:
+          indices, sizes, original color values, derived color values,
+          depth level, position (x0, y0, w, h), and color.
+
+    type: argument type
+
+   vSize: argument vSize
+
+  vColor: argument vColor
+
+  stdErr: standard errors
+
+algorithm: argument algorithm
+
+ vpCoorX: x-coordinates of the treemap within the whole plot
+
+ vpCoorY: y-coordinates of the treemap within the whole plot
+
+aspRatio: aspect ratio of the treemap
+
+   range: range of the color values scale
+
+_R_e_f_e_r_e_n_c_e_s:
+
+     Bederson, B., Shneiderman, B., Wattenberg, M. (2002) Ordered and
+     Quantum Treemaps: Making Effective Use of 2D Space to Display
+     Hierarchies. ACM Transactions on Graphics, 21(4): 833-854.
+
+     Bruls, D.M., C. Huizing, J.J. van Wijk. Squarified Treemaps. In:
+     W. de Leeuw, R. van Liere (eds.), Data Visualization 2000,
+     Proceedings of the joint Eurographics and IEEE TCVG Symposium on
+     Visualization, 2000, Springer, Vienna, p. 33-42.
+
+_E_x_a_m_p_l_e_s:
+
+     #########################################
+     ### quick example with Gross National Income data
+     #########################################
+     data(GNI2014)
+     treemap(GNI2014,
+            index=c("continent", "iso3"),
+            vSize="population",
+            vColor="GNI",
+            type="value",
+            format.legend = list(scientific = FALSE, big.mark = " "))
+     
+     #########################################
+     ### extended examples with fictive business statistics data
+     #########################################
+     data(business)
+     
+     #########################################
+     ### treemap types
+     #########################################
+     
+     # index treemap: colors are determined by the index argument
+     ## Not run:
+     
+     # large example which takes some time...
+     treemap(business, 
+             index=c("NACE1", "NACE2", "NACE3"), 
+             vSize="turnover", 
+             type="index")
+     ## End(Not run)
+     
+     treemap(business[business$NACE1=="C - Manufacturing",],
+             index=c("NACE2", "NACE3"),
+             vSize=c("employees"),
+             type="index")
+     
+     # value treemap: colors are derived from a numeric variable given by vColor 
+     # (when omited, all values are set to 1 as in the following example)
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             title.legend="number of NACE4 categories",
+             type="value")
+     
+     # comparisson treemaps: colors indicate change of vSize with respect to vColor
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.prev",
+             type="comp")
+     
+     # density treemaps: colors indicate density (like a population density map)
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="turnover",
+             vColor="employees/1000",
+             type="dens")
+     
+     ## Not run:
+     
+     # depth treemap: show depth
+     treemap(business,
+             index=c("NACE1", "NACE2", "NACE3"), 
+             vSize="turnover",
+             type="depth")
+     ## End(Not run)
+     
+     
+     # categorical treemap: colors are determined by a categorical variable
+     business <- transform(business, data.available = factor(!is.na(turnover)), x = 1)
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="x",
+             vColor="data.available",
+             type="categorical")
+     
+     ## Not run:
+     
+     # color treemap
+     business$color <- rainbow(nlevels(business$NACE2))[business$NACE2]
+     treemap(business,
+             index=c("NACE1", "NACE2"), 
+             vSize="x",
+             vColor="color",
+             type="color")
+     
+     # manual
+     business$color <- rainbow(nlevels(business$NACE2))[business$NACE2]
+     treemap(business,
+             index=c("NACE1", "NACE2"), 
+             vSize="turnover",
+             vColor="employees",
+             type="manual",
+             palette=terrain.colors(10))
+     ## End(Not run)
+     
+     
+     #########################################
+     ### graphical options: control fontsizes
+     #########################################
+     
+     ## Not run:
+     
+     # draw labels of first index at fontsize 12 at the center, 
+     # and labels of second index at fontsize 8 top left
+     treemap(business, 
+             index=c("NACE1", "NACE2"), 
+             vSize="employees", 
+             fontsize.labels=c(12, 8), 
+             align.labels=list(c("center", "center"), c("left", "top")),
+             lowerbound.cex.labels=1)
+         
+         
+     # draw all labels at fontsize 12 (only if they fit)
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             fontsize.labels=12,
+             lowerbound.cex.labels=1)
+     
+     # draw all labels at fontsize 12, and if they don't fit, reduce to a minimum of .6*12
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             fontsize.labels=12,
+             lowerbound.cex.labels=.6)
+     
+     # draw all labels at maximal fontsize
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             lowerbound.cex.labels=0,
+             inflate.labels = TRUE)
+     
+     # draw all labels at fixed fontsize, even if they don't fit
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             fontsize.labels=10,
+             lowerbound.cex.labels=1,
+             force.print.labels=TRUE)
+     
+     #########################################
+     ### graphical options: color palettes
+     #########################################
+     
+     ## for comp and value typed treemaps all diverging brewer palettes can be chosen
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.prev",
+             type="comp",
+             palette="RdBu")
+     
+     ## draw warm-colored index treemap
+     palette.HCL.options <- list(hue_start=270, hue_end=360+150)
+     treemap(business, 
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             type="index",
+             palette.HCL.options=palette.HCL.options)
+     
+     # terrain colors
+     business$employees.growth <- business$employees - business$employees.prev
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.growth",
+             type="value",
+             palette=terrain.colors(10))
+     
+     # Brewer's Red-White-Grey palette reversed with predefined legend range
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.growth",
+             type="value",
+             palette="-RdGy",
+             range=c(-20000,30000))
+     
+     # More control over the color palette can be achieved with mapping
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.growth",
+             type="value",
+             palette="RdYlGn",
+             range=c(-20000,30000),           # this is shown in the legend
+             mapping=c(-30000, 10000, 40000)) # Rd is mapped to -30k, Yl to 10k, and Gn to 40k
+     ## End(Not run)
+     
+
+treemap                package:treemap                 R Documentation
+
+_C_r_e_a_t_e _a _t_r_e_e_m_a_p
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     A treemap is a space-filling visualization of hierarchical
+     structures. This function offers great flexibility to draw
+     treemaps. Required is a data.frame (‘dtf’) that contains one or
+     more hierarchical index columns given by ‘index’, a column that
+     determines the rectangle area sizes (‘vSize’), and optionally a
+     column that determines the rectangle colors (‘vColor’). The way
+     how rectangles are colored is determined by the argument ‘type’.
+
+_U_s_a_g_e:
+
+     treemap(dtf, index, vSize, vColor = NULL, stdErr = NULL, type = "index",
+       fun.aggregate = "sum", title = NA, title.legend = NA,
+       algorithm = "pivotSize", sortID = "-size", mirror.x = FALSE,
+       mirror.y = FALSE, palette = NA, palette.HCL.options = NULL,
+       range = NA, mapping = NA, n = 7, fontsize.title = 14,
+       fontsize.labels = 11, fontsize.legend = 12, fontcolor.labels = NULL,
+       fontface.labels = c("bold", rep("plain", length(index) - 1)),
+       fontfamily.title = "sans", fontfamily.labels = "sans",
+       fontfamily.legend = "sans", border.col = "black",
+       border.lwds = c(length(index) + 1, (length(index) - 1):1),
+       lowerbound.cex.labels = 0.4, inflate.labels = FALSE, bg.labels = NULL,
+       force.print.labels = FALSE, overlap.labels = 0.5,
+       align.labels = c("center", "center"), xmod.labels = 0, ymod.labels = 0,
+       eval.labels = FALSE, position.legend = NULL, format.legend = NULL,
+       drop.unused.levels = TRUE, aspRatio = NA, vp = NULL, draw = TRUE, ...)
+     
+_A_r_g_u_m_e_n_t_s:
+
+     dtf: a data.frame. Required.
+
+   index: vector of column names in ‘dtf’ that specify the aggregation
+          indices. It could contain only one column name, which results
+          in a treemap without hierarchy. If multiple column names are
+          provided, the first name is the highest aggregation level,
+          the second name the second-highest aggregation level, and so
+          on. Required.
+
+   vSize: name of the column in ‘dtf’ that specifies the sizes of the
+          rectangles. Required.
+
+  vColor: name of the column that, in combination with ‘type’,
+          determines the colors of the rectangles. The variable can be
+          scaled by the addition of "*<scale factor>" or "/<scale
+          factor>". Note: when omitted for ‘"value"’ treemaps, a
+          contant value of 1 is taken.
+
+  stdErr: name of the column that contains standard errors. These are
+          not used for the treemaps, but only aggregated accordingly
+          and returned as item of the output list.
+
+    type: type of the treemap, which determines how the rectangles are
+          colored:
+
+          ‘"index"’: colors are determined by the ‘index’ variables.
+              Different branches in the hierarchical tree get different
+              colors. For this type, ‘vColor’ is not needed.
+
+          ‘"value"’: the numeric ‘vColor’-column is directly mapped to
+              a color palette. This palette is diverging, so that
+              values of 0 are assigned to the mid color (white or
+              yellow), and negative and positive values are assigned to
+              color based on two different hues colors (by default reds
+              for negative and greens for positive values). For more
+              freedom, see ‘"manual"’.
+
+          ‘"comp"’: colors indicate change of the ‘vSize’-column with
+              respect to the numeric ‘vColor’-column in percentages.
+              Note: the negative scale may be different from the
+              positive scale in order to compensate for the ratio
+              distribution.
+
+          ‘"dens"’: colors indicate density. This is analogous to a
+              population density map where ‘vSize’-values are area
+              sizes, ‘vColor’-values are populations per area, and
+              colors are computed as densities (i.e. population per
+              squared km).
+
+          ‘"depth"’: each aggregation level (defined by ‘index’) has a
+              distinct color. For this type, ‘vColor’ is not needed.
+
+          ‘"categorical"’: ‘vColor’ is a factor column that determines
+              the color.
+
+          ‘"color"’: ‘vColor’ is a vector of colors in the hexadecimal
+              (#RRGGBB) format
+
+          ‘"manual"’: The numeric ‘vColor’-column is directly mapped to
+              a color palette. Both palette and range should be
+              provided. The palette is mapped linearly to the range.
+
+fun.aggregate: aggregation function, only used in ‘"value"’ treemaps.
+          This function determines how values of the lowest aggregation
+          level are aggregated. By default, it takes the ‘sum’. Other
+          sensible functions are ‘mean’ and ‘weighted.mean’. In the
+          latter case, the weights are determined by the ‘vSize’
+          variable. Other arguments can be passed on. For
+          ‘weighted.mean’, it is possible to assign a variable name for
+          its ‘w’ argument.
+
+   title: title of the treemap.
+
+title.legend: title of the legend.
+
+algorithm: name of the used algorithm: ‘"squarified"’ or ‘"pivotSize"’.
+          The squarified treemap algorithm (Bruls et al., 2000)
+          produces good aspect ratios, but ignores the sorting order of
+          the rectangles (‘sortID’). The ordered treemap,
+          pivot-by-size, algorithm (Bederson et al., 2002) takes the
+          sorting order (‘sortID’) into account while aspect ratios are
+          still acceptable.
+
+  sortID: name of the variable that determines the order in which the
+          rectangles are placed from top left to bottom right. Only
+          applicable when ‘algorithm=="pivotSize"’. Also the values
+          "size" and "color" can be used, which refer to ‘vSize’ and
+          ‘vColor’ respectively. To inverse the sorting order, use "-"
+          in the prefix. By default, large rectangles are placed top
+          left.
+
+mirror.x: logical that determines whether the rectangles are mirrored
+          horizontally
+
+mirror.y: logical that determines whether the rectangles are mirrored
+          vertically
+
+ palette: one of the following:
+
+          a color palette: i.e., a vector of hexadecimal colors
+              (#RRGGBB)
+
+          a name of a Brewer palette: See
+              ‘RColorBrewer::display.brewer.all()’ for the options. The
+              palette can be reversed by prefixing with a "-". For
+              treemap types "value" and "comp", a diverging palette
+              should be chosen (default="RdYlGn"), for type "dens" a
+              sequential (default="OrRd"). The default value for
+              "depth" is "Set2".
+
+          "HCL": Tree Colors are color schemes derived from the
+              Hue-Chroma-Luminance color space model. This is only
+              applicable for qualitative palettes, which are applied to
+              the treemap types "index", "depth", and "categorical".
+              For "index" and "categorical" this is the default value.
+
+palette.HCL.options: list of advanced options to obtain Tree Colors
+          from the HCL space (when ‘palette="HCL"’). This list
+          contains:
+
+          ‘hue_start’: number between 0 and 360 that determines the
+              starting hue value (default: 30)
+
+          ‘hue_end’: number between ‘hue_start’ and ‘hue_start + 360’
+              that determines the ending hue value (default: 390)
+
+          ‘hue_perm’: boolean that determines whether the colors are
+              permuted such that adjacent levels get more
+              distinguishable colors. If ‘FALSE’, then the colors are
+              equally distributed from ‘hue_start’ to ‘hue_end’
+              (default: TRUE)
+
+          ‘hue_rev’: boolean that determines whether the colors of
+              even-numbered branched are reversed (to increase
+              discrimination among branches)
+
+          ‘hue_fraction’: number between 0 and 1 that determines the
+              fraction of the hue circle that is used for recursive
+              color picking: if 1 then the full hue circle is used,
+              which means that the hue of the colors of lower-level
+              nodes are spread maximally. If 0, then the hue of the
+              colors of lower-level nodes are identical of the hue of
+              their parents. (default: .5)
+
+          ‘chroma’: chroma value of colors of the first-level nodes,
+              that are determined by the first index variable (default:
+              60)
+
+          ‘luminance’: luminance value of colors of the first-level
+              nodes, i.e. determined by the first index variable
+              (default: 70)
+
+          ‘chroma_slope’: slope value for chroma of the non-first-level
+              nodes. The chroma values for the second-level nodes are
+              ‘chroma+chroma_slope’, for the third-level nodes
+              ‘chroma+2*chroma_slope’, etc. (default: 5)
+
+          ‘luminance_slope’: slope value for luminance of the
+              non-first-level nodes (default: -10)
+
+          For "depth" and "categorical" types, only the first two items
+          are used. Use ‘treecolors’ to experiment with these
+          parameters.
+
+   range: range of values (so vector of two) that correspond to the
+          color legend. By default, the range of actual values,
+          determined by ‘vColor’, is used. Only applicable for numeric
+          types, i.e. "value", "comp", "dens", and "manual". Note that
+          the range doesn't affect the colors in the treemap itself for
+          "value" and "manual" types; this is controlled by ‘mapping’.
+
+ mapping: vector of three values that specifies the mapping of the
+          actual values, determined by ‘vColor’, to ‘palette’. The
+          three values are respectively the minimum value, the mid
+          value, and the maximum value. The mid value is particularly
+          useful for diverging color palettes, where it defined the
+          middle, neutral, color which is typically white or yellow.
+          The ‘mapping’ should cover the ‘range’. By default, for
+          "value" treemaps, it is ‘c(-max(abs(values)), 0,
+          max(abs(values)))’, where values are the actual values
+          defined by ‘vColor’. For "manual" treemaps, the default
+          setting is ‘c(min(values), mean(range(values)),
+          max(values))’. A vector of two can also be specified. In that
+          case, the mid value will be the average of those.  Only
+          applicable for "value" and "manual" type treemaps.
+
+       n: preferred number of categories by which numeric variables are
+          discretized.
+
+fontsize.title: font size of the title
+
+fontsize.labels: font size(s) of the data labels, which is either a
+          single number that specifies the font size for all
+          aggregation levels, or a vector that specifies the font size
+          for each aggregation level. Use value ‘0’ to omit the labels
+          for the corresponding aggregation level.
+
+fontsize.legend: font size for the legend
+
+fontcolor.labels: Specifies the label colors. Either a single color
+          value, or a vector of color values one for each aggregation
+          level. By default, white and black colors are used, depending
+          on the background (‘bg.labels’).
+
+fontface.labels: either a single value, or a vector of values one for
+          each aggregation level. Values can be integers If an integer,
+          following the R base graphics standard: 1 = plain, 2 = bold,
+          3 = italic, 4 = bold italic, or characters: ‘"plain"’,
+          ‘"bold"’, ‘"italic"’, ‘"oblique"’, and ‘"bold.italic"’.
+
+fontfamily.title: font family of the title. Standard values are
+          "serif", "sans", "mono", "symbol". Mapping is device
+          dependent.
+
+fontfamily.labels: font family of the labels in each rectangle.
+          Standard values are "serif", "sans", "mono", "symbol".
+          Mapping is device dependent.
+
+fontfamily.legend: font family of the legend. Standard values are
+          "serif", "sans", "mono", "symbol". Mapping is device
+          dependent.
+
+border.col: color of borders drawn around each rectangle. Either one
+          color for all rectangles or a vector of colors, or one for
+          each aggregation level
+
+border.lwds: thicknesses of border lines. Either one number specifies
+          the line thicknesses (widths) for all rectangles or a vector
+          of line thicknesses for each aggregation level.
+
+lowerbound.cex.labels: multiplier between 0 and 1 that sets the
+          lowerbound for the data label font sizes: 0 means draw all
+          data labels, and 1 means only draw data labels if they fit
+          (given ‘fontsize.labels’).
+
+inflate.labels: logical that determines whether data labels are
+          inflated inside the rectangles. If ‘TRUE’, ‘fontsize.labels’
+          does not determine the fontsize anymore, but it still
+          determines the minimum fontsize in combination with
+          ‘lowerbound.cex.labels’.
+
+bg.labels: background color of high aggregation labels. Either a color,
+          or a number between 0 and 255 that determines the
+          transparency of the labels. In the latter case, the color
+          itself is determined by the color of the underlying
+          rectangle. For "value" and "categorical" treemaps, the
+          default is (slightly) transparent grey (‘"#CCCCCCDC"’), and
+          for the other types slightly transparent: ‘220’.
+
+force.print.labels: logical that determines whether data labels are
+          being forced to be printed if they don't fit.
+
+overlap.labels: number between 0 and 1 that determines the tolerance of
+          the overlap between labels. 0 means that labels of lower
+          levels are not printed if higher level labels overlap, 1
+          means that labels are always printed. In-between values, for
+          instance the default value .5, means that lower level labels
+          are printed if other labels do not overlap with more than .5
+          times their area size.
+
+align.labels: object that specifies the alignment of the labels. Either
+          a character vector of two values specifying the horizontal
+          alignment (‘"left"’, ‘"center"’, or ‘"right"’) and the
+          vertical alignment (‘"top"’, ‘"center"’, or ‘"bottom"’), or a
+          list of sush character vectors, one for each aggregation
+          level.
+
+xmod.labels: the horizontal position modification of the labels in
+          inches. Either a single value, or a vector that specifies the
+          modification for each aggregation level.
+
+ymod.labels: the vertical position modification of the labels in
+          inches. Either a single value, or a vector that specifies the
+          modification for each aggregation level.
+
+eval.labels: should the text labels, i.e. the factor labels of the
+          ‘index’ variables, be evaluated as expressions? Useful for
+          printing mathematical symbols or equations.
+
+position.legend: position of the legend: ‘"bottom"’, ‘"right"’, or
+          ‘"none"’. For "categorical" and "index" treemaps, ‘"right"’
+          is the default value, for "index" treemap, ‘"none"’, and for
+          the other types, ‘"bottom"’.
+
+format.legend: a list of additional arguments for the formatting of
+          numbers in the legend to pass to ‘format()’; only applies if
+          ‘type’ is ‘"value"’, ‘"dens"’ or ‘"manual"’.
+
+drop.unused.levels: logical that determines whether unused levels (if
+          any) are shown in the legend. Applicable for "categorical"
+          treemap type.
+
+aspRatio: preferred aspect ratio of the main rectangle, defined by
+          width/height. When set to ‘NA’, the available window size is
+          used.
+
+      vp: ‘viewport’ to draw in. By default it is not specified, which
+          means that a new plot is created. Useful when drawing small
+          multiples, or when placing a treemap in a custom grid based
+          plot.
+
+    draw: logical that determines whether to draw the treemap.
+
+     ...: arguments to be passed to other functions. Currently, only
+          ‘fun.aggregate’ takes optional arguments.
+
+_V_a_l_u_e:
+
+     A list is silently returned:
+
+      tm: a ‘data.frame’ containing information about the rectangles:
+          indices, sizes, original color values, derived color values,
+          depth level, position (x0, y0, w, h), and color.
+
+    type: argument type
+
+   vSize: argument vSize
+
+  vColor: argument vColor
+
+  stdErr: standard errors
+
+algorithm: argument algorithm
+
+ vpCoorX: x-coordinates of the treemap within the whole plot
+
+ vpCoorY: y-coordinates of the treemap within the whole plot
+
+aspRatio: aspect ratio of the treemap
+
+   range: range of the color values scale
+
+_R_e_f_e_r_e_n_c_e_s:
+
+     Bederson, B., Shneiderman, B., Wattenberg, M. (2002) Ordered and
+     Quantum Treemaps: Making Effective Use of 2D Space to Display
+     Hierarchies. ACM Transactions on Graphics, 21(4): 833-854.
+
+     Bruls, D.M., C. Huizing, J.J. van Wijk. Squarified Treemaps. In:
+     W. de Leeuw, R. van Liere (eds.), Data Visualization 2000,
+     Proceedings of the joint Eurographics and IEEE TCVG Symposium on
+     Visualization, 2000, Springer, Vienna, p. 33-42.
+
+_E_x_a_m_p_l_e_s:
+
+     #########################################
+     ### quick example with Gross National Income data
+     #########################################
+     data(GNI2014)
+     treemap(GNI2014,
+            index=c("continent", "iso3"),
+            vSize="population",
+            vColor="GNI",
+            type="value",
+            format.legend = list(scientific = FALSE, big.mark = " "))
+     
+     #########################################
+     ### extended examples with fictive business statistics data
+     #########################################
+     data(business)
+     
+     #########################################
+     ### treemap types
+     #########################################
+     
+     # index treemap: colors are determined by the index argument
+     ## Not run:
+     
+     # large example which takes some time...
+     treemap(business, 
+             index=c("NACE1", "NACE2", "NACE3"), 
+             vSize="turnover", 
+             type="index")
+     ## End(Not run)
+     
+     treemap(business[business$NACE1=="C - Manufacturing",],
+             index=c("NACE2", "NACE3"),
+             vSize=c("employees"),
+             type="index")
+     
+     # value treemap: colors are derived from a numeric variable given by vColor 
+     # (when omited, all values are set to 1 as in the following example)
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             title.legend="number of NACE4 categories",
+             type="value")
+     
+     # comparisson treemaps: colors indicate change of vSize with respect to vColor
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.prev",
+             type="comp")
+     
+     # density treemaps: colors indicate density (like a population density map)
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="turnover",
+             vColor="employees/1000",
+             type="dens")
+     
+     ## Not run:
+     
+     # depth treemap: show depth
+     treemap(business,
+             index=c("NACE1", "NACE2", "NACE3"), 
+             vSize="turnover",
+             type="depth")
+     ## End(Not run)
+     
+     
+     # categorical treemap: colors are determined by a categorical variable
+     business <- transform(business, data.available = factor(!is.na(turnover)), x = 1)
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="x",
+             vColor="data.available",
+             type="categorical")
+     
+     ## Not run:
+     
+     # color treemap
+     business$color <- rainbow(nlevels(business$NACE2))[business$NACE2]
+     treemap(business,
+             index=c("NACE1", "NACE2"), 
+             vSize="x",
+             vColor="color",
+             type="color")
+     
+     # manual
+     business$color <- rainbow(nlevels(business$NACE2))[business$NACE2]
+     treemap(business,
+             index=c("NACE1", "NACE2"), 
+             vSize="turnover",
+             vColor="employees",
+             type="manual",
+             palette=terrain.colors(10))
+     ## End(Not run)
+     
+     
+     #########################################
+     ### graphical options: control fontsizes
+     #########################################
+     
+     ## Not run:
+     
+     # draw labels of first index at fontsize 12 at the center, 
+     # and labels of second index at fontsize 8 top left
+     treemap(business, 
+             index=c("NACE1", "NACE2"), 
+             vSize="employees", 
+             fontsize.labels=c(12, 8), 
+             align.labels=list(c("center", "center"), c("left", "top")),
+             lowerbound.cex.labels=1)
+         
+         
+     # draw all labels at fontsize 12 (only if they fit)
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             fontsize.labels=12,
+             lowerbound.cex.labels=1)
+     
+     # draw all labels at fontsize 12, and if they don't fit, reduce to a minimum of .6*12
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             fontsize.labels=12,
+             lowerbound.cex.labels=.6)
+     
+     # draw all labels at maximal fontsize
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             lowerbound.cex.labels=0,
+             inflate.labels = TRUE)
+     
+     # draw all labels at fixed fontsize, even if they don't fit
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             fontsize.labels=10,
+             lowerbound.cex.labels=1,
+             force.print.labels=TRUE)
+     
+     #########################################
+     ### graphical options: color palettes
+     #########################################
+     
+     ## for comp and value typed treemaps all diverging brewer palettes can be chosen
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.prev",
+             type="comp",
+             palette="RdBu")
+     
+     ## draw warm-colored index treemap
+     palette.HCL.options <- list(hue_start=270, hue_end=360+150)
+     treemap(business, 
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             type="index",
+             palette.HCL.options=palette.HCL.options)
+     
+     # terrain colors
+     business$employees.growth <- business$employees - business$employees.prev
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.growth",
+             type="value",
+             palette=terrain.colors(10))
+     
+     # Brewer's Red-White-Grey palette reversed with predefined legend range
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.growth",
+             type="value",
+             palette="-RdGy",
+             range=c(-20000,30000))
+     
+     # More control over the color palette can be achieved with mapping
+     treemap(business,
+             index=c("NACE1", "NACE2"),
+             vSize="employees",
+             vColor="employees.growth",
+             type="value",
+             palette="RdYlGn",
+             range=c(-20000,30000),           # this is shown in the legend
+             mapping=c(-30000, 10000, 40000)) # Rd is mapped to -30k, Yl to 10k, and Gn to 40k
+     ## End(Not run)
+     
+

@@ -19,11 +19,11 @@ abs_rel_plt
 ```
 
 
-The number of RE-related publications from African countries has been constantly
-increasing between 2011-2019. Slightly declining publication numbers between 2019
+African countries have collaborated in approximately 31k renewable energy (RE) publications in the 10 year range between 2011-2020. The number of those RE-related publications has been constantly
+increasing between until 2019. Slightly declining publication numbers between 2019
 and 2020 (see \@ref(fig:puboty)), as Web of Science team also often emphasises,
 is caused by the latency in the database entries [^1]. Even after including the 
-incomplete amount of publications in 2020, number of RE-related publications from 
+possibly incomplete amount of publications in 2020, number of RE-related publications from 
 the African countries in total increases from ~1.1k in 2011 to ~4.8k in 
 2020 which is an increment by factor ~4.2. 
 
@@ -49,10 +49,18 @@ Although total publication output is a strong indicator of the most visible coun
 
 
 
+```{r orgmv, echo=FALSE, out.width="100%", fig.cap="Most visible 15 African countries in RE-related publications between 2011-2020"}
+org_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/org_mv.Rds")
+org_mv
+```
 
 
 
 
 
+```{r resareas, echo=FALSE, out.width="100%", fig.cap="Most visible 15 research areas in RE-related publications between 2011-2020"}
+res_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/res_areas_barplot.Rds")
+res_mv
+```
 
 [^1]: As Web of Science support service informs, it might take up to 2 years for a document to be entered into the Web of Science databases.

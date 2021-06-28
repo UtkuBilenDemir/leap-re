@@ -11,7 +11,8 @@ import itertools
 ## M_06 = pyreadr.read_r('../../../01_data/02_bibliometrix/0602_after_refine.RDS') # also works for RData
 ## M_06 = pd.read_csv('../../01_data/02_bibliometrix/0602_after_refine.csv')
 ## M_06 = M_06[None]
-M_06 = pd.read_pickle("../../../01_data/02_bibliometrix/0605_eu_au_regions.pickle")
+##M_06 = pd.read_pickle("../../../01_data/02_bibliometrix/0606_org_prop.pickle")
+
 
 
 # %%
@@ -40,8 +41,13 @@ edge_title="co-pub."
     node_id = list(range(len(unique_nodes)))
     node_group = list()
     for node in unique_nodes:
-        index = [i for i,x in enumerate(df[node_colname]) if x == node][0]
+        ##index = [i for i,x in enumerate(df[node_colname]) if x == node][0]
+        index = [i for i,x in enumerate(df[node_colname]) if x == node]
+        print(index)
+        if len(index)>1:
+            index = index[0]
         node_group.append(df.loc[index, region_colname])
+        print(df.loc[index, region_colname])
     node_dict = dict(zip(unique_nodes, node_id))
     # Add those also to the nodes
 
@@ -85,7 +91,15 @@ edge_title="co-pub."
     df = df.reset_index(drop=True)
     for node in unique_nodes:
         node_indexes = df[node_colname] == node
-        freq = list(df.loc[node_indexes, Tot_freq_colname])[0]
+        print(node)
+        ## freq = df.loc[node_indexes, Tot_freq_colname]
+        # freq = list(df.loc[node_indexes, Tot_freq_colname])[0]
+        freq = set(df.loc[node_indexes, Tot_freq_colname])
+        if len(freq)>1:
+            freq = list(freq)[0]
+        elif len(freq)>0:
+            (freq,) = freq
+        print(freq)
         temp_freq.append(freq)
         temp_title.append(str(freq) + " " + node_title)
 
@@ -113,4 +127,28 @@ na_net["edges"].to_csv("../na_edges.csv", index=False)
 
 
 
+# %% Country networks
+egypt_df = pd.read_csv("../../../01_data/0203_country_dfs/egypt_df.csv", low_memory=False)
+##egypt_df["org_prop"] = str(egypt_df["org_prop"])
+## egypt_df["org_prop"] = egypt_df["org_prop"].fillna(" ").isna()
+egypt_df["org_freq_prop"] = [int(i) for i in egypt_df["org_freq_prop"].fillna(0)]
+# %% 
+
+
+# %%
+
+egypt_net = create_network(egypt_df, 
+                        "org_prop",
+                        Tot_freq_colname="org_freq_prop",
+                        region_colname="au_off_country"
+                        )
+# %%
+egypt_net["nodes"].to_csv("../egypt_nodes.csv", index=False)
+egypt_net["edges"].to_csv("../egypt_edges.csv", index=False)
+
+
+#%%
+M_06["au_off_country"]
+# %%
+egypt_df.iloc[64,]
 # %%
