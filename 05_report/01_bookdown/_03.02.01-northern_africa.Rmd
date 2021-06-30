@@ -3,7 +3,7 @@
 
 
 ```{r natable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Northern African countries"}
-na_table <- readRDS(file = "../../04_visualisation/04_tables/table_test.Rds")
+na_table <- readRDS(file = "../../04_visualisation/04_tables/na_table.Rds")
 na_table
 ```
 
@@ -22,10 +22,6 @@ important observation is in the relative growth rates [^3211], Morocco's number 
 RE-related publications in 2020 is approximately 16 times higher the number in 2011. 
 This growth rate is not only the highest in Northern Africa but in the whole continent. 
 
-Following the given analysis of RE-related publication outputs in the Northern Africa; 
-Egypt, Algeria and Morocco have been chosen for the deeper analysis of the individual countries. 
-While Egypt and Algeria hold the highest numbers of RE-related publications in the northern
-region, Morocco has been mainly chosen for the high growth rate in the number of publications.
 
 
 
@@ -37,11 +33,21 @@ na_net
 # links with fewer than 25 publications have been removed
 ```
 
+RE-related co-publications of the Northern African countries shows a rich international network but the co-publication network with other African regions stays relatively less dense. Only African countries from other regions which have co-published over 25 RE-related papers with Northern African countries are South Africa (28 pub.) and Nigeria (26 pub.). Egypt, the most visible country in Northern Africa, with ~6.6k publications in total plays a central role in the network, relatively uniform distributed co-publication network of Egypt includes over 10 EU-27 countries as well as a number of countries from other regions of the world like USA, China, India, United Kingdom. Egypt's strongest link in the co-publications however is with organisations from Saudi Arabia. Tunisia, Algeria and Morocco have relatively high numbers of collaborations with French organisations with 751, 881 and 601 co-publications respectively. France in general is the most visible EU-27 country in the RE-related co-publications with African countries. The 4 mentioned Northern African countries so far, Egypt, Algeria, Tunisia and Morocco are co-publication wise relatively well interconnected, however, Libya stays out of the co-publication cluster in Northern Africa, from Libya's 233 RE-related publications in the last 10 years none of the Northern African countries had over 25 co-publications with Libya, instead Libya's most visible collaborators are United Kingdom (38 co-pub.) and Malaysia (29 co-pub.).
+
+Following the given analysis of RE-related publication outputs in the Northern Africa; 
+Egypt, Algeria and Morocco have been chosen for the deeper analysis of the individual countries. 
+While Egypt and Algeria hold the highest numbers of RE-related publications in the northern
+region, Morocco has been mainly chosen for the high growth rate in the number of publications.
 
 #### Egypt
 
+```{r test,  fig.show="hold", out.width="0%"}
+egypt_org_table <- readRDS(file = "../../04_visualisation/04_tables/egypt_org_table.Rds")
+egypt_org_table
+```
 
-
+The most visible Egyptian organisation in the RE-related publications is Cairo university with a total 779 publications between 2011-2020. All of the most visible 5 organisations show relatively linear growth in number of RE-related publications. However, Ain Shams University and Tanta University show a stagnation between 2019-2020 which might be caused by the delay of document entries into the Web of Science system as mentioned earlier. Furthermore, Tanta University, which had yearly fewer than 50 RE-related publications until 2016, published in 2019 and 2020 ~125 RE-related papers, this a growth rate of ~14 with respect to the 9 publications in 2011.
 
 ```{r egyptnet, echo=FALSE, out.width="100%", fig.cap="TEST"}
 egypt_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/egypt_net.Rds")
@@ -51,6 +57,10 @@ egypt_net
 ```{r}
 # Links with less than 20 publications have been removed
 ```
+
+
+Co-publication network of Egyptian organisations display a relatively dense collaboration structure between Cairo University, Ain Shams University and National Research Centre of Egpyt with over 50 publications together. Individual collaborations of those organisations include collaborations with 7 other Egyptian academic organisations with over 20 RE-related co-publications. Another visible collaborations are between Minia and Aswan Universities with over 50 publications and between Tanta and Kafrelsheikh Universities with over 70 publications together.  In general collaborations with organisations from Saudi Arabia are highly visible in the network, other than Tanta University's collaborations with Chinese Institutions and Aswan University's with Japanese orgnisations also present links with more than 20 publications together. Visible organisations from EU-27 countries are Université Bourgogne Franche-Comté from France, Ruhr university Bochum from Germany, Budapest University of Technology and Economics from Hungary and University of Jaen from Spain.
+
 
 
 

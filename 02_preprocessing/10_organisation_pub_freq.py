@@ -1,8 +1,12 @@
 # %%  This one is not well structured but corrects the issues with org name matching
 import pandas as pd
-
+import pyreadr
 #%%
-M_06 = pd.read_pickle("../01_data/02_bibliometrix/0605_eu_au_regions.pickle")
+## M_06 = pd.read_pickle("../01_data/02_bibliometrix/0605_eu_au_regions.pickle")
+#M_06_old
+M_06 = pd.read_csv('../01_data/0688_org_oty.csv', low_memory=False)
+# %%
+## M_06 =  pyreadr.read_r('../01_data/02_bibliometrix/0607_org_oty.Rds') 
 
 org_df = pd.read_csv("./08_organisation_names/0899_matched_org_df.csv")
 org_df_2 = pd.read_pickle("./08_organisation_names/02_org_df.pickle")
@@ -57,6 +61,15 @@ org_df_2.loc[org_df_2["Organisation"] == "CTR COOPERAT INT RECH AGRON DEV CIRAD"
 org_df_2.loc[org_df_2["Organisation"] == "FRENCH AGR RES CTR INT DEV CIRAD", "match_name"] = "CIRAD"
 org_df_2.loc[org_df_2["Organisation"] == "INRAE", "match_name"] = "INRAE"
 org_df_2.loc[org_df_2["Organisation"] == "CSIR", "match_name"] = "CSIR"
+org_df_2.loc[org_df_2["Organisation"] == "UNIV LYON 1", "match_name"] = "Claude Bernard University Lyon 1"
+org_df_2.loc[org_df_2["Organisation"] == "ASSET RES", "match_name"] = "ASSET Research"
+org_df_2.loc[org_df_2["Organisation"] == "EDUC HLTH AFRICA", "match_name"] = "Education for Health Africa"
+org_df_2.loc[org_df_2["Organisation"] == "INT INST TROP AGR", "match_name"] = "International Institute of Tropical Agriculture (IITA)"
+org_df_2.loc[org_df_2["Organisation"] == "IITA HEADQUARTERS", "match_name"] = "International Institute of Tropical Agriculture (IITA)"
+org_df_2.loc[org_df_2["Organisation"] == "AGR RES CTR", "match_name"] = "The Agricultural Research Council"
+org_df_2.loc[org_df_2["Organisation"] == "ISRA", "match_name"] = "ISRA/CNRF"
+org_df_2.loc[org_df_2["Organisation"] == "CNRF", "match_name"] = "ISRA/CNRF"
+org_df_2.loc[org_df_2["Organisation"] == "CTR IRD ISRA", "match_name"] = "ISRA/CNRF"
 
 
 
@@ -142,8 +155,37 @@ what2 = pd.concat([temp_df['org_prop'], temp_df['org_freq_prop']]).unique()
 what2 = pd.DataFrame(["; ".join(i) for i in zip([str(a) for a in temp_df['org_prop']], [str(i) for i in temp_df['org_freq_prop']])])
 # %%
 what2 = pd.DataFrame(what2[0].unique())
+# %% Normalize org countries | This one did not go well, loop back
+## M_06.loc[M_06["org_prop"] == "International Institute of Tropical Agriculture (IITA)", "au_off_country"] = "Nigeria"
+## M_06.loc[M_06["org_prop"] == "International Institute of Tropical Agriculture (IITA)", "au_region"] = "Nigeria"
+## M_06.loc[M_06["org_prop"] == "CIRAD", "au_off_country"] = "France"
+## M_06.loc[M_06["org_prop"] == "North-West University", "au_off_country"] = "South Africa"
+## M_06.loc[M_06["org_prop"] == "World Agroforestry Centre", "au_off_country"] = "Kenya"
+## M_06.loc[M_06["org_prop"] == "Center for International Forestry Research", "au_off_country"] = "Indonesia"
+## M_06.loc[M_06["org_prop"] == "University of Nigeria", "au_off_country"] = "Nigeria"
+## M_06.loc[M_06["org_prop"] == "International Crops Research Institute for the Semi-Arid Tropics", "au_off_country"] == "India"
+## M_06.loc[M_06["org_prop"] == "The Agricultural Research Council", "au_off_country"] = "South Africa"
+## M_06.loc[M_06["org_prop"] == "International Maize and Wheat Improvement Center", "au_off_country"] = "Mexico"
+## M_06.loc[M_06["org_prop"] == "Centre of Biotechnology of Sfax", "au_off_country"] = "Tunisia"
+## M_06.loc[M_06["org_prop"] == "CSIR", "au_off_country"] = "South Africa"
+## M_06.loc[M_06["org_prop"] == "IRD", "au_off_country"] = "France"
+## M_06.loc[M_06["org_prop"] == "Terres Univia", "au_off_country"] = "France"
+## M_06.loc[M_06["org_prop"] == "University of Zambia", "au_off_country"] = "Zambia"
+
 # %%
 
+## M_06.loc[M_06["au_off_country"] == "South Africa", "Country":"org_relative"] = M_06.loc[M_06["au_off_country"] == "South Africa", "Country":"org_relative"].iloc[1,:]
+
+# %%
+
+## M_06.loc[M_06["au_off_country"] == "Nigeria", "au_regions"] = "Western Africa"
+## M_06.loc[M_06["au_off_country"] == "France", "au_regions"] = M_06["au_regions"][92411]
+## M_06.loc[M_06["au_off_country"] == "Kenya", "au_regions"] = "Eastern Africa"
+## M_06.loc[M_06["au_off_country"] == "Indonesia", "au_regions"] = M_06["au_regions"][92411]
+## M_06.loc[M_06["au_off_country"] == "India", "au_regions"] = M_06["au_regions"][92411]
+## M_06.loc[M_06["au_off_country"] == "Mexico", "au_regions"] = M_06["au_regions"][92411]
+## M_06.loc[M_06["au_off_country"] == "Tunisia", "au_regions"] = "Northern Africa"
+## M_06.loc[M_06["au_off_country"] == "Zambia", "au_regions"] = "Southern Africa"
 # %%
 
 len(M_06.loc[M_06["Organisation"] == "CDER", "ID"].unique())
@@ -160,12 +202,25 @@ org_df_2.to_pickle("./08_organisation_names/02_org_df.pickle")
 
 # %%
 
-M_06.to_csv("../01_data/02_bibliometrix/0606_org_prop.csv")
-M_06.to_pickle("../01_data/02_bibliometrix/0606_org_prop.pickle")
+M_06.to_csv("../01_data/02_bibliometrix/0608_org_proper.csv")
+M_06.to_pickle("../01_data/02_bibliometrix/0608_org_proper.pickle")
+# %%
+
+org_df_2
 # %%
 
 # %%
 
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+sum(org_df_2["Num_pub"])
 # %%
 
 # %%

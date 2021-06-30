@@ -5,42 +5,218 @@ pd <- import("pandas")
 
 source_python("./../bibliometry_module/88_supplementary_methods/gen_network_df.py")
 
-M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0606_org_prop.pickle")
-
+##M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0606_org_prop.pickle")
+M_06 <- readRDS("./01_data/02_bibliometrix/0607_org_oty.Rds")
 
 # We are still testing with Norhtern Africa
 # Create a df with only Egypt collab.
-egypt_indexes_un <- unique(M_06[M_06$au_off_country == "Egypt", "ID"])
-morocco_indexes_un <- unique(M_06[M_06$au_off_country == "Morocco", "ID"])
-algeria_indexes_un <- unique(M_06[M_06$au_off_country == "Algeria", "ID"])
-nigeria_indexes_un <- unique(M_06[M_06$au_off_country == "Nigeria", "ID"])
-ghana_indexes_un <- unique(M_06[M_06$au_off_country == "Ghana", "ID"])
-senegal_indexes_un <- unique(M_06[M_06$au_off_country == "Senegal", "ID"])
-cameroon_indexes_un <- unique(M_06[M_06$au_off_country == "Cameroon", "ID"])
+      egypt_indexes_un <- unique(M_06[M_06$au_off_country == "Egypt", "ID"])
+    morocco_indexes_un <- unique(M_06[M_06$au_off_country == "Morocco", "ID"])
+    algeria_indexes_un <- unique(M_06[M_06$au_off_country == "Algeria", "ID"])
+    nigeria_indexes_un <- unique(M_06[M_06$au_off_country == "Nigeria", "ID"])
+      ghana_indexes_un <- unique(M_06[M_06$au_off_country == "Ghana", "ID"])
+    senegal_indexes_un <- unique(M_06[M_06$au_off_country == "Senegal", "ID"])
+ sen_gha_ni_indexes_un <- unique(M_06[M_06$au_off_country %in% c("Senegal", "Ghana", "Nigeria") , "ID"])
+   cameroon_indexes_un <- unique(M_06[M_06$au_off_country == "Cameroon", "ID"])
 demrepcongo_indexes_un <- unique(M_06[M_06$au_off_country == "Dem. Rep. Congo", "ID"])
-ethiopia_indexes_un <- unique(M_06[M_06$au_off_country == "Ethiopia", "ID"])
-kenya_indexes_un <- unique(M_06[M_06$au_off_country == "Kenya", "ID"])
-tanzania_indexes_un <- unique(M_06[M_06$au_off_country == "Tanzania", "ID"])
-
-egypt_df <- M_06[which(M_06$ID %in% egypt_indexes_un),]
-
-egypt_df <- apply(egypt_df, 2, as.character)
+   ethiopia_indexes_un <- unique(M_06[M_06$au_off_country == "Ethiopia", "ID"])
+      kenya_indexes_un <- unique(M_06[M_06$au_off_country == "Kenya", "ID"])
+   tanzania_indexes_un <- unique(M_06[M_06$au_off_country == "Tanzania", "ID"])
+         sa_indexes_un <- unique(M_06[M_06$au_off_country == "South Africa", "ID"])
+   zimbabwe_indexes_un <- unique(M_06[M_06$au_off_country == "Zimbabwe", "ID"])
 
 
-saveRDS(egypt_df, "./01_data/0203_country_dfs/egypt_df.Rds")
-write.csv(egypt_df, "./01_data/0203_country_dfs/egypt_df.csv")
+      egypt_df <- M_06[which(M_06$ID %in%       egypt_indexes_un),]
+    morocco_df <- M_06[which(M_06$ID %in%     morocco_indexes_un),]
+    algeria_df <- M_06[which(M_06$ID %in%     algeria_indexes_un),]
+    nigeria_df <- M_06[which(M_06$ID %in%     nigeria_indexes_un),]
+      ghana_df <- M_06[which(M_06$ID %in%       ghana_indexes_un),]
+    senegal_df <- M_06[which(M_06$ID %in%     senegal_indexes_un),]
+    sen_gha_ni_df <- M_06[which(M_06$ID %in%     sen_gha_ni_indexes_un),]
+
+   cameroon_df <- M_06[which(M_06$ID %in%    cameroon_indexes_un),]
+demrepcongo_df <- M_06[which(M_06$ID %in% demrepcongo_indexes_un),]
+   ethiopia_df <- M_06[which(M_06$ID %in%    ethiopia_indexes_un),]
+      kenya_df <- M_06[which(M_06$ID %in%       kenya_indexes_un),]
+   tanzania_df <- M_06[which(M_06$ID %in%    tanzania_indexes_un),]
+         sa_df <- M_06[which(M_06$ID %in%          sa_indexes_un),]
+   zimbabwe_df <- M_06[which(M_06$ID %in%    zimbabwe_indexes_un),]
+
+      egypt_df <- apply(      egypt_df, 2, as.character)
+    morocco_df <- apply(    morocco_df, 2, as.character)
+    algeria_df <- apply(    algeria_df, 2, as.character)
+    nigeria_df <- apply(    nigeria_df, 2, as.character)
+      ghana_df <- apply(      ghana_df, 2, as.character)
+    senegal_df <- apply(    senegal_df, 2, as.character)
+    sen_gha_ni_df <- apply(    sen_gha_ni_df, 2, as.character)
+
+   cameroon_df <- apply(   cameroon_df, 2, as.character)
+demrepcongo_df <- apply(demrepcongo_df, 2, as.character)
+   ethiopia_df <- apply(   ethiopia_df, 2, as.character)
+      kenya_df <- apply(      kenya_df, 2, as.character)
+   tanzania_df <- apply(   tanzania_df, 2, as.character)
+         sa_df <- apply(         sa_df, 2, as.character)
+   zimbabwe_df <- apply(   zimbabwe_df, 2, as.character)
+
+
+saveRDS(      egypt_df, "./01_data/0203_country_dfs/egypt_df.Rds")
+saveRDS(    morocco_df, "./01_data/0203_country_dfs/morocco_df.Rds")
+saveRDS(    algeria_df, "./01_data/0203_country_dfs/algeria_df.Rds")
+saveRDS(    nigeria_df, "./01_data/0203_country_dfs/nigeria_df.Rds")
+saveRDS(      ghana_df, "./01_data/0203_country_dfs/ghana_df.Rds")
+saveRDS(    senegal_df, "./01_data/0203_country_dfs/senegal_df.Rds")
+saveRDS(    sen_gha_ni_df, "./01_data/0203_country_dfs/sen_gha_ni_df.Rds")
+
+saveRDS(   cameroon_df, "./01_data/0203_country_dfs/cameroon_df.Rds")
+saveRDS(demrepcongo_df, "./01_data/0203_country_dfs/demrepcongo_df.Rds")
+saveRDS(   ethiopia_df, "./01_data/0203_country_dfs/ethiopia_df.Rds")
+saveRDS(      kenya_df, "./01_data/0203_country_dfs/kenya_df.Rds")
+saveRDS(   tanzania_df, "./01_data/0203_country_dfs/tanzania_df.Rds")
+saveRDS(         sa_df, "./01_data/0203_country_dfs/sa_df.Rds")
+saveRDS(   zimbabwe_df, "./01_data/0203_country_dfs/zimbabwe_df.Rds")
+
+write.csv(      egypt_df, "./01_data/0203_country_dfs/egypt_df.csv")
+write.csv(    morocco_df, "./01_data/0203_country_dfs/morocco_df.csv")
+write.csv(    algeria_df, "./01_data/0203_country_dfs/algeria_df.csv")
+write.csv(    nigeria_df, "./01_data/0203_country_dfs/nigeria_df.csv")
+write.csv(      ghana_df, "./01_data/0203_country_dfs/ghana_df.csv")
+write.csv(    senegal_df, "./01_data/0203_country_dfs/senegal_df.csv")
+write.csv(    sen_gha_ni_df, "./01_data/0203_country_dfs/sen_gha_ni_df.csv")
+
+write.csv(   cameroon_df, "./01_data/0203_country_dfs/cameroon_df.csv")
+write.csv(demrepcongo_df, "./01_data/0203_country_dfs/demrepcongo_df.csv")
+write.csv(   ethiopia_df, "./01_data/0203_country_dfs/ethiopia_df.csv")
+write.csv(      kenya_df, "./01_data/0203_country_dfs/kenya_df.csv")
+write.csv(   tanzania_df, "./01_data/0203_country_dfs/tanzania_df.csv")
+write.csv(         sa_df, "./01_data/0203_country_dfs/sa_df.csv")
+write.csv(   zimbabwe_df, "./01_data/0203_country_dfs/zimbabwe_df.csv")
 
 #################### GO to network_method.py
 
 # Load and vis
-egypt.nodes <- read.csv("./04_visualisation/03_networks/egypt_nodes.csv")
-egypt.edges <- read.csv("./04_visualisation/03_networks/egypt_edges.csv")
+      egypt.nodes <- read.csv("./04_visualisation/03_networks/egypt_nodes.csv")
+    morocco.nodes <- read.csv("./04_visualisation/03_networks/morocco_nodes.csv")
+    algeria.nodes <- read.csv("./04_visualisation/03_networks/algeria_nodes.csv")
+    nigeria.nodes <- read.csv("./04_visualisation/03_networks/nigeria_nodes.csv")
+      ghana.nodes <- read.csv("./04_visualisation/03_networks/ghana_nodes.csv")
+    senegal.nodes <- read.csv("./04_visualisation/03_networks/senegal_nodes.csv")
+    sen_gha_ni.nodes <- read.csv("./04_visualisation/03_networks/sen_gha_ni_nodes.csv")
 
-egypt.edges.rm <- egypt.edges$value < 20
-egypt.edges <- egypt.edges[!egypt.edges.rm, ]
+   cameroon.nodes <- read.csv("./04_visualisation/03_networks/cameroon_nodes.csv")
+demrepcongo.nodes <- read.csv("./04_visualisation/03_networks/demrepcongo_nodes.csv")
+   ethiopia.nodes <- read.csv("./04_visualisation/03_networks/ethiopia_nodes.csv")
+      kenya.nodes <- read.csv("./04_visualisation/03_networks/kenya_nodes.csv")
+   tanzania.nodes <- read.csv("./04_visualisation/03_networks/tanzania_nodes.csv")
+         sa.nodes <- read.csv("./04_visualisation/03_networks/sa_nodes.csv")
+   zimbabwe.nodes <- read.csv("./04_visualisation/03_networks/zimbabwe_nodes.csv")
 
-pres_nodes <- c(egypt.edges$to, egypt.edges$from)
-egypt.nodes <- egypt.nodes[which(egypt.nodes$id %in% pres_nodes),]
+      egypt.edges <- read.csv("./04_visualisation/03_networks/egypt_edges.csv")
+    morocco.edges <- read.csv("./04_visualisation/03_networks/morocco_edges.csv")
+    algeria.edges <- read.csv("./04_visualisation/03_networks/algeria_edges.csv")
+    nigeria.edges <- read.csv("./04_visualisation/03_networks/nigeria_edges.csv")
+      ghana.edges <- read.csv("./04_visualisation/03_networks/ghana_edges.csv")
+    senegal.edges <- read.csv("./04_visualisation/03_networks/senegal_edges.csv")
+    sen_gha_ni.edges <- read.csv("./04_visualisation/03_networks/sen_gha_ni_edges.csv")
+
+   cameroon.edges <- read.csv("./04_visualisation/03_networks/cameroon_edges.csv")
+demrepcongo.edges <- read.csv("./04_visualisation/03_networks/demrepcongo_edges.csv")
+   ethiopia.edges <- read.csv("./04_visualisation/03_networks/ethiopia_edges.csv")
+      kenya.edges <- read.csv("./04_visualisation/03_networks/kenya_edges.csv")
+   tanzania.edges <- read.csv("./04_visualisation/03_networks/tanzania_edges.csv")
+         sa.edges <- read.csv("./04_visualisation/03_networks/sa_edges.csv")
+   zimbabwe.edges <- read.csv("./04_visualisation/03_networks/zimbabwe_edges.csv")
+
+      egypt.edges.rm <-       egypt.edges$value < 20
+    morocco.edges.rm <-     morocco.edges$value < 20
+    algeria.edges.rm <-     algeria.edges$value < 20
+##    nigeria.edges.rm <-     nigeria.edges$value < 20
+##      ghana.edges.rm <-       ghana.edges$value < 20
+##    senegal.edges.rm <-     senegal.edges$value < 20
+sen_gha_ni.edges.rm <-     sen_gha_ni.edges$value <- 5
+   cameroon.edges.rm <-    cameroon.edges$value <- 5
+demrepcongo.edges.rm <- demrepcongo.edges$value <- 5
+ethiopia.edges.rm <-    ethiopia.edges$value < 5
+      kenya.edges.rm <-       kenya.edges$value < 5 
+   tanzania.edges.rm <-    tanzania.edges$value < 5 
+         sa.edges.rm <-          sa.edges$value < 20
+   zimbabwe.edges.rm <-    zimbabwe.edges$value < 20
+
+      egypt.edges <-       egypt.edges[!egypt.edges.rm, ]
+    morocco.edges <-     morocco.edges[!morocco.edges.rm, ]
+    algeria.edges <-     algeria.edges[!algeria.edges.rm, ]
+##    nigeria.edges <-     nigeria.edges[!nigeria.edges.rm, ]
+##      ghana.edges <-       ghana.edges[!ghana.edges.rm, ]
+##     senegal.edges <-     senegal.edges[!senegal.edges.rm, ]
+sen_gha_ni.edges <-     sen_gha_ni.edges[!sen_gha_ni.edges.rm, ]
+    cameroon.edges <-    cameroon.edges[!cameroon.edges.rm, ]
+ demrepcongo.edges <- demrepcongo.edges[!demrepcongo.edges.rm, ]
+ethiopia.edges <-    ethiopia.edges[!ethiopia.edges.rm, ]
+       kenya.edges <-       kenya.edges[!kenya.edges.rm, ]
+    tanzania.edges <-    tanzania.edges[!tanzania.edges.rm, ]
+         sa.edges <-          sa.edges[!sa.edges.rm, ]
+   zimbabwe.edges <-    zimbabwe.edges[!zimbabwe.edges.rm, ]
+
+      egypt_pres_nodes <- c(      egypt.edges$to,       egypt.edges$from)
+    morocco_pres_nodes <- c(    morocco.edges$to,     morocco.edges$from)
+    algeria_pres_nodes <- c(    algeria.edges$to,     algeria.edges$from)
+    nigeria_pres_nodes <- c(    nigeria.edges$to,     nigeria.edges$from)
+      ghana_pres_nodes <- c(      ghana.edges$to,       ghana.edges$from)
+    senegal_pres_nodes <- c(    senegal.edges$to,     senegal.edges$from)
+    sen_gha_ni_pres_nodes <- c(    sen_gha_ni.edges$to,     sen_gha_ni.edges$from)
+
+   cameroon_pres_nodes <- c(   cameroon.edges$to,    cameroon.edges$from)
+demrepcongo_pres_nodes <- c(demrepcongo.edges$to, demrepcongo.edges$from)
+   ethiopia_pres_nodes <- c(   ethiopia.edges$to,    ethiopia.edges$from)
+      kenya_pres_nodes <- c(      kenya.edges$to,       kenya.edges$from)
+   tanzania_pres_nodes <- c(   tanzania.edges$to,    tanzania.edges$from)
+         sa_pres_nodes <- c(         sa.edges$to,          sa.edges$from)
+   zimbabwe_pres_nodes <- c(   zimbabwe.edges$to,    zimbabwe.edges$from)
+
+      egypt.nodes <-       egypt.nodes[which(      egypt.nodes$id %in%      egypt_pres_nodes),]
+    morocco.nodes <-     morocco.nodes[which(    morocco.nodes$id %in%    morocco_pres_nodes),]
+    algeria.nodes <-     algeria.nodes[which(    algeria.nodes$id %in%    algeria_pres_nodes),]
+    nigeria.nodes <-     nigeria.nodes[which(    nigeria.nodes$id %in%    nigeria_pres_nodes),]
+      ghana.nodes <-       ghana.nodes[which(      ghana.nodes$id %in%      ghana_pres_nodes),]
+    senegal.nodes <-     senegal.nodes[which(    senegal.nodes$id %in%    senegal_pres_nodes),]
+    sen_gha_ni.nodes <-     sen_gha_ni.nodes[which(    sen_gha_ni.nodes$id %in%    sen_gha_ni_pres_nodes),]
+    
+   cameroon.nodes <-    cameroon.nodes[which(   cameroon.nodes$id %in%   cameroon_pres_nodes),]
+demrepcongo.nodes <- demrepcongo.nodes[which(demrepcongo.nodes$id %in% demrepcong_opres_nodes),]
+   ethiopia.nodes <-    ethiopia.nodes[which(   ethiopia.nodes$id %in%   ethiopia_pres_nodes),]
+      kenya.nodes <-       kenya.nodes[which(      kenya.nodes$id %in%      kenya_pres_nodes),]
+   tanzania.nodes <-    tanzania.nodes[which(   tanzania.nodes$id %in%   tanzania_pres_nodes),]
+         sa.nodes <-          sa.nodes[which(         sa.nodes$id %in%         sa_pres_nodes),]
+   zimbabwe.nodes <-    zimbabwe.nodes[which(   zimbabwe.nodes$id %in%   zimbabwe_pres_nodes),]
+
+vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%"){
+  vis <- visNetwork(nodes, edges, height = height, width = width) %>%
+  visOptions(highlightNearest = TRUE) %>%
+  visLayout(randomSeed = 123, improvedLayout = TRUE) %>%  
+  visGroups(groupname = "Northern Africa", color = "#a6761d") %>%
+  ##visGroups(groupname = "Northern Africa", color = "#C9A38D") %>%
+  visGroups(groupname = "Western Africa", color = "#666666") %>%
+  ##visGroups(groupname = "Western Africa", color = "#939393") %>%
+  visGroups(groupname = "Central Africa", color = "#1b9e77") %>%
+  ##visGroups(groupname = "Central Africa", color = "#5EBB9F") %>%
+  visGroups(groupname = "Eastern Africa", color = "#7570b3") %>%
+  ##visGroups(groupname = "Eastern Africa", color = "#B997AF") %>%
+  visGroups(groupname = "Southern Africa", color = "#e6ab02") %>%
+  ##visGroups(groupname = "Southern Africa", color = "#E2BA56") %>%
+  visGroups(groupname = "EU-27", color = "lightblue") %>%
+  visNodes(
+      shape = "dot",
+      color = list(
+        background = "#0085AF",
+        border = "#013848",
+        highlight = "#FF8000"
+      ),
+      shadow = list(enabled = TRUE, size = 10)
+  ) %>%  visPhysics(solver = "forceAtlas2Based", forceAtlas2Based = list(gravitationalConstant = -30))
+ 
+  return(vis)
+}
+
+
 
 egypt_net <- visNetwork(egypt.nodes, egypt.edges, height = "500px", width = "100%") %>% 
   visOptions(highlightNearest = TRUE) %>%
@@ -58,7 +234,49 @@ egypt_net <- visNetwork(egypt.nodes, egypt.edges, height = "500px", width = "100
     shadow = list(enabled = TRUE, size = 10)
   )
 
-egypt_net  
+      egypt.nodes$font.size <- log(      egypt.nodes$value) * 5
+    morocco.nodes$font.size <- log(    morocco.nodes$value) * 5
+    algeria.nodes$font.size <- log(    algeria.nodes$value) * 5
+    nigeria.nodes$font.size <- log(    nigeria.nodes$value) * 5
+      ghana.nodes$font.size <- log(      ghana.nodes$value) * 5
+    senegal.nodes$font.size <- log(    senegal.nodes$value) * 5
+    sen_gha_ni.nodes$font.size <- log(    sen_gha_ni.nodes$value) * 5
+   cameroon.nodes$font.size <- log(   cameroon.nodes$value) * 5
+demrepcongo.nodes$font.size <- log(demrepcongo.nodes$value) * 5
+   ethiopia.nodes$font.size <- log(   ethiopia.nodes$value) * 5
+      kenya.nodes$font.size <- log(      kenya.nodes$value) * 5
+   tanzania.nodes$font.size <- log(   tanzania.nodes$value) * 5
+         sa.nodes$font.size <- log(         sa.nodes$value) * 5
+   zimbabwe.nodes$font.size <- log(   zimbabwe.nodes$value) * 5
+
+egypt.nodes$label <- gsub("University", "Uni.",egypt.nodes$label )
+egypt.nodes$label <- gsub("Technology", "Tech.",egypt.nodes$label )
+egypt.nodes$label <- gsub("Institute", "Inst.",egypt.nodes$label )
+egypt.nodes$label <- gsub("Economics", "Econ.",egypt.nodes$label )
+egypt.nodes$label <- gsub("Research", "Res.",egypt.nodes$label )
+egypt.nodes$label <- gsub("Technological", "Tech.",egypt.nodes$label )
+egypt.nodes$label <- gsub("Science", "Sci.",egypt.nodes$label )
+egypt.nodes$label <- gsub("Centre", "CTR",egypt.nodes$label )
+## egypt.nodes$label <- gsub("and", "&",egypt.nodes$label )
+
+      egypt_net <- vis_reg_net(      egypt.nodes,       egypt.edges)
+    morocco_net <- vis_reg_net(    morocco.nodes,     morocco.edges)
+    algeria_net <- vis_reg_net(    algeria.nodes,     algeria.edges)
+    nigeria_net <- vis_reg_net(    nigeria.nodes,     nigeria.edges)
+      ghana_net <- vis_reg_net(      ghana.nodes,       ghana.edges)
+    senegal_net <- vis_reg_net(    senegal.nodes,     senegal.edges)
+    sen_gha_ni_net <- vis_reg_net(    sen_gha_ni.nodes,     sen_gha_ni.edges)
+   cameroon_net <- vis_reg_net(   cameroon.nodes,    cameroon.edges)
+demrepcongo_net <- vis_reg_net(demrepcongo.nodes, demrepcongo.edges)
+   ethiopia_net <- vis_reg_net(   ethiopia.nodes,    ethiopia.edges)
+      kenya_net <- vis_reg_net(      kenya.nodes,       kenya.edges)
+   tanzania_net <- vis_reg_net(   tanzania.nodes,    tanzania.edges)
+         sa_net <- vis_reg_net(         sa.nodes,          sa.edges)
+   zimbabwe_net <- vis_reg_net(   zimbabwe.nodes,    zimbabwe.edges)
+
+summary(ethiopia.edges)
+summary(sen_gha_ni.edges)
+egypt_net <- 
   
   
   ## %>%
@@ -70,7 +288,7 @@ egypt_net
  ##      icon = list(code = "dot", size = 50, color = "red"))), 
  ## useGroups = FALSE)
 
-saveRDS(na_net, "./04_visualisation/03_networks/01_outputs/na_net.Rds")
+saveRDS(egypt_net, "./04_visualisation/03_networks/01_outputs/egypt_net.Rds")
 
 visExport(
   na_net,

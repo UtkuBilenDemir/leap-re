@@ -63,4 +63,20 @@ res_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figure
 res_mv
 ```
 
+```{r resdomains, echo=FALSE, out.width="100%", fig.cap="Distribution of research domains in RE-related publications of African countries between 2011-2020"}
+res_domains_pie <- readRDS(file = "../../04_visualisation/05_treemaps/res_domains_pie.Rds")
+res_domains_pie 
+```
+[^2]
+
+
+```{r resareas2, echo=FALSE, out.width="100%", fig.cap="Most visible research areas"}
+test_res_areas_bar_line <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/test_res_areas_bar_line.Rds")
+test_res_areas_bar_line
+```
+
+
+
 [^1]: As Web of Science support service informs, it might take up to 2 years for a document to be entered into the Web of Science databases.
+
+[^2]: Caution, research domains and areas are not unique to a publication. A publication can have multiple disciplines involved. 

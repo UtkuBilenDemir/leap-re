@@ -8,8 +8,9 @@ import itertools
 ##### ! Caution, the method has been transferred to bibliometry_module
 
 #%%
-## M_06 = pyreadr.read_r('../../../01_data/02_bibliometrix/0602_after_refine.RDS') # also works for RData
-## M_06 = pd.read_csv('../../01_data/02_bibliometrix/0602_after_refine.csv')
+## M_06 = pyreadr.read_r('../../../01_data/02_bibliometrix/0607_org_oty.Rds') # also works for RData
+## M_06 = pd.read_csv('../../../01_data/02_bibliometrix/0607_org_oty.csv', low_memory=False)
+M_06 = pd.read_pickle("../../../01_data/02_bibliometrix/0608_org_proper.pickle")
 ## M_06 = M_06[None]
 ##M_06 = pd.read_pickle("../../../01_data/02_bibliometrix/0606_org_prop.pickle")
 
@@ -95,13 +96,15 @@ edge_title="co-pub."
         ## freq = df.loc[node_indexes, Tot_freq_colname]
         # freq = list(df.loc[node_indexes, Tot_freq_colname])[0]
         freq = set(df.loc[node_indexes, Tot_freq_colname])
+        # Freq in this cluster
+        spec_freq = len(set(df.loc[node_indexes, ID_colname]))
         if len(freq)>1:
             freq = list(freq)[0]
         elif len(freq)>0:
             (freq,) = freq
         print(freq)
-        temp_freq.append(freq)
-        temp_title.append(str(freq) + " " + node_title)
+        temp_freq.append(spec_freq)
+        temp_title.append(str(spec_freq) + " / " + str(freq) + " " + node_title)
 
     nodes[nodesValue_colname] = temp_freq
     nodes[nodesTitle_colname] = temp_title
@@ -109,7 +112,7 @@ edge_title="co-pub."
     edges[edgesFrom_colname] = [list(x)[0] for x in edges_fromto]
     edges[edgesTo_colname] = [list(x)[1] for x in edges_fromto]
     edges[edgesValue_colname] = edges_value
-    edges[edgesTitle_colname] = [str(x) + " " + edge_title for x in edges_value]
+    edges[edgesTitle_colname] = [str(x) + " " + edge_title for i,x in enumerate(edges_value)]
 
     return {
         "nodes": nodes,
@@ -118,37 +121,209 @@ edge_title="co-pub."
 
 
 # %%
-na_df = pd.read_csv("../na_df.csv", low_memory=False)
+na_df = pd.read_csv("../../../01_data/0202_region_dfs/na_df.csv", low_memory=False)
+wa_df = pd.read_csv("../../../01_data/0202_region_dfs/wa_df.csv", low_memory=False)
+ca_df = pd.read_csv("../../../01_data/0202_region_dfs/ca_df.csv", low_memory=False)
+ea_df = pd.read_csv("../../../01_data/0202_region_dfs/ea_df.csv", low_memory=False)
+sa_df = pd.read_csv("../../../01_data/0202_region_dfs/sa_df.csv", low_memory=False)
 # %% Apply method
 na_net = create_network(na_df, "au_off_country")
+wa_net = create_network(wa_df, "au_off_country")
+ca_net = create_network(ca_df, "au_off_country")
+ea_net = create_network(ea_df, "au_off_country")
+sa_net = create_network(sa_df, "au_off_country")
 
 na_net["nodes"].to_csv("../na_nodes.csv", index=False)
+wa_net["nodes"].to_csv("../wa_nodes.csv", index=False)
+ca_net["nodes"].to_csv("../ca_nodes.csv", index=False)
+ea_net["nodes"].to_csv("../ea_nodes.csv", index=False)
+sa_net["nodes"].to_csv("../sa_nodes.csv", index=False)
+
 na_net["edges"].to_csv("../na_edges.csv", index=False)
+wa_net["edges"].to_csv("../wa_edges.csv", index=False)
+ca_net["edges"].to_csv("../ca_edges.csv", index=False)
+ea_net["edges"].to_csv("../ea_edges.csv", index=False)
+sa_net["edges"].to_csv("../sa_edges.csv", index=False)
 
-
+# %%
+na_net
 
 # %% Country networks
 egypt_df = pd.read_csv("../../../01_data/0203_country_dfs/egypt_df.csv", low_memory=False)
+morocco_df = pd.read_csv("../../../01_data/0203_country_dfs/morocco_df.csv", low_memory=False)
+algeria_df = pd.read_csv("../../../01_data/0203_country_dfs/algeria_df.csv", low_memory=False)
+nigeria_df = pd.read_csv("../../../01_data/0203_country_dfs/nigeria_df.csv", low_memory=False)
+ghana_df = pd.read_csv("../../../01_data/0203_country_dfs/ghana_df.csv", low_memory=False)
+senegal_df = pd.read_csv("../../../01_data/0203_country_dfs/senegal_df.csv", low_memory=False)
+sen_gha_ni_df = pd.read_csv("../../../01_data/0203_country_dfs/sen_gha_ni_df.csv", low_memory=False)
+
+cameroon_df = pd.read_csv("../../../01_data/0203_country_dfs/cameroon_df.csv", low_memory=False)
+demrepcongo_df = pd.read_csv("../../../01_data/0203_country_dfs/demrepcongo_df.csv", low_memory=False)
+ethiopia_df = pd.read_csv("../../../01_data/0203_country_dfs/ethiopia_df.csv", low_memory=False)
+kenya_df = pd.read_csv("../../../01_data/0203_country_dfs/kenya_df.csv", low_memory=False)
+tanzania_df = pd.read_csv("../../../01_data/0203_country_dfs/tanzania_df.csv", low_memory=False)
+sa_df = pd.read_csv("../../../01_data/0203_country_dfs/sa_df.csv", low_memory=False)
+zimbabwe_df = pd.read_csv("../../../01_data/0203_country_dfs/zimbabwe_df.csv", low_memory=False)
 ##egypt_df["org_prop"] = str(egypt_df["org_prop"])
 ## egypt_df["org_prop"] = egypt_df["org_prop"].fillna(" ").isna()
 egypt_df["org_freq_prop"] = [int(i) for i in egypt_df["org_freq_prop"].fillna(0)]
+morocco_df["org_freq_prop"] = [int(i) for i in morocco_df["org_freq_prop"].fillna(0)]
+algeria_df["org_freq_prop"] = [int(i) for i in algeria_df["org_freq_prop"].fillna(0)]
+nigeria_df["org_freq_prop"] = [int(i) for i in nigeria_df["org_freq_prop"].fillna(0)]
+ghana_df["org_freq_prop"] = [int(i) for i in ghana_df["org_freq_prop"].fillna(0)]
+senegal_df["org_freq_prop"] = [int(i) for i in senegal_df["org_freq_prop"].fillna(0)]
+sen_gha_ni_df["org_freq_prop"] = [int(i) for i in sen_gha_ni_df["org_freq_prop"].fillna(0)]
+
+cameroon_df["org_freq_prop"] = [int(i) for i in cameroon_df["org_freq_prop"].fillna(0)]
+demrepcongo_df["org_freq_prop"] = [int(i) for i in demrepcongo_df["org_freq_prop"].fillna(0)]
+ethiopia_df["org_freq_prop"] = [int(i) for i in ethiopia_df["org_freq_prop"].fillna(0)]
+kenya_df["org_freq_prop"] = [int(i) for i in kenya_df["org_freq_prop"].fillna(0)]
+tanzania_df["org_freq_prop"] = [int(i) for i in tanzania_df["org_freq_prop"].fillna(0)]
+sa_df["org_freq_prop"] = [int(i) for i in sa_df["org_freq_prop"].fillna(0)]
+zimbabwe_df["org_freq_prop"] = [int(i) for i in zimbabwe_df["org_freq_prop"].fillna(0)]
 # %% 
 
 
 # %%
 
-egypt_net = create_network(egypt_df, 
-                        "org_prop",
-                        Tot_freq_colname="org_freq_prop",
-                        region_colname="au_off_country"
-                        )
+egypt_net = create_network(      egypt_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+morocco_net = create_network(    morocco_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+algeria_net = create_network(    algeria_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+nigeria_net = create_network(    nigeria_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+ghana_net = create_network(      ghana_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+senegal_net = create_network(    senegal_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+# %%
+sen_gha_ni = create_network(    sen_gha_ni_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+#%%
+
+cameroon_net = create_network(   cameroon_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+demrepcongo_net = create_network(demrepcongo_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+ethiopia_net = create_network(   ethiopia_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+kenya_net = create_network(      kenya_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+tanzania_net = create_network(   tanzania_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+sa_net = create_network(         sa_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+zimbabwe_net = create_network(   zimbabwe_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+
 # %%
 egypt_net["nodes"].to_csv("../egypt_nodes.csv", index=False)
+morocco_net["nodes"].to_csv("../morocco_nodes.csv", index=False)
+algeria_net["nodes"].to_csv("../algeria_nodes.csv", index=False)
+nigeria_net["nodes"].to_csv("../nigeria_nodes.csv", index=False)
+ghana_net["nodes"].to_csv("../ghana_nodes.csv", index=False)
+senegal_net["nodes"].to_csv("../senegal_nodes.csv", index=False)
+# %%
+sen_gha_ni_net = sen_gha_ni
+sen_gha_ni_net["nodes"].to_csv("../sen_gha_ni_nodes.csv", index=False)
+# %% 
+cameroon_net["nodes"].to_csv("../cameroon_nodes.csv", index=False)
+demrepcongo_net["nodes"].to_csv("../demrepcongo_nodes.csv", index=False)
+ethiopia_net["nodes"].to_csv("../ethiopia_nodes.csv", index=False)
+kenya_net["nodes"].to_csv("../kenya_nodes.csv", index=False)
+tanzania_net["nodes"].to_csv("../tanzania_nodes.csv", index=False)
+sa_net["nodes"].to_csv("../sa_nodes.csv", index=False)
+zimbabwe_net["nodes"].to_csv("../zimbabwe_nodes.csv", index=False)
+
 egypt_net["edges"].to_csv("../egypt_edges.csv", index=False)
+morocco_net["edges"].to_csv("../morocco_edges.csv", index=False)
+algeria_net["edges"].to_csv("../algeria_edges.csv", index=False)
+nigeria_net["edges"].to_csv("../nigeria_edges.csv", index=False)
+ghana_net["edges"].to_csv("../ghana_edges.csv", index=False)
+senegal_net["edges"].to_csv("../senegal_edges.csv", index=False)
+# %%
+sen_gha_ni_net["edges"].to_csv("../sen_gha_ni_edges.csv", index=False)
+# %%
+
+cameroon_net["edges"].to_csv("../cameroon_edges.csv", index=False)
+demrepcongo_net["edges"].to_csv("../demrepcongo_edges.csv", index=False)
+ethiopia_net["edges"].to_csv("../ethiopia_edges.csv", index=False)
+kenya_net["edges"].to_csv("../kenya_edges.csv", index=False)
+tanzania_net["edges"].to_csv("../tanzania_edges.csv", index=False)
+sa_net["edges"].to_csv("../sa_edges.csv", index=False)
+zimbabwe_net["edges"].to_csv("../zimbabwe_edges.csv", index=False)
 
 
 #%%
 M_06["au_off_country"]
 # %%
 egypt_df.iloc[64,]
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
 # %%

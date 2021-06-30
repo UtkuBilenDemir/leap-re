@@ -30,3 +30,12 @@ afr_cou_plt
 
 ```{r child="_03.02.01-northern_africa.Rmd", echo=FALSE}
 ```
+
+
+```{r child="_03.02.02-western_central_east_africa.Rmd", echo=FALSE}
+```
+
+
+```{r child="_03.02.03-southern_africa.Rmd", echo=FALSE}
+```
+
