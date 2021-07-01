@@ -152,10 +152,16 @@ na_net
 egypt_df = pd.read_csv("../../../01_data/0203_country_dfs/egypt_df.csv", low_memory=False)
 morocco_df = pd.read_csv("../../../01_data/0203_country_dfs/morocco_df.csv", low_memory=False)
 algeria_df = pd.read_csv("../../../01_data/0203_country_dfs/algeria_df.csv", low_memory=False)
+# %%
+eg_mor_alg_df = pd.read_csv("../../../01_data/0203_country_dfs/eg_mor_alg_df.csv", low_memory=False)
+# %%
 nigeria_df = pd.read_csv("../../../01_data/0203_country_dfs/nigeria_df.csv", low_memory=False)
 ghana_df = pd.read_csv("../../../01_data/0203_country_dfs/ghana_df.csv", low_memory=False)
 senegal_df = pd.read_csv("../../../01_data/0203_country_dfs/senegal_df.csv", low_memory=False)
 sen_gha_ni_df = pd.read_csv("../../../01_data/0203_country_dfs/sen_gha_ni_df.csv", low_memory=False)
+eth_ken_tan_df = pd.read_csv("../../../01_data/0203_country_dfs/eth_ken_tan_df.csv", low_memory=False)
+con_cam_gab_df = pd.read_csv("../../../01_data/0203_country_dfs/con_cam_gab_df.csv", low_memory=False)
+west_east_central_df = pd.read_csv("../../../01_data/0203_country_dfs/west_east_central_df.csv", low_memory=False)
 
 cameroon_df = pd.read_csv("../../../01_data/0203_country_dfs/cameroon_df.csv", low_memory=False)
 demrepcongo_df = pd.read_csv("../../../01_data/0203_country_dfs/demrepcongo_df.csv", low_memory=False)
@@ -173,6 +179,9 @@ nigeria_df["org_freq_prop"] = [int(i) for i in nigeria_df["org_freq_prop"].filln
 ghana_df["org_freq_prop"] = [int(i) for i in ghana_df["org_freq_prop"].fillna(0)]
 senegal_df["org_freq_prop"] = [int(i) for i in senegal_df["org_freq_prop"].fillna(0)]
 sen_gha_ni_df["org_freq_prop"] = [int(i) for i in sen_gha_ni_df["org_freq_prop"].fillna(0)]
+eth_ken_tan_df["org_freq_prop"] = [int(i) for i in eth_ken_tan_df["org_freq_prop"].fillna(0)]
+con_cam_gab_df["org_freq_prop"] = [int(i) for i in con_cam_gab_df["org_freq_prop"].fillna(0)]
+west_east_central_df["org_freq_prop"] = [int(i) for i in west_east_central_df["org_freq_prop"].fillna(0)]
 
 cameroon_df["org_freq_prop"] = [int(i) for i in cameroon_df["org_freq_prop"].fillna(0)]
 demrepcongo_df["org_freq_prop"] = [int(i) for i in demrepcongo_df["org_freq_prop"].fillna(0)]
@@ -189,11 +198,17 @@ zimbabwe_df["org_freq_prop"] = [int(i) for i in zimbabwe_df["org_freq_prop"].fil
 egypt_net = create_network(      egypt_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 morocco_net = create_network(    morocco_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 algeria_net = create_network(    algeria_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+# %%
+eg_mor_alg_net = create_network(    eg_mor_alg_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+# %%
 nigeria_net = create_network(    nigeria_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 ghana_net = create_network(      ghana_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 senegal_net = create_network(    senegal_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 # %%
-sen_gha_ni = create_network(    sen_gha_ni_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+sen_gha_ni_net = create_network(    sen_gha_ni_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+eth_ken_tan_net = create_network(    eth_ken_tan_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+con_cam_gab_net = create_network(    con_cam_gab_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+west_east_central_net = create_network(    west_east_central_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 #%%
 
 cameroon_net = create_network(   cameroon_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
@@ -208,12 +223,17 @@ zimbabwe_net = create_network(   zimbabwe_df, "org_prop", Tot_freq_colname="org_
 egypt_net["nodes"].to_csv("../egypt_nodes.csv", index=False)
 morocco_net["nodes"].to_csv("../morocco_nodes.csv", index=False)
 algeria_net["nodes"].to_csv("../algeria_nodes.csv", index=False)
+# %%
+eg_mor_alg_net["nodes"].to_csv("../eg_mor_alg_nodes.csv", index=False)
+# %%
 nigeria_net["nodes"].to_csv("../nigeria_nodes.csv", index=False)
 ghana_net["nodes"].to_csv("../ghana_nodes.csv", index=False)
 senegal_net["nodes"].to_csv("../senegal_nodes.csv", index=False)
 # %%
-sen_gha_ni_net = sen_gha_ni
 sen_gha_ni_net["nodes"].to_csv("../sen_gha_ni_nodes.csv", index=False)
+eth_ken_tan_net["nodes"].to_csv("../eth_ken_tan_nodes.csv", index=False)
+con_cam_gab_net["nodes"].to_csv("../con_cam_gab_nodes.csv", index=False)
+west_east_central_net["nodes"].to_csv("../west_east_central_nodes.csv", index=False)
 # %% 
 cameroon_net["nodes"].to_csv("../cameroon_nodes.csv", index=False)
 demrepcongo_net["nodes"].to_csv("../demrepcongo_nodes.csv", index=False)
@@ -226,11 +246,17 @@ zimbabwe_net["nodes"].to_csv("../zimbabwe_nodes.csv", index=False)
 egypt_net["edges"].to_csv("../egypt_edges.csv", index=False)
 morocco_net["edges"].to_csv("../morocco_edges.csv", index=False)
 algeria_net["edges"].to_csv("../algeria_edges.csv", index=False)
+# %%
+eg_mor_alg_net["edges"].to_csv("../eg_mor_alg_edges.csv", index=False)
+# %% 
 nigeria_net["edges"].to_csv("../nigeria_edges.csv", index=False)
 ghana_net["edges"].to_csv("../ghana_edges.csv", index=False)
 senegal_net["edges"].to_csv("../senegal_edges.csv", index=False)
 # %%
 sen_gha_ni_net["edges"].to_csv("../sen_gha_ni_edges.csv", index=False)
+eth_ken_tan_net["edges"].to_csv("../eth_ken_tan_edges.csv", index=False)
+con_cam_gab_net["edges"].to_csv("../con_cam_gab_edges.csv", index=False)
+west_east_central_net["edges"].to_csv("../west_east_central_edges.csv", index=False)
 # %%
 
 cameroon_net["edges"].to_csv("../cameroon_edges.csv", index=False)

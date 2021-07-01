@@ -15,8 +15,7 @@ pd <- import("pandas")
 
 M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0608_org_proper.pickle")
 
-
-which(length(M_06$au_off_country )>1)
+M_06$au_off_country[1]
 
 # French organisations are entered as African
 cirad_df <- M_06[M_06$org_prop == "CIRAD", ]
@@ -172,6 +171,19 @@ demrepcongo_org_df <- demrepcongo_org_df[order(as.numeric(demrepcongo_org_df$org
  sen_gha_ni_org_df <-  sen_gha_ni_org_df[order(as.numeric( sen_gha_ni_org_df$org_freq_prop), decreasing = TRUE),]
 eth_ken_tan_org_df <- eth_ken_tan_org_df[order(as.numeric(eth_ken_tan_org_df$org_freq_prop), decreasing = TRUE),]
 con_cam_gab_org_df <- con_cam_gab_org_df[order(as.numeric(con_cam_gab_org_df$org_freq_prop), decreasing = TRUE),]
+
+# Remove internationals
+sen_to_rm <- c("CIRAD", "North-West University", "CSIR" )
+eth_to_rm <- c("University of Nigeria")
+con_to_rm <- c("CIRAD", "World Agroforestry Centre", "International Institute of Tropical Agriculture (IITA)" , "Centre of Biotechnology of Sfax")
+
+sen_to_rm_indexes <- which(sen_gha_ni_org_df$org_prop %in% sen_to_rm)
+eth_to_rm_indexes <- which(eth_ken_tan_org_df$org_prop %in% eth_to_rm)
+con_to_rm_indexes <- which(con_cam_gab_org_df$org_prop %in% con_to_rm)
+
+sen_gha_ni_org_df <- sen_gha_ni_org_df[-c(sen_to_rm_indexes), ][1:5,]
+eth_ken_tan_org_df <- eth_ken_tan_org_df[-c(eth_to_rm_indexes), ][1:5,]
+con_cam_gab_org_df <- con_cam_gab_org_df[-c(con_to_rm_indexes), ][1:5,]
 
 rownames(      egypt_org_df) <- seq_along(rownames(      egypt_org_df))
 rownames(    morocco_org_df) <- seq_along(rownames(    morocco_org_df))

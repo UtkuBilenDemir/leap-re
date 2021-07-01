@@ -4,9 +4,14 @@ library(reticulate)
 pd <- import("pandas")
 
 M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0606_org_prop.pickle")
+M_06_new <- readRDS("./01_data/02_bibliometrix/0607_org_oty.Rds")
+M_06_new
 ## au_off <- readRDS(file = "01_data/04_geospatial_data/au_official_boundaries.Rds")
 ## org_table <- readRDS(file = "01_data/0201_tables/country_table.Rds")
 
+
+unique(M_06[M_06$au_off_country == "South Africa", "cou_tot_pub"])
+unique(M_06_new[M_06_new$au_off_country == "South Africa", "cou_tot_pub"])
   
 # Create pub freq columns for each year
 for(year in sort(unique(M_06$PY), decreasing = FALSE)){
@@ -40,8 +45,9 @@ for(i in 1:length(org_name_un)){
     M_06[[year_col_name]][temp_indexes] <- year_pub_freq
   }
 }
+print("bitti")
 
-
+1+1
 org_rel_pub
 
 org_rel_pub[org_rel_pub == Inf] <- NA
@@ -72,5 +78,14 @@ colnames(M_06)
 # ---
 
 saveRDS(M_06, file = "./01_data/0607_org_oty.Rds")
-write_csv(M_06, file = "./01_data/01_data/0607_org_oty.csv")
+M_06 <- as.data.frame(apply(M_06, 2, as.character))
+write_csv(M_06, file = "./01_data/0607_org_oty.csv")
 ## saveRDS(unsd_regions, file = "01_data/0201_tables/country_table_-_2.Rds")
+
+write_csv(as.data.frame(apply(M_06_new, 2, as.character)), file = "./01_data/02_bibliometrix/0607_org_oty.csv")
+
+
+write_csv(as.data.frame(apply(M_06_new, 2, as.character)), file = "./01_data/0688_org_oty.csv")
+
+
+2+2

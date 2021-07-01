@@ -1,5 +1,6 @@
 ### Western Africa, Central Africa, Eastern Africa
 
+#### Western Africa
 ```{r watable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Western African countries"}
 wa_table <- readRDS(file = "../../04_visualisation/04_tables/wa_table.Rds")
 wa_table
@@ -34,7 +35,7 @@ sen_gha_ni_org_table <- readRDS(file = "../../04_visualisation/04_tables/sen_gha
 sen_gha_ni_org_table
 ```
 
-
+#### Central Africa
 ```{r catable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Central African countries"}
 ca_table <- readRDS(file = "../../04_visualisation/04_tables/ca_table.Rds")
 ca_table
@@ -58,7 +59,7 @@ France is again the most visible EU-27 country in the co-publication network in 
 con_cam_gab_org_table <- readRDS(file = "../../04_visualisation/04_tables/con_cam_gab_org_table.Rds")
 con_cam_gab_org_table
 ```
-
+#### Eastern Africa
 ```{r eatable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Eastern African countries"}
 ea_table <- readRDS(file = "../../04_visualisation/04_tables/ea_table.Rds")
 ea_table
@@ -86,4 +87,14 @@ South Africa is the only African country from another region that has more than 
 ```{r ethkentan,  fig.show="hold", out.width="0%", fig.cap= "Most visible organisations from Ethiopia, Kenya, Tanzania cluster"}
 eth_ken_tan_org_table <- readRDS(file = "../../04_visualisation/04_tables/con_cam_gab_org_table.Rds")
 eth_ken_tan_org_table
+```
+
+#### Co-publication Network
+
+```{r wacaeaorgnet, echo=FALSE, out.width="100%", fig.cap="Co-publication network of Western, Central, Eastern African organisations in RE-related publications between 2011-2020"}
+ea_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/ea_net.Rds")
+ea_net
+```
+```{r}
+# links with fewer than 25 publications have been removed
 ```

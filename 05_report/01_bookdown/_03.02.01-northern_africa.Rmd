@@ -25,7 +25,7 @@ This growth rate is not only the highest in Northern Africa but in the whole con
 
 
 
-```{r nanet, echo=FALSE, out.width="100%", fig.cap="TEST"}
+```{r nanet, echo=FALSE, out.width="100%", fig.cap="Co-publication network of Northern African countries in RE-related publications between 2011-2020"}
 na_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/na_net.Rds")
 na_net
 ```
