@@ -1,1 +1,59 @@
 ### Southern Africa
+
+```{r satable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Southern African countries"}
+sa_table <- readRDS(file = "../../04_visualisation/04_tables/sa_table.Rds")
+sa_table
+```
+```{r sanet, echo=FALSE, out.width="100%", fig.cap="Co-publication network of Southern African countries in RE-related publications between 2011-2020"}
+sa_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/sa_net.Rds")
+sa_net
+```
+```{r}
+# links with fewer than 25 publications have been removed
+```
+
+
+
+```{r saorgtable,  fig.show="hold", out.width="0%", fig.cap= "Most visible organisations from South Africa"}
+sa_org_table <- readRDS(file = "../../04_visualisation/04_tables/sa_org_table.Rds")
+sa_org_table
+```
+
+
+
+
+```{r saorgnet, echo=FALSE, out.width="100%", fig.cap="Co-publication network of Southern African organisations in RE-related publications between 2011-2020"}
+south_a_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/south_a_net.Rds")
+south_a_net
+```
+```{r}
+# links with fewer than 25 publications have been removed
+```
+
+
+
+
+#####  University of KwaZulu-Natal
+
+```{r kwazubarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+kwazu_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/kwazu_ra_barline.Rds")
+
+kwazu_barline
+```
+
+
+
+##### University of Cape Town 
+```{r capetbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+capet_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/capet_ra_barline.Rds")
+
+capet_barline
+```
+
+
+##### Stellenbosch University 
+```{r stellbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+stell_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/stell_ra_barline.Rds")
+
+stell_barline
+```

@@ -13,7 +13,7 @@ African countries in the 10 years period between 2011-2020.
 ```
 
 
-```{r puboty, echo=FALSE, out.width="200%", fig.cap="Number of RE-related publications in African countries over the years between 2011-2020"}
+```{r puboty, echo=FALSE, out.width="100%", out.height="50%", fig.cap="Number of RE-related publications in African countries over the years between 2011-2020"}
 abs_rel_plt <- readRDS(file = "../../01_data/03_visualisations/abs_rel_plt.Rds")
 abs_rel_plt
 ```
@@ -21,7 +21,7 @@ abs_rel_plt
 
 African countries have collaborated in approximately 31k renewable energy (RE) publications in the 10 year range between 2011-2020. The number of those RE-related publications has been constantly
 increasing between until 2019. Slightly declining publication numbers between 2019
-and 2020 (see \@ref(fig:puboty)), as Web of Science team also often emphasises,
+and 2020 (see \@ref(fig:puboty)), as Web of Science (WoS) team also often emphasises,
 is caused by the latency in the database entries [^1]. Even after including the 
 possibly incomplete amount of publications in 2020, number of RE-related publications from 
 the African countries in total increases from ~1.1k in 2011 to ~4.8k in 
@@ -41,36 +41,47 @@ map_pub_freq
 # TODO: Edit the following text
 ```
 
-As \@ref(fig:choropleth) shows, South Africa and Egypt are the most visible countries with 6.8k and 6.6k publications respectively. 20 countries stay under 40 RE-related publications in total between 2011-2020, the most visible countries distributed diversely on the continent.  
+As \@ref(fig:choropleth) shows, South Africa and Egypt are the most visible countries with 6.8k and 6.6k publications respectively. 20 African countries stay under 40 RE-related publications in total between 2011-2020. The most visible countries distributed diversely on the continent, however, other than the Northern African countries and South Africa only Nigeria contributed in over 1000 RE-related publications (2252 pub.).  
 
-Although total publication output is a strong indicator of the most visible countries, it does not show the growth rate in the number of Publications. African countries that show high increment rate in the number of publications despite having relatively lower total amount of publications will be analysed in the following chapter.
+Although total publication output is a strong indicator of the most visible countries, it does not show the growth rate in the numbers. African countries that show high increment rate in the number of publications despite having relatively lower total amount of publications will be analysed in the following chapter.
   
 
 
 
 
 ```{r orgmv, echo=FALSE, out.width="100%", fig.cap="Most visible 15 African countries in RE-related publications between 2011-2020"}
-org_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/org_mv.Rds")
+org_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/org_mv_barplot.Rds")
 org_mv
 ```
 
+4 of the most visible 5 organisations in RE-related publications are from South Africa. Each of them has close to or over 800 publications between 2011-2020, Cairo University from Egypt is following them with ~780 publications. Although, most of the visible organisaitons are in general universities, there is also *Renewable Energy Development Center* from Algeria, an institution specifically focuses on RE-related topics with an output of ~800 publications between 2011-2020.
 
 
 
 
-```{r resareas, echo=FALSE, out.width="100%", fig.cap="Most visible 15 research areas in RE-related publications between 2011-2020"}
-res_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/res_areas_barplot.Rds")
-res_mv
+```{r resareas, include=FALSE, out.width="100%", fig.cap="Most visible 15 research areas in RE-related publications between 2011-2020"}
+## res_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/res_areas_barplot.Rds")
+## res_mv
 ```
 
-```{r resdomains, echo=FALSE, out.width="100%", fig.cap="Distribution of research domains in RE-related publications of African countries between 2011-2020"}
-res_domains_pie <- readRDS(file = "../../04_visualisation/05_treemaps/res_domains_pie.Rds")
-res_domains_pie 
+
+```{r resdomains, echo=FALSE, out.height="1000px", fig.cap="Distribution of research domains in RE-related publications of African countries between 2011-2020"}
+## res_domains_pie <- readRDS(file = "../../04_visualisation/05_treemaps/res_domains_pie.Rds")
+## res_domains_pie 
+gen_ra_sun <- readRDS("../../04_visualisation/05_treemaps/gen_ra_sun.Rds")
+gen_ra_sun
 ```
 [^2]
 
+Over 50% of the RE-related publications are associated with research areas from *Technology* domain. *Energy & Fuels* is the most visible research area in total followed by *Electrical & Elctronic Engineering*. Other Engineering fields like *Chemical, Environmental, Mechanical Engineering* also in the visible research areas. Multidisciplinary discipline *Green & Sustainable Science & Technology* is the 3. most visible research area in total. 
 
-```{r resareas2, echo=FALSE, out.width="100%", fig.cap="Most visible research areas"}
+Life Science $ Biomedicine and Physical Sciences have similar number of publications (~8800 pub. both). *Environmental Science* and *Ecology* from Life Sciences & Biomedicine as well as *Multidisciplinary Materials Science* and *Thermodynamics* from Physical Sciences are also in the 10 most visible research areas.
+
+Social Sciences (1325 pub.) is also not absent in the RE-related publications of African organisations. *Environmental Studies* is the most visible research area in this domain with 663 publications.
+
+
+
+```{r resareas2, include=FALSE, out.width="100%", fig.cap="Most visible research areas"}
 test_res_areas_bar_line <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/test_res_areas_bar_line.Rds")
 test_res_areas_bar_line
 ```
@@ -79,4 +90,4 @@ test_res_areas_bar_line
 
 [^1]: As Web of Science support service informs, it might take up to 2 years for a document to be entered into the Web of Science databases.
 
-[^2]: Caution, research domains and areas are not unique to a publication. A publication can have multiple disciplines involved. 
+[^2]: Caution, research domains and areas are not unique to a publication. A publication can have multiple disciplines involved. Therefore, the sum of the number of publications in each research area does not correspond to the number of publications in their respective research domain.

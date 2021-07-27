@@ -1,5 +1,7 @@
 ### Western Africa, Central Africa, Eastern Africa
 
+
+
 #### Western Africa
 ```{r watable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Western African countries"}
 wa_table <- readRDS(file = "../../04_visualisation/04_tables/wa_table.Rds")
@@ -7,9 +9,9 @@ wa_table
 ```
 
 Western African countries Nigeria and Ghana have been increasing their RE-related publication
-output in a consistent manner in the 10 years range (see table \@ref(fig:watable)) without any stagnation. Although Nigeria's number of publications in 2011 already relatively high in comparison (74 pub.), number of publications in 2020 was ~6.5 folds (481 pub.) of that. 
+output in a consistent manner in the 10 years range (see table \@ref(fig:watable)) without any stagnation. Although Nigeria's number of publications in 2011 already relatively high in comparison (74 pub.), number of publications in 2020 was ~6.5 folds (481 pub.) of that. In a similar fashion Ghana has increased its RE-related publication output from 20 in 2011 to 153 in 2020 which is an increment of a factor of ~7.5. 
 
-Volatility in the publication nummbers of Senegal, Burkina Faso and Benin is expected since their publication outputs relatively lower. 
+Volatility in the publication nummbers of Burkina Faso and Benin is expected since their publication outputs relatively lower. Senegal's output of RE-related publication, however, has fallen to 28 in 2020 after 49 publications in 2018.   
 
 
 
@@ -26,7 +28,7 @@ Nigeria is also the centre of mass in the co-publication network of the Western 
 
 However, the collaborations between the two most visible countries in the region with the other countries are relatively sparse. Côte d'Ivoire, Benin, Senegal, Burkina Faso and Mali are mostly engaged in their own cluster. The most visible international partner of that cluster is France. French academic organisations have co-publicated ~400 papers with Western African countries between 2011-2020 and most of those have been carried out with the mentioned 5 countries. 
 
-Other than France, Germany and Netherlands are also engaged in the RE-related publications in Western Africa; Sweden and Denmar are mostly collaborated with Ghana and Italian organisations have mostly co-published with Nigerian organisations.
+Other than France, Germany and Netherlands are also engaged in the RE-related publications in Western Africa; Sweden and Denmark are mostly collaborated with Ghana and Italian organisations have mostly co-published with Nigerian organisations.
 
 Other visible international partners in the region are Malaysia and India.
 
@@ -34,6 +36,10 @@ Other visible international partners in the region are Malaysia and India.
 sen_gha_ni_org_table <- readRDS(file = "../../04_visualisation/04_tables/sen_gha_ni_org_table.Rds")
 sen_gha_ni_org_table
 ```
+Most visible 3 organisations in Western Africa are from Nigeria. Number of the RE-related publications from *Covenant University*, the most visible organisation in the region, seems to be declining presumably because of the latency in document entries into WoS databases after 2019. 
+
+Other than *Covenant University* total RE-related publication outputs of other most visible organisations in Western Africa are relatively close to each other. Other than *University of Ibadan* other 3 organisations also consistently increasing numbers of their Re-related publications.   
+
 
 #### Central Africa
 ```{r catable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Central African countries"}
@@ -41,7 +47,9 @@ ca_table <- readRDS(file = "../../04_visualisation/04_tables/ca_table.Rds")
 ca_table
 ```
 
-In the Central African region the publication output in the RE-related topics is relatively volatile. Cameroon shows a steady increment between 2011-2020 (see \@ref(fig:catable)) with a total output of 379 RE-related publications in 10 years. Other than Cameroon 
+In the Central African region the publication output in the RE-related topics is relatively volatile. Cameroon shows a steady increment between 2011-2020 (see \@ref(fig:catable)) with a total output of 379 RE-related publications in 10 years. Other than Cameroon total number of RE-related publications in other Central African countries stays under 100. 
+
+
 
 
 
@@ -55,17 +63,22 @@ ca_net
 
 France is again the most visible EU-27 country in the co-publication network in Central Africa with 121 co-pub. with the most visible Central African country Cameroon. Although the publication output is not high in comparison with other regions, most of the publications in Central Africa produced through international co-operation and all of the visible international collaborator countries are engaged in co-publications with Cameroon, most visible country in the region. 
 
+
+
 ```{r concamgab,  fig.show="hold", out.width="0%", fig.cap= "Most visible organisations from Cameroon, Dem. Rep. Congo, Gabon cluster"}
 con_cam_gab_org_table <- readRDS(file = "../../04_visualisation/04_tables/con_cam_gab_org_table.Rds")
 con_cam_gab_org_table
 ```
+All of the most visible 5 countries in region are from Cameroon with most visible organisation being *Université de Yaoundé I* with 170 RE-related publications in 2020. None of the organisations in the region has more than 5 RE-related publications in 2011 
+
+
 #### Eastern Africa
 ```{r eatable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Eastern African countries"}
 ea_table <- readRDS(file = "../../04_visualisation/04_tables/ea_table.Rds")
 ea_table
 ```
 
-The most visible 5 Eastern African countries have steadily increasing number of RE-related publications (see \@ref(fig:eatable)). Ethiopia and Kenya are the most visible ones with 940 and 870 publications respectively. Ethiopia's number of publications in 2020 (226 pub.) is approximetaly 8 fold of the number in 2011 (28). 
+The most visible 5 Eastern African countries have steadily increasing number of RE-related publications (see \@ref(fig:eatable)). Ethiopia and Kenya are the most visible ones with 940 and 870 publications respectively. Ethiopia's number of publications in 2020 (226 pub.) is approximetaly 8 fold of the number in 2011 (28).  
 
 
 
@@ -82,19 +95,67 @@ ea_net
 
 Other than EU countries United States and United Kingdom are also visible international partners engaged in RE-related research with Eastern African organisations. United States has ~500 co-publications with the region. 
 
-South Africa is the only African country from another region that has more than 25 RE-related co-publications with the Eastern African countries. 
+South Africa is the only African country from another region that has more than 25 RE-related co-publications with the Eastern African countries. South Africa's total RE-related co-publication output with the Eastern African countries between 2011-2020 is 199. 
 
 ```{r ethkentan,  fig.show="hold", out.width="0%", fig.cap= "Most visible organisations from Ethiopia, Kenya, Tanzania cluster"}
-eth_ken_tan_org_table <- readRDS(file = "../../04_visualisation/04_tables/con_cam_gab_org_table.Rds")
+eth_ken_tan_org_table <- readRDS(file = "../../04_visualisation/04_tables/eth_ken_tan_org_table.Rds")
 eth_ken_tan_org_table
 ```
 
-#### Co-publication Network
+Most visible countries from the selected countries in Eastern Africa, namely Ethiopia, Kenya Tanzania are diverse. *Addis Ababa University* from Ethiopia is the most visible one with 246 RE-related publications between 2011-2020. Number of publications from *Addis Ababa University* has been increasing steadily. 
+
+#### Selected Institutions and Institutional Co-publication Network
 
 ```{r wacaeaorgnet, echo=FALSE, out.width="100%", fig.cap="Co-publication network of Western, Central, Eastern African organisations in RE-related publications between 2011-2020"}
-ea_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/ea_net.Rds")
-ea_net
+wce_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/west_east_central_net.Rds")
+wce_net
 ```
 ```{r}
 # links with fewer than 25 publications have been removed
+```
+
+
+
+
+##### Covenant University (Nigeria)
+```{r covenbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+coven_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/coven_ra_barline.Rds")
+
+coven_barline
+```
+The most visible research areas are *Energy & Fuels* and *Green & Sustainable Science & Technology* similarly.
+
+However, Covenant University also *Multidisciplinary Sciences* as one of the most visible research areas. 
+
+None of the last three research areas *Multidisciplinary Sciences*, *Material Science* and *Electrical & Electronic Engineering* had more than 1 yearly RE-related publications in *Covenant University* until 2016. However, especially *Multidisciplinary Sciences* had over 10 yearly publications starting after 2017. 
+
+##### University of Nigeria
+```{r uninibarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+unini_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/unini_ra_barline.Rds")
+
+unini_barline
+```
+
+
+##### Université de Yaoundé I (Cameroon)
+```{r yaounbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+yaoun_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/yaoun_ra_barline.Rds")
+
+yaoun_barline
+```
+
+
+##### Addis Ababa University (Ethiopia)
+```{r addisbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+addis_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/addis_ra_barline.Rds")
+
+addis_barline
+```
+
+
+##### Mekelle University (Ethiopia)
+```{r mekelbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+mekel_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/mekel_ra_barline.Rds")
+
+mekel_barline
 ```

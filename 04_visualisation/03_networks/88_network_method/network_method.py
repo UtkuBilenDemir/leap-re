@@ -125,24 +125,28 @@ na_df = pd.read_csv("../../../01_data/0202_region_dfs/na_df.csv", low_memory=Fal
 wa_df = pd.read_csv("../../../01_data/0202_region_dfs/wa_df.csv", low_memory=False)
 ca_df = pd.read_csv("../../../01_data/0202_region_dfs/ca_df.csv", low_memory=False)
 ea_df = pd.read_csv("../../../01_data/0202_region_dfs/ea_df.csv", low_memory=False)
+#%% 
 sa_df = pd.read_csv("../../../01_data/0202_region_dfs/sa_df.csv", low_memory=False)
 # %% Apply method
 na_net = create_network(na_df, "au_off_country")
 wa_net = create_network(wa_df, "au_off_country")
 ca_net = create_network(ca_df, "au_off_country")
 ea_net = create_network(ea_df, "au_off_country")
+# %%
 sa_net = create_network(sa_df, "au_off_country")
-
+# %%
 na_net["nodes"].to_csv("../na_nodes.csv", index=False)
 wa_net["nodes"].to_csv("../wa_nodes.csv", index=False)
 ca_net["nodes"].to_csv("../ca_nodes.csv", index=False)
 ea_net["nodes"].to_csv("../ea_nodes.csv", index=False)
+# %% 
 sa_net["nodes"].to_csv("../sa_nodes.csv", index=False)
-
+# %%
 na_net["edges"].to_csv("../na_edges.csv", index=False)
 wa_net["edges"].to_csv("../wa_edges.csv", index=False)
 ca_net["edges"].to_csv("../ca_edges.csv", index=False)
 ea_net["edges"].to_csv("../ea_edges.csv", index=False)
+# %%
 sa_net["edges"].to_csv("../sa_edges.csv", index=False)
 
 # %%
@@ -168,7 +172,7 @@ demrepcongo_df = pd.read_csv("../../../01_data/0203_country_dfs/demrepcongo_df.c
 ethiopia_df = pd.read_csv("../../../01_data/0203_country_dfs/ethiopia_df.csv", low_memory=False)
 kenya_df = pd.read_csv("../../../01_data/0203_country_dfs/kenya_df.csv", low_memory=False)
 tanzania_df = pd.read_csv("../../../01_data/0203_country_dfs/tanzania_df.csv", low_memory=False)
-sa_df = pd.read_csv("../../../01_data/0203_country_dfs/sa_df.csv", low_memory=False)
+south_a_df = pd.read_csv("../../../01_data/0203_country_dfs/sa_df.csv", low_memory=False)
 zimbabwe_df = pd.read_csv("../../../01_data/0203_country_dfs/zimbabwe_df.csv", low_memory=False)
 ##egypt_df["org_prop"] = str(egypt_df["org_prop"])
 ## egypt_df["org_prop"] = egypt_df["org_prop"].fillna(" ").isna()
@@ -188,7 +192,7 @@ demrepcongo_df["org_freq_prop"] = [int(i) for i in demrepcongo_df["org_freq_prop
 ethiopia_df["org_freq_prop"] = [int(i) for i in ethiopia_df["org_freq_prop"].fillna(0)]
 kenya_df["org_freq_prop"] = [int(i) for i in kenya_df["org_freq_prop"].fillna(0)]
 tanzania_df["org_freq_prop"] = [int(i) for i in tanzania_df["org_freq_prop"].fillna(0)]
-sa_df["org_freq_prop"] = [int(i) for i in sa_df["org_freq_prop"].fillna(0)]
+south_a_df["org_freq_prop"] = [int(i) for i in sa_df["org_freq_prop"].fillna(0)]
 zimbabwe_df["org_freq_prop"] = [int(i) for i in zimbabwe_df["org_freq_prop"].fillna(0)]
 # %% 
 
@@ -216,7 +220,7 @@ demrepcongo_net = create_network(demrepcongo_df, "org_prop", Tot_freq_colname="o
 ethiopia_net = create_network(   ethiopia_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 kenya_net = create_network(      kenya_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 tanzania_net = create_network(   tanzania_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
-sa_net = create_network(         sa_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
+south_a_net = create_network(         sa_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 zimbabwe_net = create_network(   zimbabwe_df, "org_prop", Tot_freq_colname="org_freq_prop",region_colname="au_off_country")
 
 # %%
@@ -240,7 +244,7 @@ demrepcongo_net["nodes"].to_csv("../demrepcongo_nodes.csv", index=False)
 ethiopia_net["nodes"].to_csv("../ethiopia_nodes.csv", index=False)
 kenya_net["nodes"].to_csv("../kenya_nodes.csv", index=False)
 tanzania_net["nodes"].to_csv("../tanzania_nodes.csv", index=False)
-sa_net["nodes"].to_csv("../sa_nodes.csv", index=False)
+south_a_net["nodes"].to_csv("../sa_nodes.csv", index=False)
 zimbabwe_net["nodes"].to_csv("../zimbabwe_nodes.csv", index=False)
 
 egypt_net["edges"].to_csv("../egypt_edges.csv", index=False)
@@ -264,7 +268,7 @@ demrepcongo_net["edges"].to_csv("../demrepcongo_edges.csv", index=False)
 ethiopia_net["edges"].to_csv("../ethiopia_edges.csv", index=False)
 kenya_net["edges"].to_csv("../kenya_edges.csv", index=False)
 tanzania_net["edges"].to_csv("../tanzania_edges.csv", index=False)
-sa_net["edges"].to_csv("../sa_edges.csv", index=False)
+south_a_net["edges"].to_csv("../sa_edges.csv", index=False)
 zimbabwe_net["edges"].to_csv("../zimbabwe_edges.csv", index=False)
 
 

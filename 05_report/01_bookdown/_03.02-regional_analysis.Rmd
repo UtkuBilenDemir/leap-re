@@ -4,16 +4,14 @@
 # TODO: Rewrite the following
 ```
 
-Following the overall figures of the RE-related publications in Africa this sub-chapter introduces geographical regions of Africa to bring the analysis one step further. 
+Following the overall figures of the RE-related publications in Africa this sub-chapter introduces geographical regions of Africa to bring the analysis one step further. Focusing on different regions of Africa prevents the over-representation of already more visible countries in terms of publications in general and also enables a detailed analysis for individual countries and organisations.
 
-Focusing on different regions of Africa prevents the over representation of already more visible countries in terms of publications in general and also enables a
-
-```{r auregions, echo=FALSE, out.width="100%", fig.cap="test"}
+```{r auregions, echo=FALSE, out.width="100%", fig.cap="African Union Regions"}
 au_regions <- readRDS(file = "../../04_visualisation/02_maps/03_results/au_regions.Rds")
 au_regions
 ```
   
-Although the most common definition of African geographical regions is the categorization of the [United Nations Statistics Department](https://unstats.un.org/unsd/methodology/m49/) (UNSD), as the Figure \@ref(fig:auregions) shows, this research uses a different categorization, namely [African Union Geographical Regions](https://au.int/en/member_states/countryprofiles2). The reason for this decision solely lies on the more evenly sized regions in AU categorization. 
+Although the most common definition of African geographical regions is the categorization of the [United Nations Statistics Department](https://unstats.un.org/unsd/methodology/m49/) (UNSD), as the Figure \@ref(fig:auregions) shows, this report uses a different categorization, namely [African Union Geographical Regions](https://au.int/en/member_states/countryprofiles2). The reason for this decision solely lies on the more evenly sized regions in AU categorization. 
   
 ```{r}
 # TODO: Change regions to the AU regions
@@ -21,10 +19,13 @@ Although the most common definition of African geographical regions is the categ
 # TODO: Cite the region sources?
 ```
 
-```{r echo=FALSE, out.width="100%"}
+```{r afrcouplt, echo=FALSE, out.width="100%"}
 afr_cou_plt <- readRDS(file = "../../01_data/03_visualisations/afr_cou_plt.Rds")
 afr_cou_plt
 ```
+
+As Figure \@ref(fig:afrcouplt) summarizes, 4 of the most visible African countries in the RE-related publications are from Northern Africa. South Africa has the highest number of publications. Nigeria and Ghana from Western Africa, Ethiopia and Kenya from Eastern Africa are following those 5 countries. Cameroon is the only country from Central Africa that finds a place between the 15 most visible countries.  
+
 
 
 

@@ -144,7 +144,7 @@ demrepcongo.nodes <- read.csv("./04_visualisation/03_networks/demrepcongo_nodes.
    ethiopia.nodes <- read.csv("./04_visualisation/03_networks/ethiopia_nodes.csv")
       kenya.nodes <- read.csv("./04_visualisation/03_networks/kenya_nodes.csv")
    tanzania.nodes <- read.csv("./04_visualisation/03_networks/tanzania_nodes.csv")
-         sa.nodes <- read.csv("./04_visualisation/03_networks/sa_nodes.csv")
+         sa.nodes <- read.csv("./04_visualisation/03_networks/south_a_nodes.csv")
    zimbabwe.nodes <- read.csv("./04_visualisation/03_networks/zimbabwe_nodes.csv")
 
       egypt.edges <- read.csv("./04_visualisation/03_networks/egypt_edges.csv")
@@ -164,7 +164,7 @@ demrepcongo.edges <- read.csv("./04_visualisation/03_networks/demrepcongo_edges.
    ethiopia.edges <- read.csv("./04_visualisation/03_networks/ethiopia_edges.csv")
       kenya.edges <- read.csv("./04_visualisation/03_networks/kenya_edges.csv")
    tanzania.edges <- read.csv("./04_visualisation/03_networks/tanzania_edges.csv")
-         sa.edges <- read.csv("./04_visualisation/03_networks/sa_edges.csv")
+         sa.edges <- read.csv("./04_visualisation/03_networks/south_a_edges.csv")
    zimbabwe.edges <- read.csv("./04_visualisation/03_networks/zimbabwe_edges.csv")
 
       egypt.edges.rm <-       egypt.edges$value < 20
@@ -439,7 +439,7 @@ saveRDS(      egypt_net, "./04_visualisation/03_networks/01_outputs/egypt_net.Rd
 saveRDS(    morocco_net, "./04_visualisation/03_networks/01_outputs/morocco_net.Rds")
 saveRDS(    algeria_net, "./04_visualisation/03_networks/01_outputs/algeria_net.Rds")
 saveRDS(west_east_central_net, "./04_visualisation/03_networks/01_outputs/west_east_central_net.Rds")
-saveRDS(sa_net, "./04_visualisation/03_networks/01_outputs/sa_net.Rds")
+saveRDS(sa_net, "./04_visualisation/03_networks/01_outputs/south_a_net.Rds")
 
 visExport(
   na_net,

@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "Yihui Xie"
+title: "LEAP-RE T5.3. | Scientometric Analysis of Renewable Energy Research in Africa"
+author: ""
 date: "`r Sys.Date()`"
 output:
   word_document: default

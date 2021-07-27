@@ -4,8 +4,9 @@ library(reticulate)
 library(tidyr)
 library(dplyr)   
 
-M_06 <- readRDS("./01_data/02_bibliometrix/0607_org_oty.Rds")
 
+#M_06 <- readRDS("./01_data/02_bibliometrix/0607_org_oty.Rds")
+M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0608_org_proper.pickle")
 
 
 # !!!! IT IS IMPORTANT TO EXPLODE THE DATAFRAME !!!!

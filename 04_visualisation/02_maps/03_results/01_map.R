@@ -13,7 +13,8 @@ library(leaflet.extras)
 
 require("reticulate")
 source_python("../bibliometry_module/88_supplementary_methods/R_pickle_reader.py")
-M_06 <- read_pickle_file("./01_data/02_bibliometrix/0603_GRID_au-off_names.pickle")
+## M_06 <- read_pickle_file("./01_data/02_bibliometrix/0603_GRID_au-off_names.pickle")
+M_06 <- read_pickle_file("./01_data/02_bibliometrix/0608_org_proper.pickle")
 
 # Country Table
 unsd_regions <- read.csv("./01_data/0201_tables/02_country_table.csv")
