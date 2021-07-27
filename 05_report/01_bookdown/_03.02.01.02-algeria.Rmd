@@ -1,0 +1,32 @@
+#### Algeria
+
+```{r algeriaorgtable,  fig.show="hold", out.width="0%"}
+algeria_org_table <- readRDS(file = "../../04_visualisation/04_tables/algeria_org_table.Rds")
+algeria_org_table
+```
+
+*Renewable Energy Development Center*, Algeria's dedicated institution for RE-related research is the most visible Organisation in the country with ~690 publications. However, number of RE-related publications of the institution is falling down after a spike in 2018 with 127 publications. Although the latency in the record entry process in WoS databases might be causing a proportion of the decline, number of publications in 2020 seems to be less than half of the number in 2018 (54 pub.).   
+
+*Houari Boumediene University of Sciences* is another Algerian institution that publishes RE-related papers consistently. A similar decline in the number of publications like in case of *Renewable Energy Development Center* can be observed after 2018 from 75 publications to 44 publications in 2020.  *École Nationale Polytechnique d'Oran University*, *Ferhat Abbas of Setif* and *University of Batna* are other organisations with similar numbers of RE-related publications (259, 241, 239 pub. respectively), each of those have increased their yearly RE-related publication output to ~30 yearly.
+
+```{r algerianet, echo=FALSE, out.width="100%", fig.cap="Co-publication network in RE-related publications in organisaitons from Algeria between 2011-2020"}
+algeria_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/algeria_net.Rds")
+algeria_net
+
+```
+```{r}
+# Links with less than 20 publications have been removed
+```
+
+Co-publication network of Algerian organisations mostly gathered around *Renewable Energy Development Center*, the institution often collaborates with other Algerian academic institutions. Most visible collaborations are with *Houari Boumediene University of Sciences* and *École Nationale Polytechnique d'Oran University*, both with an output over 60 co-publications.
+
+Most of the international collaborators with more than 25 co-publications with Algerian institutions are French, the collaboration between *University of Batna* and *University of Picardy Jules Verne* is the most visible one with 27 co-publications between 2011-2020. *University of Jijel* collaborates also often with Italian institutions like *University of Trieste* (23 co-pub.) and *International Centre for Theoretical Physics* (28 co-pub.).
+
+##### Renewable Energy Development Center 
+```{r redecbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+redec_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/redec_ra_barline.Rds")
+
+redec_barline
+```
+
+The most visible research area in the RE-related publications of *Renewable Energy Development Center* is *Energy & Fuels*, although related number of publications has fallen to 34 in 2020 from 86 in 2018. *Green & Sustaibable Science in Technology* is the second most visible area. Most of the visible areas in institutions RE-related publications show a decline in numbers after 2018.

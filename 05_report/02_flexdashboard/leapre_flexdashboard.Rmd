@@ -1,0 +1,32 @@
+---
+title: "LEAP-RE T5.3. | Scientometric Analysis of Renewable Energy Related Publications in African Countries"
+output:
+  flexdashboard::flex_dashboard:
+    theme: journal
+      ## version: 4
+      ## bootswatch: minty
+    orientation: columns
+    vertical_layout: fill
+  html_document:
+    df_print: paged
+# bibliography: PRO.bib
+---
+
+```{r setup, include=FALSE}
+library(sass)
+library(bslib)
+library(widgetframe)
+library(leaflet)
+library(leaflet.providers)
+library(htmlwidgets)
+library(htmltools)
+library(canvasXpress)
+library(leaflet)
+library(leaflet.providers)
+library(formattable)
+library(sparkline)
+library(formattable)
+library(tidyr)
+library(data.table)
+library(htmltools)
+```

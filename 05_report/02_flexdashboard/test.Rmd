@@ -1,0 +1,48 @@
+---
+title: "Flexdashboard theming demo"
+runtime: shiny
+output: 
+  flexdashboard::flex_dashboard:
+    theme: 
+      bg: "#101010"
+      fg: "#FDF7F7" 
+      primary: "#ED79F9"
+      base_font: !expr bslib::font_google("Prompt")
+      code_font: !expr bslib::font_google("JetBrains Mono")
+    orientation: rows
+    social: menu
+    source_code: embed
+    navbar:
+      - { title: "About", href: "https://google.com", align: right, icon: glyphicon-time}
+      - { title: "Home", href: "https://google.com", align: right, icon: fa-facebook}
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(bslib)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+

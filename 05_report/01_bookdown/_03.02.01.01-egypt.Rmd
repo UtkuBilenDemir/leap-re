@@ -1,0 +1,30 @@
+#### Egypt
+
+```{r test,  fig.show="hold", out.width="0%"}
+egypt_org_table <- readRDS(file = "../../04_visualisation/04_tables/egypt_org_table.Rds")
+egypt_org_table
+```
+
+The most visible Egyptian organisation in the RE-related publications is Cairo university with a total 779 publications between 2011-2020. All of the most visible 5 organisations show relatively linear growth in number of RE-related publications. However, Ain Shams University and Tanta University show a stagnation between 2019-2020 which might be caused by the delay of document entries into the Web of Science system as mentioned earlier. Furthermore, Tanta University, which had yearly fewer than 50 RE-related publications until 2016, published in 2019 and 2020 ~125 RE-related papers, this a growth rate of ~14 with respect to the 9 publications in 2011.
+
+```{r egyptnet, echo=FALSE, out.width="100%", fig.cap="Co-publication network in RE-related publications in organisaitons from Egypt between 2011-2020"}
+egypt_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/egypt_net.Rds")
+egypt_net
+
+```
+```{r}
+# Links with less than 20 publications have been removed
+```
+
+
+Co-publication network of Egyptian organisations display a relatively dense collaboration structure between *Cairo University*, *Ain Shams University* and *National Research Centre* of Egpyt with over 50 publications together. Individual collaborations of those organisations include collaborations with 7 other Egyptian academic organisations with over 20 RE-related co-publications. Another visible collaborations are between Minia and Aswan Universities with over 50 publications and between Tanta and Kafrelsheikh Universities with over 70 publications together.  In general collaborations with organisations from Saudi Arabia are highly visible in the network, other than Tanta University's collaborations with Chinese Institutions and Aswan University's with Japanese orgnisations also present links with more than 20 publications together. Visible organisations from EU-27 countries are Université Bourgogne Franche-Comté from France, Ruhr university Bochum from Germany, Budapest University of Technology and Economics from Hungary and University of Jaen from Spain.
+
+##### Cairo University
+
+```{r cairobarline, echo=FALSE, out.width="100%", fig.cap="Absolute and relative growth in RE-related publications from Cairo University between 2011-2020"}
+cairo_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/cairo_ra_barline.Rds")
+
+cairo_barline
+```
+
+Out of 779 publication of *Cairo University*, most visible research areas are aligning with the most visible research areas in RE-related publications from African countries in general. *Energy & Fuels* as well as *Electrical & Electronic Engineering* are the most visible research areas in Cairo university, hover the number of RE-related in those areas are not growing in the last years. After the spike in 2017 with ~50 publications, number of publications from *Energy & Fuels* has fallen to ~30 publications in the last 2019 and 2020. *Green & Sustainable Science & Technology* and *Environmental Sciences* on the other hand show a relatively steady growth in numbers. Considering there was only 1 from each area in 2011,  ~20 RE-related publications in 2020 makes those the fastest growing research areas in the RE-related publications from Cairo University.

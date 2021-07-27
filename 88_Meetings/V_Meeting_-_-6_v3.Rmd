@@ -1,0 +1,65 @@
+---
+title: "LEAP-RE T5.3. | Scientometric Analysis"
+subtitle: "Results"
+output:
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+library(widgetframe)
+library(leaflet)
+library(leaflet.providers)
+library(htmlwidgets)
+library(htmltools)
+library(canvasXpress)
+library(leaflet)
+library(leaflet.providers)
+library(formattable)
+library(sparkline)
+library(formattable)
+library(tidyr)
+library(data.table)
+library(htmltools)
+```
+
+## Overall Figures
+
+- Number of RE-related publications over the years
+- Most visible countries & organisations
+- Distribution of research areas & domains
+```{r resdomains, echo=FALSE, out.width="100%"}
+## res_domains_pie <- readRDS(file = "../../04_visualisation/05_treemaps/res_domains_pie.Rds")
+## res_domains_pie 
+gen_ra_sun <- readRDS("../04_visualisation/05_treemaps/gen_ra_sun.Rds")
+gen_ra_sun
+```
+
+
+## Regional Analysis
+
+- Individual analysis of AU regions (Northern, Western, Central, Eastern, Southern Africa)
+- Absolute and relative growth in RE-related publications of
+  - Most visible countries in each region
+  - Most visible organisations in selected countries
+- Co-publication networks of countries and organisations 
+
+
+```{r nanet, echo=FALSE, out.height="10%"}
+wa_net <- readRDS(file = "../04_visualisation/03_networks/01_outputs/wa_net.Rds")
+wa_net
+```
+
+## Further Focus & Output
+- Co-occurence network in individual research domains
+- Trending research areas in selected organisations between 2011-2020
+- Output formats: HTML-doc, PDF-doc and dashboard
+
+```{r redecbarline, echo=FALSE, out.width="60%", fig.cap="Renewable Energy Development Center | Most visible research areas in RE-related publications between 2011-2020"}
+redec_barline <- readRDS(file = "../04_visualisation/01_bar_graphs/02_regions/redec_ra_barline.Rds")
+
+redec_barline
+```
+
+
+
+
