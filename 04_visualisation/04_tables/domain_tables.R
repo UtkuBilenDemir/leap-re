@@ -6,11 +6,18 @@ library(tidyr)
 library(data.table)
 library(htmltools)
 library(reticulate)
+library(stringr)
+library(tidyr)
 
 pd <- import("pandas")
 M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0608_org_proper.pickle")
 M_06_ex <- readRDS("./01_data/02_bibliometrix/res_area_exp_069999_res_oty.Rds")
 wos_dict <- readRDS("./../bibliometry_module/00_data/research_areas/wos_dictionary.Rds")
+
+# Better formattable methods
+bg <- readRDS("../bibliometry_module/88_supplementary_methods/formattable_color_grader.Rds")
+color_bar2 <- readRDS("../bibliometry_module/88_supplementary_methods/formattable_better_color_bar.Rds")
+
 
 unique_domains <- unique(M_06_ex$res_domains)
 # domain dfs
@@ -97,7 +104,7 @@ partner_find <- function (df, ID_colname="ID", org_colname="org_prop") {
   df[ID_colname] <- as.vector(unlist(df[ID_colname]))
   org_pair <- vector()
   co_pub <-  vector()
-  ids <- list()
+  ids <- character()
   un_ids <- as.vector(unlist(unique(df[ID_colname])))
   for (i in seq_along(un_ids)) {
     print(paste0(i/length(un_ids), " is completed"))
@@ -114,21 +121,21 @@ partner_find <- function (df, ID_colname="ID", org_colname="org_prop") {
         if (pair %in% org_pair) {
           ind <- which(pair ==org_pair)
           co_pub[ind] <- co_pub[ind] + 1
-          ids[ind] <- paste0(as.character(ids[ind]), as.character(un_ids[i]), collapse = ",")
+          ids[ind] <- paste0(as.character(ids[ind]), ",", as.character(un_ids[i]))
           #ids[ind] <- c(ids[ind], un_ids[i])
         } else if (pair2 %in% org_pair) {
           ind <- which(pair2==org_pair)
           co_pub[ind] <- co_pub[ind] + 1
-          ids[ind] <- paste0(as.character(ids[ind]), as.character(un_ids[i]), collapse = ",")
-          ids[ind] <- c(ids[ind], un_ids[i])
+          ids[ind] <- paste0(as.character(ids[ind]), ",", as.character(un_ids[i]))
+          #ids[ind] <- c(ids[ind], un_ids[i])
         } else {
           org_pair <- c(org_pair, pair)
           co_pub <- c(co_pub, 1)
           ids <- c(ids, as.character(un_ids[i]))
         }
-      if (i %% 1000 == 0) {
-        print(ids)
-      }
+      #if (i %% 1000 == 0) {
+      #  print(ids)
+      #}
       }
     }
   }
@@ -171,17 +178,111 @@ gen_pair_table <- function(df,
                           id_colname="ids", 
                           org_colname="org_pair", 
                           country_colname="Country_names",
-                          main_org_colname="org_prop") {
+                          main_org_colname="org_prop",
+                          ra_colname="res_areas",
+                          copub_freq_colname="co_pub") {
+  country1_list <- vector()
+  country2_list <- vector()
+  pair1_list <- vector()
+  pair2_list <- vector()
+  copub_freq_list<- vector()
+  mv_ra_list <- vector()
+  df <- as.data.frame(df)
+  main_df <- as.data.frame(main_df)
+
   for (i in seq_len(nrow(df))) {
-    pair1 <- str_split(df[i, org_colname], ",")[1]
+    print(paste0(format(round(i/nrow(df), 2), nsmall = 2), "% is completed"))
+    pair1 <- unlist(str_split(df[i, org_colname], ","))[1]
     country1 <- main_df[main_df[main_org_colname] == pair1, country_colname][1]
-    pair2 <- str_split(df[i, org_colname], ",")[2]
+    pair2 <- unlist(str_split(df[i, org_colname], ","))[2]
     country2 <- main_df[main_df[main_org_colname] == pair2, country_colname][1]
-    research_areas <
-  }
+
+    ids <- as.vector(sapply(str_split(df[i, id_colname], ","), as.numeric))
+    temp_df <- as.data.frame(main_df[ids, ])
+    research_areas <- unlist(as.vector(unlist(unique(temp_df[, ra_colname]))))
+    re_freqs <- vector()
+    for (j in seq_along(research_areas)) {
+      re_freqs <- c(re_freqs, length(unique(temp_df[temp_df[ra_colname] == research_areas[j], "ID"])))
+    }
+    re_freqs <- as.vector(re_freqs)
+    re_freqs <-  sapply(re_freqs, as.numeric)
+    #print(re_freqs)
+    #mv_ra <- paste0(research_areas[order(re_freqs, decreasing = TRUE)[1]], " (", re_freqs[order(re_freqs[1], decreasing=TRUE)], ")")  
+    mv_ra <- paste0(research_areas[order(re_freqs, decreasing = TRUE)[1]])  
+
+    country1_list <- c(country1_list, country1)
+    country2_list <- c(country2_list, country2)
+    pair1_list <- c(pair1_list, pair1)
+    pair2_list <- c(pair2_list, pair2)
+    copub_freq_list <- c(copub_freq_list, as.vector(unlist(df[copub_freq_colname]))[i])
+    mv_ra_list <- c(mv_ra_list, mv_ra)
+    }
+    return (as.data.frame(cbind(country1_list, pair1_list, copub_freq_list, pair2_list, country2_list, mv_ra_list)))
 }
 
-colnames(M_06_ex)
-as.data.frame(table(M_06_ex["Country_names"]))
+ps_table <- gen_pair_table(head(ps_part_df, 500), ps_df)
+te_table <- gen_pair_table(head(te_part_df, 500), te_df)
+ls_table <- gen_pair_table(head(ls_part_df, 500), ls_df)
+ss_table <- gen_pair_table(head(ss_part_df, 500), ss_df)
 
-as.character(M_06_ex$ID[1000])
+
+# What we want is actually an interregional table, there is too many pairings from same country/region
+
+
+eleminate_reg_pairings <- function(table_df, 
+                                  main_df, 
+                                  region_colname="eu_au_region", 
+                                  country_colname="Country_names",
+                                  country1_colname="country1_list",
+                                  country2_colname="country2_list"
+                                  ) {
+  #main_df[region_colname] <- unlist(main_df[region_colname])
+  main_df[is.na(main_df[region_colname]), region_colname] <- " "
+  print(unique(main_df[region_colname]))
+  rows_to_rm <- vector()
+  for (i in seq_len(nrow(table_df))) {
+    print(paste0(format(round(i/nrow(table_df), 2), nsmall = 2), "% is completed"))
+    print(paste0(table_df[i, country1_colname], " --- ", table_df[i, country2_colname]))
+    reg1 <- main_df[which(main_df[country_colname] == table_df[i, country1_colname])[1], region_colname]
+    reg2 <- main_df[which(main_df[country_colname] == table_df[i, country2_colname])[1], region_colname]
+    if (is.na(reg1) | is.na(reg2) ){
+      next()
+    } else if (reg1 == reg2) {
+      print(paste0(reg1, " ::: ", reg2))
+      rows_to_rm <- c(rows_to_rm, i)
+    }
+  }
+  colnames(table_df) <- c("Country 1", "Partner 1", "Num. of co-pub.", "Partner 2", "Country 2", "Most Visible Res. Area")
+  return (table_df[-c(rows_to_rm), ])
+}
+
+
+ps_table_interreg <- eleminate_reg_pairings(ps_table, ps_df)
+te_table_interreg <- eleminate_reg_pairings(te_table, te_df)
+ls_table_interreg <- eleminate_reg_pairings(ls_table, ls_df)
+ss_table_interreg <- eleminate_reg_pairings(ss_table, ss_df)
+
+head(ps_table_interreg, 10)
+head(te_table_interreg, 10)
+head(ls_table_interreg, 10)
+head(ss_table_interreg, 10)
+
+
+# Prepare formattable tables
+gen_pair_table <- function(table_df) {
+  out_table <- as.htmlwidget(formattable(table_df,
+    align = c("l","l", "c", "l", "l", "r"),
+    list(
+    `Country 1` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
+    `Country 2` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
+    `Partner 1` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
+    `Partner 2` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
+    `Most Visible Res. Area` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
+    `Num. of co-pub.` = color_bar2("lightblue")
+  )))
+  return(out_table)
+}
+
+gen_pair_table(ps_table_interreg[1:10,])
+
+saveRDS(M_06_ex, "./01_data/02_bibliometrix/res_area_exp_069999_res_oty.Rds")

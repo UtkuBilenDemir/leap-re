@@ -271,7 +271,7 @@ gen_org_ftable <- function(df) {
    return(out_table)
  }
 
-bg = function(start, end, color, ...) {
+bg <- function(start, end, color, ...) {
   paste("linear-gradient(90deg,transparent ",percent(start),",",
         color, percent(start), ",", color, percent(end),
         ", transparent", percent(end),")")
@@ -282,6 +282,11 @@ color_bar2 <-  function (color = "lightgray", fun = "proportion", ...) {
                 `unicode-bidi` = "plaintext", 
                 "background" = bg(1-fun(as.numeric(x), ...), 1, color), "width"="100%" ))
 }
+
+saveRDS(bg, "../bibliometry_module/88_supplementary_methods/formattable_color_grader.Rds")
+saveRDS(color_bar2, "../bibliometry_module/88_supplementary_methods/formattable_better_color_bar.Rds")
+
+
       egypt_out <- gen_org_ftable(      egypt_org_df)
     morocco_out <- gen_org_ftable(    morocco_org_df)
     algeria_out <- gen_org_ftable(    algeria_org_df)

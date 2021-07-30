@@ -1,8 +1,10 @@
 library(reticulate)
 library(kableExtra)
 library(formattable)
+library(magrittr)
+pd <- import("pandas")
 
-M_06 <- read_pickle_file("./01_data/02_bibliometrix/0608_org_proper.pickle")
+M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0608_org_proper.pickle")
 
 # Create org df
 cairo_df <- M_06[M_06$org_prop == "Cairo University", ]
