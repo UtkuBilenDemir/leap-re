@@ -9,9 +9,10 @@ library(widyr)
 library(visNetwork)
 
 pd <- import("pandas")
-# Let's assume we are analysing ngrams for Cairo Univ.
 M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0608_org_proper.pickle")
-abs_df <- read.csv("./01_data/02_bibliometrix/abs_df.csv")
+M_06_ex <- readRDS("./01_data/02_bibliometrix/res_area_exp_069999_res_oty.Rds")
+wos_dict <- readRDS("./../bibliometry_module/00_data/research_areas/wos_dictionary.Rds")
+
 
 M_06 <- M_06 %>% 
         apply(2, as.character) %>%
@@ -42,3 +43,5 @@ M_06_united <- M_06_separated %>%
   unite(bigram, c(word1, word2), sep = " ")
 
 M_06_united %>% count(bigram, sort = TRUE)
+
+2+2

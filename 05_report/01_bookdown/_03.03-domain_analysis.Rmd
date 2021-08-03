@@ -1,0 +1,40 @@
+## Research Domain Analysis
+
+```{r}
+# TODO: Include an introduction
+```
+
+### Physical Sciences
+```{r pstable, echo=FALSE, out.width="50%", fig.cap="Most Visible pairings in Physical Sciences"}
+ps_table <- readRDS(file = "../../04_visualisation/04_tables/ps_pair_table.Rds")
+ps_table
+```
+
+
+```{r psbarplot, echo=FALSE, out.width="100%", out.height="1000px", fig.cap="Most visiblble keywords/keyword pairs"}
+ps_barplot <- readRDS(file = "../../04_visualisation/06_ngrams/ps_domain_barplot.Rds")
+ps_barplot
+```
+
+```{r pslineplot, echo=FALSE, out.width="100%", out.height="1000px", fig.cap="Most visible keywords/keyword pairs over the years"}
+ps_lineplot <- readRDS(file = "../../04_visualisation/06_ngrams/ps_domain_lineplot.Rds")
+ps_lineplot
+```
+
+### Technology
+```{r tetable, echo=FALSE, out.width="50%", fig.cap="Most Visible pairings in Technology"}
+te_table <- readRDS(file = "../../04_visualisation/04_tables/te_pair_table.Rds")
+te_table
+```
+
+### Life Sciences
+```{r lstable, echo=FALSE, out.width="50%", fig.cap="Most Visible pairings in Life Sciences"}
+te_table <- readRDS(file = "../../04_visualisation/04_tables/ls_pair_table.Rds")
+te_table
+```
+
+### Social Sciences and Arts & Humanities
+```{r sstable, echo=FALSE, out.width="50%", fig.cap="Most Visible pairings in Social Sciences and Arts & Humanities"}
+ss_table <- readRDS(file = "../../04_visualisation/04_tables/ss_pair_table.Rds")
+ss_table
+```

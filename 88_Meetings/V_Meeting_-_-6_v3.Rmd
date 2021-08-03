@@ -1,6 +1,6 @@
 ---
 title: "LEAP-RE T5.3. | Scientometric Analysis"
-subtitle: "Results"
+subtitle: "Report Outline"
 output:
   slidy_presentation: default
 ---
@@ -22,6 +22,18 @@ library(data.table)
 library(htmltools)
 ```
 
+## Main focus points
+
+* Overall Figures
+* Regional Analysis
+* Research Domain Analysis
+
+```{r mvorg, echo=FALSE, out.width="100%"}
+## res_domains_pie <- readRDS(file = "../../04_visualisation/05_treemaps/res_domains_pie.Rds")
+## res_domains_pie 
+org_mv <- readRDS("../04_visualisation/01_bar_graphs/01_overall_figures/org_mv_barplot.Rds")
+org_mv
+```
 ## Overall Figures
 
 - Number of RE-related publications over the years
@@ -42,22 +54,34 @@ gen_ra_sun
   - Most visible countries in each region
   - Most visible organisations in selected countries
 - Co-publication networks of countries and organisations 
-
+- Distribution of research areas and
+- co-occurrence network of keywords/ keyword pairs in the pub. of selected countries
 
 ```{r nanet, echo=FALSE, out.height="10%"}
 wa_net <- readRDS(file = "../04_visualisation/03_networks/01_outputs/wa_net.Rds")
 wa_net
 ```
 
-## Further Focus & Output
-- Co-occurence network in individual research domains
-- Trending research areas in selected organisations between 2011-2020
-- Output formats: HTML-doc, PDF-doc and dashboard
+## Domain Analysis
+- Most visible international/ inter-regional collaborations in each research domain
+- Most visible keywords/ keyword pairs
+- Analysis of the most visible keyword and keyword pairs over the years
 
-```{r redecbarline, echo=FALSE, out.width="60%", fig.cap="Renewable Energy Development Center | Most visible research areas in RE-related publications between 2011-2020"}
-redec_barline <- readRDS(file = "../04_visualisation/01_bar_graphs/02_regions/redec_ra_barline.Rds")
 
-redec_barline
+```{r pstable, echo=FALSE, warning=FALSE, out.width="100%"}
+ps_oty <- readRDS(file = "../04_visualisation/06_ngrams/ps_domain_lineplot.Rds")
+ps_oty
+```
+
+## Output
+- Output formats: HTML-doc, PDF-doc and a dashboard
+- Dataset and the code are available
+
+
+```{r redecbarline, echo=FALSE, out.width="60%", fig.cap="Cairo University | Most visible research areas in RE-related publications between 2011-2020"}
+cairo_barline <- readRDS(file = "../04_visualisation/01_bar_graphs/02_regions/cairo_ra_barline.Rds")
+
+cairo_barline
 ```
 
 

@@ -19,8 +19,8 @@ Although the most common definition of African geographical regions is the categ
 # TODO: Cite the region sources?
 ```
 
-```{r afrcouplt, echo=FALSE, out.width="100%"}
-afr_cou_plt <- readRDS(file = "../../01_data/03_visualisations/afr_cou_plt.Rds")
+```{r afrcouplt, echo=FALSE, out.width="100%", fig.cap="Most visible 15 African countries in  RE-related publications between 2011-2020"}
+afr_cou_plt <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/afr_cou_plot.Rds")
 afr_cou_plt
 ```
 

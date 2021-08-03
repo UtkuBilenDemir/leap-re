@@ -27,3 +27,6 @@ contains at least two affiliations.
 
 ```{r child="_03.02-regional_analysis.Rmd", echo=FALSE}
 ```
+
+```{r child="_03.03-domain_analysis.Rmd", echo=FALSE}
+```

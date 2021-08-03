@@ -125,6 +125,16 @@ write.csv(         sa_df, "./01_data/0203_country_dfs/sa_df.csv")
 write.csv(   zimbabwe_df, "./01_data/0203_country_dfs/zimbabwe_df.csv")
 
 #################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
+#################### GO to network_method.py
 
 # Load and vis
       egypt.nodes <- read.csv("./04_visualisation/03_networks/egypt_nodes.csv")
@@ -167,6 +177,9 @@ demrepcongo.edges <- read.csv("./04_visualisation/03_networks/demrepcongo_edges.
          sa.edges <- read.csv("./04_visualisation/03_networks/south_a_edges.csv")
    zimbabwe.edges <- read.csv("./04_visualisation/03_networks/zimbabwe_edges.csv")
 
+head(west_east_central.nodes)
+
+
       egypt.edges.rm <-       egypt.edges$value < 20
     morocco.edges.rm <-     morocco.edges$value < 15 
     algeria.edges.rm <-     algeria.edges$value < 15 
@@ -174,8 +187,8 @@ demrepcongo.edges <- read.csv("./04_visualisation/03_networks/demrepcongo_edges.
  sen_gha_ni.edges.rm <-     sen_gha_ni.edges$value < 20 
 eth_ken_tan.edges.rm <-     eth_ken_tan.edges$value < 20 
 con_cam_gab.edges.rm <-     con_cam_gab.edges$value < 20 
-west_east_central.edges$value <- west_east_central.edges$value + 3
-west_east_central.edges.rm <-     west_east_central.edges$value < 20
+#west_east_central.edges$value <- west_east_central.edges$value + 3
+west_east_central.edges.rm <-     west_east_central.edges$value < 15
    cameroon.edges.rm <-    cameroon.edges$value < 5
 demrepcongo.edges.rm <- demrepcongo.edges$value < 5
    ethiopia.edges.rm <-    ethiopia.edges$value < 5
@@ -205,22 +218,22 @@ ethiopia.edges <-    ethiopia.edges[!ethiopia.edges.rm, ]
 
 
 
-      egypt.edges.nodes <-       egypt.edges.nodes[      egypt.edges.nodes$id %in% unique(c(      egypt.edges.edges$from,       egypt.edges$to)), ]
-    morocco.edges.nodes <-     morocco.edges.nodes[    morocco.edges.nodes$id %in% unique(c(    morocco.edges.edges$from,     morocco.edges$to)), ]
-    algeria.edges.nodes <-     algeria.edges.nodes[    algeria.edges.nodes$id %in% unique(c(    algeria.edges.edges$from,     algeria.edges$to)), ]
-    eg_mor_alg.edges.nodes <-     eg_mor_alg.edges.nodes[    eg_mor_alg.edges.nodes$id %in% unique(c(    eg_mor_alg.edges.edges$from,     eg_mor_alg.edges$to)), ]
-
- sen_gha_ni.edges.nodes <-  sen_gha_ni.edges.nodes[ sen_gha_ni.edges.nodes$id %in% unique(c( sen_gha_ni.edges.edges$from,  sen_gha_ni.edges$to)), ]
-eth_ken_tan.edges.nodes <- eth_ken_tan.edges.nodes[eth_ken_tan.edges.nodes$id %in% unique(c(eth_ken_tan.edges.edges$from, eth_ken_tan.edges$to)), ]
-con_cam_gab.edges.nodes <- con_cam_gab.edges.nodes[con_cam_gab.edges.nodes$id %in% unique(c(con_cam_gab.edges.edges$from, con_cam_gab.edges$to)), ]
-west_east_central.nodes <- west_east_central.nodes[west_east_central.nodes$id %in% unique(c(west_east_central.edges$from, west_east_central$to)), ]
-   cameroon.edges.nodes <-    cameroon.edges.nodes[   cameroon.edges.nodes$id %in% unique(c(   cameroon.edges.edges$from,    cameroon.edges$to)), ]
-demrepcongo.edges.nodes <- demrepcongo.edges.nodes[demrepcongo.edges.nodes$id %in% unique(c(demrepcongo.edges.edges$from, demrepcongo.edges$to)), ]
-   ethiopia.edges.nodes <-    ethiopia.edges.nodes[   ethiopia.edges.nodes$id %in% unique(c(   ethiopia.edges.edges$from,    ethiopia.edges$to)), ]
-      kenya.edges.nodes <-       kenya.edges.nodes[      kenya.edges.nodes$id %in% unique(c(      kenya.edges.edges$from,       kenya.edges$to)), ]
-   tanzania.edges.nodes <-    tanzania.edges.nodes[   tanzania.edges.nodes$id %in% unique(c(   tanzania.edges.edges$from,    tanzania.edges$to)), ]
-         sa.edges.nodes <-          sa.edges.nodes[         sa.edges.nodes$id %in% unique(c(         sa.edges.edges$from,          sa.edges$to)), ]
-   zimbabwe.edges.nodes <-    zimbabwe.edges.nodes[   zimbabwe.edges.nodes$id %in% unique(c(   zimbabwe.edges.edges$from,    zimbabwe.edges$to)), ]
+##      egypt.edges.nodes <-       egypt.edges.nodes[      egypt.edges.nodes$id %in% unique(c(      egypt.edges.edges$from,       egypt.edges$to)), ]
+##    morocco.edges.nodes <-     morocco.edges.nodes[    morocco.edges.nodes$id %in% unique(c(    morocco.edges.edges$from,     morocco.edges$to)), ]
+##    algeria.edges.nodes <-     algeria.edges.nodes[    algeria.edges.nodes$id %in% unique(c(    algeria.edges.edges$from,     algeria.edges$to)), ]
+##    eg_mor_alg.edges.nodes <-     eg_mor_alg.edges.nodes[    eg_mor_alg.edges.nodes$id %in% unique(c(    eg_mor_alg.edges.edges$from,     eg_mor_alg.edges$to)), ]
+##
+## sen_gha_ni.edges.nodes <-  sen_gha_ni.edges.nodes[ sen_gha_ni.edges.nodes$id %in% unique(c( sen_gha_ni.edges.edges$from,  sen_gha_ni.edges$to)), ]
+##eth_ken_tan.edges.nodes <- eth_ken_tan.edges.nodes[eth_ken_tan.edges.nodes$id %in% unique(c(eth_ken_tan.edges.edges$from, eth_ken_tan.edges$to)), ]
+##con_cam_gab.edges.nodes <- con_cam_gab.edges.nodes[con_cam_gab.edges.nodes$id %in% unique(c(con_cam_gab.edges.edges$from, con_cam_gab.edges$to)), ]
+##west_east_central.nodes <- west_east_central.nodes[west_east_central.nodes$id %in% unique(c(west_east_central.edges$from, west_east_central$to)), ]
+##   cameroon.edges.nodes <-    cameroon.edges.nodes[   cameroon.edges.nodes$id %in% unique(c(   cameroon.edges.edges$from,    cameroon.edges$to)), ]
+##demrepcongo.edges.nodes <- demrepcongo.edges.nodes[demrepcongo.edges.nodes$id %in% unique(c(demrepcongo.edges.edges$from, demrepcongo.edges$to)), ]
+##   ethiopia.edges.nodes <-    ethiopia.edges.nodes[   ethiopia.edges.nodes$id %in% unique(c(   ethiopia.edges.edges$from,    ethiopia.edges$to)), ]
+##      kenya.edges.nodes <-       kenya.edges.nodes[      kenya.edges.nodes$id %in% unique(c(      kenya.edges.edges$from,       kenya.edges$to)), ]
+##   tanzania.edges.nodes <-    tanzania.edges.nodes[   tanzania.edges.nodes$id %in% unique(c(   tanzania.edges.edges$from,    tanzania.edges$to)), ]
+##         sa.edges.nodes <-          sa.edges.nodes[         sa.edges.nodes$id %in% unique(c(         sa.edges.edges$from,          sa.edges$to)), ]
+##   zimbabwe.edges.nodes <-    zimbabwe.edges.nodes[   zimbabwe.edges.nodes$id %in% unique(c(   zimbabwe.edges.edges$from,    zimbabwe.edges$to)), ]
 
       egypt_pres_nodes <- c(      egypt.edges$to,       egypt.edges$from)
     morocco_pres_nodes <- c(    morocco.edges$to,     morocco.edges$from)
@@ -242,6 +255,7 @@ demrepcongo_pres_nodes <- c(demrepcongo.edges$to, demrepcongo.edges$from)
          sa_pres_nodes <- c(         sa.edges$to,          sa.edges$from)
    zimbabwe_pres_nodes <- c(   zimbabwe.edges$to,    zimbabwe.edges$from)
 
+
       egypt.nodes <-       egypt.nodes[which(      egypt.nodes$id %in%      egypt_pres_nodes),]
     morocco.nodes <-     morocco.nodes[which(    morocco.nodes$id %in%    morocco_pres_nodes),]
     algeria.nodes <-     algeria.nodes[which(    algeria.nodes$id %in%    algeria_pres_nodes),]
@@ -252,18 +266,18 @@ demrepcongo_pres_nodes <- c(demrepcongo.edges$to, demrepcongo.edges$from)
     sen_gha_ni.nodes <-     sen_gha_ni.nodes[which(    sen_gha_ni.nodes$id %in%    sen_gha_ni_pres_nodes),]
     eth_ken_tan.nodes <-     eth_ken_tan.nodes[which(    eth_ken_tan.nodes$id %in%    eth_ken_tan_pres_nodes),]
     con_cam_gab.nodes <-     con_cam_gab.nodes[which(    con_cam_gab.nodes$id %in%    con_cam_gab_pres_nodes),]
-    west_east_central.nodes <-     west_east_central.nodes[which(    west_east_central.nodes$id %in%    west_east_central_nodes),]
+    west_east_central.nodes <-     west_east_central.nodes[which(    west_east_central.nodes$id %in%    west_east_central_pres_nodes),]
     
    cameroon.nodes <-    cameroon.nodes[which(   cameroon.nodes$id %in%   cameroon_pres_nodes),]
-demrepcongo.nodes <- demrepcongo.nodes[which(demrepcongo.nodes$id %in% demrepcong_opres_nodes),]
+demrepcongo.nodes <- demrepcongo.nodes[which(demrepcongo.nodes$id %in% demrepcongo_pres_nodes),]
    ethiopia.nodes <-    ethiopia.nodes[which(   ethiopia.nodes$id %in%   ethiopia_pres_nodes),]
       kenya.nodes <-       kenya.nodes[which(      kenya.nodes$id %in%      kenya_pres_nodes),]
    tanzania.nodes <-    tanzania.nodes[which(   tanzania.nodes$id %in%   tanzania_pres_nodes),]
          sa.nodes <-          sa.nodes[which(         sa.nodes$id %in%         sa_pres_nodes),]
    zimbabwe.nodes <-    zimbabwe.nodes[which(   zimbabwe.nodes$id %in%   zimbabwe_pres_nodes),]
 
-vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%"){
-  vis <- visNetwork(nodes, edges, height = height, width = width) %>%
+vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%", nn=20){
+  vis <- visNetwork(nodes, edges, height = height, width = width, footer=list(text = paste0("*Collaborations with fewer than ", nn, " co-publications have been removed"))) %>%
   visOptions(highlightNearest = TRUE) %>%
   visLayout(randomSeed = 123, improvedLayout = TRUE) %>%  
   visGroups(groupname = "Northern Africa", color = "#a6761d") %>%
@@ -277,6 +291,33 @@ vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%"){
   visGroups(groupname = "Southern Africa", color = "#e6ab02") %>%
   ##visGroups(groupname = "Southern Africa", color = "#E2BA56") %>%
   visGroups(groupname = "EU-27", color = "lightblue") %>%
+  visGroups(groupname = "Saudi Arabia", shape = "icon", icon = list(opacity=0.3, color="#0F8554", code = "f111", size = 75)) 
+  #visGroups(groupname = "United Arab Emirates", shape = "icon", icon = list(code = "f111", size = 75)) %>%
+  #visGroups(groupname = "United States", shape = "icon", icon = list(code = "f111", size = 75)) %>%
+  #visGroups(groupname = "Spain", shape = "icon", icon = list(code = "f111", size = 75)) %>%
+  #visGroups(groupname = "Japan", shape = "icon", icon = list(code = "f111", size = 75)) %>%
+  #visGroups(groupname = "China", shape = "icon", icon = list(code = "f111", size = 75)) %>%
+  #visGroups(groupname = "India", shape = "icon", icon = list(code = "f111", size = 75)) %>%
+  col_col <- c("#E58606","#5D69B1","#52BCA3","#99C945","#CC61B0","#24796C","#DAA51B","#2F8AC4","#764E9F","#ED645A","#CC3A8E","#A5AA99")
+  for (i in seq_along(unique(nodes$group))) {
+    print(unique(nodes$group)[i])
+    vis <- vis %>% 
+    visGroups(groupname = unique(nodes$group)[i], shape = "icon", icon = list(color=col_col[i],code = "f111")) 
+  }
+
+  vis <- vis %>%
+  visGroups(groupname = "Egypt", shape = "icon", icon = list(color="#9e6788", code = "f111")) %>%
+  visGroups(groupname = "Algeria", shape = "icon", icon = list(color="#2F8AC4", code = "f111")) %>%
+  visGroups(groupname = "Morocco", shape = "icon", icon = list(color="#6c9685", code = "f111")) %>%
+  visGroups(groupname = "United Kingdom", shape = "icon", icon = list(color="#A06177", code = "f111")) %>%
+  visGroups(groupname = "South Africa", shape = "icon", icon = list(color="#EDAD08", code = "f111")) %>%
+  visGroups(groupname = "Cameroon", shape = "icon", icon = list(color="#9e6788", code = "f111")) %>%
+  visGroups(groupname = "Ethiopia", shape = "icon", icon = list(color="#2F8AC4", code = "f111")) %>%
+  visGroups(groupname = "Gabon", shape = "icon", icon = list(color="#6c9685", code = "f111")) %>%
+  visGroups(groupname = "Nigeria", shape = "icon", icon = list(color="#764E9F", code = "f111")) %>%
+
+  visEdges(color=list(opacity=0.5)) %>%
+  visNodes(color=list(opacity=0.5)) %>%
   visNodes(
       shape = "dot",
       color = list(
@@ -285,32 +326,32 @@ vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%"){
         highlight = "#FF8000"
       ),
       shadow = list(enabled = TRUE, size = 10)
-  ) %>%  visPhysics(solver = "forceAtlas2Based", forceAtlas2Based = list(gravitationalConstant = -30))
- 
+  ) %>%  visPhysics(solver = "forceAtlas2Based", forceAtlas2Based = list(gravitationalConstant = -30)) %>%
+ visLegend(useGroups = TRUE, ncol=1)
   return(vis)
 }
 
 
 
-egypt_net <- visNetwork(egypt.nodes, egypt.edges, height = "500px", width = "100%") %>% 
-  visOptions(highlightNearest = TRUE) %>%
-  visOptions(selectedBy = "group") %>%
-  visLayout(randomSeed = 123) %>%  
-  visGroups(groupname = "Northern Africa", color ="#BF9983") %>%
-  visGroups(groupname = "EU-27", color = "lightblue") %>%
-   visNodes(
-    shape = "dot",
-    color = list(
-      background = "#0085AF",
-      border = "#013848",
-      highlight = "#FF8000"
-    ),
-    shadow = list(enabled = TRUE, size = 10)
-  )
+#egypt_net <- visNetwork(egypt.nodes, egypt.edges, height = "500px", width = "100%") %>% 
+#  visOptions(highlightNearest = TRUE) %>%
+#  visOptions(selectedBy = "group") %>%
+#  visLayout(randomSeed = 123) %>%  
+#  visGroups(groupname = "Northern Africa", color ="#BF9983") %>%
+#  visGroups(groupname = "EU-27", color = "lightblue") %>%
+#   visNodes(
+#    shape = "dot",
+#    color = list(
+#      background = "#0085AF",
+#      border = "#013848",
+#      highlight = "#FF8000"
+#    ),
+#    shadow = list(enabled = TRUE, size = 10)
+#  )
 
-      egypt.nodes$font.size <- log(      egypt.nodes$value) * 3
-    morocco.nodes$font.size <- log(    morocco.nodes$value) * 3
-    algeria.nodes$font.size <- log(    algeria.nodes$value) * 3
+      egypt.nodes$font.size <- log(      egypt.nodes$value) * 4.2 
+    morocco.nodes$font.size <- log(    morocco.nodes$value) * 3.5 
+    algeria.nodes$font.size <- log(    algeria.nodes$value) * 3.5
     eg_mor_alg.nodes$font.size <- log(    eg_mor_alg.nodes$value) * 5 
     nigeria.nodes$font.size <- log(    nigeria.nodes$value) * 5
       ghana.nodes$font.size <- log(      ghana.nodes$value) * 5
@@ -390,10 +431,10 @@ sa.nodes[2, "id" ]
 ## west_east_central.nodes[west_east_central.nodes$label == sa.nodes[2, "label" ],]
 
 
-west_east_central.nodes[24,]
-west_east_central.nodes <- west_east_central.nodes[-c(24),]
-west_east_central.nodes <- west_east_central.nodes[west_east_central.nodes$id %in% unique(c(west_east_central.edges$from, west_east_central.edges$to)), ]
-west_east_central.nodes[west_east_central.nodes$label == "UKOLN", "label"] = "UCL"
+##west_east_central.nodes[24,]
+##west_east_central.nodes <- west_east_central.nodes[-c(24),]
+##west_east_central.nodes <- west_east_central.nodes[west_east_central.nodes$id %in% unique(c(west_east_central.edges$from, west_east_central.edges$to)), ]
+##west_east_central.nodes[west_east_central.nodes$label == "UKOLN", "label"] = "UCL"
 
 west_east_central.nodes <- west_east_central.nodes[!(west_east_central.nodes$label %in% c("Smithsonian Tropical Research Institute", "Smithsonian Tropical Research Institute", "University of Florida")), ]  
 sa.nodes <- sa.nodes[!(sa.nodes$label == "De Beers (South Africa)"), ]  
@@ -402,30 +443,48 @@ morocco.nodes <- morocco.nodes[!(morocco.nodes$label == "Maroc Numeric Cluster")
 
 sa.nodes[west_east_central.nodes$label == "CSIR", "label"] = "UCL"
 
-      egypt_net <- vis_reg_net(      egypt.nodes,       egypt.edges)
-    morocco_net <- vis_reg_net(    morocco.nodes,     morocco.edges)
-    algeria_net <- vis_reg_net(    algeria.nodes,     algeria.edges)
-    eg_mor_alg_net <- vis_reg_net(    eg_mor_alg.nodes,     eg_mor_alg.edges)
+# Eliminate anomalies 
+rownames(west_east_central.nodes) <- NULL
+west_east_central.nodes <- west_east_central.nodes[-c(2), ]
+
+rownames(west_east_central.nodes) <- NULL
+west_east_central.nodes <- west_east_central.nodes[-c(19, 35, 28,37, 16, 17), ]
+rownames(west_east_central.nodes) <- NULL
+
+rownames(egypt.nodes) <- NULL
+egypt.nodes <- egypt.nodes[-c(21),]
+#west_east_central.nodes <- west_east_central.nodes[-c(5, 26, 18), ]
+   unique(egypt.nodes$group)
+   egypt.nodes$shape <- "dot"
+   egypt.nodes$color.opacity<-0.3
+      egypt_net <- vis_reg_net(      egypt.nodes,       egypt.edges, nn=20) 
+    morocco_net <- vis_reg_net(    morocco.nodes,     morocco.edges, nn=15)
+    algeria_net <- vis_reg_net(    algeria.nodes,     algeria.edges, nn=15)
+    eg_mor_alg_net <- vis_reg_net(    eg_mor_alg.nodes,     eg_mor_alg.edges, nn=20)
     nigeria_net <- vis_reg_net(    nigeria.nodes,     nigeria.edges)
       ghana_net <- vis_reg_net(      ghana.nodes,       ghana.edges)
     senegal_net <- vis_reg_net(    senegal.nodes,     senegal.edges)
-    sen_gha_ni_net <- vis_reg_net(    sen_gha_ni.nodes,     sen_gha_ni.edges)
-    eth_ken_tan_net <- vis_reg_net(    eth_ken_tan.nodes,     eth_ken_tan.edges)
-    con_cam_gab_net <- vis_reg_net(    con_cam_gab.nodes,     con_cam_gab.edges)
-    west_east_central_net <- vis_reg_net(    west_east_central.nodes,     west_east_central.edges)
-   cameroon_net <- vis_reg_net(   cameroon.nodes,    cameroon.edges)
-demrepcongo_net <- vis_reg_net(demrepcongo.nodes, demrepcongo.edges)
-   ethiopia_net <- vis_reg_net(   ethiopia.nodes,    ethiopia.edges)
-      kenya_net <- vis_reg_net(      kenya.nodes,       kenya.edges)
-   tanzania_net <- vis_reg_net(   tanzania.nodes,    tanzania.edges)
-         sa_net <- vis_reg_net(         sa.nodes,          sa.edges)
-   zimbabwe_net <- vis_reg_net(   zimbabwe.nodes,    zimbabwe.edges)
+    sen_gha_ni_net <- vis_reg_net(    sen_gha_ni.nodes,     sen_gha_ni.edges, nn=20)
+    eth_ken_tan_net <- vis_reg_net(    eth_ken_tan.nodes,     eth_ken_tan.edges, nn=20)
+    con_cam_gab_net <- vis_reg_net(    con_cam_gab.nodes,     con_cam_gab.edges, nn=20)
+    west_east_central_net <- vis_reg_net(    west_east_central.nodes,     west_east_central.edges, nn=20)
+   cameroon_net <- vis_reg_net(   cameroon.nodes,    cameroon.edges, nn=5)
+demrepcongo_net <- vis_reg_net(demrepcongo.nodes, demrepcongo.edges, nn=5)
+   ethiopia_net <- vis_reg_net(   ethiopia.nodes,    ethiopia.edges, nn=5)
+      kenya_net <- vis_reg_net(      kenya.nodes,       kenya.edges, nn=5)
+   tanzania_net <- vis_reg_net(   tanzania.nodes,    tanzania.edges, nn=5)
+         sa_net <- vis_reg_net(         sa.nodes,          sa.edges, nn=20)
+   zimbabwe_net <- vis_reg_net(   zimbabwe.nodes,    zimbabwe.edges, nn=20)
 
-summary(ethiopia.edges)
-summary(sen_gha_ni.edges)
-egypt_net <- 
-  
-  
+
+
+
+unique(egypt.nodes$group)
+
+
+
+
+
   ## %>%
   ## visLegend(width = 0.1, position = "right", main = "Group")
  ## visLegend(addNodes = list(

@@ -1,6 +1,6 @@
 #### Egypt
 
-```{r test,  fig.show="hold", out.width="0%"}
+```{r test,  fig.show="hold", out.width="0%", fig.cap="Re-related publication output of most visible Egyptian organisations"}
 egypt_org_table <- readRDS(file = "../../04_visualisation/04_tables/egypt_org_table.Rds")
 egypt_org_table
 ```
@@ -28,3 +28,10 @@ cairo_barline
 ```
 
 Out of 779 publication of *Cairo University*, most visible research areas are aligning with the most visible research areas in RE-related publications from African countries in general. *Energy & Fuels* as well as *Electrical & Electronic Engineering* are the most visible research areas in Cairo university, hover the number of RE-related in those areas are not growing in the last years. After the spike in 2017 with ~50 publications, number of publications from *Energy & Fuels* has fallen to ~30 publications in the last 2019 and 2020. *Green & Sustainable Science & Technology* and *Environmental Sciences* on the other hand show a relatively steady growth in numbers. Considering there was only 1 from each area in 2011,  ~20 RE-related publications in 2020 makes those the fastest growing research areas in the RE-related publications from Cairo University.
+
+
+```{r cairongramnetwork, echo=FALSE, out.width="100%", fig.cap="Keyword/keyword pair correlation network in RE-related publications of Cairo University"}
+cairo_ngram_network_plot <- readRDS(file = "../../04_visualisation/06_ngrams/cairo_ngram_network_plot.Rds")
+
+cairo_ngram_network_plot
+```

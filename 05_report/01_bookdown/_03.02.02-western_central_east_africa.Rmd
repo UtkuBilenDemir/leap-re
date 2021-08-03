@@ -114,7 +114,11 @@ wce_net
 # links with fewer than 25 publications have been removed
 ```
 
+Collective organisation network of Western, Central and Eastern African regions shows a couple of interconnected co-publication clusters. Organisations from Cameroon are one of the most visible clusters where *Université Yaoundé I* stays as a central point. *Université de Dschang*, *Uni. of Buea* and *Université De Ngaoundéré* are the other academic organisations from Cameroon which co-published visible amount of RE-related publications with *Université Yaoundé I* (22, 17 and 17 co-publications respectively). Network of Cameroonian universities also connects with visible amount of publications to French and British organisations. On the French side *Uni. of Montpellier* and *CIRAD* both have 22 co-publications with *Université Yaoundé I* and on the other side *Uni. of Leeds* has a collaboration of 18 RE-related co-publications with *Université Yaoundé I* where other British academic organisaitons like *UCL*, *Uni. of Oxford* and *York Uni.* are also present in a number of those co-publications.
 
+Nigerian Universities form another visible clusted in the co-publication network whereas *Covenant University* plays a central role. *Uni. of Ibadan* and *Obafemi Awolowo Uni.* both have ~20 co-publications with *Covenant University*. Also, *Covenant University*'s collaborations with South African institutions are in the most visible co-pub. connections in the region, *University of Johannesburg* has co-published 34 RE-related publications with *Covenant University*.  
+
+Other visible collaborations are *Norwegian Uni. of Life Sciences*' co-publications with Tanzania's *Sokoine Uni. of Agriculture* (24 co-pub.) and with Ethiopia's *Mekelle University* (22 co-pub.).
 
 
 ##### Covenant University (Nigeria)
@@ -123,11 +127,9 @@ coven_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions
 
 coven_barline
 ```
-The most visible research areas are *Energy & Fuels* and *Green & Sustainable Science & Technology* similarly.
+The most visible research areas are *Energy & Fuels* and *Green & Sustainable Science & Technology* respectively in RE-related publications of *Covenant University*. 2019 is in terms of RE-related publications a peak point for *Covenant University*, the 2 two most visible areas include 20 and 30 publications respectively in this year. 
 
-However, Covenant University also *Multidisciplinary Sciences* as one of the most visible research areas. 
-
-None of the last three research areas *Multidisciplinary Sciences*, *Material Science* and *Electrical & Electronic Engineering* had more than 1 yearly RE-related publications in *Covenant University* until 2016. However, especially *Multidisciplinary Sciences* had over 10 yearly publications starting after 2017. 
+None of the last three research areas *Multidisciplinary Sciences*, *Material Science* and *Electrical & Electronic Engineering* had more than 1 yearly RE-related publications in *Covenant University* until 2016. However, although there wasn't any publications in *Multidisciplinary Sciences* until 2017, the research area has became one of the most visible research areas in *Covenant University's* RE-related publications with yearly over 10 publications. 
 
 ##### University of Nigeria
 ```{r uninibarline, echo=FALSE, out.width="100%", fig.cap="TEST"}

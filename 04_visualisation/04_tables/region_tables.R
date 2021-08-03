@@ -6,12 +6,13 @@ library(tidyr)
 library(data.table)
 library(htmltools)
 
+library(reticulate)
 #  Start na table
 pd <- import("pandas")
 
-require("reticulate")
-M_06 <- pd$read_pickle("/01_data/02_bibliometrix/0608_org_proper.pickle")
+#M_06 <- pd$read_pickle("/01_data/02_bibliometrix/0608_org_proper.pickle")
 ## M_06 <- readRDS("./01_data/02_bibliometrix/0607_org_oty.Rds")
+M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0608_org_proper.pickle")
 
 # Create a df with only region based collab.
 na_indexes_un <- unique(M_06[M_06$au_regions == "Northern Africa", "ID"])
@@ -94,11 +95,11 @@ ca_country_df <- ca_country_df[1:5,c(1:3, 11, 13, 12)]
 ea_country_df <- ea_country_df[1:5,c(1:3, 11, 13, 12)]
 sa_country_df <- sa_country_df[1:5,c(1:3, 11, 13, 12)]
 
-colnames(na_country_df) <- c("Country", "2011","2011-2020","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
-colnames(wa_country_df) <- c("Country", "2011","2011-2020","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
-colnames(ca_country_df) <- c("Country", "2011","2011-2020","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
-colnames(ea_country_df) <- c("Country", "2011","2011-2020","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
-colnames(sa_country_df) <- c("Country", "2011","2011-2020","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
+colnames(na_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
+colnames(wa_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
+colnames(ca_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
+colnames(ea_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
+colnames(sa_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
 
 bg = function(start, end, color, ...) {
   paste("linear-gradient(90deg,transparent ",percent(start),",",

@@ -417,7 +417,14 @@ gen_ra_sun <- plot_ly(
   # This one is real good
   hovertemplate = paste0(ra_df$ra, ": ", ra_df$ra_freq ," pub.", "<extra></extra>"),
   texttemplate = paste0(ra_df$ra, "\n ", ra_df$ra_freq )
-    ) %>% layout(colorway=c("#66C2A5","#FC8D62", "#8DA0CB",  "#E5C494", "#FFD92F" )) 
+    ) %>% layout(colorway=c("#66C2A5","#FC8D62", "#8DA0CB",  "#E5C494", "#FFD92F" ))  %>% 
+    layout(annotations = 
+    list(y=-1,text = "A single publication may be associated with multiple research domains/ areas. \n
+    The sum of the number of publications in individual research domains/areas does not add up to the total number of publications.", 
+      showarrow = F, xref='paper', yref='paper', 
+      #xanchor='right', yanchor='auto', xshift=0, yshift=0,
+      font=list(size=10))
+ )
   
 gen_ra_sun
 

@@ -20,7 +20,7 @@ morocco_net
 # Links with less than 20 publications have been removed
 ```
 
-Moroccan organisations are interconnected in the RE-related publications with only a few collaborations with an output of more than 25 co-publications. Although *Mohamed V Uni.* has a central position the native collaboration is relatively uniform distributed. 
+Moroccan organisations are interconnected in the RE-related publications, only a few international collaborations have an output of more than 25 co-publications. Although *Mohamed V Uni.* has a central position the native collaboration is relatively uniform distributed. Especially the number of co-publications of *Mohamed V Uni.* with *Cadi Ayyad Uni.* and *Uni. of Hassan II Casablanca* (41 and 39 co-publications respectively) as well as the co-publications between *Universite Moulay Ismail de Meknes* and *Sidi Mohamed Ben Abdellah Uni.* (~50 co-publications) are most visible collaborations in Morocco. 
 
 International collaborations includes mostly French institutions like *Uni. of Lorraine*, *Uni. of Montpellier* and *University of Pau and Pays de l'Adour*.
 
@@ -31,4 +31,6 @@ moham_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions
 
 moham_barline
 ```
+
+Similar to the other selected universities from the Northern Africa region *Energy & Fuels* has a strong presence also in the publications of *Mohamed V Uni.*. Considering, there was no recorded renewable energy related publication from *Mohamed V Uni.* in 2011 and only 1 publication in 2012 in Web of Science databases, 2018 shows a strong contrast with 85 RE-related publications to the previous years. *Electrical and Electronic Engineering* is following *Energy and Fuels* closely in total RE-related publication from *Mohamed V Uni.*. Although, there are no recorded publications in *Green and Sustainable Science & Tech.* before 2014, it stays as the 3. most visible research areain the total numbers. In contrast to the other selected organisations so far one of the most visible research areas in the RE-related publications from *Mohamed V University*  is *Telecommunications* and publications in *Multidisciplinary Material Science* are also increasing since 2015.
 

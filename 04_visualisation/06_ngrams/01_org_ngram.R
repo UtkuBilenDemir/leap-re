@@ -286,8 +286,8 @@ cairo_cor <- cairo_words %>%
 cairo_net <- cairo_cor %>%
   filter(correlation > .5) %>%
   as_tbl_graph() 
-  
-gen_word_net <- function(word_df) {
+
+gen_word_net <- function(word_df, nn = 20) {
   words <- word_df %>%
     unnest_tokens(word, text) %>%
     filter(!word %in% c(stop_words$word, "na", "NA","nan", "NAN"))
@@ -297,7 +297,7 @@ gen_word_net <- function(word_df) {
    filter(item1 == "nan") 
   cor <- words %>%
     add_count(word) %>%
-    filter(n>20) %>%
+    filter(n > nn) %>%
     select(-n) %>%
     pairwise_cor(word, res_domains, sort=TRUE)
     print(2)
@@ -309,10 +309,11 @@ gen_word_net <- function(word_df) {
   edges <- net %>% activate(edges) %>% as.data.frame()
   nodes <- net %>% activate(nodes) %>% as.data.frame()
   colnames(edges)[3] <- "value"
+  print(colnames(edges))
   nodes$id <- 1:length(nodes$name)
   colnames(nodes)[1] <- "label"
   nodes <- nodes[,c(2,1)]
-  nodes$font.size <- 45
+  nodes$font.size <- 25
 
   return(list(nodes, edges))
 }
@@ -333,49 +334,7 @@ techn_net <- gen_word_net(techn_text_df)
 lifes_net <- gen_word_net(lifes_text_df)
 
 
-##   %>%
-##   ggraph(layout = "fr") +
-##   geom_edge_link(aes(edge_alpha = correlation), show.legend = FALSE) +
-##   geom_node_point(color = "lightblue", size = 5) +
-##   geom_node_text(aes(label = name), repel = TRUE)
-
-
-
-
-
-## den_nodes <- as.data.frame(cbind(1:nrow(cairo_cor), paste(cairo_cor$item1, cairo_cor$item2) ))
-## colnames(den_nodes) <- c("id", "node")
-## 
-## 
-## visNetwork(den_nodes, cairo_net)
-## as.data.frame(cairo_net)
-## 
-## cairo_net[[1]]
-
-## cairo_edges <- cairo_net %>% activate(edges) %>% as.data.frame()
-## cairo_nodes <- cairo_net %>% activate(nodes) %>% as.data.frame()
-## colnames(cairo_edges)[3] <- "value"
-## cairo_nodes$id <- 1:length(cairo_nodes$name)
-## colnames(cairo_nodes)[1] <- "label"
-## cairo_nodes <- cairo_nodes[,c(2,1)]
-## cairo_nodes$font.size <- 45
-
-##visNetwork(cairo_nodes, cairo_edges, height ="1000px") %>%
-##  visOptions(highlightNearest = TRUE) %>%
-##  visLayout(randomSeed = 123, improvedLayout = TRUE) %>%
-##  visNodes(
-##      shape = "text",
-##      color = list(
-##        background = "#0085AF",
-##        border = "#fdb462",
-##        highlight = "#FF8000"
-##      ),
-##      shadow = list(enabled = TRUE, size = 10)
-##  ) 
-##  #%>%   visIgraphLayout(layout = "layout_with_fr")
-##
-
-visNetwork(mekel_net[[1]],mekel_net[[2]], height ="1000px") %>%
+visNetwork(cairo_net[[1]],cairo_net[[2]], height ="1000px") %>%
   visOptions(highlightNearest = TRUE) %>%
   visLayout(randomSeed = 123, improvedLayout = TRUE) %>%
   visNodes(
@@ -388,6 +347,66 @@ visNetwork(mekel_net[[1]],mekel_net[[2]], height ="1000px") %>%
       shadow = list(enabled = TRUE, size = 10)
   ) 
   #%>%   visIgraphLayout(layout = "layout_with_fr")
+
+
+
+
+
+# !!!!!!!!!!!!!!! Second approach 
+
+M_06_ex <- readRDS("./01_data/02_bibliometrix/res_area_exp_07_ngrams.Rds")
+M_06_ex$text <- M_06_ex$un_bigrams
+
+cairo_df <- M_06_ex[M_06_ex$org_prop == "Cairo University",]
+redec_df <- M_06_ex[M_06_ex$org_prop == "Renewable Energy Development Center",]
+moham_df <- M_06_ex[M_06_ex$org_prop == "Mohammed V University",]
+coven_df <- M_06_ex[M_06_ex$org_prop == "Covenant University",]
+unini_df <- M_06_ex[M_06_ex$org_prop == "University of Nigeria",]
+yaoun_df <- M_06_ex[M_06_ex$org_prop == "Université de Yaoundé I",]
+addis_df <- M_06_ex[M_06_ex$org_prop == "Addis Ababa University",]
+mekel_df <- M_06_ex[M_06_ex$org_prop == "Mekelle University",]
+kwazu_df <- M_06_ex[M_06_ex$org_prop == "University of KwaZulu-Natal", ]
+capet_df <- M_06_ex[M_06_ex$org_prop == "University of Cape Town",]
+stell_df <- M_06_ex[M_06_ex$org_prop == "Stellenbosch University",]
+
+cairo_net <- gen_word_net(cairo_df, 45)
+redec_net <- gen_word_net(redec_df, 45)
+moham_net <- gen_word_net(moham_df, 45)
+coven_net <- gen_word_net(coven_df, 30)
+unini_net <- gen_word_net(unini_df, 20)
+yaoun_net <- gen_word_net(yaoun_df, 20)
+addis_net <- gen_word_net(addis_df, 20)
+mekel_net <- gen_word_net(mekel_df, 15)
+kwazu_net <- gen_word_net(kwazu_df, 40)
+capet_net <- gen_word_net(capet_df, 45)
+stell_net <- gen_word_net(stell_df, 45)
+
+cairo_net[[1]]$font.size <- 20
+
+gen_ngram_network <- function(net_df) {
+  out_net <- visNetwork(net_df[[1]], net_df[[2]], width = "1000px", height = "1000px") %>%
+    visOptions(highlightNearest = TRUE) %>%
+    visLayout(randomSeed = 123, improvedLayout = TRUE) %>%
+    visNodes(
+        shape = "text",
+        color = list(
+          background = "#0085AF",
+          border = "#fdb462",
+          highlight = "#FF8000"
+        ),
+        shadow = list(enabled = TRUE, size = 10)
+    ) %>%   visIgraphLayout(layout = "layout_with_fr")  
+    return(out_net)
+
+}
+
+
+cairo_ngram_network_plot <- gen_ngram_network(cairo_net)
+redec_ngram_network_plot <- gen_ngram_network(redec_net)
+
+cairo_ngram_network_plot
+saveRDS(cairo_ngram_network_plot, "./04_visualisation/06_ngrams/cairo_ngram_network_plot.Rds")
+
 
 
 

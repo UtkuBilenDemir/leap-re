@@ -8,10 +8,23 @@ library(htmltools)
 library(reticulate)
 library(stringr)
 library(tidyr)
+library(kableExtra)
 
 pd <- import("pandas")
 M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0608_org_proper.pickle")
-M_06_ex <- readRDS("./01_data/02_bibliometrix/res_area_exp_069999_res_oty.Rds")
+M_06_ex <- readRDS("./01_data/02_bibliometrix/res_area_exp_07_ngrams.Rds")
+M_06_ex <- as.data.frame(M_06_ex)
+# Important org_name correction:
+
+
+
+M_06[M_06["org_prop"] == "Chungbuk National University", "org_prop"] <- "JeonBuk National University"
+M_06_ex[M_06_ex["org_prop"] == "Chungbuk National University", "org_prop"] <- "JeonBuk National University"
+## M_06_ex$org_prop <- as.list(M_06_ex$org_prop)
+## M_06_ex$org_prop <- lapply(M_06_ex$org_prop, function(x) replace(x,is.null(x)," "))
+## M_06_ex$org_prop <- unlist(M_06_ex$org_prop)
+## M_06_ex[which(M_06_ex["org_prop"] == "Chungbuk National University"), "org_prop"][[1]] <- "JeonBuk National University"
+## 
 wos_dict <- readRDS("./../bibliometry_module/00_data/research_areas/wos_dictionary.Rds")
 
 # Better formattable methods
@@ -78,23 +91,20 @@ for (i in seq_along(M_06_ex$res_areas)) {
   un_dict_domain[i] <- wos_dict[M_06_ex$res_areas[i],]
 }
 
-unique(M_06_ex$res_areas[is.na(un_dict_domain)])
-unique(wos_dict)
-
 M_06_ex$prop_domain <- un_dict_domain
-sum(is.na(M_06_ex$prop_domain))
-
-unique(M_06_ex$prop_domain)
-
 
 sample_indexes <- sample(1:nrow(M_06_ex), 900)
 cbind(M_06_ex$res_areas[sample_indexes], M_06_ex$prop_domain[sample_indexes])[1:100,]    # seems fine
 
 # domain dfs
 ps_df <- M_06_ex[M_06_ex$prop_domain == "Physical Sciences", ]
+rownames(ps_df) <-  NULL
 te_df <- M_06_ex[M_06_ex$prop_domain == "Technology", ]
+rownames(te_df) <-  NULL
 ls_df <- M_06_ex[M_06_ex$prop_domain == "Life Sciences & Biomedicine", ]
+rownames(ls_df) <-  NULL
 ss_df <- M_06_ex[M_06_ex$prop_domain %in% c("Social Sciences" , "Arts & Humanities"), ]
+rownames(ss_df) <-  NULL
 
 
 # -> Go to each individual publication
@@ -146,14 +156,19 @@ partner_find <- function (df, ID_colname="ID", org_colname="org_prop") {
   return(out_df)
 }
 
+# 1
 print("ps")
 ps_part_df <-  partner_find(ps_df)
+rownames(ps_part_df) <-  NULL
 print("tech")
 te_part_df <-  partner_find(te_df)
+rownames(te_part_df) <-  NULL
 print("ls")
 ls_part_df <-  partner_find(ls_df)
+rownames(ls_part_df) <-  NULL
 print("ss")
 ss_part_df <-  partner_find(ss_df)
+rownames(ss_part_df) <-  NULL
 
 saveRDS(ps_part_df, "./01_data/06_domain_partnerships/ps_part_df.Rds")
 saveRDS(te_part_df, "./01_data/06_domain_partnerships/te_part_df.Rds")
@@ -163,7 +178,6 @@ saveRDS(ss_part_df, "./01_data/06_domain_partnerships/ss_part_df.Rds")
 
 
 
-rownames(te_part_df) <- NULL
 
 head(ps_part_df, 10)
 
@@ -176,8 +190,9 @@ head(ss_part_df, 10)
 gen_pair_table <- function(df, 
                           main_df, 
                           id_colname="ids", 
+                          main_id_colname="ID", 
                           org_colname="org_pair", 
-                          country_colname="Country_names",
+                          country_colname="au_off_country",
                           main_org_colname="org_prop",
                           ra_colname="res_areas",
                           copub_freq_colname="co_pub") {
@@ -198,7 +213,11 @@ gen_pair_table <- function(df,
     country2 <- main_df[main_df[main_org_colname] == pair2, country_colname][1]
 
     ids <- as.vector(sapply(str_split(df[i, id_colname], ","), as.numeric))
+    #print(ids)
+    ids <- which(main_df[[main_id_colname]] %in% ids)
+    #print(ids)
     temp_df <- as.data.frame(main_df[ids, ])
+    #print(head(temp_df))
     research_areas <- unlist(as.vector(unlist(unique(temp_df[, ra_colname]))))
     re_freqs <- vector()
     for (j in seq_along(research_areas)) {
@@ -220,11 +239,13 @@ gen_pair_table <- function(df,
     return (as.data.frame(cbind(country1_list, pair1_list, copub_freq_list, pair2_list, country2_list, mv_ra_list)))
 }
 
+# 2
 ps_table <- gen_pair_table(head(ps_part_df, 500), ps_df)
 te_table <- gen_pair_table(head(te_part_df, 500), te_df)
 ls_table <- gen_pair_table(head(ls_part_df, 500), ls_df)
 ss_table <- gen_pair_table(head(ss_part_df, 500), ss_df)
 
+head(te_table)
 
 # What we want is actually an interregional table, there is too many pairings from same country/region
 
@@ -232,7 +253,7 @@ ss_table <- gen_pair_table(head(ss_part_df, 500), ss_df)
 eleminate_reg_pairings <- function(table_df, 
                                   main_df, 
                                   region_colname="eu_au_region", 
-                                  country_colname="Country_names",
+                                  country_colname="au_off_country",
                                   country1_colname="country1_list",
                                   country2_colname="country2_list"
                                   ) {
@@ -261,28 +282,122 @@ ps_table_interreg <- eleminate_reg_pairings(ps_table, ps_df)
 te_table_interreg <- eleminate_reg_pairings(te_table, te_df)
 ls_table_interreg <- eleminate_reg_pairings(ls_table, ls_df)
 ss_table_interreg <- eleminate_reg_pairings(ss_table, ss_df)
-
+rownames(ps_table_interreg) <- NULL
+rownames(te_table_interreg) <- NULL
+rownames(ls_table_interreg) <- NULL
+rownames(ss_table_interreg) <- NULL
+#3
 head(ps_table_interreg, 10)
 head(te_table_interreg, 10)
 head(ls_table_interreg, 10)
 head(ss_table_interreg, 10)
 
+colnames(ps_table_interreg)
+ps_table_interreg$`Country 1`
+# We need to get a specific number of pairings from each region, otherwise it's only Egypt and SA
+separate_table_into_regions <- function(table_df,
+                                        main_df,
+                                        african_colname="African",
+                                        main_country_colname="au_off_country",
+                                        region_colname="eu_au_region",
+                                        country1_colname="Country 1",
+                                        country2_colname="Country 2",
+                                        partner1_colname="Partner 1",
+                                        partner2_colname="Partner 2") {
+  table_df$region <- ""
+  for (i in seq_len(nrow(table_df))) {
+    country1 <- table_df[[country1_colname]][i]
+    print(country1)
+    country2 <- table_df[[country2_colname]][i]
+    african_country <- ""
+    # Is the following really boolean?
+    condit <- main_df[match( country1, main_df[[main_country_colname]]), african_colname]
+    if (is.na(condit)) {
+      next()
+    } else if (condit == "True") {
+      african_country <- country1
+    } else {
+      african_country <- country2
+      # swap if the second partner is the african
+      temp_country <- country1
+      temp_partner <- table_df[i, partner1_colname]
+      table_df[i, partner1_colname] <- table_df[i, partner2_colname]
+      table_df[i, country1_colname] <- country2
+      table_df[i, partner2_colname] <- temp_partner
+      table_df[i, country2_colname] <- temp_country
+    }
+    region <- main_df[match(african_country, main_df[[main_country_colname]]), region_colname]
+    table_df$region[i] <- region
+  }
+  #table_df <- as.data.frame(cbind(regions, table_df))
+  #colnames(table_df)[1] <- "Region"
+  #reg_ids <- vector()
+  #un_reg <- unique(table_df[["Region"]])
+  #for (j in seq_along(un_reg)) {
+  #  reg_ids <- c(reg_ids, which(table_df["Region"] == un_reg[j])[1:3])
+  #}
+  #return(table_df[reg_ids,])
+  return(table_df)
+
+}
+
+
+ps_table_regional <- separate_table_into_regions(ps_table_interreg, M_06_ex)
+te_table_regional <- separate_table_into_regions(te_table_interreg, M_06_ex)
+ls_table_regional <- separate_table_into_regions(ls_table_interreg, M_06_ex)
+ss_table_regional <- separate_table_into_regions(ss_table_interreg, M_06_ex)
+
+au_regions <- unique(ls_table_regional$region)[c(1,6,7,3, 4 )]
+pick_from_each_region <- function(table_df, region_colname="region", region_vector=au_regions) {
+  inds <- vector()
+  inds <- c(inds, which(table_df[[region_colname]] == au_regions[1])[1:5])
+  inds <- c(inds, which(table_df[[region_colname]] %in% au_regions[c(2,3,4)])[1:5])
+  inds <- c(inds, which(table_df[[region_colname]] == au_regions[5])[1:5])
+  out_df <- table_df[inds,]
+  out_df[6:10, region_colname] <- "Western, Central, Eastern Africa"
+  out_df <- out_df[, c(ncol(out_df), 1:(ncol(out_df)-1))]
+  rownames(out_df) <- c("N1", "N2", "N3", "N4", "N5",
+                        "WCE1", "WCE2", "WCE3", "WCE4", "WCE5",
+                        "S1", "S2", "S3", "S4", "S5")
+  return(out_df)
+}
+
+ps_table_regional_picked <- pick_from_each_region(ps_table_regional)
+te_table_regional_picked <- pick_from_each_region(te_table_regional)
+ls_table_regional_picked <- pick_from_each_region(ls_table_regional)
+ss_table_regional_picked <- pick_from_each_region(ss_table_regional)
 
 # Prepare formattable tables
 gen_pair_table <- function(table_df) {
-  out_table <- as.htmlwidget(formattable(table_df,
-    align = c("l","l", "c", "l", "l", "r"),
-    list(
-    `Country 1` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
-    `Country 2` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
-    `Partner 1` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
-    `Partner 2` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
-    `Most Visible Res. Area` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold")),
-    `Num. of co-pub.` = color_bar2("lightblue")
-  )))
+  out_table <- table_df[,2:ncol(table_df)] %>%
+  mutate(
+    `Num. of co-pub.` = color_bar2("lightblue")(`Num. of co-pub.`),
+
+    `Country 1` = formattable::formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold"))(`Country 1`),
+    `Country 2` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold", align="c"))(`Country 2`),
+    `Partner 1` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold"))(`Partner 1`),
+    `Partner 2` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold"))(`Partner 2`),
+    `Most Visible Res. Area` = formatter("span", style = ~ formattable::style(color = "grey", font.weight = "bold"))(`Most Visible Res. Area`),
+
+  ) %>%
+  kable("html", escape = F, "striped",align=c(rep('l', 2), "c", rep("r", 3)), , table.attr = "style='width:30%;'") %>%
+  kable_styling("hover", full_width = F) %>%
+  #column_spec(5, width = "3cm") 
+  pack_rows(unique(test$region)[1], 1, 5 , label_row_css = "background-color: #C9A38D; color: #fff;") %>%
+  pack_rows(unique(test$region)[2], 6, 10, label_row_css = "background-color: #5EBB9F; color: #fff;") %>%
+  pack_rows(unique(test$region)[3],11, 15, label_row_css = "background-color: #E2BA56; color: #fff;")
+
   return(out_table)
 }
 
-gen_pair_table(ps_table_interreg[1:10,])
+ps_pair_table <- gen_pair_table(ps_table_regional_picked)
+te_pair_table <- gen_pair_table(te_table_regional_picked)
+ls_pair_table <- gen_pair_table(ls_table_regional_picked)
+ss_pair_table <- gen_pair_table(ss_table_regional_picked)
 
-saveRDS(M_06_ex, "./01_data/02_bibliometrix/res_area_exp_069999_res_oty.Rds")
+
+saveRDS(M_06_ex, "./01_data/02_bibliometrix/res_area_exp_07_ngrams.Rds")
+saveRDS(ps_pair_table, "./04_visualisation/04_tables/ps_pair_table.Rds")
+saveRDS(te_pair_table, "./04_visualisation/04_tables/te_pair_table.Rds")
+saveRDS(ls_pair_table, "./04_visualisation/04_tables/ls_pair_table.Rds")
+saveRDS(ss_pair_table, "./04_visualisation/04_tables/ss_pair_table.Rds")
