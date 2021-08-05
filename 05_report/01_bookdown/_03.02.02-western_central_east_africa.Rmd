@@ -140,7 +140,7 @@ unini_barline
 
 
 ##### Université de Yaoundé I (Cameroon)
-```{r yaounbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+```{r yaounbarline, echo=FALSE, fig.cap="TEST", out.height="800px", out.width="100%"}
 yaoun_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/yaoun_ra_barline.Rds")
 
 yaoun_barline
@@ -148,7 +148,7 @@ yaoun_barline
 
 
 ##### Addis Ababa University (Ethiopia)
-```{r addisbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+```{r addisbarline, echo=FALSE,out.width="100%", fig.cap="TEST"}
 addis_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/addis_ra_barline.Rds")
 
 addis_barline

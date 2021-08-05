@@ -196,30 +196,67 @@ cairo_ra_table
 library(plotly)
 ifelse(moham_ra_table[,2]/moham_ra_table[1,2], moham_ra_table[,2]/moham_ra_table[2,2])
 
-gen_grouped_barchart <- function(df, colrange = 3:6) {
-
-  plt_col <- c("#80b1d3", "#fb8072", "#b3de69", "#fdb462", "#bc80bd")
-  plot <- plot_ly(df, x=~Years, y=df[,2], type="bar", name=colnames(df)[2], color = plt_col[1], text = df[,2], textposition = 'outside', textfont = list(color="black") )
-  line_plot <- plot_ly(df, x=~Years, y=df[,2]/df[1,2], name=colnames(df)[2], type="scatter", mode="lines+markers", line = list(width = 3), color = plt_col[1] , showlegend = FALSE)
+gen_grouped_barchart <- function(df, plt_col=c("#66c2a5","#e78ac3",  "#a6d854", "#8da0cb", "#e5c494"), colrange = 3:6) {
+  plot <- plot_ly(df, 
+                  x=~Years, 
+                  y=df[,2], 
+                  type="bar", 
+                  name=colnames(df)[2], 
+                  marker=list(color = plt_col[1]), 
+                  text = df[,2], 
+                  textposition = 'outside', 
+                  textfont = list(color="black"))
+  line_plot <- plot_ly(df, 
+                      x=~Years, 
+                      y=ifelse(is.na(df[,2]/df[1,2]), 0,  df[,2]/df[1,2]),
+                      name = colnames(df)[2], 
+                      type = "scatter", 
+                      mode = "lines+markers", 
+                      line = list(width = 3, color = plt_col[1]), 
+                      marker = list(color = plt_col[1]) , 
+                      showlegend = FALSE)
   for (i in colrange ) {
-    plot <- plot %>% add_trace(y=df[,i], name=colnames(df)[i], color = plt_col[i-1], text = df[,i])
-    line_plot <- line_plot %>% add_trace(y=df[,i]/df[1,i], name=colnames(df)[i], mode="lines+markers", line = list(width = 3),color = plt_col[i-1])
+      denom <- df[which(df[,i] != 0)[1], i]
+    plot <- plot %>% 
+      add_trace(y=df[,i], 
+                name=colnames(df)[i], 
+                marker=list(color = plt_col[i-1]), 
+                text = df[,i])
+    line_plot <- line_plot %>% 
+      add_trace(#y=ifelse( is.na(df[,i]/df[1,i]), 0, df[,i]/denom), 
+                y = df[,i]/denom,
+                name=colnames(df)[i], 
+                mode="lines+markers", 
+                line = list(width = 3, color = plt_col[i-1]),
+                marker = list(color = plt_col[i-1]))
   }
   plot <- plot %>% layout(barmode="group") 
-  return(subplot(plot, line_plot, nrows=2, shareX = TRUE) %>% layout(legend = list(x = 0.05, y = 1, bgcolor= 'rgba(0,0,0,0)')))
+  return(subplot(plot, line_plot, nrows=2, shareX = TRUE) %>% layout(legend = list(x = 0, y = 1, bgcolor= 'rgba(0,0,0,0)')))
+#layout(legend = list(x = 0.05, y = 1, bgcolor= 'rgba(0,0,0,0)')))
 }
 
-cairo_ra_barline <- gen_grouped_barchart(cairo_ra_table)
-redec_ra_barline <- gen_grouped_barchart(redec_ra_table)
-moham_ra_barline <- gen_grouped_barchart(moham_ra_table)
-coven_ra_barline <- gen_grouped_barchart(coven_ra_table)
-unini_ra_barline <- gen_grouped_barchart(unini_ra_table)
-yaoun_ra_barline <- gen_grouped_barchart(yaoun_ra_table)
-addis_ra_barline <- gen_grouped_barchart(addis_ra_table)
-mekel_ra_barline <- gen_grouped_barchart(mekel_ra_table)
-kwazu_ra_barline <- gen_grouped_barchart(kwazu_ra_table)
-capet_ra_barline <- gen_grouped_barchart(capet_ra_table)
-stell_ra_barline <- gen_grouped_barchart(stell_ra_table)
+cairo_ra_barline <- gen_grouped_barchart(cairo_ra_table, 
+  plt_col <- c("#66c2a5","#e78ac3",  "#a6d854", "#8da0cb", "#e5c494"))
+redec_ra_barline <- gen_grouped_barchart(redec_ra_table,
+  plt_col <- c("#66c2a5","#a6d854","#e78ac3" ,"#e5c494", "#8da0cb" ))
+moham_ra_barline <- gen_grouped_barchart(moham_ra_table,
+  plt_col <- c("#66c2a5","#e78ac3",  "#a6d854", "#e5c494","#8da0cb"))
+coven_ra_barline <- gen_grouped_barchart(coven_ra_table,
+  plt_col <- c("#66c2a5","#a6d854", "#e5c494","#8da0cb", "#e78ac3"))
+unini_ra_barline <- gen_grouped_barchart(unini_ra_table,
+  plt_col <- c("#66c2a5","#a6d854", "#e5c494", "#e78ac3","#8da0cb"))
+yaoun_ra_barline <- gen_grouped_barchart(yaoun_ra_table,
+  plt_col <- c("#66c2a5","#a6d854",  "#ffd92f","#b3b3b3", "#e5c494"))
+addis_ra_barline <- gen_grouped_barchart(addis_ra_table,
+  plt_col <- c("#66c2a5", "#e5c494","#b3b3b3","#a6d854",  "#8da0cb"))
+mekel_ra_barline <- gen_grouped_barchart(mekel_ra_table,
+  plt_col <- c("#66c2a5", "#e5c494","#a6d854",  "#8da0cb","#b3b3b3"))
+kwazu_ra_barline <- gen_grouped_barchart(kwazu_ra_table,
+  plt_col <- c("#66c2a5","#e78ac3",  "#e5c494", "#b3b3b3", "#a6d854"))
+capet_ra_barline <- gen_grouped_barchart(capet_ra_table,
+  plt_col <- c("#66c2a5","#e78ac3", "#b3b3b3", "#a6d854", "#e5c494"))
+stell_ra_barline <- gen_grouped_barchart(stell_ra_table,
+  plt_col <- c("#66c2a5","#e78ac3","#fc8d62", "#b3b3b3", "#a6d854"))
 
 saveRDS(cairo_ra_barline, "./04_visualisation/01_bar_graphs/02_regions/cairo_ra_barline.Rds")
 saveRDS(redec_ra_barline, "./04_visualisation/01_bar_graphs/02_regions/redec_ra_barline.Rds")

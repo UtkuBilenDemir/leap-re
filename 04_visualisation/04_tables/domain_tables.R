@@ -367,6 +367,10 @@ te_table_regional_picked <- pick_from_each_region(te_table_regional)
 ls_table_regional_picked <- pick_from_each_region(ls_table_regional)
 ss_table_regional_picked <- pick_from_each_region(ss_table_regional)
 
+rownames(ps_table_regional_picked) <- NULL
+rownames(te_table_regional_picked) <- NULL
+rownames(ls_table_regional_picked) <- NULL
+rownames(ss_table_regional_picked) <- NULL
 # Prepare formattable tables
 gen_pair_table <- function(table_df) {
   out_table <- table_df[,2:ncol(table_df)] %>%

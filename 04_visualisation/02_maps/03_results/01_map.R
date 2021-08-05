@@ -30,8 +30,14 @@ m <- leaflet(au_off) %>%
 
 # Create colour palette for choropleth layer
 bins <- c(0, 40, 100, 200, 400, 600, 800, 1000, 3000, 5000, Inf)
-pal <- colorBin("YlOrRd", domain = au_off$color_code, bins = bins)
-
+#pal <- colorBin("YlGnBu", domain = au_off$color_code, bins = bins)
+pal <- colorBin(c("#FFF2EB","#ffcdb2","#ffb4a2","#e5989b","#b5838d","#6d6875", "#504D56"), 
+                domain = au_off$color_code, 
+                bins = bins,
+                pretty = TRUE,
+                na.color = "#4CA6A6")
+#pal <- colorBin(c("#f3e79b","#fac484","#f8a07e","#eb7f86","#ce6693","#a059a0","#5c53a5"), domain = au_off$color_code, bins = bins)
+#c("#d1eeea","#a8dbd9","#85c4c9","#68abb8","#4f90a6","#3b738f","#2a5674")
 # Adjust color distribution
 bins2 <- c(1,2,3,4, 5)
 pal2 <- colorNumeric("Dark2", domain = au_off$region_num)
@@ -44,7 +50,7 @@ labels <- sprintf(
 
 m <- m %>% addPolygons(
   fillColor = ~pal(freq),
-  weight = 2,
+  weight = 1,
   opacity = 1,
   color = "black",
   dashArray = "1",
@@ -67,10 +73,13 @@ m <- m %>% addPolygons(
 ##   HTML('<strong>Number of RE-related publications in African countries between 2011-2020</strong>')
 ## )
 
-map_pub_freq <- m %>% addLegend(pal = pal, title="Amount of pub.", values = ~freq, opacity = 0.7,
+map_pub_freq <- m %>% addLegend(pal = pal, title="Amount of pub.", values = ~freq, opacity = 1,
                 position = "bottomright") %>%
 ##   addControl(rr, position = "bottomleft") %>%
 setMapWidgetStyle(list(background= "white"))
+map_pub_freq
+
+
 
 saveWidget(map_pub_freq, file="./04_visualisation/02_maps/03_results/choropleth.html")
 saveRDS(map_pub_freq, file = "./04_visualisation/02_maps/03_results/choropleth.Rds")
@@ -90,7 +99,7 @@ r <- leaflet(au_off) %>%
 # Regions
 r <- r %>% addPolygons(
   fillColor = ~pal2(region_num),
-  weight = 2,
+  weight = 1,
   opacity = 1,
   color = "black",
   dashArray = "1",
@@ -124,5 +133,6 @@ saveRDS(map_cou_reg, file = "./04_visualisation/02_maps/03_results/au_regions.Rd
 length(unique(na_df$ID)) / length(unique(M_06$ID))
 unique(M_06[order(M_06$Country_relative, decreasing = TRUE), c("au_off_country")])[1:10]
 M_06[, "au_off_country"]
+
 
 

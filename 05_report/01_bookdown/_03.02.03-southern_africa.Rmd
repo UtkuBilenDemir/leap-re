@@ -44,7 +44,8 @@ kwazu_barline
 
 
 ##### University of Cape Town 
-```{r capetbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+```{r capetbarline, echo=FALSE, out.width="100%", out.height="700px",fig.cap="TEST"}
+
 capet_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/capet_ra_barline.Rds")
 
 capet_barline

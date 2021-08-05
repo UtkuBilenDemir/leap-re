@@ -379,7 +379,9 @@ ss_domain_barplot <- gen_domain_barplot(ss_keyword_oty_df, "#E5C494")
 gen_domain_lineplot <- function(df_t) {
   fig <- plot_ly(df_t[,1:12], type = 'scatter', mode = 'lines') 
   for (i in 1:12) {
-    fig <- fig %>% add_trace(x=rownames(df_t), y = df_t[, i], name=colnames(df_t)[i], mode = 'lines+markers') 
+    fig <- fig %>% 
+      add_trace(x=rownames(df_t), y = df_t[, i], name=colnames(df_t)[i], mode = 'lines+markers') %>%
+      layout(legend = list(x=0.1, y=0.9))
   }
   return(fig)
 }

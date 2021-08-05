@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="3.3 Research Domain Analysis | LEAP-RE T5.3. | Scientometric Analysis of Renewable Energy Research in Africa" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+
+
+
+<meta name="date" content="2021-08-04" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+
+<title>3.3 Research Domain Analysis | LEAP-RE T5.3. | Scientometric Analysis of Renewable Energy Research in Africa</title>
+
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+<script src="libs/map-widget-style-1.0.0/map-widget-style-bindings.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/formattable_widget-binding-0.2.1/formattable_widget.js"></script>
+<link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
+<script src="libs/jquery-sparkline-2.1.2/jquery.sparkline.js"></script>
+<script src="libs/sparkline-binding-2.0/sparkline.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface">Preface</a></li>
+<li><a href="1-intro.html#intro"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="2-methodology.html#methodology"><span class="toc-section-number">2</span> Methodology</a></li>
+<li><a href="3-results.html#results"><span class="toc-section-number">3</span> Results</a>
+<ul>
+<li><a href="3-1-overall-figures.html#overall-figures"><span class="toc-section-number">3.1</span> Overall Figures</a></li>
+<li><a href="3-2-regional-analysis.html#regional-analysis"><span class="toc-section-number">3.2</span> Regional Analysis</a>
+<ul>
+<li><a href="3-2-regional-analysis.html#northern-africa"><span class="toc-section-number">3.2.1</span> Northern Africa</a>
+<ul>
+<li><a href="3-2-regional-analysis.html#egypt"><span class="toc-section-number">3.2.1.1</span> Egypt</a></li>
+<li><a href="3-2-regional-analysis.html#algeria"><span class="toc-section-number">3.2.1.2</span> Algeria</a></li>
+<li><a href="3-2-regional-analysis.html#morocco"><span class="toc-section-number">3.2.1.3</span> Morocco</a></li>
+</ul></li>
+<li><a href="3-2-regional-analysis.html#western-africa-central-africa-eastern-africa"><span class="toc-section-number">3.2.2</span> Western Africa, Central Africa, Eastern Africa</a>
+<ul>
+<li><a href="3-2-regional-analysis.html#western-africa"><span class="toc-section-number">3.2.2.1</span> Western Africa</a></li>
+<li><a href="3-2-regional-analysis.html#central-africa"><span class="toc-section-number">3.2.2.2</span> Central Africa</a></li>
+<li><a href="3-2-regional-analysis.html#eastern-africa"><span class="toc-section-number">3.2.2.3</span> Eastern Africa</a></li>
+<li><a href="3-2-regional-analysis.html#selected-institutions-and-institutional-co-publication-network"><span class="toc-section-number">3.2.2.4</span> Selected Institutions and Institutional Co-publication Network</a></li>
+</ul></li>
+<li><a href="3-2-regional-analysis.html#southern-africa"><span class="toc-section-number">3.2.3</span> Southern Africa</a></li>
+</ul></li>
+<li><a href="3-3-research-domain-analysis.html#research-domain-analysis"><span class="toc-section-number">3.3</span> Research Domain Analysis</a>
+<ul>
+<li><a href="3-3-research-domain-analysis.html#physical-sciences"><span class="toc-section-number">3.3.1</span> Physical Sciences</a></li>
+<li><a href="3-3-research-domain-analysis.html#technology"><span class="toc-section-number">3.3.2</span> Technology</a></li>
+<li><a href="3-3-research-domain-analysis.html#life-sciences"><span class="toc-section-number">3.3.3</span> Life Sciences</a></li>
+<li><a href="3-3-research-domain-analysis.html#social-sciences-and-arts-humanities"><span class="toc-section-number">3.3.4</span> Social Sciences and Arts &amp; Humanities</a></li>
+</ul></li>
+</ul></li>
+<li><a href="4-final-words.html#final-words"><span class="toc-section-number">4</span> Final Words</a></li>
+<li><a href="references.html#references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="research-domain-analysis" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Research Domain Analysis</h2>
+<div id="physical-sciences" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Physical Sciences</h3>
+<table style="width:30%; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Country 1
+</th>
+<th style="text-align:left;">
+Partner 1
+</th>
+<th style="text-align:center;">
+Num. of co-pub.
+</th>
+<th style="text-align:right;">
+Partner 2
+</th>
+<th style="text-align:right;">
+Country 2
+</th>
+<th style="text-align:right;">
+Most Visible Res. Area
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #C9A38D; color: #fff;">
+<strong>Northern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Minia University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  0.00% , lightblue 0.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">45</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">JeonBuk National University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">South Korea </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Chemistry, Physical </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Minia University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  28.89% , lightblue 28.89% , lightblue 100.00% , transparent 100.00% ); width: 100%">32</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Saud University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Chemistry, Physical </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Ain Shams University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  51.11% , lightblue 51.11% , lightblue 100.00% , transparent 100.00% ); width: 100%">22</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Khalid University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Materials Science, Multidisciplinary</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Mansoura University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  51.11% , lightblue 51.11% , lightblue 100.00% , transparent 100.00% ); width: 100%">22</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Ruhr University Bochum </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Germany </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Astronomy &amp; Astrophysics </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Tanta University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  53.33% , lightblue 53.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">21</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Jiangsu University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">China </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Chemistry, Analytical </span>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #5EBB9F; color: #fff;">
+<strong>Western, Central, Eastern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Nigeria </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Covenant University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  62.22% , lightblue 62.22% , lightblue 100.00% , transparent 100.00% ); width: 100%">17</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Johannesburg </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">South Africa </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Materials Science, Multidisciplinary</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Cameroon </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Université de Yaoundé I </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  71.11% , lightblue 71.11% , lightblue 100.00% , transparent 100.00% ); width: 100%">13</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Montpellier </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">France </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Multidisciplinary Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Cameroon </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Université de Yaoundé I </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  75.56% , lightblue 75.56% , lightblue 100.00% , transparent 100.00% ); width: 100%">11</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Leeds </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United Kingdom</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Multidisciplinary Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Gabon </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">National Agency for National Parks</span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  77.78% , lightblue 77.78% , lightblue 100.00% , transparent 100.00% ); width: 100%">10</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Stirling </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United Kingdom</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Multidisciplinary Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Gabon </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">National Agency for National Parks</span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  77.78% , lightblue 77.78% , lightblue 100.00% , transparent 100.00% ); width: 100%">10</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Leeds </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United Kingdom</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Multidisciplinary Sciences </span>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #E2BA56; color: #fff;">
+<strong>Southern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of the Western Cape </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  20.00% , lightblue 20.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">36</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Northwest Normal University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">China </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Electrochemistry </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">North-West University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  48.89% , lightblue 48.89% , lightblue 100.00% , transparent 100.00% ); width: 100%">23</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Finnish Meteorological Institute</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Finland </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Meteorology &amp; Atmospheric Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">North-West University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  60.00% , lightblue 60.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">18</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Stuttgart </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Germany </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Polymer Science </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of the Witwatersrand </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  71.11% , lightblue 71.11% , lightblue 100.00% , transparent 100.00% ); width: 100%">13</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Delft University of Technology </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Netherlands </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Chemistry, Multidisciplinary </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">North-West University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  73.33% , lightblue 73.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">12</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Ruhr University Bochum </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Germany </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Astronomy &amp; Astrophysics </span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:psbarplot"></span>
+<div id="htmlwidget-08b65bd1155e3ac746f9" style="width:100%;height:1000px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-08b65bd1155e3ac746f9">{"x":{"visdat":{"20e9a272d447c":["function () ","plotlyVisDat"]},"cur_data":"20e9a272d447c","attrs":{"20e9a272d447c":{"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"textfont":{"color":"white"},"type":"bar","x":{},"orientation":"h","marker":{"color":"#8DA0CB","line":{"color":"rgb(8,48,107)","width":1.5}},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"","tickangle":-45},"yaxis":{"domain":[0,1],"automargin":true,"side":"left","title":"","showgrid":false,"zeroline":true,"type":"category","categoryorder":"array","categoryarray":["silicon_solar","photovoltaic_cell","numerical_simulation","photovoltaic_properties","oxide_nano","photovoltaic_module","comparative_study","oxygen_reduction","wastewater_treatment","heat_transfer","desalination","heavy_metals","water_treatment","kinetics","organic_solar","solar_wind","efficiency","activated_carbon","electrical_properties","photovoltaic_applications","environmental_impact","climate_change","remote_sensing","carbon_nano","hydrogen_production","biosorption","sensitized_solar","aqueous_solution","wind_turbines","adsorption","modeling-simulation","energy_storage","photovoltaic_application","energy_efficiency","optical_properties","biomass","thin_films","photovoltaic_energy/systems","fuel_cells","solar_cells"]},"showlegend":false,"hovermode":"closest"},"source":"A","config":{"showSendToCloud":false,"displaylogo":false,"displayModeBar":true},"data":[{"y":["solar_cells","fuel_cells","photovoltaic_energy/systems","thin_films","biomass","optical_properties","energy_efficiency","energy_storage","photovoltaic_application","modeling-simulation","adsorption","wind_turbines","aqueous_solution","sensitized_solar","biosorption","hydrogen_production","carbon_nano","climate_change","remote_sensing","environmental_impact","electrical_properties","photovoltaic_applications","activated_carbon","efficiency","solar_wind","kinetics","organic_solar","water_treatment","heavy_metals","desalination","heat_transfer","oxygen_reduction","wastewater_treatment","comparative_study","photovoltaic_module","oxide_nano","photovoltaic_properties","numerical_simulation","photovoltaic_cell","silicon_solar"],"textfont":{"color":"white"},"type":"bar","x":[692,431,330,309,199,192,137,131,131,129,126,119,119,111,99,97,92,91,91,89,86,86,85,82,81,75,75,73,72,71,70,69,69,68,67,64,63,63,62,61],"orientation":"h","marker":{"color":"#8DA0CB","line":{"color":"rgb(8,48,107)","width":1.5}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p class="caption marginnote shownote">
+Figure 3.39: Most visiblble keywords/keyword pairs
+</p>
+</div>
+<pre><code>## Warning: Can&#39;t display both discrete &amp; non-discrete data on same axis</code></pre>
+<div class="figure"><span id="fig:pslineplot"></span>
+<div id="htmlwidget-42c36699c512bd3f8fb0" style="width:100%;height:1000px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-42c36699c512bd3f8fb0">{"x":{"visdat":{"20e9a70b8893d":["function () ","plotlyVisDat"]},"cur_data":"20e9a70b8893d","attrs":{"20e9a70b8893d":{"mode":"lines","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"20e9a70b8893d.1":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[25,26,34,63,68,74,73,96,105,128],"name":"solar_cells","inherit":true},"20e9a70b8893d.2":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[17,29,29,44,40,47,55,39,63,68],"name":"fuel_cells","inherit":true},"20e9a70b8893d.3":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[14,16,12,21,28,29,48,45,61,56],"name":"photovoltaic_energy/systems","inherit":true},"20e9a70b8893d.4":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[15,14,16,21,25,25,34,46,54,59],"name":"thin_films","inherit":true},"20e9a70b8893d.5":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[4,7,9,13,23,24,18,31,34,36],"name":"biomass","inherit":true},"20e9a70b8893d.6":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[5,7,5,10,18,26,28,23,21,49],"name":"optical_properties","inherit":true},"20e9a70b8893d.7":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[2,3,3,7,13,14,18,25,21,31],"name":"energy_efficiency","inherit":true},"20e9a70b8893d.8":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3,1,1,12,12,15,15,20,17,35],"name":"energy_storage","inherit":true},"20e9a70b8893d.9":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6,1,4,8,20,11,13,20,21,27],"name":"photovoltaic_application","inherit":true},"20e9a70b8893d.10":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[4,6,9,16,19,17,17,11,14,16],"name":"modeling-simulation","inherit":true},"20e9a70b8893d.11":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[4,7,7,14,10,13,19,16,16,20],"name":"adsorption","inherit":true},"20e9a70b8893d.12":{"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[1,7,5,13,11,14,11,9,22,26],"name":"wind_turbines","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":[]},"yaxis":{"domain":[0,1],"automargin":true,"title":[]},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"mode":"lines","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[25,26,34,63,68,74,73,96,105,128],"name":"solar_cells","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[17,29,29,44,40,47,55,39,63,68],"name":"fuel_cells","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"line":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[14,16,12,21,28,29,48,45,61,56],"name":"photovoltaic_energy/systems","marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"line":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[15,14,16,21,25,25,34,46,54,59],"name":"thin_films","marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"line":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[4,7,9,13,23,24,18,31,34,36],"name":"biomass","marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"line":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[5,7,5,10,18,26,28,23,21,49],"name":"optical_properties","marker":{"color":"rgba(227,119,194,1)","line":{"color":"rgba(227,119,194,1)"}},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"line":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[2,3,3,7,13,14,18,25,21,31],"name":"energy_efficiency","marker":{"color":"rgba(127,127,127,1)","line":{"color":"rgba(127,127,127,1)"}},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"line":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[3,1,1,12,12,15,15,20,17,35],"name":"energy_storage","marker":{"color":"rgba(188,189,34,1)","line":{"color":"rgba(188,189,34,1)"}},"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"line":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[6,1,4,8,20,11,13,20,21,27],"name":"photovoltaic_application","marker":{"color":"rgba(23,190,207,1)","line":{"color":"rgba(23,190,207,1)"}},"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"line":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[4,6,9,16,19,17,17,11,14,16],"name":"modeling-simulation","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[4,7,7,14,10,13,19,16,16,20],"name":"adsorption","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"mode":"lines+markers","type":"scatter","x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],"y":[1,7,5,13,11,14,11,9,22,26],"name":"wind_turbines","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"line":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p class="caption marginnote shownote">
+Figure 3.40: Most visible keywords/keyword pairs over the years
+</p>
+</div>
+</div>
+<div id="technology" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Technology</h3>
+<table style="width:30%; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Country 1
+</th>
+<th style="text-align:left;">
+Partner 1
+</th>
+<th style="text-align:center;">
+Num. of co-pub.
+</th>
+<th style="text-align:right;">
+Partner 2
+</th>
+<th style="text-align:right;">
+Country 2
+</th>
+<th style="text-align:right;">
+Most Visible Res. Area
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #C9A38D; color: #fff;">
+<strong>Northern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Minia University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  0.00% , lightblue 0.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">66</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Prince Sattam Bin Abdulaziz University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Mansoura University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  22.73% , lightblue 22.73% , lightblue 100.00% , transparent 100.00% ); width: 100%">51</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Saud University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Tanta University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  28.79% , lightblue 28.79% , lightblue 100.00% , transparent 100.00% ); width: 100%">47</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Jiangsu University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">China </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Tanta University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  39.39% , lightblue 39.39% , lightblue 100.00% , transparent 100.00% ); width: 100%">40</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Huazhong University of Science and Technology</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">China </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Alexandria University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  42.42% , lightblue 42.42% , lightblue 100.00% , transparent 100.00% ); width: 100%">38</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Qatar University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Qatar </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Engineering, Electrical &amp; Electronic </span>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #5EBB9F; color: #fff;">
+<strong>Western, Central, Eastern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Nigeria </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Abubakar Tafawa Balewa University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  75.76% , lightblue 75.76% , lightblue 100.00% , transparent 100.00% ); width: 100%">16</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Open University Malaysia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Malaysia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Ghana </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">CSIR </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  75.76% , lightblue 75.76% , lightblue 100.00% , transparent 100.00% ); width: 100%">16</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Stellenbosch University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">South Africa </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Nigeria </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Covenant University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  77.27% , lightblue 77.27% , lightblue 100.00% , transparent 100.00% ); width: 100%">15</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Tshwane University of Technology </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">South Africa </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Nigeria </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of Maiduguri </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  80.30% , lightblue 80.30% , lightblue 100.00% , transparent 100.00% ); width: 100%">13</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Open University Malaysia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Malaysia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Ghana </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Kwame Nkrumah University of Science and Technology</span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  80.30% , lightblue 80.30% , lightblue 100.00% , transparent 100.00% ); width: 100%">13</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Norwegian University of Life Sciences </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Norway </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #E2BA56; color: #fff;">
+<strong>Southern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of KwaZulu-Natal </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  48.48% , lightblue 48.48% , lightblue 100.00% , transparent 100.00% ); width: 100%">34</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Clemson University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United States</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Engineering, Electrical &amp; Electronic </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of Pretoria </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  57.58% , lightblue 57.58% , lightblue 100.00% , transparent 100.00% ); width: 100%">28</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">CSIR </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Ghana </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Engineering, Electrical &amp; Electronic </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of Johannesburg </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  57.58% , lightblue 57.58% , lightblue 100.00% , transparent 100.00% ); width: 100%">28</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Covenant University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Nigeria </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Green &amp; Sustainable Science &amp; Technology</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Stellenbosch University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  59.09% , lightblue 59.09% , lightblue 100.00% , transparent 100.00% ); width: 100%">27</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Victoria University of Wellington </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">New Zealand </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Energy &amp; Fuels </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of KwaZulu-Natal </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  63.64% , lightblue 63.64% , lightblue 100.00% , transparent 100.00% ); width: 100%">24</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Georgia Institute of Technology </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United States</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Engineering, Electrical &amp; Electronic </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="life-sciences" class="section level3" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Life Sciences</h3>
+<table style="width:30%; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Country 1
+</th>
+<th style="text-align:left;">
+Partner 1
+</th>
+<th style="text-align:center;">
+Num. of co-pub.
+</th>
+<th style="text-align:right;">
+Partner 2
+</th>
+<th style="text-align:right;">
+Country 2
+</th>
+<th style="text-align:right;">
+Most Visible Res. Area
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #C9A38D; color: #fff;">
+<strong>Northern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Tanta University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  0.00% , lightblue 0.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">27</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Jiangsu University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">China </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Biotechnology &amp; Applied Microbiology</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Assiut University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  22.22% , lightblue 22.22% , lightblue 100.00% , transparent 100.00% ); width: 100%">21</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Saud University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Suez Canal University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  22.22% , lightblue 22.22% , lightblue 100.00% , transparent 100.00% ); width: 100%">21</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Saud University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Plant Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Alexandria University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  25.93% , lightblue 25.93% , lightblue 100.00% , transparent 100.00% ); width: 100%">20</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Saud University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Re Action </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  25.93% , lightblue 25.93% , lightblue 100.00% , transparent 100.00% ); width: 100%">20</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Saud University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Plant Sciences </span>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #5EBB9F; color: #fff;">
+<strong>Western, Central, Eastern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Ethiopia </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Mekelle University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  29.63% , lightblue 29.63% , lightblue 100.00% , transparent 100.00% ); width: 100%">19</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Norwegian University of Life Sciences</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Norway </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Forestry </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Tanzania </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Sokoine University of Agriculture </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  29.63% , lightblue 29.63% , lightblue 100.00% , transparent 100.00% ); width: 100%">19</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Norwegian University of Life Sciences</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Norway </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Cameroon </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Université de Yaoundé I </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  44.44% , lightblue 44.44% , lightblue 100.00% , transparent 100.00% ); width: 100%">15</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">CIRAD </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">France </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Forestry </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Senegal </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Cheikh Anta Diop University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  48.15% , lightblue 48.15% , lightblue 100.00% , transparent 100.00% ); width: 100%">14</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Montpellier </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">France </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Plant Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Gabon </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">National Agency for National Parks </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  48.15% , lightblue 48.15% , lightblue 100.00% , transparent 100.00% ); width: 100%">14</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Duke University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United States </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Ecology </span>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #E2BA56; color: #fff;">
+<strong>Southern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of KwaZulu-Natal </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  40.74% , lightblue 40.74% , lightblue 100.00% , transparent 100.00% ); width: 100%">16</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Wageningen University &amp; Research </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Netherlands </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Ecology </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">North-West University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  40.74% , lightblue 40.74% , lightblue 100.00% , transparent 100.00% ); width: 100%">16</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Finnish Meteorological Institute </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Finland </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Sciences </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of Cape Town </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  40.74% , lightblue 40.74% , lightblue 100.00% , transparent 100.00% ); width: 100%">16</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of British Columbia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Canada </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Ecology </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Malawi </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Malawi-Liverpool-Wellcome Trust Clinical Research Programme</span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  51.85% , lightblue 51.85% , lightblue 100.00% , transparent 100.00% ); width: 100%">13</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Liverpool School of Tropical Medicine</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United Kingdom</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Respiratory System </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of Cape Town </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  51.85% , lightblue 51.85% , lightblue 100.00% , transparent 100.00% ); width: 100%">13</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Montpellier </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">France </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Ecology </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="social-sciences-and-arts-humanities" class="section level3" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Social Sciences and Arts &amp; Humanities</h3>
+<table style="width:30%; width: auto !important; margin-left: auto; margin-right: auto;" class="table table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Country 1
+</th>
+<th style="text-align:left;">
+Partner 1
+</th>
+<th style="text-align:center;">
+Num. of co-pub.
+</th>
+<th style="text-align:right;">
+Partner 2
+</th>
+<th style="text-align:right;">
+Country 2
+</th>
+<th style="text-align:right;">
+Most Visible Res. Area
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #C9A38D; color: #fff;">
+<strong>Northern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Assiut University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  53.33% , lightblue 53.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">7 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Majmaah University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Mansoura University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  66.67% , lightblue 66.67% , lightblue 100.00% , transparent 100.00% ); width: 100%">5 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Saud University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Mansoura University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  73.33% , lightblue 73.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">4 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Majmaah University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Assiut University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  73.33% , lightblue 73.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">4 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">King Saud University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+N5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Egypt </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Minia University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  73.33% , lightblue 73.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">4 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Prince Sattam Bin Abdulaziz University</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Saudi Arabia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #5EBB9F; color: #fff;">
+<strong>Western, Central, Eastern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Ethiopia </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Addis Ababa University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  73.33% , lightblue 73.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">4 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Gothenburg </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Sweden </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Economics </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Rwanda </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of Rwanda </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  80.00% , lightblue 80.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">3 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Georgia Institute of Technology </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United States </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Ethiopia </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Mekelle University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  80.00% , lightblue 80.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">3 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Tottori University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Japan </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Ethiopia </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Bahir Dar University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  80.00% , lightblue 80.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">3 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Tottori University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Japan </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+WCE5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Ethiopia </span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Mekelle University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  80.00% , lightblue 80.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">3 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Ghent University </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">Belgium </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="7" style="background-color: #E2BA56; color: #fff;">
+<strong>Southern Africa</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S1
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">North-West University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  0.00% , lightblue 0.00% , lightblue 100.00% , transparent 100.00% ); width: 100%">15</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of East Anglia </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United Kingdom</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S2
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">North-West University </span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  53.33% , lightblue 53.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">7 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Liverpool </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United Kingdom</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S3
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">Stellenbosch University</span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  53.33% , lightblue 53.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">7 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Victoria University of Wellington </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">New Zealand </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S4
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of Cape Town</span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  73.33% , lightblue 73.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">4 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Cambridge </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United Kingdom</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Environmental Studies </span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+S5
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">South Africa</span>
+</td>
+<td style="text-align:left;">
+<span style="color: grey; font-weight: bold">University of Cape Town</span>
+</td>
+<td style="text-align:center;">
+<span style="display: inline-block; unicode-bidi: plaintext; background: linear-gradient(90deg,transparent  73.33% , lightblue 73.33% , lightblue 100.00% , transparent 100.00% ); width: 100%">4 </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">University of Oxford </span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold; align: c">United Kingdom</span>
+</td>
+<td style="text-align:right;">
+<span style="color: grey; font-weight: bold">Education &amp; Educational Research</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<!-- </div> -->
+<p style="text-align: center;">
+<a href="3-2-regional-analysis.html"><button class="btn btn-default">Previous</button></a>
+<a href="4-final-words.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>
