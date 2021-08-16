@@ -1,31 +1,30 @@
-## Regional Analysis
+## Regional Analysis {#regional-analysis}
 ```{r}
-# TODO: Remove figure titles
 # TODO: Rewrite the following
 ```
 
-Following the overall figures of the RE-related publications in Africa this sub-chapter introduces geographical regions of Africa to bring the analysis one step further. Focusing on different regions of Africa prevents the over-representation of already more visible countries in terms of publications in general and also enables a detailed analysis for individual countries and organisations.
+Following the overall figures of the RE-related publications in Africa, this section introduces the geographical regions of Africa to broaden the analysis further. Focusing on different regions of Africa prevents the over-representation of already relatively more visible countries in terms of publications and also enables a detailed analysis for individual countries and organisations.
 
-```{r auregions, echo=FALSE, out.width="100%", fig.cap="African Union Regions"}
+```{r auregions, echo=FALSE, out.width="100%", fig.cap="African Union Geographic Regions"}
 au_regions <- readRDS(file = "../../04_visualisation/02_maps/03_results/au_regions.Rds")
 au_regions
 ```
-  
-Although the most common definition of African geographical regions is the categorization of the [United Nations Statistics Department](https://unstats.un.org/unsd/methodology/m49/) (UNSD), as the Figure \@ref(fig:auregions) shows, this report uses a different categorization, namely [African Union Geographical Regions](https://au.int/en/member_states/countryprofiles2). The reason for this decision solely lies on the more evenly sized regions in AU categorization. 
+ 
+To determine the African regions, this study uses [African Union Geographical Regions](https://au.int/en/member_states/countryprofiles2) instead of the [United Nations Statistics Department](https://unstats.un.org/unsd/methodology/m49/) (UNSD). A presentation of the African Union regions can be seen in Figure \@ref(fig:auregions).
+
+
+
+As Figure \@ref(fig:afrcouplt) summarizes, 4 of the most visible African countries in the RE-related publications are from Northern Africa. South Africa has the highest number of RE-related publications (~6900) between 2011-2020, only other member country of Southern Africa in the most visible 15 countries is Zimbabwe with 230 RE-related publications between 2011-2020. Nigeria, Ghana, Senegal from Western Africa; Ethiopia, Kenya, Tanzania, Uganda from Eastern Africa; and Cameroon, the only country from Central Africa, are among the 15 most visible countries following the most visible 5 countries.
   
 ```{r}
-# TODO: Change regions to the AU regions
 # TODO: Make links appear as foot note
 # TODO: Cite the region sources?
 ```
 
-```{r afrcouplt, echo=FALSE, out.width="100%", fig.cap="Most visible 15 African countries in  RE-related publications between 2011-2020"}
+```{r afrcouplt, echo=FALSE, out.width="100%", fig.cap="The most visible 15 African countries in  RE-related publications between 2011-2020"}
 afr_cou_plt <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/afr_cou_plot.Rds")
 afr_cou_plt
 ```
-
-As Figure \@ref(fig:afrcouplt) summarizes, 4 of the most visible African countries in the RE-related publications are from Northern Africa. South Africa has the highest number of publications. Nigeria and Ghana from Western Africa, Ethiopia and Kenya from Eastern Africa are following those 5 countries. Cameroon is the only country from Central Africa that finds a place between the 15 most visible countries.  
-
 
 
 

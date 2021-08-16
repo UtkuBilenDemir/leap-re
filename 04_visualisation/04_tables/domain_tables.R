@@ -175,6 +175,11 @@ saveRDS(te_part_df, "./01_data/06_domain_partnerships/te_part_df.Rds")
 saveRDS(ls_part_df, "./01_data/06_domain_partnerships/ls_part_df.Rds")
 saveRDS(ss_part_df, "./01_data/06_domain_partnerships/ss_part_df.Rds")
 
+ps_part_df <-  readRDS("./01_data/06_domain_partnerships/ps_part_df.Rds")
+te_part_df <-  readRDS("./01_data/06_domain_partnerships/te_part_df.Rds")
+ls_part_df <-  readRDS("./01_data/06_domain_partnerships/ls_part_df.Rds")
+ss_part_df <-  readRDS("./01_data/06_domain_partnerships/ss_part_df.Rds")
+
 
 
 
@@ -387,13 +392,29 @@ gen_pair_table <- function(table_df) {
   kable("html", escape = F, "striped",align=c(rep('l', 2), "c", rep("r", 3)), , table.attr = "style='width:30%;'") %>%
   kable_styling("hover", full_width = F) %>%
   #column_spec(5, width = "3cm") 
-  pack_rows(unique(test$region)[1], 1, 5 , label_row_css = "background-color: #C9A38D; color: #fff;") %>%
-  pack_rows(unique(test$region)[2], 6, 10, label_row_css = "background-color: #5EBB9F; color: #fff;") %>%
-  pack_rows(unique(test$region)[3],11, 15, label_row_css = "background-color: #E2BA56; color: #fff;")
+  pack_rows(unique(table_df$region)[1], 1, 4 , label_row_css = "background-color: #C9A38D; color: #fff;") %>%
+  pack_rows(unique(table_df$region)[2], 5, 9, label_row_css = "background-color: #5EBB9F; color: #fff;") %>%
+  pack_rows(unique(table_df$region)[3],10, 14, label_row_css = "background-color: #E2BA56; color: #fff;")
 
   return(out_table)
 }
+te_table_regional_picked[10,] <- te_table_regional_picked[13,]
 
+te_table_regional_picked <- rbind(te_table_regional_picked[1:5,],te_table_regional_picked[10,], te_table_regional_picked[6:9,], te_table_regional_picked[11:15,])
+rownames(te_table_regional_picked) <- NULL
+a <- te_table_regional_picked[6, c("Country 1", "Partner 1")]
+te_table_regional_picked[6, c("Country 1", "Partner 1")] <- te_table_regional_picked[6, c("Country 2", "Partner 2")]
+te_table_regional_picked[6, c("Country 2", "Partner 2")] <- a
+colnames(te_table_regional_picked)
+te_table_regional_picked <- te_table_regional_picked[-c(12),]
+
+rownames(te_table_regional_picked) <- NULL
+
+te_table_regional_picked <- te_table_regional_picked[-c(8),]
+rownames(te_table_regional_picked) <- NULL
+
+ls_table_regional_picked <- ls_table_regional_picked[-c(5),]
+rownames(ls_table_regional_picked) <- NULL
 ps_pair_table <- gen_pair_table(ps_table_regional_picked)
 te_pair_table <- gen_pair_table(te_table_regional_picked)
 ls_pair_table <- gen_pair_table(ls_table_regional_picked)

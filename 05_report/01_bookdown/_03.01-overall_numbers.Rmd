@@ -1,11 +1,8 @@
-## Overall Figures
+## Overall Figures {#overall-figures}
 
-This sub-chapter mainly deals with number of RE-related publication outputs in
-African countries in the 10 years period between 2011-2020. 
-
-```{r}
+```{r, include=FALSE}
 # Addition: In order to put numbers
-# in perspective, number of publication in the EU-27 countries has been added analysed
+# in perspective, the number of publications in the EU-27 countries has been added analysed
 # as well.
 # TODO: Add EU-27 absolute numbers and relative growth 
 
@@ -19,13 +16,13 @@ abs_rel_plt
 ```
 
 
-African countries have collaborated in approximately 31k renewable energy (RE) publications in the 10 year range between 2011-2020. The number of those RE-related publications has been constantly
-increasing between until 2019. Slightly declining publication numbers between 2019
-and 2020 (see \@ref(fig:puboty)), as Web of Science (WoS) team also often emphasises,
-is caused by the latency in the database entries [^1]. Even after including the 
-possibly incomplete amount of publications in 2020, number of RE-related publications from 
+African countries have collaborated in approximately 31k renewable energy (RE) related publications in the 10 years range between 2011-2020. The number of those publications has been constantly
+increasing until 2019. Slightly declining publication numbers between 2019
+and 2020 (see Figure \@ref(fig:puboty))
+is likely caused by the latency in the database entries [^1] according to the explanation of Web of Science. Even after including the 
+possibly incomplete amount of publications in 2020, the number of RE-related publications from 
 the African countries in total increases from ~1.1k in 2011 to ~4.8k in 
-2020 which is an increment by factor ~4.2. 
+2020 which is an increment by factor ~4.2.  
 
 ```{r}
 # TODO: Research Areas?
@@ -41,9 +38,10 @@ map_pub_freq
 # TODO: Edit the following text
 ```
 
-As \@ref(fig:choropleth) shows, South Africa and Egypt are the most visible countries with 6.8k and 6.6k publications respectively. 20 African countries stay under 40 RE-related publications in total between 2011-2020. The most visible countries distributed diversely on the continent, however, other than the Northern African countries and South Africa only Nigeria contributed in over 1000 RE-related publications (2252 pub.).  
+As Figure \@ref(fig:choropleth) shows, South Africa and Egypt are the most visible countries with 6.8k and 6.6k RE-related publications respectively. 20 African countries stay under 40 RE-related
+publications in total between 2011-2020. The most visible countries are distributed diversely on the continent, however, other than the Northern African countries and South Africa only Nigeria contributed to over 1000 RE-related publications (2252 pub.) between 2011-2020.  
 
-Although total publication output is a strong indicator of the most visible countries, it does not show the growth rate in the numbers. African countries that show high increment rate in the number of publications despite having relatively lower total amount of publications will be analysed in the following chapter.
+Although total publication output is a strong indicator of the most visible countries, it does not show the growth rate in the numbers. African countries that show a high increment rate in the number of publications despite having a relatively lower total amount of publications will be analysed in the following chapter.
   
 
 
@@ -54,7 +52,11 @@ org_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figure
 org_mv
 ```
 
-4 of the most visible 5 organisations in RE-related publications are from South Africa. Each of them has close to or over 800 publications between 2011-2020, Cairo University from Egypt is following them with ~780 publications. Although, most of the visible organisaitons are in general universities, there is also *Renewable Energy Development Center* from Algeria, an institution specifically focuses on RE-related topics with an output of ~800 publications between 2011-2020.
+4 of the most visible 5 organisations (*University of Kwazulu-Natal*, *University of Cape Town*, *Stellenbosch University*, and *University of Pretoria*) in RE-related publications are located in South Africa. Each of them has close to or over 800 publications between 2011-2020, Cairo University from Egypt is following them with ~780 publications. 4 other Egyptian institutions; namely Ain Shams University, Tanta University, National Research Centre of Egypt and Alexandria University are also among the 15 most visible organisations. 
+
+*Tunis El Manar University* and the *University of Sfax* from Tunisia are also in the most visible 15 organisations with ~650 and ~550 RE-related publications and *Mohamed V University*, the only organisation from Morocco in the list has ~670 RE-related publications.
+
+Although most of the visible organisations are in general universities, the only organisation from Algeria in the most visible 15 organisations, namely *Renewable Energy Development Center* is an institution completely dedicated to RE-related research. The total number of RE-related publications of *Renewable Energy Development Center* is ~700 between 2011-2020.
 
 
 
@@ -65,7 +67,7 @@ org_mv
 ```
 
 
-```{r resdomains, echo=FALSE, out.height="1000px", fig.cap="Distribution of research domains in RE-related publications of African countries between 2011-2020"}
+```{r resdomains, echo=FALSE, fig.cap="Distribution of research domains in RE-related publications of African countries between 2011-2020"}
 ## res_domains_pie <- readRDS(file = "../../04_visualisation/05_treemaps/res_domains_pie.Rds")
 ## res_domains_pie 
 gen_ra_sun <- readRDS("../../04_visualisation/05_treemaps/gen_ra_sun.Rds")
@@ -73,11 +75,13 @@ gen_ra_sun
 ```
 [^2]
 
-Over 50% of the RE-related publications are associated with research areas from *Technology* domain. *Energy & Fuels* is the most visible research area in total followed by *Electrical & Elctronic Engineering*. Other Engineering fields like *Chemical, Environmental, Mechanical Engineering* also in the visible research areas. Multidisciplinary discipline *Green & Sustainable Science & Technology* is the 3. most visible research area in total. 
+Over 50% of the RE-related publications are associated with research areas from the *Technology* domain. *Energy & Fuels* is the most visible research area in total followed by *Electrical & Electronic Engineering*. Other Engineering fields like *Chemical, Environmental, Mechanical Engineering* are also among the visible research areas. Multidisciplinary discipline *Green & Sustainable Science & Technology* is the 3. most visible research area in total. 
 
-Life Science $ Biomedicine and Physical Sciences have similar number of publications (~8800 pub. both). *Environmental Science* and *Ecology* from Life Sciences & Biomedicine as well as *Multidisciplinary Materials Science* and *Thermodynamics* from Physical Sciences are also in the 10 most visible research areas.
+Life Science & Biomedicine and Physical Sciences have a similar number of publications (~8800 pub. both). *Environmental Science* and *Ecology* from Life Sciences & Biomedicine as well as *Multidisciplinary Materials Science* and *Thermodynamics* from Physical Sciences are also in the 10 most visible research areas.
 
 Social Sciences (1325 pub.) is also not absent in the RE-related publications of African organisations. *Environmental Studies* is the most visible research area in this domain with 663 publications.
+
+The 5. research domain Arts & Humanities include only 45 publications, therefore, this domain will be analysed together with Social Sciences in Chapter \@ref(domain-analysis) Domain Analysis.
 
 
 
@@ -88,6 +92,6 @@ test_res_areas_bar_line
 
 
 
-[^1]: As Web of Science support service informs, it might take up to 2 years for a document to be entered into the Web of Science databases.
+[^1]: As the Web of Science support service informs, it might take up to 2 years for a document to be entered into the Web of Science databases.
 
-[^2]: Caution, research domains and areas are not unique to a publication. A publication can have multiple disciplines involved. Therefore, the sum of the number of publications in each research area does not correspond to the number of publications in their respective research domain.
+[^2]: A single publication may be associated with multiple research domains/ areas. The sum of the number of publications in individual research domains/areas does not add up to the total number of publications.

@@ -4,21 +4,28 @@
 sa_table <- readRDS(file = "../../04_visualisation/04_tables/sa_table.Rds")
 sa_table
 ```
+
+There is a strong contrast between the Southern African countries in terms of RE-related publication output. While South Africa is the most visible country in the whole continent with ~6900 RE-related publications between 2011-2020 the closest follower Zimbabwe have 230. Other than South Africa and Zimbabwe, the following countries Botswana, Zambia and Mozambique ~150 RE-related publications between 2011-2020 each.
+
+
+
 ```{r sanet, echo=FALSE, out.width="100%", fig.cap="Co-publication network of Southern African countries in RE-related publications between 2011-2020"}
-sa_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/sa_net.Rds")
+sa_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/san_net.Rds")
 sa_net
 ```
-```{r}
-# links with fewer than 25 publications have been removed
-```
+In alignment with the total number of publications, South Africa is the centre of mass in the co-publication network of Southern Africa. All the other visible South African countries have collaborations with South Africa with more than 25 co-publications. South Africa also has strong interregional collaboration with other African countries, which includes Egypt (~30 co-pub.) from Northern Africa; Nigeria (277 co-pub.) and Ghana (27 co-pub.) from Western Africa; Ethiopia (44 co-pub.), Tanzania (38 co-pub.), Uganda (32 co-pub.) and Kenya (68 co-pub.) from Eastern Africa, which makes South Africa the most visible African country also in interregional collaborations. None of the Southern African countries has a collaboration link with more than 25 co-pub. without the involvement of South Africa. 
 
+The most visible EU-27 country in the region is Germany with involvement in 373 co-publications. Germany is followed by France with 290 co-pub. and Spain 150 co-publications. However, South Africa's most visible collaborations are with the United Kingdom and the United States 533 and 701 co-pub. respectively out of United States' 812 and UK's 614 co-publications in the region. 
 
+#### South Africa
 
-```{r saorgtable,  fig.show="hold", out.width="0%", fig.cap= "Most visible organisations from South Africa"}
+```{r saorgtable,  fig.show="hold", out.width="0%", fig.cap= "Re-related publication output of the most visible South African organisations"}
 sa_org_table <- readRDS(file = "../../04_visualisation/04_tables/sa_org_table.Rds")
 sa_org_table
 ```
+The most visible 5 organisations in the region are all from South Africa.  *University of KwaZulu-Natal* is the organisation with the highest output of RE-related publications (934 publications). However, the organisation's RE-related publication output is stagnating since 2017.
 
+*University of Cape Town* is steadily increasing its RE-related publications since 2011 with a total output of ~860 publications. *Stellennosch University* is closely following with ~850 RE-related publications between 2011-2020 which despite the decline after 2019 only 1 publication behind *University of KwaZulu-Natal*. *University of Pretoria* and *University of Johannesburg* are following with ~800 and ~620 publications respectively.
 
 
 
@@ -26,35 +33,62 @@ sa_org_table
 south_a_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/south_a_net.Rds")
 south_a_net
 ```
-```{r}
-# links with fewer than 25 publications have been removed
-```
+The Organisation network of South Africa displays a relatively well interconnected co-publication structure with a number of intercontinental collaborators. None of the organisations seems to be the centre of mass in the network. 
 
-
+Some of the notable international collaborations are between China's *Northwest Normal University* and *University of Western Cape* (36 co-pub.), Denmark's *Aalborg University* and *University of Johannesburg* (23 co-pub,), UAE's *Uni. of Sharjah* and *University of Pretoria* (22 co-pub.), New Zealand's *Victoria University of Wellington* and *Stellenbosch University* (~30 co-pub.), France's *University of Montpellier* and *University of Cape Town* (20 co-pub.) and Canada's *Uni. of British Columbia* and *University of Cape Town* (23 co-pub.). Also, as an interregional collaboration between African organisations, Nigeria's *Covenant University* has 34 RE-related co-publications with *University of Johannesburg*. 
 
 
 #####  University of KwaZulu-Natal
 
-```{r kwazubarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+```{r kwazubarline, echo=FALSE, out.width="100%", fig.cap="Absolute and relative growth of the most visible research areas in RE-related publications of University of KwaZulu-Natal between 2011-2020"}
 kwazu_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/kwazu_ra_barline.Rds")
 
 kwazu_barline
 ```
+The most visible areas in *University of KwaZulu-Natal*'s publications are Energy & Fuels and Electrical & Electronic Engineering. However, as seen previously in other organisations both of those fields start to decline in numbers after 2017. Instead, the number of publications in Environmental Sciences keeps growing followed by Ecology in a relatively stable manner. Other than this reoccurring pattern *University of KwaZulu-Natal* has uniquely Plant Sciences as one of the most visible areas.
 
 
+```{r kwazungramnetwork, echo=FALSE, out.width="100%", fig.cap="Keyword/keyword pair correlation network in RE-related publications of University of KwaZulu-Natal"}
+kwazu_ngram_network_plot <- readRDS(file = "../../04_visualisation/06_ngrams/kwazu_ngram_network_plot.Rds")
+
+kwazu_ngram_network_plot
+```
+As unique keyword pairs,  *University of KwaZulu-Natal*'s keyword correlation network includes the mention of estuarine lakes. The exploitation of the tidal energy where salty and freshwater meet is an often discussed topic (see for example @ross2021) and the largest estuarine lake in Southern Africa, namely Saint Lucia, is located in South Africa.
+
+Other keyword pairs show great diversity. Generally trending topics like solar and wind energy-related keyword pairs are also present in *University of KwaZulu-Natal*'s network. As a unique biomass related keyword, c4 grass type is often mentioned in the publications in *University of KwaZulu-Natal* which ar referring to a specific type of grass that can be used effectively for biofuel production (see @vanderweijde2013).
 
 ##### University of Cape Town 
-```{r capetbarline, echo=FALSE, out.width="100%", out.height="700px",fig.cap="TEST"}
+```{r capetbarline, echo=FALSE, out.width="100%", out.height="700px",fig.cap="Absolute and relative growth of the most visible research areas in RE-related publications of University of Cape Town between 2011-2020"}
 
 capet_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/capet_ra_barline.Rds")
 
 capet_barline
 ```
+Similar to *University of KwaZulu-Natal*, the most visible research areas in the RE-related publications of *University of Cape Town* are Energy & Fuels and Electrical & Electronic Engineering followed by Ecology. Uniquely, the most visible 5 research areas of *University of Cape Town* include Marine & Freshwater Biology which stays number of publication wise relatively stable over the years. Despite the decline in numbers in 2020 Environmental Sciences is steadily growing in numbers.
 
+```{r capetngramnetwork, echo=FALSE, out.width="100%", fig.cap="Keyword/keyword pair correlation network in RE-related publications of University of Cape Town"}
+capet_ngram_network_plot <- readRDS(file = "../../04_visualisation/06_ngrams/capet_ngram_network_plot.Rds")
+
+capet_ngram_network_plot
+```
+*University of Cape Town*'s keyword/keyword pair network clearly shows the influence of Marine & Freshwater Biology in one of its clusters. Marine ecosystem especially in Southern Benguela is a reoccurring topic in the publications of the *University of Cape Town*.
+
+Other than that, along with the high emphasis on photovoltaic energy environmental topics like environmental impact and carbon footprint are also visible keyword pairs. 
 
 ##### Stellenbosch University 
-```{r stellbarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+```{r stellbarline, echo=FALSE, out.width="100%", fig.cap="Absolute and relative growth of the most visible research areas in RE-related publications of Stellenbosch University between 2011-2020"}
 stell_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/stell_ra_barline.Rds")
 
 stell_barline
 ```
+Similar to the other South African organisations *Stellenbosch University*'s most visible research areas are Energy & Fuels and Electrical & Electronic Engineering. A unique research area Biotechnology & Applied Microbiology is following the most visible 2 research areas in a consistent manner. Ecology and Green & Sustainable Science & Technology are following those with Ecology having the highest number of publications in 2020.
+```{r stellngramnetwork, echo=FALSE, out.width="100%", fig.cap="Keyword/keyword pair correlation network in RE-related publications of Stellenbosch University "}
+stell_ngram_network_plot <- readRDS(file = "../../04_visualisation/06_ngrams/stell_ngram_network_plot.Rds")
+
+stell_ngram_network_plot
+```
+Wind energy-related keyword pairs are emphasised more in the publications of *Stellenbosch University* than in any other South African country.
+
+Research on types of yeast like Pichia Pastoris and fungi like Saccharomyces Cerevisiae presumably because of the high number of publications in Biotechnology & Applied Microbiology (see @benjamin2020 and @siripong2018 for their possible uses for RE).
+
+Other than that, a number of biomass, biogas and bioprocessing methods are also highly emphasised in the RE-related publications of *Stellenbosch University*.

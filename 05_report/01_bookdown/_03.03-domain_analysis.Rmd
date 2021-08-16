@@ -1,40 +1,108 @@
-## Research Domain Analysis
+## Domain Analysis {#domain-analysis}
 
-```{r}
-# TODO: Include an introduction
-```
+This chapter is mainly interested in analysing RE-related publications of African countries separated into the 5 research domains (Physical Sciences, Technology, Life Sciences & Biomedicine, Social Sciences, and Arts & Humanities) in order to offer a different perspective on the characteristics by reviewing the most visible institutional pairings and trending themes in each category. In order to exclude pairings from the same country institutional pairings have been chosen from the collaborations with at least an interregional partnership.
 
 ### Physical Sciences
-```{r pstable, echo=FALSE, out.width="50%", fig.cap="Most Visible pairings in Physical Sciences"}
+```{r pstable, echo=FALSE, out.width="50%", fig.cap="The m. v interregional and intercontinental organisational co-publication pairings in Physical Sciences"}
 ps_table <- readRDS(file = "../../04_visualisation/04_tables/ps_pair_table.Rds")
 ps_table
 ```
 
+Looking at the international collaborations in the research domain of Physical Sciences the top pairings seems to be the co-publication partnerships between African and East Asian countries. Co-publication partnership between Egypt's *Minia University* and South Korea's *JeonBuk National University* is the most visible one in terms of RE-related number of co-publications followed by the collaboration between *University of the Western Cape* of South Africa and China's *Northwest Normal University*.
 
-```{r psbarplot, echo=FALSE, out.width="100%", out.height="1000px", fig.cap="Most visiblble keywords/keyword pairs"}
+The most visible Co-publication pairings in Northern and South Africa are occupied by Egyptian and South African organisations because of their high number of RE-related publication outputs. Egypt's high number of co-publications with Saudi Arabian institutions is also visible among the pairings, 2 of the most visible 5 pairings are between Egypt's *Minia* and *Ain Shams Universities* collaboration with Saudi Arabia's *King Saud* and *King Khalid Universities* respectively. 2. and 3. of the 5 most visible pairings in Southern Africa belong to *North-West University* of South Africa with *Finnish Meteorological Institute* and *University of Stuttgart*. 
+
+In the Western, Central and Eastern Africa cluster the most visible pairing is between Nigeria's *Covenant University* with South African *University of Johannesburg* which is the only interregional African collaboration in the most visible co-publication collaborations in Physical Sciences. Other than *Université de Yaoundé I*'s (Cameroon) collaborations with *University of Montpellier* of France and the UK's *University of Leeds* are also in the most visible organisational pairings. *University of Leeds* has also together with *University of Stirling* visible co-publication partnership with *National Agency for National Parks* of Gabon. 
+
+
+```{r psbarplot, echo=FALSE, fig.cap="The most Visible keywords/ keyword pairs in Physical Sciences", warning=FALSE, out.height="1000px", out.width="100%"}
 ps_barplot <- readRDS(file = "../../04_visualisation/06_ngrams/ps_domain_barplot.Rds")
 ps_barplot
 ```
+The most visible keywords and keywords pairs in Physical Sciences refer to solar energy and components used in photovoltaic systems like thin films as Figure \@ref(fig:psbarplot) displays. In relation, those keywords are also increasingly trending in the last years as in Figure \@ref(fig:pslineplot). One of the rising keyword pairs in the last couple of years is indicating research on the optical properties of different substances which can play a critical role in the advancements in the absorption of solar energy. Similarly, solar adsorption cooling/ refrigeration systems are also often mentioned in RE-related publications in the Physical Science domain.
 
-```{r pslineplot, echo=FALSE, out.width="100%", out.height="1000px", fig.cap="Most visible keywords/keyword pairs over the years"}
+Technologies like fuel cells that convert the energy from fuels more effectively into electricity in comparison with their less green counterparts like combustion engines are also in the trending keywords. Biomass and wind energy-related keyword pairs are also following the solar energy topics. Other than, using green energy forms to produce hydrogen instead of fossil fuels is also a visible topic in the Physical Science keywords.
+
+Environmental topics are also often mentioned in the RE-related topics. Other than measuring the environmental impact of different kinds of energy production types there are also keyword pairs mentioning water/wastewater treatment, desalination.
+
+
+```{r pslineplot, echo=FALSE, out.width="100%", warning=FALSE, out.height="1000px", fig.cap="The most visible keywords/keyword pairs over the years in Physical Sciences"}
 ps_lineplot <- readRDS(file = "../../04_visualisation/06_ngrams/ps_domain_lineplot.Rds")
 ps_lineplot
 ```
 
 ### Technology
-```{r tetable, echo=FALSE, out.width="50%", fig.cap="Most Visible pairings in Technology"}
+
+```{r tetable, echo=FALSE, out.width="50%", fig.cap="The most visible interregional and intercontinental organisational co-publication pairings in Technology"}
 te_table <- readRDS(file = "../../04_visualisation/04_tables/te_pair_table.Rds")
 te_table
 ```
 
-### Life Sciences
-```{r lstable, echo=FALSE, out.width="50%", fig.cap="Most Visible pairings in Life Sciences"}
-te_table <- readRDS(file = "../../04_visualisation/04_tables/ls_pair_table.Rds")
-te_table
+2 of the most visible collaborations in the Technology domain are between Egyptian and Saudi Arabian organisations, namely between *Minia University* and *Prince Sattam Bin Abdulaziz University*, and between *Mansoura University* and *King Saud University*. All of the first 5 most visible pairings are from Northern Africa and specifically from Egyptian universities. *Tanta University*'s 2 partnerships with Chinese organisations *Jiangsu University* and *Huazhong University of Science and Technology* are the most visible 3. and 4. pairings followed by *Alexandria University*'s collaboration with *Qatar University*. 
+
+All of the most visible pairings in Southern Africa are associated with South African organisations with the most visible one being between *University of KwaZulu-Natal* and *Clemson University* from the United States. The following partnership between *University of Johannesburg* and *Covenant University* of Nigeria is also the most visible pairing in the Western. Central, Eastern Africa cluster. All of the most visible pairings from this cluster are occupied by the Nigerian Universities. 2 of them are with Malaysian organisations and another one is again between Nigerian *Covenant University* and South African *Tshwane University of Technology*.
+
+```{r tebarplot, echo=FALSE, fig.cap="The most visible keywords/ keyword pairs in Technology", warning=FALSE, out.height="1000px", out.width="100%"}
+te_barplot <- readRDS(file = "../../04_visualisation/06_ngrams/te_domain_barplot.Rds")
+te_barplot
+```
+
+The most visible keywords and keyword pairs in Technology show similarity to the trending topics in Physical Sciences. Photovoltaic systems, wind tribunes, fuel cells are among the most visible keyword pairs. The maximum power point tracking (MPPT) technique for algorithmic improvement for the energy extraction from (mostly) photovoltaic systems is one of the most often mentioned keywords. Similarly, algorithmic control systems for photovoltaic and wind energy like fuzzy logic are also among the trending keyword pairs in the Technology domain. Research areas under Technology seem to be also focusing heavily on energy management methods like energy storage, conversion, maximization.
+
+As on Figure \@ref(fig:telineplot) the most visible keyword pairs under Technology seems to be either stagnating or falling in terms of number of publications after 2017. This might indicate there are other topics growing in Technology related areas which are not apparent yet.
+
+```{r telineplot, echo=FALSE, warning=FALSE, out.width="100%", out.height="1000px", fig.cap="The most visible keywords/keyword pairs over the years in Technology"}
+te_lineplot <- readRDS(file = "../../04_visualisation/06_ngrams/te_domain_lineplot.Rds")
+te_lineplot
+```
+
+### Life Sciences & Biomedicine
+```{r lstable, echo=FALSE, out.width="50%", fig.cap="The most visible interregional and intercontinental organisational co-publication pairings in Life Sciences & Biomedicine"}
+ls_table <- readRDS(file = "../../04_visualisation/04_tables/ls_pair_table.Rds")
+ls_table
+```
+
+The most visible pairing in Life Sciences & Biomedicine is between Egypt's *Tanta University* and *Jiangsu University* of China. All the following 3 pairings are between Egyptian organisations *Assiut*, *Suez Canal* and *Alexandria Universities* with *King Saud University* of Saudi Arabia. 
+
+2 of the most visible pairings in the West, Central, East Africa cluster are the collaborations between Ethiopian *Mekelle University* and Tanzanian *Sokoine University of Agriculture* with *Norwegian University of Life Sciences*. French organisations *CIRAD* and *University of Montpellier *'s collaborations with *Université de Yaoundé I* (Cameroon) and *Cheikh Anta Diop University* (Senegal) are other visible collaborations from the region.
+
+In Southern Africa, the most visible pairing is between *University of KwaZulu-Natal* of South Africa with the Netherlands' *Wageningen University* followed by *North-West University*'s collaboration with *Finnish Meteorological Institute* and *University of Cape Town*'s collaborations with *University of British Columbia* (Canada).
+
+```{r lsbarplot, echo=FALSE, out.width="100%", out.height="1000px", fig.cap="The most visible keywords/ keyword pairs in Life Sciences & Biomedicine"}
+ls_barplot <- readRDS(file = "../../04_visualisation/06_ngrams/ls_domain_barplot.Rds")
+ls_barplot
+```
+Biomass related keywords are by far the most visible ones in the RE-related publications in Life Sciences & Medicine. Climate change and environmental impact related keywords are also among the most often mentioned topics and are increasingly more often mentioned. Also as related trending topics soil fertility, water/wastewater treatment, plant/grain growth topics are heavily emphasised in the RE-related publications under Life Sciences & Biomedicine. Air pollution, as well as heavy metal waste, are also among the visible keywords.
+
+
+
+```{r lslineplot, echo=FALSE, out.width="100%", out.height="1000px", warning=FALSE, fig.cap="The most visible keywords/keyword pairs over the years in Life Sciences & Biomedicine"}
+ls_lineplot <- readRDS(file = "../../04_visualisation/06_ngrams/ls_domain_lineplot.Rds")
+ls_lineplot
 ```
 
 ### Social Sciences and Arts & Humanities
-```{r sstable, echo=FALSE, out.width="50%", fig.cap="Most Visible pairings in Social Sciences and Arts & Humanities"}
+```{r sstable, echo=FALSE, out.width="50%", fig.cap="The most visible interregional and intercontinental organisational co-publication pairings in Social Sciences and Arts & Humanities"}
 ss_table <- readRDS(file = "../../04_visualisation/04_tables/ss_pair_table.Rds")
 ss_table
+```
+The most visible 2 collaboration partnerships in Social Science and Arts & Humanities (SSH) is between South Africa's *North-West University* and the UK's *University of East Anglia* as well as *University of Liverpool*. As in the case of almost all of the visible collaborations in SSH the dominant research area in those collaborations is Environmental Studies.  
+
+
+*Stellenbosch University*'s collaboration with New Zealand's *Victoria University of Wellington* and Egypt's *Assiut University*'s with Saudi Arabian *Majmaah University* are other visible pairings in SSH. From the Western, Central, Eastern Africa cluster the most visible pairing is between *Addis Ababa University* (Ethiopia) and *University of Gothenburg* (Denmark) which are exceptionally mostly co-published Economics related papers.
+
+
+```{r ssbarplot, echo=FALSE, out.width="100%", out.height="1000px", fig.cap="The most visible keywords/ keyword pairs in Social Sciences and Arts & Humanities"}
+ss_barplot <- readRDS(file = "../../04_visualisation/06_ngrams/ss_domain_barplot.Rds")
+ss_barplot
+```
+
+Climate change related keywords are the most visible cluster in the RE-related keywords from SSH areas. Environmental impact assessment, climate resilience, environmental sustainability, CO_2 emissions are just a few of those. In relation, energy consumption, strategy and policy are also emphasised keyword pairs in RE-related SSH publications from African organisations. 
+
+Another cluster of keywords indicates discussion about the economic aspect of renewable energy innovations as well as the economic impact of climate change related issues.
+
+```{r sslineplot, echo=FALSE, warning=FALSE, fig.cap="The most visible keywords/keyword pairs over the years in Social Sciences and Arts & Humanities", warning=FALSE, out.height="1000px", out.width="100%"}
+
+ss_lineplot <- readRDS(file = "../../04_visualisation/06_ngrams/ss_domain_lineplot.Rds")
+ss_lineplot
 ```

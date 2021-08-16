@@ -134,5 +134,22 @@ length(unique(na_df$ID)) / length(unique(M_06$ID))
 unique(M_06[order(M_06$Country_relative, decreasing = TRUE), c("au_off_country")])[1:10]
 M_06[, "au_off_country"]
 
+library(mapview)
+
+mapshot(
+  map_pub_freq,
+  file = "./05_report/01_bookdown/static_output/map_pub_freq.png",
+  remove_controls = c("zoomControl", "layersControl", "homeButton", "scaleBar",
+    "drawToolbar", "easyButton")
+)
+mapshot(
+  map_cou_reg,
+  file = "./05_report/01_bookdown/static_output/map_cou_reg.png",
+  remove_controls = c("zoomControl", "layersControl", "homeButton", "scaleBar",
+    "drawToolbar", "easyButton")
+)
+
+
+
 
 

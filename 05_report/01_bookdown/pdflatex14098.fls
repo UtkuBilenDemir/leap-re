@@ -1,0 +1,4 @@
+PWD /home/ubd/Projects/zsi/leap-re/05_report/01_bookdown
+INPUT /home/ubd/.TinyTeX/texmf.cnf
+INPUT /home/ubd/.TinyTeX/texmf-dist/web2c/texmf.cnf
+INPUT /home/ubd/.TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt

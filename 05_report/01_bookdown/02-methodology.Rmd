@@ -1,3 +1,32 @@
-# Methodology
+# Methodology {#method}
 
-Here is a review of existing methods.
+This chapter mainly deals with the explanation of the methodological definitions, information about the data collection, preprocessing, analysis, and visualisation/ report writing phases.
+
+## Definitions
+**Research Area/ Research Domain.** Research areas are the scientific fields defined by the Web of Science (WoS). Research domains are the 5 parent categories (Physical Sciences, Technology, Life Sciences & Biomedicine, Social Sciences, Arts & Humanities) of the research areas [^0201].  
+
+**Co-publication**. A publication that has been produced with the collaboration of at least 2 authors from 2 different organisations.
+
+**Interregional co-publication**. Interregionality in this Report refers to different African countries from different African Union (AU) regions. An interregional co-publication, therefore, is a paper published with the collaboration of at least 2 authors from African organisations from different regions of Africa.
+
+**Intercontinental co-publication**. Co-publications of at least 2 organisations located on different continents.
+
+**Relative growth rate**. A simple indicator of how many folds the number of publications has been increased in comparison with the number of publications in the start year (2011). The equation is simply:
+
+\[
+rel\_growth\_rate := end\_value/start\_value
+\]
+
+## Data Source & Methodological Steps
+
+The study is based on the data from Clarivate's Web of Science (WoS) databases. After the unification of the collected RE-related keywords, different types of search queries have been tested on WoS. A search query with over 80% accuracy for the identification of RE-related research has been determined through sampling processes.
+
+The data collected from WoS databases through the decided search query have been turned into a common dataset for the use of all partners collaborating in the study. The generated dataset has been transformed by preprocessing steps like data cleaning, normalisation, reduction, and categorisation. The normalisation of the organisation names is done with the help of the [Global Research Identifier Database (GRID)](https://www.grid.ac/).
+
+Following the preprocessing steps, an exploratory data analysis has been carried out and some of the key figures have been visualised to decide for focus points of the study between the partners.
+
+Further data analysis has been carried out accordingly to the joint decision on the report format/ outline planning and visualisations have been designed to work interactively. 
+
+
+
+[^0201]: Web of Science's categorization of research areas under research domains can be found under [https://images.webofknowledge.com/images/help/WOS/hp_research_areas_easca.html](https://images.webofknowledge.com/images/help/WOS/hp_research_areas_easca.html).  

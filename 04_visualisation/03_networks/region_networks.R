@@ -105,7 +105,7 @@ ea.nodes <- ea.nodes[which(ea.nodes$id %in% ea_res_nodes),]
 sa.nodes <- sa.nodes[which(sa.nodes$id %in% sa_res_nodes),]
 
 vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%"){
-  vis <- visNetwork(nodes, edges, height = height, width = width) %>%
+  vis <- visNetwork(nodes, edges, height = height, width = width, footer="*Collaboration links with fewer than 25 co-publications have been removed.") %>%
   visOptions(highlightNearest = TRUE) %>%
   visLayout(randomSeed = 123, improvedLayout = TRUE
   ) %>%  
@@ -145,6 +145,8 @@ ca.nodes$font.size <- log(ca.nodes$value) * 5
 ea.nodes$font.size <- log(ea.nodes$value) * 5
 sa.nodes$font.size <- log(sa.nodes$value) * 5
 
+
+
 na_net <- vis_reg_net(na.nodes, na.edges)
 wa_net <- vis_reg_net(wa.nodes, wa.edges)
 ca_net <- vis_reg_net(ca.nodes, ca.edges)
@@ -152,45 +154,17 @@ ea_net <- vis_reg_net(ea.nodes, ea.edges)
 sa_net <- vis_reg_net(sa.nodes, sa.edges)
 
 
-## na_net <- visNetwork(na.nodes, na.edges, height = "500px", width = "100%") %>% 
-##   visOptions(highlightNearest = TRUE) %>%
-##   visOptions(selectedBy = "group") %>%
-##   visLayout(randomSeed = 123) %>%  
-##   visGroups(groupname = "Northern Africa", color ="#BF9983") %>%
-##   visGroups(groupname = "EU-27", color = "lightblue") %>%
-##    visNodes(
-##     shape = "dot",
-##     color = list(
-##       background = "#0085AF",
-##       border = "#013848",
-##       highlight = "#FF8000"
-##     ),
-##     shadow = list(enabled = TRUE, size = 10)
-##   )
-## 
-## na_net  
-##   
-##   
-##   ## %>%
-##   ## visLegend(width = 0.1, position = "right", main = "Group")
-##  ## visLegend(addNodes = list(
-##  ## list(label = "Northern Africa", shape = "icon", 
-##  ##      icon = list(code = "dot", size = 25)),
-##  ## list(label = "User", shape = "icon", 
-##  ##      icon = list(code = "dot", size = 50, color = "red"))), 
-##  ## useGroups = FALSE)
-
 saveRDS(na_net, "./04_visualisation/03_networks/01_outputs/na_net.Rds")
 saveRDS(wa_net, "./04_visualisation/03_networks/01_outputs/wa_net.Rds")
 saveRDS(ca_net, "./04_visualisation/03_networks/01_outputs/ca_net.Rds")
 saveRDS(ea_net, "./04_visualisation/03_networks/01_outputs/ea_net.Rds")
-saveRDS(sa_net, "./04_visualisation/03_networks/01_outputs/sa_net.Rds")
+saveRDS(sa_net, "./04_visualisation/03_networks/01_outputs/san_net.Rds")
 
 visExport(
   na_net,
-  type = "pdf",
+  type = "png",
   name = "na_net",
-  label = paste0("Export as ", "pdf"),
+  label = paste0("Export as ", "png"),
   ##background = "#fff",
   float = "right",
   style = NULL,

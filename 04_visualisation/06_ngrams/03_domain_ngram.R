@@ -418,7 +418,6 @@ transform(id = as.integer(factor(keyword)))
 
 
 
-
 ps_keyword_oty_df[1:20,]
 new_keyword <- vector()
 num_pub_oty <- vector()

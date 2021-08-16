@@ -67,8 +67,11 @@
 ## 
 ## #####################################################
 
+library(plotly)
+library(reticulate)
 # Let's assume we are analysing ngrams for Cairo Univ.
-M_06 <- read_pickle_file("./01_data/02_bibliometrix/0608_org_proper.pickle")
+pd <- import("pandas")
+M_06 <- pd$read_pickle("./01_data/02_bibliometrix/0608_org_proper.pickle")
 
 M_02 <- read.csv("./01_data/02_bibliometrix/02_bib_dataframe_noab.csv", sep="|")
 
@@ -128,3 +131,10 @@ abs_rel_plt <- plot_ly( abs_rel_oty,
 
 
 saveRDS(abs_rel_plt, "./01_data/03_visualisations/abs_rel_plt.Rds")
+
+abs_rel_plt  %>%
+  config(
+    toImageButtonOptions = list(
+      format = "svg"
+    )
+  )

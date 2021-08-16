@@ -1,0 +1,2066 @@
+---
+title: "Kopublikationsanalyse | Österreich - China 2013-2018"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    theme: flatly
+    #runtime: shiny
+bibliography: PRO.bib
+---
+
+```{r global, include=FALSE}
+library(flexdashboard)
+library(formattable)
+library(bannerCommenter)
+library(DT)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(tidyverse)
+library(RColorBrewer)
+library(sparkline)
+library(sparkTable)
+library(plotly)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(plyr)
+library(igraph)
+library(RColorBrewer)
+library(leaflet)
+library(farver)
+library(formattable)
+library(bannerCommenter)
+library(DT)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(tidyverse)
+library(magrittr)
+library(widgetframe)
+library(scales)
+
+
+
+
+load('Presentation.RData')
+
+##setwd("C:/Users/demir/Desktop/ZSI_Nextcloud/copub/2019_AT-CN/04_presentation")
+
+
+# In case you need it
+# layout(autosize = T, margin=margin, font=t2)
+
+
+# This chunk needs to stay here, otherwise leaflet can't build its "provider temps".
+leaflet(CN_bei 
+                                    #, options = leafletOptions(preferCanvas=TRUE)
+)  %>% 
+  addCircleMarkers(
+    lng = ~lon
+    , lat = ~lat
+    , weight = 4
+    , radius = rescale(sqrt(1/CN_bei$CN_int.Ranking),c(0.15,0.75))*50
+    #, labelOptions = labelOptions(noHide = F, direction="auto", opacity = 0.5)
+    , popup = paste(sep = "<br/>",
+                    paste0("<b>", CN_bei$Organizations, "</b>"),
+                    paste0("<b>Int. | Kopub.: </b>",CN_bei$CN_int),
+                    paste0("<b>Öst. | Kopub.: </b>",CN_bei$AT.CN)) 
+    , color = "gray"
+    #brewer.pal(6,"Set2")[1]
+    , fillColor = CN_bei$color
+    #pal(CN_ORG$AT.CN)
+    #, stroke = TRUE
+    , fillOpacity = 0.7
+    , options = popupOptions(closeButton = FALSE)
+    
+    
+  )%>%
+  addTiles()%>% 
+  setView(116.5368457, 40.1476671, 9)%>% 
+  addProviderTiles(providers$CartoDB.Positron )%>% 
+  # addLegend("topright",
+  #           opacity = 0.7,
+  #           colors = CN_bei$color,
+  #           labels = CN_bei$Organizations
+  # )%>%
+  addMiniMap( tiles =providers$CartoDB.Positron)
+
+
+
+
+
+
+```
+
+
+
+```{r}
+
+ # sendSweetAlert(session, title = "Help Me!", text = "Please contact your instructor")
+
+#  sendSweetAlert(session, title = "Help Me!", text = "Please contact your instructor")
+
+
+```
+
+
+
+
+
+
+
+
+Gesamtzahlen {.storyboard}
+=========================================
+
+### Konsolidierte Darstellung der österreichischen Gesamtpublikationen, der internationalen Kopublikationen und der Kopublikationen mit China
+
+```{r ,message=FALSE, warning=FALSE}
+
+
+AT_gesamt_plot%>%layout(font=t2, autosize=TRUE)
+```
+
+*** 
+
+
+
+* Die Anzahl der Gesamtpublikationen ist von 2013 bis 2018 von ∼ 24 k auf ∼ 28 k gewachsen.
+
+* Das Wachstum steigt generell konstant an und schließt 2018 im Vgl. zu 2013 mit einem Zuwachs um Faktor 1,2 ab.
+
+* Der Anteil der internationalen Kopublikationen Österreichs an den Gesamtpublikationen war in 2013 ∼ 56 % und ist bis 2018 auf 65 % gestiegen. Eine vorangegangene Studie zeigt, dass dieser Anteil 2003 noch auf 43 % lag [@Büsel2016].
+
+* Der Anteil der Kopublikationen mit China an den internationalen Kopublikationen Österreichs ist in diesem Zeitraum von ca. 4 % auf 7 % gestiegen.
+
+* 2009 betrug die Anzahl der Kopublikationen mit China knapp 300 [@Büsel2016, 16], was einen Anteil von ∼ 2,5 % an den internationalen Kopublikationen ausmacht. D.h. die Kopublikationen Österreichs mit China sind sich der Dekade von 2009-2018 um das Fünffache gestiegen.
+
+
+
+
+### Absolutes/Relatives Wachstum der österreichischen Gesamtpublikatonen, der internationalen Kopublikationen und der Kopublikationen mit China
+
+```{r}
+AT_CN_abs_rel_plot %>% layout(autosize = T
+                             #, margin=margin2
+                             , font=t2)
+```
+
+***
+
+
+
+* Die internationalen Kopublikationen Österreichs sind insgesamt zwischen 2013 und 2018 von ∼ 13,5 k auf ∼ 18,5 k gestiegen, was einem Wachstumsfaktor von ∼ 1,4 entspricht.
+
+* Die an den Österreich-China Kopublikationen beteiligten Organisationen in beiden Ländern sind zwischen 2013 und 2018 von gut 600 auf über 1400 gestiegen. Dieses Wachstum enspricht einem Faktor von ~ 2,3.
+
+* Die Stagnation zwischen 2017 und 2018 ist bereits bei der Datenquelle dieser Studie, nämlich *Web of Science*, bei einer großen Anzahl an Ländern zu beobachten, wozu auch Länder wie Deutschland, Schweiz, Finnland, Dänemark gehören. Die Erklärung des Eigentümers dieser Zitationsdatenbank, *Clarivate Analytics*, hat auf unsere Anfrage hin die Auskunft gegeben, dass die Eintragungen bestimmter Dokumenttypen wie *Proceedings* und *Abstracts* (Konferenzen) der letzten drei Jahre noch nicht vollständig abgeschlossen ist. Wir haben diesen Umstand getestet, wobei sich bestätigt hat, dass weiterhin ein konstantes Wachstum gegeben ist, wenn diese Dokumententypen von der Analyse ausgeschlossen werden. Es kann davon ausgegangen werden, dass sich die Datenabdeckung in Zukunft verbessert.
+
+
+
+
+
+### Die Kopublikationen von Österreich und China erklärt durch *Science-Metrix Domains*
+
+```{r}
+
+AT_CN_SciMet_plot %>% layout(autosize = TRUE
+                             #, margin=margin
+                             , font=t2)
+```
+
+
+***
+
+
+
+* Das Wachstum der Kopublikationen in den Naturwissenschaften und Gesundheitswissenschaften ist über den Beobachtungszeitraum relativ stabil. Die Kopublikationen in den angewandten Wissenschaften sind im selben Zeitraum stärker angestiegen. Während in den angewandten Wissenschaften 2013 knapp 70 Publikationen zu verzeichnen waren, ist deren Anzahl 2018 auf ca. 280 gestiegen, was ein Wachstum von Faktor 4 bedeutet.
+
+* Die Fluktuationen in den *Social Sciences* sowie *Arts & Humanities* sind aufgrund der geringen Kopublikationszahlen zu erwarten – Kopublikationen sind das Ergebnis von realen Kollaborationen, die von vielen Faktoren abhängig sind, wie z. B. Gelegenheiten für das gemeinsame Publizieren (Konferenzen, Projekte, usw.). Bei den *Domains* mit deutlich mehr Kopublikationen ist die Entwicklung nur scheinbar konsistent; wenn man thematisch weiter in die Tiefe geht, sind ebenfalls große Schwankungen zu verzeichnen. *Social Sciences* sowie *Arts & Humanities* sind jene Bereiche, die auch in der vorangegangenen Studie (2003-2014) nur einen geringen Anteil an den Gesamtkopublikationen Österreichs mit China ausmachten (jeweils ca. 2%).
+
+
+
+
+
+
+
+
+Science-Metrix Domains { data-navmenu="Forschungsfelder"}
+=========================================
+
+
+Column  {data-width=600}
+-----------------------------------------
+
+### Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+Scimet_sunburst_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+#domains_wachstum_plot
+
+
+```
+
+
+
+Column 
+-----------------------------------------
+
+### Absolutes Wachstum der Hauptkategorien
+
+
+
+Ebene: *Science-Metrix Domains*
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+domains_abs_wachstum_plot_sep
+```
+
+### Relatives Wachstum der Hauptkategorien
+
+Ebene: *Science-Metrix Domains*
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+domains_rel_wachstum_plot
+```
+
+
+Science-Metrix Sub-fields { data-navmenu="Forschungsfelder"}
+=========================================
+
+
+### Verteilung der Science-Metrix Sub-fields
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+colnames(C_data)[c(4,6,8)] <- c("2013*", "2015*","2018*")
+colnames(C_data)[2] <- "# Kopub."
+C_table <- as.htmlwidget(formattable(C_data,
+                                     align = c("l","r","r","c","c","c","c","c","l")
+                                     , list(
+                                       `Sub-Field`=formatter("span"
+                                                             ,style = ~ formattable::style(color = "grey", font.weight = "bold"))
+                                     , `Kopub. #`=normalize_bar("lightblue")
+                                     #, `Ran. 2013` = color_tile("orange", "#FFFFFF")
+                                     , `2015*`= formatter("span",
+                                                              style= ~ formattable::style(color=sapply(z1, function(x) if (x < 0) "#e41a1c" else if (x > 0 ) "#4daf4a" else "black"), `2015*`))
+                                     , `  `=  formatter("span", 
+                                                        style = ~ formattable::style(color = ifelse(z1>0,"#4daf4a", "#e41a1c" )),                                    
+                                                        ~ icontext(sapply(`  `, function(x) if (x < 0) "glyphicon glyphicon-triangle-bottom" else if (x > 0) "glyphicon glyphicon-triangle-top" else "")))                                                # ~ formattable::style(color = ifelse(z1 > 0, "green", "red")))
+                                     , `   `=formatter("span", 
+                                                      style = ~ formattable::style(color = ifelse(z2>0,"#4daf4a", "#e41a1c" )),                                    
+                                                      ~ icontext(sapply(`   `, function(x) if (x < 0) "glyphicon glyphicon-triangle-bottom" else if (x > 0) "glyphicon glyphicon-triangle-top" else "")))
+                                     , `2018*` = formatter("span",
+                                                               style= ~ formattable::style(color=sapply(z2, function(x) if (x < 0) "#e41a1c" else if (x > 0 ) "#4daf4a" else "black"), `2018*`))
+                                     , Domain= FALSE
+                                       #sci_color_formatter(C_data$Domain)
+                                     , Field = sci_color_formatter(C_data$Domain)
+                                     )
+                                     
+                                     
+                                     ))
+
+C_table$dependencies = c(out$dependencies, htmlwidgets:::widget_dependencies("sparkline", "sparkline"))
+C_table
+
+
+print("*: Die Zahlen repräsentieren die Sichtbarkeit der Sub-fields und kein Ranking.")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Natural Sciences | I  { data-navmenu="Forschungsfelder"}
+=====================================
+
+Column
+-----------------------------------------
+
+### Sichbarste Organisationen
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+ns_org_table
+```
+
+
+### Absolutes/ relatives Wachstum der sichtbarsten österreichischen Organisationen
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+ns_org_abs_rel_plot #%>%layout(autosize = T
+                    #     , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------
+
+
+
+
+### Beteiligungsmaße in den *Fields* | *Natural Sciences*
+
+**Hinweis**: Die gezeigten Werte repräsentieren **Kollaborationen**, an einer Kopublikation können mehrere Organisationen beteiligt sein. 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+ns_sankey
+
+```
+
+
+
+
+
+
+
+Natural Sciences | II  { data-navmenu="Forschungsfelder"}
+=====================================
+
+
+
+Column 
+-----------------------------------------
+
+
+
+### Absolutes/relatives Wachstum in den sichtbarsten Kategorien | Naturwissenschaften
+
+Ebene: *Science-Metrix Fields* 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+ns_fields_abs_rel_plot_nw #%>% layout(autosize = TRUE
+                          #   #, margin=margin
+                          #   , font=t2)
+
+```
+
+### Absolutes/relatives Wachstum in den sichtbarsten | in Naturwissenschaften
+
+Ebene: *Science-Metrix Sub-fields* 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+ns_subs_abs_rel_plot_nw #%>% layout(autosize = TRUE
+                        #     #, margin=margin
+                        #     , font=t2)
+
+```
+
+
+
+Column {data-width=300}
+-----------------------------------------
+
+###
+
+
+
+* *Physics & Astronomy* ist seit mind. 2003 [@Büsel2016, 23] das sichtbarste *Field* in den Kopublikationen zwischen Österreich und China.
+
+* Das stärkste relative Wachstum haben die *Earth & Enviromental Sciences* (*Natural Sciences*) zwischen 2013 und 2018 zu verzeichnen. Dieses Feld bleibt bis 2018 auch unter den fünf sichtbarsten Feldern. *Biology* befindet sich ebenfalls unter den sichtbarsten Feldern und wird gefolgt von *Chemistry* und *Mathematics & Statistics*.
+
+* *Nuclear & Particle Physics* ist in *Natural Sciences* das sichtbarste unter den *Fields*. Die stärkste Wachstumsrate hat jedoch *Fluids & Plasmas* zu verzeichnen, nämlich um Faktor 6,3, vom Niveau von 2013 ausgehend. Dieses Wachstum zeigt auch einen starken Kontrast zur Vergangenheit: zwischen 2003 und 2013 wurden insgesamt 89 Kopublikationen registriert [@Büsel2016, 24], ein Wert, der fast allein im Jahr 2018 erreicht wird, wie die aktuelle Studie zeigt.
+
+* Drei österreichische Institutionen, die auch die höchsten Kopublikationszahlen mit China für sich verbuchen, nämlich die TU Wien, Universität Innsbruck und ÖAW (v.a. das HEPHY), spielen eine entscheidende Rolle in *Natural Sciences*.
+
+
+
+Health Sciences | I  { data-navmenu="Forschungsfelder"}
+=====================================
+
+Column 
+-----------------------------------------
+
+### Sichbarste Organisationen
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+hs_org_table
+```
+
+### Absolutes/ relatives Wachstum der sichtbarsten österreichischen Organisationen
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+hs_org_abs_rel_plot%>%layout(autosize = T
+                         , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------
+
+### Beteiligungsmaße in den *Fields* | *Health Sciences*
+
+
+**Hinweis**: Die gezeigten Werte repräsentieren **Kollaborationen**, an einer Kopublikation können mehrere Organisationen beteiligt sein. 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+hs_sankey
+```
+
+
+
+Health Sciences | II  { data-navmenu="Forschungsfelder"}
+=====================================
+
+
+
+Column 
+-----------------------------------------
+
+
+### Absolutes/relatives Wachstum in den sichtbarsten Kategorien | Health Sciences
+
+Ebene: *Science-Metrix Fields* 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+hs_fields_abs_rel_plot_nw #%>% layout(autosize = TRUE
+                          #   #, margin=margin
+                          #   , font=t2)
+
+```
+
+### Absolutes/relatives Wachstum in den sichtbarsten | Health Sciences
+
+Ebene: *Science-Metrix Sub-fields* 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+hs_subs_abs_rel_plot_nw #%>% layout(autosize = TRUE
+                        #     #, margin=margin
+                        #     , font=t2)
+
+```
+
+
+Column {data-width=200}
+-----------------------------------------
+
+###
+
+
+
+* *Clinical Medicine* ist seit mind. 2008 das zweitstärkste *Field* in den Kopublikationen Österreichs mit China [@Büsel2016,23]. Hier sind v.a. die Kollaborationen zwischen den medizinischen Universitäten von Wien, Graz und Innsbruck mit den chinesischen Organisationen *Chinese Academy of Sciences*, *Peking University* und *Shanghai Jiao Tong University* am auffälligsten.
+
+* *Biomedical Research* und *Clinical Medicine* zeigen identische Entwicklungen. *Public Health & Health Services* sind unter diesen *Fields* die wenigsten sichtbaren; es bleibt sehen, ob sich dies auf Grund von COVID-19 in Zukunft ändern wird.
+
+* Alle der fünf sichtbarsten *Sub-fields* in *Health Sciences* gehören zum Field *Clinical Medicine*, wobei die stärkste Unterkategorien *Oncology & Cardiogenesis* und *Neurology & Neurosurgery* sind.
+
+
+
+
+
+
+Applied Sciences | I  { data-navmenu="Forschungsfelder"}
+=====================================
+
+Column 
+-----------------------------------------
+
+### Sichbarste Organisationen
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+as_org_table
+```
+
+### Absolutes/ relatives Wachstum der sichtbarsten österreichischen Organisationen
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+as_org_abs_rel_plot%>%layout(autosize = T
+                         , font=t2)
+
+
+```
+
+
+
+Column 
+-----------------------------------------
+
+### Beteiligungsmaße in den *Fields* | *Applied Sciences*
+
+
+**Hinweis**: Die gezeigten Werte repräsentieren **Kollaborationen**, an einer Kopublikation können mehrere Organisationen beteiligt sein.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+as_sankey
+```
+
+
+
+Applied Sciences | II  { data-navmenu="Forschungsfelder"}
+=====================================
+
+
+Column 
+-----------------------------------------
+
+
+### Absolutes/relatives Wachstum in den sichtbarsten Kategorien | Applied Sciences
+
+Ebene: *Science-Metrix Fields* 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+as_fields_abs_rel_plot_nw #%>% layout(autosize = TRUE
+                          #   #, margin=margin
+                          #   , font=t2)
+
+```
+
+### Absolutes/relatives Wachstum in den sichtbarsten | Applied Sciences
+
+Ebene: *Science-Metrix Sub-fields* 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+as_subs_abs_rel_plot_nw #%>% layout(autosize = TRUE
+                        #     #, margin=margin
+                        #     , font=t2)
+
+```
+
+
+
+
+Column {data-width=200}
+-----------------------------------------
+
+### 
+
+
+
+* *Enabling & Strategic Technologies* ist das einzige *Field* in *Applied Sciences*, das auch im Umfang der vorangegangenen Studie [@Büsel2016, 23-24] in diesem Bereich stabil unter den sichtbarsten *Fields* vertreten ist. Zwischen 2013 und 2018 ist *Enabling & Strategic Technologies* konstant angewachsen. Die Stagnation im Jahr 2018 ist vermutlich den noch nicht abgeschlossenen Datenerhebungen seitens *Web of Science* geschuldet (wie zuvor berichtet, sind die Dokumenttypen *Proceedings* und *Abstracts* noch zu komplettieren).
+
+* Die Stärke von *Enabling & Strategic Technologies* liegt auf zwei *Sub-fields*, nämlich *Energy und Materials Science*, welche in den gesamten *Sub-fields* Österreichs mit China auf dem 5. und 7. Platz der sichtbarsten *Sub-fields* zu finden sind. *Sub-field* *Materials* zeigt ein 9-faches Wachstum zwischen 2013 − 2018, ging jedoch von einem geringen Ausgangswert aus.
+
+* Unter den sichtbarsten österreichischen Organisationen zeigt die Österreichische Akademie der Wissenschaften mit gut 60 Kopublikationen relativ gesehen eine höhere Beteiligung in *Materials Science*. In *Applied Sciences* sind im stärksten *Sub-field*, nämlich *Energy Science*, die TU Wien und Universität Innsbruck mit 100 bzw. 82 Kopublikationen präsent.
+
+
+Economic & Social Sciences | I  { data-navmenu="Forschungsfelder"}
+=====================================
+
+Column 
+-----------------------------------------
+
+### Sichbarste Organisationen
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+es_org_table
+```
+
+### Absolutes/ relatives Wachstum der sichtbarsten österreichischen Organisationen
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+es_org_abs_rel_plot%>%layout(autosize = T
+                         , font=t2)
+
+
+```
+
+
+
+Column 
+-----------------------------------------
+
+### Beteiligungsmaße in den *Fields* | *Economic & Social Sciences*
+
+
+**Hinweis**: Die gezeigten Werte repräsentieren **Kollaborationen**, an einer Kopublikation können mehrere Organisationen beteiligt sein. 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+es_sankey
+```
+
+
+
+Economic & Social Sciences | II  { data-navmenu="Forschungsfelder"}
+=====================================
+
+
+Column 
+-----------------------------------------
+
+
+### Absolutes/relatives Wachstum in den sichtbarsten Kategorien | Economic & Social Sciences
+
+Ebene: *Science-Metrix Fields* 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+es_fields_abs_rel_plot_nw #%>% layout(autosize = TRUE
+                          #   #, margin=margin
+                          #   , font=t2)
+
+```
+
+### Absolutes/relatives Wachstum in den sichtbarsten | Economic & Social Sciences
+
+Ebene: *Science-Metrix sub-fields* 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+es_subs_abs_rel_plot_nw #%>% layout(autosize = TRUE
+                        #     #, margin=margin
+                        #     , font=t2)
+
+```
+
+Column {data-width=200}
+-----------------------------------------
+
+###
+
+
+
+* Die Kopublikationen mit China in den *Economic & Social Sciences* findet wenig überraschend auf einem vergleichsweise niedrigem Niveau statt. Wie im vorigen Abschnitt gezeigt, beträgt deren Anteil an den gesamten Kopublikationen Österreichs mit China lediglich 3,4 %.
+
+* Dennoch können die *Fields* und *Sub-fields* von Interesse sein. Bezüglich ersterer sind *Economics & Business* als auch *Social Sciences* die sichtbarsten Vertreter. Bei den *Sub-fields* sind die Kopublikationszahlen bereits sehr gering - die meisten haben *Business & Management* und *Geography* zu verzeichnen. Nichtsdestotrotz hat in diesen *Sub-fields* ein Wachstum stattgefunden; ob sich dieses in den kommenden Jahren fortsetzt, bleibt zu beobachten.
+
+* Unter den prominentesten Kollaborationspartnern auf österreichischer Seite sind die Universität Wien und mit einigem Abstand das IIASA und die Universität Innsbruck zu zählen. Auf Chinesischer Seite fallen die *Chinese Academy of Sciences*, die *Sun Yat-sen University* und die *Peking University* auf.
+
+* Als sichtbarste Paarbeziehungen ist in *Economics & Business* die Universität Wien gemeinsam mit der *Sun Yat-sen University* und der *Peking University* zu nennen, im Bereich *Social Sciences* die Universität Wien und das IIASA, jeweils gemeinsam mit der *Chinese Academy of Sciences*.
+
+
+
+
+
+
+Lokationen der chinesischen Organisationen { data-navmenu="Organisationen"}
+=========================================
+
+Column {data-width=800}
+-----------------------------------------
+
+### 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+CN_TOP20_mapplot_without
+```
+
+Column
+-----------------------------------------
+
+
+### Beijing Provinz
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+CN_BEIJING_mapplot
+```
+
+
+### Shanghai & Zhejian Provinze
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+CN_SHANGHAI_mapplot
+```
+
+
+
+
+
+
+Chinesische Organisationen { data-navmenu="Organisationen"}
+=========================================
+
+
+
+
+Column 
+-----------------------------------------
+
+### Die sichtbarsten chinesischen Organisationen in den Kopublikationen mit Österreich
+
+
+```{r message=FALSE, warning=FALSE}
+CN_ORG_table
+
+```
+
+Column {data-width=200}
+-----------------------------------------
+
+###
+
+
+
+* Die weitgehend aktivste Kooperation österreichischer Organisationen findet mit der *Chinese Academy of Sciences* statt. Diese in Beijing gelagerte Organisation war in ∼ 45 % der Kopublikationen mit österreichischen Organisationen involviert.
+
+* Das *Institute of High Energy Physics* scheint in der Liste der sichtbarsten Kollaborationspartner an zweiter Stelle auf. Da *Nuclear & Particle Physics* die höchsten Werte in den China-Österreich Kopublikationen aufweist, hat das *Institute of High Energy Physics* eine besonders hohe Beteiligung zu verzeichnen und zeigt eine höhere Sichtbarkeit als vergleichsweise auf internationaler Ebene.
+
+* *Peking University* und *University of Science & Technology of China* sind hoch aktive Institutionen in *Particle Physics*. *Shanghai Jiao Tong* zeigt hohe Aktivität in den angewandten Wissenschaften sowie Naturwissenschaften, auch auf internationaler Ebene, sodass sie auch „the MIT of the East“ genannt wird. *Shanghai Jiao Tong* ist in den Kopublikationen mit Österreich auch im Bereich der Gesundheitswissenschaften sichtbar.
+
+* Organisationen, die auf der internationalen Bühne keine besondere Sichtbarkeit zeigen, rangieren in der Liste mit Österreich auf Grund ihrer Spezialisierung in Feldern wie *Nuclear & Particle Physics* hoch.
+
+* Generell dominieren in Chinas Publikationen bestimmte Bereiche besonders stark, was sich auch in den Paarbeziehungen mit internationalen und österreichischen Organisationen widerspiegelt. Neben den *Health Sciences* betrifft dies v.a. *Applied Sciences* und *Natural Sciences*. Top Bereiche sind hier *Electrical & Electronic Engineering* (11%), *Materials Science* (10%), *Multidisciplinary Chemistry* (5%) und *Applied Physics* (5%).
+
+
+
+
+
+
+
+
+Österreichische Organisationen { data-navmenu="Organisationen"}
+=========================================
+
+
+Column
+-----------------------------------------
+
+### Die sichtbarsten österreichischen Organisationen in den Kopublikationen mit
+China
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+AT_ORG_table
+```
+
+
+
+
+Column {data-width=200}
+-----------------------------------------
+
+###
+
+
+
+
+* Unter den österreichischen Organisationen weisen die drei sichtbarsten, nämlich die TU Wien, die Universität Innsbruck und die Österreichische Akademie der Wissenschaften (ÖAW), ein ähnliches Niveau an Kopublikationen auf.
+
+* Die TU Wien zeigt einen hohen Kontrast zu den Ergebnissen der vorangegangenen Studie [@Büsel2016, 27. Sie gehörte zwischen 2003 und 2014 zwar ebenfalls zu den fünf sichtbarsten österreichischen Organisationen, die ÖAW, Universität Innsbruck und Universität Wien hatten jedoch doppelt so viele Kollaborationen zu verzeichnen.
+
+* Während die TU Wien im Untersuchungszeitraum deren Involvierung in Kopublikationen mit China deutlich erhöht hat, scheint die Universität Wien im Vergleich zur vorangegangenen Studie weniger Kollaborationen eingegangen zu sein.
+
+* Die Medizinische Universität Wien ist die sichtbarste österreichische Organisation in den Health Sciences.
+
+
+
+
+
+
+
+
+
+
+
+Kollaborationsverbindungen zwischen den sichtbarsten Organisationen { data-navmenu="Organisationen"}
+=========================================
+
+
+
+### 
+
+**Hinweis**: Die gezeigten Werte repräsentieren **Kollaborationen**, an einer Kopublikation können mehrere Organisationen beteiligt sein.
+
+```{r echo=FALSE, fig.height=7, fig.width=10, message=FALSE, warning=FALSE}
+AT_CN_ORG_sankey
+
+```
+
+
+
+
+
+
+Technische Universität Wien I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Technische Universität Wien
+
+```{r echo=FALSE}
+tu_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+
+
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+TU_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+TU_rel_plot
+```
+
+
+Column {data-width=300}
+-----------------------------------------
+
+###
+
+
+
+
+* Das sichtbarste Feld in den Kopublikationen der TU Wien mit China ist *Nuclear & Particle Physics*.
+
+* Das am stärksten wachsende *Sub-field*, *Natural Sciences* *Fluids & Plasmas*, zeigt eine hohe Beteiligung der TU Wien.
+
+* In dem Bereich *Applied Sciences* fallen in *Energy Sciences* die meisten Kopublikationen mit der Beteiligung der TU Wien an. *Energy Sciences* ist eines von zwei *Sub-fields*, die für die Sichbarkeit der angewandten Wissenschaften in den Kopublikationen Österreichs mit China verantwortlich sind.
+
+
+
+Technische Universität Wien II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Technische Universität Wien | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+TU_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+TU_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+TU_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Universität Innsbruck I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Universität Innsbruck
+
+```{r echo=FALSE}
+ui_kable %>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+UI_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+UI_rel_plot
+```
+
+
+Column {data-width=300}
+-----------------------------------------
+
+###
+
+
+
+
+* Die Universität Innsbruck zeigt generell eine ähnliche Struktur bezügl. der sichtbarsten Kategorien wie die TU Wien (siehe nächster Punkt).
+
+* *Nuclear & Particle Physics* ist wenig überraschend am sichtbarsten. Weiters ist die Universität Innsbruck gleichsam mit der TU Wien die meist involvierte österreichische Organisation in *Fluids & Plasmas* und *Energy Sciences* - beide *Sub-fields* haben in den Österreich-China Kopublikationen einen steigenden Trend zu verzeichnen.
+
+* Mit knapp 100 Kopublikationen befindet sich *General Physics* an dritter Stelle der sichtbarsten *Sub-fields* in *Natural Sciences*, jedoch auf deutlich niedrigerem Niveau als *Nuclear & Particle Physics* (~ 570).
+
+
+
+
+
+Universität Innsbruck II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Universität Innsbruck | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+UI_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+UI_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+UI_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Österreichische Akademie der Wissenschaften I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Österreichische Akademie der Wissenschaften
+
+```{r echo=FALSE}
+oeaw_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+OAW_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+OAW_rel_plot
+```
+
+
+Column {data-width=300}
+-----------------------------------------
+
+###
+
+
+
+
+* Die ÖAW ist in den österreichischen Kopublikationen mit China sehr sichtbar. Allerdings liegt das Wachstum deren Kopublikationen mit China gleich hoch wie deren Wachstum der internationalen Kopublikationen weltweit, d.h. in 2018 auf Faktor 1,6 (im Vgl. zu 2013); das durchschnittliche Wachstum der Österreich-China Kopublikationen beläuft sich auf Faktor 2,3.
+
+* Die ÖAW ist in *Nuclear & Particles Physics* am aktivsten. An dieser Stelle ist das von der ÖAW gegründete Institut für Hochenergiephysik (HEPHY) erwähnenswert, das v.a. mit der *Peking University*, dem *Institute of High Energy Physics* und der *Chinese Academy of Sciences* gemeinsame Kopublikationen veröffentlicht hat. Hervorzuheben ist dabei, dass es bei *Nuclear & Particles Physics* in der Natur der Sache liegt, dass eine außerordentlich hohe Anzahl an Kollaborationspartnern involviert ist.
+
+* *General Physics* ist hinter *Nuclear & Particle Physics* das nächst sichtbare *Sub-field*, wobei der Abstand bereits sehr groß ist (ca. 110 Kopublikationen vs. ca. 680). Die ÖAW ist im Vergleich mit der TU Wien und der Universität Innsbruck mehr in *Astronomy & Astrophysics* involviert.
+
+* Die ÖAW scheint das Spektrum der Kopublikationen leicht ausgeweitet zu haben, und zwar in Richtung *Applied Sciences* – die absoluten Zahlen sind noch zu gering, aber hier zeichnet sich gerade eine Dynamik in *Sub-field Materials* ab.
+
+
+
+
+Österreichische Akademie der Wissenschaften II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Österreichische Akademie der Wissenschaften | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+OAW_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+OAW_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+OAW_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Universität Wien I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Universität Wien
+
+```{r echo=FALSE}
+uw_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+ 
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+UW_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+UW_rel_plot
+```
+
+
+Column {data-width=300}
+-----------------------------------------
+
+###
+
+
+
+
+* Die Universität Wien ist hinsichtlich Kopublikationen mit China thematisch breit aufgestellt. Das sichtbarste Field scheint *General Science & Technology* zu sein, was auf interdisziplinäre Themen deutet.
+
+* Ähnlich wie die ÖAW ist Universität Wien relativ stark in *Astronomy & Astrophysics* involviert. Weitere sichtbare *Sub-fields* sind *Paleontology*, *Geochemistry & Geophysics* und *Ecology*. Diese sind in den Kollaborationen anderer österreichischer Organisationen mit China kaum zu finden.
+
+* Im Untersuchungszeitraum der vorangegangenen Studie [@Büsel2016, 28] war das *Sub-field Materials* eines der sichtbarsten der Universität Wien. Die Anzahl der Involvierungen gingen im aktuellen Untersuchungszeitraum (2013-2018) jedoch zurück.
+
+* Obwohl in allen hoch sichtbaren *Fields* die sichtbarste Partnerorganisation die *Chinese Academy of Sciences* ist, zeigt sich hinsichtlich der Kollaborationen mit anderen chinesischen Partnern eine höhere Varianz. Dieser Umstand ist wohl der thematisch breiter angelegten Zusammenarbeit zu verdanken.
+
+* Da die Kopublikationen der Universität Wien sich über viele unterschiedliche thematische Bereiche verteilen, sind in Folge die Kopublikationszahlen meist zu gering, um hinsichtlich des Wachstums signifikante Erkenntnisse gewinnen zu können.
+
+
+Universität Wien II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Universität Wien | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+UW_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+UW_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+UW_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Medizinische Universität Wien I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Medizinische Universität Wien
+
+```{r echo=FALSE}
+mw_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+ 
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+MW_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+MW_rel_plot
+```
+
+
+Column {data-width=300}
+-----------------------------------------
+
+###
+
+
+
+* Auf Ebene der *Fields* ist die Medizinische Universität Wien hinsichtlich deren Kopublikationen mit China mit Abstand am meisten in *Clinical Medicine* involviert – knapp 400 Kopublikationen. Erst mit knapp 40 Kopublikationen ist *Biomedical Research* das nächst sichtbare Field in den *Health Sciences*. Sichtbarster chinesischer Partner ist die *Peking University* in Clinical Medicine.
+
+* Auf *Sub-field* Ebene ist die Medizinische Universität Wien besonders in *Oncology & Cardiogenesis* vertreten (knapp 60 Kopub.), gefolgt von *Immunology und Nuclear Medicine* and *Medical Imaging* (jeweils knapp 30 Kopub.).
+
+* In *Oncology & Cardiogenesis* und *Immunology* war die Medizinische Universität Wien bereits im Zeitraum der vorangegangenen Studie [@Büsel2016, 27-28], d.h. zwischen 2003 und 2014, unter den sichtbarsten *Sub-fields* vertreten. Dies ist nach wie vor der Fall, *Nuclear Medicine & Medical Imaging* zeigt erst ab 2016 etwas Dynamik.
+
+* Die Kopublikationszahlen in *Psychiatry* sind noch zu gering, um einen Trend vorherzusagen; es bleibt abzuwarten, ob sich das 2015 beginnende Wachstum auch in den nächsten Jahren fortsetzt.
+
+
+Medizinische Universität Wien II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Medizinische Universität Wien | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+MW_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+MW_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+MW_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IIASA I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### International Institute for Applied Systems Analysis
+
+```{r echo=FALSE}
+iia_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+ 
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+IIA_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+IIA_rel_plot
+```
+
+
+Column {data-width=300}
+-----------------------------------------
+
+### 
+
+
+* Das IIASA (*International Institute for Applied Systems Analysis*) ist wenig überraschend vorwiegend in Kopublikationen in *Natural Sciences* und *Applied Sciences* involviert, wobei für erstere gut doppelt so viele Kopublikationen zu beobachten waren als für zweitere (knapp 150 vs. 70 Kopub.).
+
+* Das Wachstum der IIASA Kopublikationen mit China befindet sich auf dem selben Niveau wie der Österreich-China Durchschnitt.
+
+* In den *Natural Sciences* sind die Kopublikationen in *Earth and Environmental Sciences* (100) und *Biology* (40) besonders sichtbar sind, in *Applied Sciences* sind dies *Enabling and Strategic Technologies* (~ 30) und *Engineering* (~ 20). in *General Sciences* sind insgesamt gut 30 Kopublikationen zu verzeichnen.
+
+* Was die chinesischen Kollaborationspartner anlangt, so zeigt sich beim IIASA generell mehr Diversität als bei den meisten anderen österreichischen Organisationen, die in Kopublikationen mit China stark vertreten sind. Die sichtbarsten chinesischen Partner sind die *Tsinghua University*, die *Peking University* und – der allgemein prominente Partner – die *Chinese Academy of Sciences*.
+
+
+
+IIASA II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### IIASA | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+IIA_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+IIA_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+IIA_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Medizinische Universität Graz I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Medizinische Universität Graz
+
+```{r echo=FALSE}
+mg_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+ 
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+MG_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+MG_rel_plot
+```
+
+
+
+
+Column {data-width=300}
+-----------------------------------------
+
+
+
+###
+
+
+
+
+* Die Kopublikationen der Medizinischen Universität Graz haben von 2016 auf 2017 einen leichten Sprung zu verzeichnen. Ob sich das erhöhte Niveau halten lässt oder gar ein weiteres Wachstum stattfinden wird, bleibt zu beobachten. Insgesamt liegt das Wachstum der Kopublikationen leicht unter dem österreichischen Durchschnitt; dies kann jedoch daran liegen, dass sich die Anzahl der Kopublikationen noch in einem relativ niedrigen Bereich befindet, in dem sichtbare Schwankungen zu erwarten sind.
+
+* Ähnlich wie bei den anderen medizinischen Universitäten ist die Medizinische Universität Graz in *Health Sciences* vorwiegend in *Clinical Medicine* und *Biomedical Research* tätig (190 und 20 Kopub.).
+
+* Auf Ebene der *Sub-fields* zeigt die Universität bei den Kopublikationen mit China eine andere Verteilung als bei den anderen medizinischen Universitäten, d.h. bei der Medizinischen Universität Graz ist *Complementary & Alternative Medicine* besonders sichtbar. Allerdings war der Höchstwert im Jahr 2013 zu beobachten, seitdem ist die Entwicklung rückläufig.
+
+
+* Die Kopublikationszahlen sind allgemein relativ gering, um von wirklich sichtbaren Kollaborationspartnern zu sprechen. Beispielsweise nimmt hier die *Shanghai Jiao Tong University* mit lediglich 14 Kopublikationen den sichtbarsten Platz ein. Insgesamt verteilen sich die Kopublikationen auf unterschiedliche chinesische Partner.
+
+Medizinische Universität Graz II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Medizinische Universität Graz | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+MG_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+MG_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+MG_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Karl-Franzens-Universität Graz I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Karl-Franzens-Universität Graz
+
+```{r echo=FALSE}
+ug_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+ 
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+UG_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+UG_rel_plot
+```
+
+
+
+Column {data-width=300}
+-----------------------------------------
+
+
+
+
+###
+
+
+
+* Die Karl-Franzens-Universität Graz kollaboriert mit China vorwiegend in *Natural Sciences*, *Health Sciences* und *Applied Sciences*. Das Wachstum deren Kopublikationen mit China liegt jedoch mit Faktor 1,2 (2018 vs. Ausgangsjahr 2013) unter dem österreichischen Durchschnitt (Faktor 2,3). Allerdings ist diese Entwicklung vorsichtig zu interpretieren, da die sich die Kopublikationszahlen auf niedrigem Niveau befinden (im Schnitt auf 35 Kopub./Jahr).
+
+* Die Kollaborationen mit China finden vorwiegend in den *Fields Earth and Environmental Sciences* (~ 50), *Physics and Astronomy* (~ 40) und *Chemistry* (~ 25) statt, die alle zu den *Natural Sciences* gehören. In den *Health Sciences* sind *Clinical Medicine* und *Biomedical Research* am sichtbarsten (ca. 20 und 15 Kopub.).
+
+* Obwohl die Kopublikationszahlen relativ niedrig sind, so zeigt sich doch die *Chinese Academy of Sciences* als wichtigster Kollaborationspartner auf chinesischer Seite.
+
+
+
+
+Karl-Franzens-Universität Graz II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Karl-Franzens-Universität Graz | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+UG_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+UG_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+UG_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Medizinische Universität Innsbruck I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Karl-Franzens-Universität Graz
+
+```{r echo=FALSE}
+mi_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+ 
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+MI_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+MI_rel_plot
+```
+
+
+
+Column {data-width=300}
+-----------------------------------------
+
+
+
+###
+
+
+
+
+* Die Medizinische Universität Innsbruck ist in den Kopublikationen mit China erwartungsgemäß in *Health Sciences* am meisten involviert, und zwar in den *Fields Clinical Medicine* und *Biomedical Research* (~ 160 und 30 Kopub.).
+
+* Das Wachstum der Kopublikationen mit China liegen leicht über dem österreichischen Schnitt.
+
+* Auf Ebene der *Sub-fields* zeigt sich eine größere Verteilung als bei den anderen medizinischen Universitäten, was am niedrigeren Kopublikationsniveau liegen mag. Nichtsdestotrotz sind *Neurology & Neurosurgery*, *Immunology*, *General & Internal Medicine* und *Cardiovascular System & Hematology* mit jeweils etwas über 10 Kopublikationen leicht sichtbarer als andere *Sub-fields*.
+
+* Als Kollaborationspartner auf chinesischer Seite scheinen die *Shanghai Jiao Tong University* und die *Peking University* öfter auf.
+
+
+
+
+
+Medizinische Universität Innsbruck II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Medizinische Universität Innsbruck | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+MI_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+MI_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+MI_rel_top5_plot
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Technische Universität Graz I  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column
+-----------------------------------------------------------------------
+
+### Technische Universität Graz
+
+```{r echo=FALSE}
+tug_kable%>% footnote(general = c("*    Der sichtbarste Partner je Field", "** Kollaborationen entsprechen der Beteiligung der Organisationen in einer Kopublikation. An einer Kopublikation können mehrere Organisationen beteiligt sein. Die Anzahl der Kollaborationen insgesamt ist deshalb höher als die Anzahl der Kopublikationen.", "*** Die Sub-fields, die einem Anteil von den Kopublikationen weniger als 0.5% entsprechen wurden ausgeblendet."))
+ 
+
+
+```
+
+Column 
+-----------------------------------------------------------------------
+
+### Absolutes Wachstum
+
+```{r}
+TUG_abs_plot
+```
+
+### Relatives Wachstum
+
+```{r}
+TUG_rel_plot
+```
+
+
+
+Column {data-width=300}
+-----------------------------------------
+
+
+
+###
+
+
+
+* Der Anteil der Kopublikationen der TU Graz mit China nimmt nur einen geringen Teil der Österreich-China Kopublikationen ein. Es ist ein leichtes Wachstum zu erkennen, wenn auch nicht so ausgeprägt wie bei den anderen österreichischen Organisationen, die in den Österreich-China Kopublikationen am sichtbarsten sind.
+
+* Die TU Graz arbeitet mit China wie erwartet vorwiegend in *Applied Sciences* und *Natural Sciences* zusammen, dies vor allem in *ICT* und *Engineering* (jeweils 30 Kopub.).
+
+* Die Kopublikationen befinden sich auf zu geringem Niveau, um im Beobachtungszeitraum signifikante Aussagen über die Wachstumsdynamiken in den *Sub-fields* zu treffen.
+
+* Die *Chinese Academy of Sciences* und die *Shanghai Jiao Tong University* sind die beiden sichtbarsten Kollaborationspartner der TU Graz.
+
+ 
+
+Technische Universität Graz II  { data-navmenu="Organisationen"}
+=====================================
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Technische Universität Graz | Verteilung der *Science-Metrix* Kategorien
+
+
+```{r echo=FALSE}
+TUG_sun_plot_nw%>%layout(autosize = T
+                                 #, margin=sun_margin
+                                 , font=t2)
+
+
+```
+
+
+
+Column
+-----------------------------------------------------------------------
+
+### Top 5 *Sub-Fields* | Absolut
+
+```{r echo=FALSE}
+TUG_abs_top5_plot
+
+
+
+```
+
+
+### Top 5 *Sub-Fields* | Relativ
+
+```{r echo=FALSE}
+TUG_rel_top5_plot
+
+
+
+```
+
+

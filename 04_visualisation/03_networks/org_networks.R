@@ -291,7 +291,7 @@ vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%", nn=20){
   visGroups(groupname = "Southern Africa", color = "#e6ab02") %>%
   ##visGroups(groupname = "Southern Africa", color = "#E2BA56") %>%
   visGroups(groupname = "EU-27", color = "lightblue") %>%
-  visGroups(groupname = "Saudi Arabia", shape = "icon", icon = list(opacity=0.3, color="#0F8554", code = "f111", size = 75)) 
+  visGroups(groupname = "Saudi Arabia", shape = "icon", icon = list(opacity=0.3, color="#0F8554", code = "f111")) 
   #visGroups(groupname = "United Arab Emirates", shape = "icon", icon = list(code = "f111", size = 75)) %>%
   #visGroups(groupname = "United States", shape = "icon", icon = list(code = "f111", size = 75)) %>%
   #visGroups(groupname = "Spain", shape = "icon", icon = list(code = "f111", size = 75)) %>%
@@ -315,15 +315,19 @@ vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%", nn=20){
   visGroups(groupname = "Ethiopia", shape = "icon", icon = list(color="#2F8AC4", code = "f111")) %>%
   visGroups(groupname = "Gabon", shape = "icon", icon = list(color="#6c9685", code = "f111")) %>%
   visGroups(groupname = "Nigeria", shape = "icon", icon = list(color="#764E9F", code = "f111")) %>%
+  visGroups(groupname = "Belgium", shape = "icon", icon = list(color="#b3aa31", code = "f111")) %>%
+  visGroups(groupname = "United Kingdom", shape = "icon", icon = list(color="#ff7676", code = "f111")) %>%
 
   visEdges(color=list(opacity=0.5)) %>%
-  visNodes(color=list(opacity=0.5)) %>%
   visNodes(
       shape = "dot",
+      size=log(nodes$value),
+      print(log(nodes$value)),
       color = list(
         background = "#0085AF",
         border = "#013848",
-        highlight = "#FF8000"
+        highlight = "#FF8000",
+color=list(opacity=0.5)
       ),
       shadow = list(enabled = TRUE, size = 10)
   ) %>%  visPhysics(solver = "forceAtlas2Based", forceAtlas2Based = list(gravitationalConstant = -30)) %>%
@@ -351,7 +355,8 @@ vis_reg_net <- function(nodes, edges, height = "1000px", width = "100%", nn=20){
 
       egypt.nodes$font.size <- log(      egypt.nodes$value) * 4.2 
     morocco.nodes$font.size <- log(    morocco.nodes$value) * 3.5 
-    algeria.nodes$font.size <- log(    algeria.nodes$value) * 3.5
+    algeria.nodes$font.size <- log(    algeria.nodes$value) * 4
+    algeria.nodes$node.size <- log(    algeria.nodes$value) * 4
     eg_mor_alg.nodes$font.size <- log(    eg_mor_alg.nodes$value) * 5 
     nigeria.nodes$font.size <- log(    nigeria.nodes$value) * 5
       ghana.nodes$font.size <- log(      ghana.nodes$value) * 5
@@ -443,6 +448,7 @@ morocco.nodes <- morocco.nodes[!(morocco.nodes$label == "Maroc Numeric Cluster")
 
 sa.nodes[west_east_central.nodes$label == "CSIR", "label"] = "UCL"
 
+egypt.nodes[which(egypt.nodes$label == "Chungbuk National Uni."), "label"] <- "JeonBuk National University"
 # Eliminate anomalies 
 rownames(west_east_central.nodes) <- NULL
 west_east_central.nodes <- west_east_central.nodes[-c(2), ]
@@ -453,6 +459,10 @@ rownames(west_east_central.nodes) <- NULL
 
 rownames(egypt.nodes) <- NULL
 egypt.nodes <- egypt.nodes[-c(21),]
+
+
+west_east_central.nodes[which(west_east_central.nodes$label == "UKOLN"), "label"] <- "UCL"
+# Eliminate anomalies 
 #west_east_central.nodes <- west_east_central.nodes[-c(5, 26, 18), ]
    unique(egypt.nodes$group)
    egypt.nodes$shape <- "dot"
@@ -467,7 +477,7 @@ egypt.nodes <- egypt.nodes[-c(21),]
     sen_gha_ni_net <- vis_reg_net(    sen_gha_ni.nodes,     sen_gha_ni.edges, nn=20)
     eth_ken_tan_net <- vis_reg_net(    eth_ken_tan.nodes,     eth_ken_tan.edges, nn=20)
     con_cam_gab_net <- vis_reg_net(    con_cam_gab.nodes,     con_cam_gab.edges, nn=20)
-    west_east_central_net <- vis_reg_net(    west_east_central.nodes,     west_east_central.edges, nn=20)
+    west_east_central_net <- vis_reg_net(    west_east_central.nodes,     west_east_central.edges, nn=15)
    cameroon_net <- vis_reg_net(   cameroon.nodes,    cameroon.edges, nn=5)
 demrepcongo_net <- vis_reg_net(demrepcongo.nodes, demrepcongo.edges, nn=5)
    ethiopia_net <- vis_reg_net(   ethiopia.nodes,    ethiopia.edges, nn=5)

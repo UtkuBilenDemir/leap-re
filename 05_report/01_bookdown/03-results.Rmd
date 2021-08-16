@@ -1,26 +1,35 @@
-# Results
+# Results {#results}
 
 Following clarification of  the motivation and methodology of the 
 scientometric analysis on the renewable energy (RE) related research in Africa, 
-this chapter is aiming to present the results of the study with the help of useful
-visualisations and tables in following sub-chapters:
+this chapter is dedicated to the presentation of the results under the following
+3 sub-chapters:
 
-```{r}
-# TODO: Bullet point chapters
-```
+1. Overall Figures
+2. Regional Analysis
+3. Domain Analysis
 
-Some of the re-occurring concepts, however, require a clear definition before 
-the discussion of the results to avoid any possible misconceptions between
-readers and authors:
+After delivering a general overview on yearly output, the most visible
+countries and organisations as well as distribution of scientific domains and
+areas in the RE-related publications in African countries between 2011-2020, *Regional
+Analysis* focuses on each of the 5 regions (Northern Africa, Western Africa, Central Africa,
+Eastern Africa, Southern Africa)[^0301] individually. Analysis of the geographic regions
+include:
 
+* Most visible countries.
+* Regional, interregional, and intercontinental collaboration networks of all countries in the region.
+* Collaboration networks of the academic organisations in *selected countries*[^0302]. 
+* Analysis of the most visible research areas and the correlation network of the
+keyword/keyword pairs in the RE-related publications of the *selected organisations*[^0303].
 
-* An *affiliation* defines one of the collaborator organisation in a specific 
-publication process.
+*Domain Analysis* approaches RE-related research in Africa from a different perspective
+by analysing the publications under the 5 research domains Physical Sciences,
+Technology, Life Sciences & Biomedicine, Social Sciences and Arts & Humanities[^0304]. Analysis
+of each domain includes:
 
+* Most visible inter-regional/ intercontinental collaborations between academic organisations.
+* Most visible and trending keywords/ keyword pairs. 
 
-* A  *co-publication* is a publication that have been produced
-with collaboration of at least two organisations. Therefore, a co-publication 
-contains at least two affiliations.
 
 ```{r child="_03.01-overall_numbers.Rmd", echo=FALSE}
 ```
@@ -30,3 +39,14 @@ contains at least two affiliations.
 
 ```{r child="_03.03-domain_analysis.Rmd", echo=FALSE}
 ```
+
+
+[^0301]: A list of the countries in each African Union region can
+be found under [https://au.int/en/member_states/countryprofiles2](https://au.int/en/member_states/countryprofiles2).
+
+[^0302]: The two deciding factors for the selection were, firstly, the total RE-related 
+publication output, and secondly, the relative growth in the number of RE-related publications.
+
+[^0303]: Selection criteria were the same as the criteria for countries.
+
+[^0304]: Web of Science's research area/domain classification can be found under [https://images.webofknowledge.com/images/help/WOS/hp_research_areas_easca.html](https://images.webofknowledge.com/images/help/WOS/hp_research_areas_easca.html). Because of the fewer number of publications, Social Sciences and Arts & Humanities have been analysed together. 

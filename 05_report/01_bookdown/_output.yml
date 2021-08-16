@@ -1,19 +1,17 @@
 bookdown::gitbook:
+  split_by: none
+  self_contained: true
   css: style.css
   toc_depth: 4
   config:
     toc:
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
-      after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: ["pdf", "epub"]
+        <li><a href="./">RE research-capacity in Africa</a></li>
+    download: ["pdf"]
 bookdown::pdf_book:
-  
   includes:
     documentclass: report
     classoption:
-      - twocolumn
       - landscape
     in_header: preamble.tex
   latex_engine: xelatex

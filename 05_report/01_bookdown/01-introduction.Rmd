@@ -1,21 +1,24 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Introduction {#intro}
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+This study mainly focuses on renewable energy (RE) related research in African countries between 2011-2020. The study has been carried out under the project [LEAP-RE](https://www.leap-re.eu/) (Long-Term Joint European Union - African Union Research and Innovation Partnership on Renewable Energy) *Task 5.3: Strategy for RE research-capacity in Africa* with the co-lead of [MESRS (Ministry of Higher Education and Scientific Research)](https://www.mesrs.dz/) and [ZSI (Centre for Social Innovation)](https://www.zsi.at/). 
 
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+The results, which will be displayed in the following chapters, are generated through a cleaned, normalised and recategorised dataset created with the data collected from the [Clarivate's Web of Science](https://www.webofscience.com) databases. A comprehensive discussion about the methods can be found in Chapter \@ref(method).
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
+Following the explanation of the methodology in the next chapter, Chapter \@ref(results) displays the results of the study. After showing the overall figures in Section \@ref(overall-figures) which include a general overview of the yearly RE-related publication output in the African continent, the most visible countries and organisations as well as the distribution of research domains and areas, Section \@ref(regional-analysis) focuses on individual African Union Geographic Regions[^0101]. The regional analysis generally deals with the most visible countries in each region as well as their co-publication networks which also include interregional (partnerships with other African countries from other regions) and intercontinental (partnerships with countries from other continents) collaborations. Furthermore, the analysis also focuses on selected countries in each region to display the most visible organisations and organisational co-publication networks as well. The regional analysis also includes at least 1 selected organisation from each selected country to present the most visible research areas and keyword/keyword pair networks on the organisational level. Finally, Section \@ref(domain-analysis) approaches the RE research in Africa from another direction and by splitting publications into research domains in order to discuss the most visible co-publication pairings between organisations as well as most visible keywords/ keyword pairs in each distinct cluster of scientific areas.
 
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+The report will be delivered in 3 different formats. An HTML-File which includes the whole scope of the report with interactive visualisations, a PDF-File which is content-wise identical to the HTML-File with static visualisations instead of interactive. And a dashboard where the results will be displayed in a compact mode interactively. 
 
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+
+
+
+
+
+[^0101]: The 5 African Union Geographic Regions; Northern Africa, Western Africa, Central Africa, Eastern Africa, and Southern Africa have been defined by the Organisation of African Unity in 1976 (CM/Res.464QCXVI). A list of countries in each region can
+be found under [https://au.int/en/member_states/countryprofiles2](https://au.int/en/member_states/countryprofiles2).
+

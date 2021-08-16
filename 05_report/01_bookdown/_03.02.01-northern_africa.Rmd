@@ -2,25 +2,25 @@
 
 
 
-```{r natable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in Northern African countries"}
+```{r tables-natable, echo=FALSE, out.width="100%", fig.cap="RE-related publication output in the most visible Northern African countries"}
 na_table <- readRDS(file = "../../04_visualisation/04_tables/na_table.Rds")
 na_table
 ```
 
-Countries of Northern Africa have collaborated approximately in the half of the 
-total number of renewable energy related publications (17116 publications out of 31099).
-4 of the 5 most visible African countries in RE-related publications are from the 
-northern region; namely Egypt, Algeria, Tunisia and Morocco. As table \@ref(fig:natable) 
-presents all of the Northern Africa countries increased their number of RE-related
-publications. Although, as discussed in the previous chapter, slight declines in the 
-number of publications between 2019-2020 are most likely caused by the delay of 
-document entry into the Web of Science databases, Algeria and Tunisia show a 
-decline in their number of publications starting 2017 and 2018 respectively. In the
-cases of Libya and Mauritania, however, volatility in the number of publications 
-is expected as their total publication outputs are relatively lower. Another 
-important observation is in the relative growth rates [^3211], Morocco's number of 
-RE-related publications in 2020 is approximately 16 times higher the number in 2011. 
-This growth rate is not only the highest in Northern Africa but in the whole continent. 
+Member countries of Northern Africa have collaborated approximately in half of
+the total number of all RE-related publications (17116 publications out of 31099) in Africa between 2011-2020. 4 of the 5 most visible African countries in RE-related publications are from the 
+northern region; namely Egypt, Algeria, Tunisia and Morocco. 
+
+As Table \@ref(fig:tables-natable) 
+presents, all of the Northern Africa countries increased their number of RE-related
+publications until 2017. Although, as discussed in the previous chapter, slight declines in the number of publications between 2019-2020 are most likely caused by the delay of document entry into the Web of Science databases, Algeria and Tunisia show an earlier start of 
+the decline in their number of publications starting in 2017 and 2018 respectively. In the
+case of Libya, however, volatility in the number of publications 
+is expected as their total publication outputs are relatively lower. 
+
+Another important observation is in the relative growth rates [^3211], Morocco's number of 
+RE-related publications in 2020 are approximately 16 times higher than the number in 2011. 
+This growth rate is not only the highest in Northern Africa but in the whole continent among the most visible countries in RE-related research. 
 
 
 
@@ -33,9 +33,15 @@ na_net
 # links with fewer than 25 publications have been removed
 ```
 
-RE-related co-publications of the Northern African countries shows a rich international network but the co-publication network with other African regions stays relatively less dense. Only African countries from other regions which have co-published over 25 RE-related papers with Northern African countries are South Africa (28 pub.) and Nigeria (26 pub.). Egypt, the most visible country in Northern Africa, with ~6.6k publications in total plays a central role in the network, relatively uniform distributed co-publication network of Egypt includes over 10 EU-27 countries as well as a number of countries from other regions of the world like USA, China, India, United Kingdom. Egypt's strongest link in the co-publications however is with organisations from Saudi Arabia. Tunisia, Algeria and Morocco have relatively high numbers of collaborations with French organisations with 751, 881 and 601 co-publications respectively. France in general is the most visible EU-27 country in the RE-related co-publications with African countries. The 4 mentioned Northern African countries so far, Egypt, Algeria, Tunisia and Morocco are co-publication wise relatively well interconnected, however, Libya stays out of the co-publication cluster in Northern Africa, from Libya's 233 RE-related publications in the last 10 years none of the Northern African countries had over 25 co-publications with Libya, instead Libya's most visible collaborators are United Kingdom (38 co-pub.) and Malaysia (29 co-pub.).
+RE-related co-publications of the Northern African countries show a rich international network but the collaboration with other African regions seems to be relatively less dense. Only African countries from other regions which have co-published over 25 RE-related papers with Northern African countries are South Africa (28 pub.) and Nigeria (26 pub.). 
 
-Following the given analysis of RE-related publication outputs in the Northern Africa; 
+Egypt, the most visible country in Northern Africa in terms of RE-related publications,  plays a central role in the network with ~6.6k publications in total. The relatively uniform distributed co-publication network of Egypt includes over 10 EU-27 countries as well as a number of countries from other regions of the world like the USA, China, India, United Kingdom. Egypt's strongest link in the co-publications, however, is with organisations from Saudi Arabia. 
+
+Tunisia, Algeria and Morocco have relatively high numbers of collaborations with French organisations with 751, 881 and 601 co-publications respectively. France in general is the most visible EU-27 country in the RE-related co-publications with African countries. Out of France's ~3250 RE-related co-publications with African countries ~2350 of those have been published with the collaboration of Northern African countries whereas Algeria and Tunisia being the most visible Northern African countries in those collaborations. The closest following EU-27 country in terms of RE-related co-publications is Spain (~580 out of ~820 co-publications with African countries) and Germany (~490 out of 1334 co-publications with African countries).
+
+The 4 mentioned Northern African countries so far, Egypt, Algeria, Tunisia and Morocco are co-publication-wise relatively well interconnected, however, Libya stays out of the co-publication cluster in Northern Africa, from Libya's 233 RE-related publications in the last 10 years none of the Northern African countries had over 25 co-publications with Libya. Instead, Libya's most visible collaborators are United Kingdom (38 co-pub.) and Malaysia (29 co-pub.).
+
+Following the given analysis of RE-related publication outputs in Northern Africa; 
 Egypt, Algeria and Morocco have been chosen for the deeper analysis of the individual countries. 
 While Egypt and Algeria hold the highest numbers of RE-related publications in the northern
 region, Morocco has been mainly chosen for the high growth rate in the number of publications.

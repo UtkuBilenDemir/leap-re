@@ -1,17 +1,16 @@
 #### Morocco
 
-```{r moroccoorgtable,  fig.show="hold", out.width="0%"}
+```{r moroccoorgtable,  fig.show="hold", out.width="0%", fig.cap="Re-related publication output of the most visible Moroccan organisations"}
 morocco_org_table <- readRDS(file = "../../04_visualisation/04_tables/morocco_org_table.Rds")
 morocco_org_table
 ```
-Morocco has the most rapidly growing number of publications in the 15 most visible African countries in RE-related publications with having 543 publications in 2020 in comparison with 34 RE-related publications in 2011. The same pattern is also observable in the publications of Moroccan Institutions. Each one of the RE-wise most visible 5 organisations in Morocco had 1 digit RE-related publications in 2011 and each of those have published at least ~8 folds of those numbers in 2020. 
+Morocco has the most rapidly growing number of publications in the 15 most visible African countries in RE-related publications with having 543 publications in 2020 in comparison with 34 RE-related publications in 2011. The same pattern is also observable in the publications of Moroccan Institutions. Each one of the RE-wise most visible 5 organisations in Morocco had 1 digit RE-related publications in 2011 and each of those have published at least ~8 fold of those numbers in 2020. 
 
-*Mohamed V University* is the most visible Moroccan institution in the RE-related publications with 667 publications in total. There is a slight decline in the number of publications after 2018 but the university still collaborates in over 100 RE-related publications yearly. *Mohamed V* and *Mohamed I Universities* are both publishing in comparison with 2011 ~25 times more in RE-related topics.
-
-*University of Sfax*, *University of Casablanca* and *Cadi Ayyad University* are most visible 2., 3. and 4. organisations respectively 
+*Mohamed V University* is the most visible Moroccan institution in the RE-related publications with 667 publications in total between 2011-2020. There is a slight decline in the number of publications after 2018 but the university still collaborates in over 100 RE-related publications yearly. *Mohamed V* and *Mohamed I Universities* are both published in comparison with 2011 ~25 times more in RE-related papers. The *University of Sfax*, *University of Casablanca* and *Cadi Ayyad University* are most visible 2., 3. and 4. organisations respectively 
 
 
-```{r morocconet, echo=FALSE, out.width="100%", fig.cap="Co-publication network in RE-related publications in organisaitons from Morocco between 2011-2020"}
+
+```{r morocconet, echo=FALSE, out.width="100%", fig.cap="Co-publication network in RE-related publications in organisations from Morocco between 2011-2020"}
 morocco_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/morocco_net.Rds")
 morocco_net
 
@@ -20,17 +19,27 @@ morocco_net
 # Links with less than 20 publications have been removed
 ```
 
-Moroccan organisations are interconnected in the RE-related publications, only a few international collaborations have an output of more than 25 co-publications. Although *Mohamed V Uni.* has a central position the native collaboration is relatively uniform distributed. Especially the number of co-publications of *Mohamed V Uni.* with *Cadi Ayyad Uni.* and *Uni. of Hassan II Casablanca* (41 and 39 co-publications respectively) as well as the co-publications between *Universite Moulay Ismail de Meknes* and *Sidi Mohamed Ben Abdellah Uni.* (~50 co-publications) are most visible collaborations in Morocco. 
+Moroccan organisations are well interconnected in RE-related publications. Although *Mohamed V University* stays in the centre of the network, institutions are evenly distributed. Especially the number of co-publications of *Mohamed V Uni.* with *Cadi Ayyad Uni.* and *Uni. of Hassan II Casablanca* (41 and 39 co-publications respectively) as well as the co-publications between *Universite Moulay Ismail de Meknes* and *Sidi Mohamed Ben Abdellah Uni.* (~50 co-publications) are most visible collaborations in Morocco. 
 
-International collaborations includes mostly French institutions like *Uni. of Lorraine*, *Uni. of Montpellier* and *University of Pau and Pays de l'Adour*.
+Only a few intercontinental collaborations have an output of more than 15 co-publications with Moroccan organisations. *Uni. of Lorraine*, *Uni. of Montpellier* and *University of Pau and Pays de l'Adour* from France, *Uni. of Leeds* from the UK are the most visible intercontinental collaborators.
+
 
 
 ##### Mohammed V University
-```{r mohambarline, echo=FALSE, out.width="100%", fig.cap="TEST"}
+```{r mohambarline, echo=FALSE, out.width="100%", fig.cap="Absolute and relative growth of the most visible research areas in RE-related publications of Mohamed V University between 2011-2020"}
 moham_barline <- readRDS(file = "../../04_visualisation/01_bar_graphs/02_regions/moham_ra_barline.Rds")
 
 moham_barline
 ```
 
-Similar to the other selected universities from the Northern Africa region *Energy & Fuels* has a strong presence also in the publications of *Mohamed V Uni.*. Considering, there was no recorded renewable energy related publication from *Mohamed V Uni.* in 2011 and only 1 publication in 2012 in Web of Science databases, 2018 shows a strong contrast with 85 RE-related publications to the previous years. *Electrical and Electronic Engineering* is following *Energy and Fuels* closely in total RE-related publication from *Mohamed V Uni.*. Although, there are no recorded publications in *Green and Sustainable Science & Tech.* before 2014, it stays as the 3. most visible research areain the total numbers. In contrast to the other selected organisations so far one of the most visible research areas in the RE-related publications from *Mohamed V University*  is *Telecommunications* and publications in *Multidisciplinary Material Science* are also increasing since 2015.
+Similar to the other selected universities from the Northern Africa region *Energy & Fuels* has a strong presence also in the publications of *Mohamed V Uni.*. Considering, there was no recorded renewable energy-related publication from *Mohamed V Uni.* in 2011 and only 1 publication in 2012 in Web of Science databases, 2018 shows a strong contrast with 85 RE-related publications to the previous years. *Electrical and Electronic Engineering* is following *Energy and Fuels* closely in total RE-related publication from *Mohamed V Uni.*. 
 
+Although, there are no recorded publications in *Green and Sustainable Science & Tech.* before 2014, it stays as the 3. most visible research area in the total numbers. In contrast to the other selected organisations so far one of the most visible research areas in the RE-related publications of *Mohamed V University*  is *Telecommunications* and publications in *Multidisciplinary Material Science* are also increasing since 2015. *Multidisciplinary Material Science* is also the only research area that was increasing in numbers between 2019-2020 in the RE-related publications of *Mohamed V University*.
+
+```{r mohamngramnetwork, echo=FALSE, out.width="100%", fig.cap="Keyword/keyword pair correlation network in RE-related publications of Mohammed V University"}
+moham_ngram_network_plot <- readRDS(file = "../../04_visualisation/06_ngrams/moham_ngram_network_plot.Rds")
+
+moham_ngram_network_plot
+```
+
+The keyword/keyword pair correlation network of *Mohamed V University* also includes a number of solar energy and wind energy-related themes. Especially different types of conversion systems (wind energy conversion systems <wecs>) are reoccurring patterns in the RE-related publications of *Mohamed V University*. In relation, hybrid energy approaches like *doubly fed induction generator* (dfig) or backstepping control system that supports wind tribunes and photovoltaic systems (see @e.ahmed2012) are emphasized.  Also, dc-dc converter technologies like MPPT that aims to increase the efficiency of the photovoltaic systems are among the most visible keywords.
