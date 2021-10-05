@@ -4,9 +4,9 @@
 morocco_org_table <- readRDS(file = "../../04_visualisation/04_tables/morocco_org_table.Rds")
 morocco_org_table
 ```
-Morocco has the most rapidly growing number of publications in the 15 most visible African countries in RE-related publications with having 543 publications in 2020 in comparison with 34 RE-related publications in 2011. The same pattern is also observable in the publications of Moroccan Institutions. Each one of the RE-wise most visible 5 organisations in Morocco had 1 digit RE-related publications in 2011 and each of those have published at least ~8 fold of those numbers in 2020. 
+Morocco has the most rapidly growing number of publications in the 15 most visible African countries in RE-related publications with having 543 publications in 2020 in comparison with 34 RE-related publications in 2011. The same pattern is also observable in the publications of Moroccan institutions. Each one of the RE-wise most visible 5 organisations in Morocco had 1 digit RE-related publications in 2011 and each of those have published at least ~8 fold of those numbers in 2020. 
 
-*Mohamed V University* is the most visible Moroccan institution in the RE-related publications with 667 publications in total between 2011-2020. There is a slight decline in the number of publications after 2018 but the university still collaborates in over 100 RE-related publications yearly. *Mohamed V* and *Mohamed I Universities* are both published in comparison with 2011 ~25 times more in RE-related papers. The *University of Sfax*, *University of Casablanca* and *Cadi Ayyad University* are most visible 2., 3. and 4. organisations respectively 
+*Mohamed V University* is the most visible Moroccan institution in the RE-related publications with 667 publications in total between 2011-2020. There is a slight decline in the number of publications after 2018 but the university still collaborates in over 100 RE-related publications yearly. *Mohamed V* and *Mohamed I Universities* are both publishing in comparison with 2011 ~25 times more in RE-related papers. The *University of Sfax*, *University of Casablanca* and *Cadi Ayyad University* are most visible 2, 3. and 4. organisations respectively. 
 
 
 

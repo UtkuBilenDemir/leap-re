@@ -5,12 +5,12 @@
 
 Following the overall figures of the RE-related publications in Africa, this section introduces the geographical regions of Africa to broaden the analysis further. Focusing on different regions of Africa prevents the over-representation of already relatively more visible countries in terms of publications and also enables a detailed analysis for individual countries and organisations.
 
-```{r auregions, echo=FALSE, out.width="100%", fig.cap="African Union Geographic Regions"}
+```{r auregions, echo=FALSE, out.width="100%", fig.cap="African Union geographic regions"}
 au_regions <- readRDS(file = "../../04_visualisation/02_maps/03_results/au_regions.Rds")
 au_regions
 ```
  
-To determine the African regions, this study uses [African Union Geographical Regions](https://au.int/en/member_states/countryprofiles2) instead of the [United Nations Statistics Department](https://unstats.un.org/unsd/methodology/m49/) (UNSD). A presentation of the African Union regions can be seen in Figure \@ref(fig:auregions).
+To determine the African regions, this study uses [the categorisation provided by African Union](https://au.int/en/member_states/countryprofiles2). A presentation of the African Union regions can be seen in Figure \@ref(fig:auregions).
 
 
 

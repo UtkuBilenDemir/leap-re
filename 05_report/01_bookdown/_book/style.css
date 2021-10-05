@@ -15,3 +15,8 @@ pre code {
 .book .book-body .page-wrapper .page-inner {
   max-width: 60%;
 }
+
+.leaflet-container {
+    background: #ddd;
+    outline: 0;
+}

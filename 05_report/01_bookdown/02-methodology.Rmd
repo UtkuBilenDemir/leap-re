@@ -19,7 +19,7 @@ rel\_growth\_rate := end\_value/start\_value
 
 ## Data Source & Methodological Steps
 
-The study is based on the data from Clarivate's Web of Science (WoS) databases. After the unification of the collected RE-related keywords, different types of search queries have been tested on WoS. A search query with over 80% accuracy for the identification of RE-related research has been determined through sampling processes.
+The study is based on the data from Clarivate's Web of Science (WoS) databases. After the unification of the collected RE-related keywords by MESRS and ZSI, different types of search queries have been tested on WoS. A search query with over 80% accuracy for the identification of RE-related research has been determined through sampling processes.
 
 The data collected from WoS databases through the decided search query have been turned into a common dataset for the use of all partners collaborating in the study. The generated dataset has been transformed by preprocessing steps like data cleaning, normalisation, reduction, and categorisation. The normalisation of the organisation names is done with the help of the [Global Research Identifier Database (GRID)](https://www.grid.ac/).
 

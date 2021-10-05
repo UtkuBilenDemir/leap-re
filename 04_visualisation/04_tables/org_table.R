@@ -242,29 +242,29 @@ demrepcongo_org_df <- demrepcongo_org_df[,c(1:2, 14, 11,12, 13)]
 eth_ken_tan_org_df <- eth_ken_tan_org_df[,c(1:2, 14, 11,12, 13)]
 con_cam_gab_org_df <- con_cam_gab_org_df[,c(1:2, 14, 11,12, 13)]
 
-colnames(      egypt_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(    morocco_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(    algeria_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(    nigeria_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(      ghana_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(    senegal_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(   cameroon_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(demrepcongo_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(   ethiopia_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(      kenya_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(   tanzania_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(         sa_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(   zimbabwe_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames( sen_gha_ni_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(eth_ken_tan_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
-colnames(con_cam_gab_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of pub. (2011-2020)")
+colnames(      egypt_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(    morocco_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(    algeria_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(    nigeria_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(      ghana_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(    senegal_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(   cameroon_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(demrepcongo_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(   ethiopia_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(      kenya_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(   tanzania_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(         sa_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(   zimbabwe_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames( sen_gha_ni_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(eth_ken_tan_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
+colnames(con_cam_gab_org_df) <- c("Organisation", "2011","    ","2020","Rel. growth rate (2011-2020)","Total num. of RE-pub. (2011-2020)")
 
 gen_org_ftable <- function(df) {
   out_table <- as.htmlwidget(formattable(df[1:5,],
     align = c("l",rep("r", NCOL(df) - 1)), 
     list(`Organisation` = formatter("span", style = ~ style(color = "grey", font.weight = "bold")),
     `Rel. growth rate (2011-2020)` = color_tile("#f5f5f5", "lightpink"),
-    `Total num. of pub. (2011-2020)` = color_bar2("lightblue")
+    `Total num. of RE-pub. (2011-2020)` = color_bar2("lightblue")
   )))
 
    out_table$dependencies = c(out_table$dependencies, htmlwidgets:::widget_dependencies("sparkline", "sparkline"))

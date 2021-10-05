@@ -1,5 +1,6 @@
 ---
 title: "LEAP-RE T5.3. | Renewable Energy Research-Capacity in Africa (2011-2020)"
+subtitle: "Preliminary Report"
 output:
   flexdashboard::flex_dashboard:
       ## version: 4
@@ -115,7 +116,7 @@ map_pub_freq
 * 20 African countries stay under 40 RE-related
 publications in total between 2011-2020.
 
-### The most visible 15 African countries in RE-related publications between 2011-2020
+### The most visible 15 African organisations in RE-related publications between 2011-2020
 
 ```{r orgmv, echo=FALSE}
 org_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/org_mv_barplot.Rds")
@@ -157,7 +158,7 @@ Overview { data-navmenu="Regional Analysis"}
 Column  
 -----------------------------------------
 
-### African Union Geographic Regions
+### African Union geographic regions
 ```{r auregions2}
 au_regions <- readRDS(file = "../../04_visualisation/02_maps/03_results/au_regions.Rds")
 au_regions
@@ -180,7 +181,7 @@ afr_cou_plt %>% layout(autosize=TRUE)
 
 * Nigeria, Ghana, Senegal from Western Africa; Ethiopia, Kenya, Tanzania, Uganda from Eastern Africa; and Cameroon, the only country from the Central Africa, are among the 15 most visible countries following the most visible 5 countries.
 
-Although the most common definition of African geographical regions is the categorization of the [United Nations Statistics Department](https://unstats.un.org/unsd/methodology/m49/) (UNSD), as the Figure \@ref(fig:auregions) shows, this study is based on a different categorization, namely [African Union Geographical Regions](https://au.int/en/member_states/countryprofiles2).
+As the Figure \@ref(fig:auregions) presents; to determine the African regions, this study uses [the categorisation provided by African Union](https://au.int/en/member_states/countryprofiles2).
 
 
 Northern Africa { data-navmenu="Regional Analysis"}
@@ -260,11 +261,11 @@ egypt_org_table
 
 * Tanta University, which had yearly fewer than 50 RE-related publications until 2016, published in 2019 and 2020 ~125 RE-related papers, this is a growth rate of ~14 fold with respect to the 9 publications in 2011. 
 
-* The Co-publication network of Egyptian organisations shows a relatively dense collaboration structure between *Cairo University*, *Ain Shams University* and *National Research Centre* of Egpyt. *National Research Centre* has over 50 co-publications with each of the other universities in that cluster. *Cairo University* is also in the centre of other 4 Egyptian organisations; namely *Suez Canal Uni.*, *British Uni. in Egypt*, *Zewail City of Sci. Tech* and *American Uni. in Cairo*, with over 20 co-publications each.  
+* The co-publication network of Egyptian organisations shows a relatively dense collaboration structure between *Cairo University*, *Ain Shams University* and *National Research Centre* of Egpyt. *National Research Centre* has over 50 co-publications with each of the other universities in that cluster. *Cairo University* is also in the centre of 4 other Egyptian organisations; namely *Suez Canal Uni.*, *British Uni. in Egypt*, *Zewail City of Sci. Tech* and *American Uni. in Cairo*, with over 20 co-publications each.  
 
 * Other visible collaboration links are between *Minia* and *Aswan Universities* with over 50 publications and between *Tanta* and *Kafrelsheikh Universities* with over 70 publications together.  In general, collaborations with organisations from Saudi Arabia are highly visible in the network, especially *King Saud University* is a central node in the network with ~400 RE-related co-publications with Egyptian organisations. 
 
-* East Asian organisations have also a visible presence in the co-publication network of Egypt. *Tanta University*'s collaborations with Chinese Institutions *Jiangsu Uni.* and *Huazhong Uni* include 60  and 40 co-publications respectively. Several Japanese universities have collaborations with *Aswan University*, *Zagazig University*, *Assiut University*, *Suez University*, *Egypt Japan University* and *Minia University* with over 20 co-publications each. *Minia University*'s collaboration with South Korean institution *JeonBuk National University* also include 60 RE-related co-publications between 2011-2020.
+* East Asian organisations have also a visible presence in the co-publication network of Egypt. *Tanta University*'s collaborations with Chinese institutions *Jiangsu Uni.* and *Huazhong Uni* include 60  and 40 co-publications respectively. Several Japanese universities have collaborations with *Aswan University*, *Zagazig University*, *Assiut University*, *Suez University*, *Egypt Japan University* and *Minia University* with over 20 co-publications each. *Minia University*'s collaboration with South Korean institution *JeonBuk National University* also include 60 RE-related co-publications between 2011-2020.
 
 * Visible organisations from EU-27 countries are *Université Bourgogne Franche-Comté* of France (over 25 co-publications with *Zagazig University*), *Ruhr University Bochum* from Germany (22 co-publications with *Mansoura Uni.*), *Budapest University of Technology and Economics* from Hungary and the *University of Jaen* from Spain (both over 25 co-pub. with *Aswan University*).
 
@@ -295,7 +296,7 @@ cairo_barline
 
 ### 
 
-* Out of 779 publications in total, the most visible research areas are aligning with the most visible research areas in RE-related publications from African countries in general. *Energy & Fuels* as well as *Electrical & Electronic Engineering* are the most visible research areas in Cairo university, however, the number of RE-related in those areas are not growing in the last years. After the spike in 2017 with ~50 publications, the number of publications from *Energy & Fuels* has fallen to ~30 publications in 2019 and 2020. 
+* Out of 779 publications in total, the most visible research areas are aligning with the most visible research areas in RE-related publications from African countries in general. *Energy & Fuels* as well as *Electrical & Electronic Engineering* are the most visible research areas in Cairo University, however, the number of RE-related in those areas are not growing in the last years. After the spike in 2017 with ~50 publications, the number of publications from *Energy & Fuels* has fallen to ~30 publications in 2019 and 2020. 
 
 * *Green & Sustainable Science & Technology* and *Environmental Sciences* display relatively steady growth in numbers. Considering there was only 1 from each area in 2011,  ~20 RE-related publications in 2020 makes those the fastest growing research areas in the RE-related publications from Cairo University.
 
@@ -331,7 +332,7 @@ algeria_org_table
 
 ### {data-height=1100}
 
-* *Renewable Energy Development Center*, Algeria's dedicated institution for RE-related research is the most visible Organisation in the country with ~690 publications. However, the number of RE-related publications of the institution is falling down after a spike in 2018 with 127 publications. Although the latency in the record entry process in WoS databases might be causing a proportion of the decline, the number of publications in 2020 seems to be less than half of the number in 2018 (54 pub.).   
+* *Renewable Energy Development Center*, Algeria's dedicated institution for RE-related research is the most visible organisation in the country with ~690 publications. However, the number of RE-related publications of the institution is falling down after a spike in 2018 with 127 publications. Although the latency in the record entry process in WoS databases might be causing a proportion of the decline, the number of publications in 2020 seems to be less than half of the number in 2018 (54 pub.).   
 
 * *Houari Boumediene University of Sciences* is another Algerian institution that publishes RE-related papers consistently. A similar decline in the number of publications like in the case of *Renewable Energy Development Center* can be observed in the publications of *Houari Boumediene University of Sciences* after 2018 (from 75 publications to 44 publications in 2020).  
 
@@ -404,9 +405,9 @@ morocco_org_table
 
 ### {data-height=1100}
 
-* Morocco has the most rapidly growing number of publications in the 15 most visible African countries in RE-related publications with having 543 publications in 2020 in comparison with 34 RE-related publications in 2011. The same pattern is also observable in the publications of Moroccan Institutions. Each one of the RE-wise most visible 5 organisations in Morocco had 1 digit RE-related publications in 2011 and each of those have published at least ~8 fold of those numbers in 2020. 
+* Morocco has the most rapidly growing number of publications in the 15 most visible African countries in RE-related publications with having 543 publications in 2020 in comparison with 34 RE-related publications in 2011. The same pattern is also observable in the publications of Moroccan institutions. Each one of the RE-wise most visible 5 organisations in Morocco had 1 digit RE-related publications in 2011 and each of those have published at least ~8 fold of those numbers in 2020. 
 
-* *Mohamed V University* is the most visible Moroccan institution in the RE-related publications with 667 publications in total between 2011-2020. There is a slight decline in the number of publications after 2018 but the university still collaborates in over 100 RE-related publications yearly. *Mohamed V* and *Mohamed I Universities* are both published in comparison with 2011 ~25 times more in RE-related papers. The *University of Sfax*, *University of Casablanca* and *Cadi Ayyad University* are most visible 2., 3. and 4. organisations respectively 
+* *Mohamed V University* is the most visible Moroccan institution in the RE-related publications with 667 publications in total between 2011-2020. There is a slight decline in the number of publications after 2018 but the university still collaborates in over 100 RE-related publications yearly. *Mohamed V* and *Mohamed I Universities* are both publishing in comparison with 2011 ~25 times more in RE-related papers. The *University of Sfax*, *University of Casablanca* and *Cadi Ayyad University* are most visible 2, 3. and 4. organisations respectively. 
 
 * Moroccan organisations are  well interconnected in RE-related publications. Although *Mohamed V University* stays in the centre of the network, institutions are evenly distributed. Especially the number of co-publications of *Mohamed V Uni.* with *Cadi Ayyad Uni.* and *Uni. of Hassan II Casablanca* (41 and 39 co-publications respectively) as well as the co-publications between *Universite Moulay Ismail de Meknes* and *Sidi Mohamed Ben Abdellah Uni.* (~50 co-publications) are most visible collaborations in Morocco. 
 
@@ -482,7 +483,7 @@ output in a consistent manner in the 10 years range without any stagnation. Alth
 
 * Burkina Faso is following Senegal with relatively less volatility and Benin's volatile numbers are expected since the total output of RE-related publications is fewer in comparison.
 
-* Nigeria, the highest of the region in terms of the total number of RE-related publications, is also the centre of mass in the co-publication network of the Western African countries. It is the only Western African country with more than 25 co-publications with a Northern African country (Egypt, 26 co-pub). In a similar manner, together with Ghana, Nigeria is the only Western African Country with more than 25 co-pub. with South Africa (277 pub.).
+* Nigeria, the highest of the region in terms of the total number of RE-related publications, is also the centre of mass in the co-publication network of the Western African countries. It is the only Western African country with more than 25 co-publications with a Northern African country (Egypt, 26 co-pub). In a similar manner, together with Ghana, Nigeria is the only Western African country with more than 25 co-pub. with South Africa (277 pub.).
 
 * Ghana and Nigeria have a collaboration link with 40 RE-related co-publications between 2011-2020. However, the collaborations between the two most visible countries in the region with the other countries are relatively sparse. Côte d'Ivoire, Benin, Senegal, Burkina Faso and Mali are mostly engaged in their own cluster. The most visible international partner of that cluster is France. 
 
@@ -601,17 +602,17 @@ eth_ken_tan_org_table
 
 ### Notes
 
-* All of the most visible 3 organisations in the Nigeria, Ghana, Senegal cluster are from Nigeria. The number of RE-related publications from *Covenant University*, the most visible organisation in the region, seems to be declining presumably because of the latency in document entries into WoS databases after 2019. 
+* All of the most visible 3 organisations in the selected West African countries Nigeria, Ghana, Senegal are from Nigeria. The number of RE-related publications from *Covenant University*, the most visible organisation in the region, seems to be declining presumably because of the latency in document entries into WoS databases after 2019. 
 
-* Other than *Covenant University* total RE-related publication outputs of other most visible organisations in Western Africa are relatively close to each other. The *University of Nigeria* has the highest relative growth rate of 11.5 (from 4 pub. in 2011 to 46 in 2020). Other than the *University of Ibadan*, the other 3 organisations were also consistently increasing numbers of their Re-related publications despite two Ghanaian organisations showing a slightly more volatile progress.     
+* Other than *Covenant University* total RE-related publication outputs of other most visible organisations in Western Africa are relatively close to each other. The *University of Nigeria* has the highest relative growth rate of 11.5 (from 4 pub. in 2011 to 46 in 2020). Other than the *University of Ibadan*, the other 3 organisations were also consistently increasing numbers of their RE-related publications despite two Ghanaian organisations showing a slightly more volatile progress.     
 
-* In the Cameroon, Dem. Rep. Congo and Gabon cluster, all of the most visible 5 organisations in the region are from Cameroon with the most visible organisation being *Université de Yaoundé I* with 170 RE-related publications in 2020. None of the organisations in the region had published more than 5 RE-related publications in 2011.  
+* In the selectedral African countries Cameroon, Dem. Rep. Congo and Gabon, all of the most visible 5 organisations in the region are from Cameroon with the most visible organisation being *Université de Yaoundé I* with 170 RE-related publications in 2020. None of the organisations in the region had published more than 5 RE-related publications in 2011.  
 
 * *Université de Yaoundé I* is followed by *Université de Dschang* which increased its 1 RE-related publication in 2011 to 18 in 2020 with a total of 76 RE-related publications in the 10-year range. The RE-related publication output of the following 3 organisations; *University of Buea*, *University of Ngaoundéré* and *University of Douala* is still fewer than 10 yearly publications.
 
 * Most visible countries from the selected countries in Eastern Africa, namely Ethiopia, Kenya Tanzania are diverse. *Addis Ababa University* from Ethiopia is the most visible one with 246 RE-related publications between 2011-2020. The number of publications from *Addis Ababa University* has been increasing steadily since 2013.
 
-* Although *World Agroforestry Centre* operates in different countries, the main location of the institution is registered as Kenya. *World Agroforestry Centre* is the second most visible organisation in the Ethiopia, Kenya, Tanzania cluster with a total number of 150 publications between 2011-2020. However, the yearly number of publications are declining since 2016.
+* Although *World Agroforestry Centre* operates in different countries, the main location of the institution is registered as Kenya. *World Agroforestry Centre* is the second most visible organisation in the selected East African countries Ethiopia, Kenya, Tanzania with a total number of 150 publications between 2011-2020. However, the yearly number of publications are declining since 2016.
 
 * *Mekelle University* of Ethiopia is the third most visible organisation with steady growth in the number of RE-related publications and *University of Dar es Salaam* is the only organisation from Tanzania in the 5 most visible countries in the selected countries of East Africa followed by the *University of Nairobi* of Kenya. 
 
@@ -655,11 +656,11 @@ coven_barline
 
 * The most visible research areas are *Energy & Fuels* and *Green & Sustainable Science & Technology* respectively in RE-related publications of *Covenant University*. 2019 is in terms of RE-related publications a peak point for *Covenant University*, the 2 two most visible areas include 20 and 30 publications respectively in this year. 
 
-* None of the last three research areas *Multidisciplinary Sciences*, *Material Science* and *Electrical & Electronic Engineering* had more than 1 yearly RE-related publication in *Covenant University* until 2016. However, although there weren't any publications in *Multidisciplinary Sciences* until 2017, the research area has become one of the most visible research areas in *Covenant University's* RE-related publications with yearly over 10 publications. 
+None of the last three categories *Multidisciplinary Sciences*, *Material Science* and *Electrical & Electronic Engineering* had more than 1 yearly RE-related publication in *Covenant University* until 2016. However, although there weren't any publications in *Multidisciplinary Sciences* until 2017, it has become one of the most visible categories in *Covenant University's* RE-related publications with yearly over 10 publications. 
 
 * Similar to the research areas keyword/keyword pair correlation network of *Covenant University* also includes some differing elements. Along with a heavy emphasis on solar and wind energy-related topics, one of the central keyword pairs indicates the research on using rice husk, a byproduct of rice growing, as a biomass fuel. Presumably several mentions of concrete and steel, firstly, relates to the production of those materials with renewable energy, and secondly, as *compacting_concrete* indicates research on producing environment-friendly forms of (self-) compacting concrete which has more than one benefit for sustainable development (further reading: @long2015 and @gupta2021). 
 
-* Also, keyword pairs like *fast_pyrolysis* and *enzymatic_convertibility* indicate a high number of biomass related studies.
+* Also, keyword pairs like *fast_pyrolysis* and *enzymatic_convertibility* indicate a relatively high number of biomass related studies.
 
 
 Western Africa | Nigeria/ University of Nigeria  { data-navmenu="Regional Analysis"}
@@ -691,7 +692,7 @@ unini_barline
 
 * While the two most visible areas are stagnating or declining Environmental Sciences starts to grow in numbers and become together with Chemical Engineering the only areas still rising in 2020.
 
-* The *University of Nigeria* also includes some unique keyword pairs. Along with the usual emphasized renewable energy forms like solar and wind energy RE-related publications of the *University of Nigeria* puts high emphasis on biomass related topics. In relation, also micro- and macroalgae are often reoccurring keywords in the RE-related publications of *University of Nigeria*, these are recently discussed in the renewable energy-related areas because of their potential to be used as biofuel (see @khan2018). 
+* The *University of Nigeria* also includes some unique keyword pairs. Along with the usual emphasized renewable energy forms like solar and wind energy RE-related publications of the *University of Nigeria* puts high emphasis on biomass related topics. In conjunction, also micro- and macroalgae are often reoccurring keywords in the RE-related publications of *University of Nigeria*, these are recently discussed in the renewable energy-related areas because of their potential to be used as biofuel (see @khan2018). 
 
 * Also, a couple of keywords pairs indicate wastewater treatment, removal and recycling of waste plastics are also visible topics in the publications of *University of Nigeria*.
 
@@ -825,8 +826,7 @@ sa_table
 
 * South Africa also has strong interregional collaboration with other African countries, which includes Egypt (~30 co-pub.) from Northern Africa; Nigeria (277 co-pub.) and Ghana (27 co-pub.) from Western Africa; Ethiopia (44 co-pub.), Tanzania (38 co-pub.), Uganda (32 co-pub.) and Kenya (68 co-pub.) from Eastern Africa, which makes South Africa the most visible African country also in interregional collaborations. None of the Southern African countries has a collaboration link with more than 25 co-pub. without the involvement of South Africa. 
 
-* The most visible EU-27 country in the region is Germany with involvement in 373 co-publications. Germany is followed by France with 290 co-pub. and Spain 150 co-publications. However, South Africa's most visible collaborations are with the United Kingdom and the United States 533 and 701 co-pub. respectively out of United States' 812 and UK's 614 co-publications in the region. 
-
+* The most visible EU-27 country in the region is Germany with involvement in 373 co-publications. Germany is followed by France with 290 co-pub. and Spain 150 co-publications. However, South Africa’s most visible collaborations are with the United Kingdom and the United States. Those collaborations constitute 533 out of UK’s 614 and 701 out of US’ 812 co-publications in the region.
 
 Southern Africa | South Africa { data-navmenu="Regional Analysis"}
 =========================================
@@ -855,7 +855,7 @@ sa_org_table
 
 * *University of Cape Town* is steadily increasing its RE-related publications since 2011 with a total output of ~860 publications. *Stellenbosch University* is closely following with ~850 RE-related publications between 2011-2020 which, despite the decline after 2019, only 1 publication behind *University of KwaZulu-Natal*. *University of Pretoria* and *University of Johannesburg* are following with ~800 and ~620 publications respectively.
 
-* The Organisation network of South Africa displays a relatively well interconnected co-publication structure with a number of intercontinental collaborators. None of the organisations seems to be the centre of mass in the network. 
+* The organisation network of South Africa displays a relatively well interconnected co-publication structure with a number of intercontinental collaborators. None of the organisations seems to be the centre of mass in the network. 
 
 * Some of the notable international collaborations are between China's *Northwest Normal University* and *University of Western Cape* (36 co-pub.), Denmark's *Aalborg University* and *University of Johannesburg* (23 co-pub,), UAE's *Uni. of Sharjah* and *University of Pretoria* (22 co-pub.), New Zealand's *Victoria University of Wellington* and *Stellenbosch University* (~30 co-pub.), France's *University of Montpellier* and *University of Cape Town* (20 co-pub.) and Canada's *Uni. of British Columbia* and *University of Cape Town* (23 co-pub.). Also, as an interregional collaboration between African organisations Nigeria's *Covenant University* has 34 RE-related co-publications with *University of Johannesburg*. Also, as an interregional collaboration between African organisations Nigeria's *Covenant University* has 34 RE-related co-publications with *University of Johannesburg*.
 

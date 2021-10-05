@@ -95,11 +95,11 @@ ca_country_df <- ca_country_df[1:5,c(1:3, 11, 13, 12)]
 ea_country_df <- ea_country_df[1:5,c(1:3, 11, 13, 12)]
 sa_country_df <- sa_country_df[1:5,c(1:3, 11, 13, 12)]
 
-colnames(na_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
-colnames(wa_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
-colnames(ca_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
-colnames(ea_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
-colnames(sa_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of pub. (2011-2020)")
+colnames(na_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of RE-pub. (2011-2020)")
+colnames(wa_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of RE-pub. (2011-2020)")
+colnames(ca_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of RE-pub. (2011-2020)")
+colnames(ea_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of RE-pub. (2011-2020)")
+colnames(sa_country_df) <- c("Country", "2011","    ","2020","Rel. growth rate (2011-2020)", "Total num. of RE-pub. (2011-2020)")
 
 bg = function(start, end, color, ...) {
   paste("linear-gradient(90deg,transparent ",percent(start),",",
@@ -118,7 +118,7 @@ gen_formattable <- function(df){
       list(`Country` = formatter("span", style = ~ style(color = "grey", font.weight = "bold")),
       ##`Rel. growth rate (2011-2020)` = color_tile("#DeF7E9", "#71CA97")
       `Rel. growth rate (2011-2020)` = color_tile("#f5f5f5", "lightpink"),
-      `Total num. of pub. (2011-2020)` = color_bar2("lightblue")
+      `Total num. of RE-pub. (2011-2020)` = color_bar2("lightblue")
       )))
     out$dependencies <- c(out$dependencies, htmlwidgets:::widget_dependencies("sparkline", "sparkline"))
 

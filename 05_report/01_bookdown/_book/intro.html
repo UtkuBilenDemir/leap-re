@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Introduction | LEAP-RE T5.3</title>
   <meta name="description" content="This report presents the results of the scientometric study on the renewable energy related research in African countries in the 10 years range between 2011-2020." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24.1 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Introduction | LEAP-RE T5.3" />
   <meta property="og:type" content="book" />
@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="This report presents the results of the scientometric study on the renewable energy related research in African countries in the 10 years range between 2011-2020." />
   
 
-<meta name="author" content="MESRS: … | ZSI: Dietmar Lampert, Elke Dall, Utku B. Demir" />
+<meta name="author" content="Author: Utku B. Demir" />
 
 
 
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="method.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,10 +50,9 @@
 
 
 
-
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
@@ -65,9 +65,9 @@
 <script src="libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-binding-2.0.3.9000/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3.9000/leaflet-providers-plugin.js"></script>
 <script src="libs/map-widget-style-1.0.0/map-widget-style-bindings.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -193,15 +193,15 @@ div.csl-indent {
 <h1><span class="header-section-number">1</span> Introduction</h1>
 <p>This study mainly focuses on renewable energy (RE) related research in African countries between 2011-2020. The study has been carried out under the project <a href="https://www.leap-re.eu/">LEAP-RE</a> (Long-Term Joint European Union - African Union Research and Innovation Partnership on Renewable Energy) <em>Task 5.3: Strategy for RE research-capacity in Africa</em> with the co-lead of <a href="https://www.mesrs.dz/">MESRS (Ministry of Higher Education and Scientific Research)</a> and <a href="https://www.zsi.at/">ZSI (Centre for Social Innovation)</a>.</p>
 <p>The results, which will be displayed in the following chapters, are generated through a cleaned, normalised and recategorised dataset created with the data collected from the <a href="https://www.webofscience.com">Clarivate’s Web of Science</a> databases. A comprehensive discussion about the methods can be found in Chapter <a href="method.html#method">2</a>.</p>
-<p>Following the explanation of the methodology in the next chapter, Chapter <a href="results.html#results">3</a> displays the results of the study. After showing the overall figures in Section <a href="results.html#overall-figures">3.1</a> which include a general overview of the yearly RE-related publication output in the African continent, the most visible countries and organisations as well as the distribution of research domains and areas, Section <a href="results.html#regional-analysis">3.2</a> focuses on individual African Union Geographic Regions<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. The regional analysis generally deals with the most visible countries in each region as well as their co-publication networks which also include interregional (partnerships with other African countries from other regions) and intercontinental (partnerships with countries from other continents) collaborations. Furthermore, the analysis also focuses on selected countries in each region to display the most visible organisations and organisational co-publication networks as well. The regional analysis also includes at least 1 selected organisation from each selected country to present the most visible research areas and keyword/keyword pair networks on the organisational level. Finally, Section <a href="results.html#domain-analysis">3.3</a> approaches the RE research in Africa from another direction and by splitting publications into research domains in order to discuss the most visible co-publication pairings between organisations as well as most visible keywords/ keyword pairs in each distinct cluster of scientific areas.</p>
+<p>Following the explanation of the methodology in the next chapter, Chapter <a href="results.html#results">3</a> displays the results of the study. After showing the overall figures in Section <a href="results.html#overall-figures">3.1</a> which include a general overview of the yearly RE-related publication output in the African continent, the most visible countries and organisations as well as the distribution of research domains and areas, Section <a href="results.html#regional-analysis">3.2</a> focuses on individual African Union Geographic Regions<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. The regional analysis generally deals with the most visible countries in each region as well as their co-publication networks which also include interregional (partnerships with other African countries from other regions) and intercontinental (partnerships with countries from other continents) collaborations. Furthermore, the analysis also focuses on selected countries in each region to display the most visible organisations and organisational co-publication networks as well. The regional analysis also includes at least 1 selected organisation from each selected country to present the most visible research areas and keyword/keyword pair networks on the organisational level. Finally, Section <a href="results.html#domain-analysis">3.3</a> approaches the RE research in Africa from another direction and by splitting publications into research domains in order to discuss the most visible co-publication pairings between organisations as well as most visible keywords/ keyword pairs in each distinct cluster of scientific areas.</p>
 <p>The report will be delivered in 3 different formats. An HTML-File which includes the whole scope of the report with interactive visualisations, a PDF-File which is content-wise identical to the HTML-File with static visualisations instead of interactive. And a dashboard where the results will be displayed in a compact mode interactively.</p>
 
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>The 5 African Union Geographic Regions; Northern Africa, Western Africa, Central Africa, Eastern Africa, and Southern Africa have been defined by the Organisation of African Unity in 1976 (CM/Res.464QCXVI). A list of countries in each region can
-be found under <a href="https://au.int/en/member_states/countryprofiles2">https://au.int/en/member_states/countryprofiles2</a>.<a href="intro.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p>The 5 African Union Geographic Regions; Northern Africa, Western Africa, Central Africa, Eastern Africa, and Southern Africa have been defined by the Organisation of African Unity in 1976 (CM/Res.464QCXVI). A list of countries in each region can
+be found under <a href="https://au.int/en/member_states/countryprofiles2">https://au.int/en/member_states/countryprofiles2</a>.<a href="intro.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -214,7 +214,6 @@ be found under <a href="https://au.int/en/member_states/countryprofiles2">https:
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -253,7 +252,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["01_bookdown.pdf"],
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

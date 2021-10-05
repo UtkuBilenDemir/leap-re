@@ -47,7 +47,7 @@ Although total publication output is a strong indicator of the most visible coun
 
 
 
-```{r orgmv, echo=FALSE, out.width="100%", fig.cap="Most visible 15 African countries in RE-related publications between 2011-2020"}
+```{r orgmv, echo=FALSE, out.width="100%", fig.cap="Most visible 15 African organisations in RE-related publications between 2011-2020"}
 org_mv <- readRDS(file = "../../04_visualisation/01_bar_graphs/01_overall_figures/org_mv_barplot.Rds")
 org_mv
 ```

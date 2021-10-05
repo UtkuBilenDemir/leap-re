@@ -1,17 +1,12 @@
 --- 
 title: "LEAP-RE T5.3"
-subtitle: "Scientometric Analysis of Renewable Energy Research-Capacity in Africa"
-author: "MESRS: ... | ZSI: Dietmar Lampert, Elke Dall, Utku B. Demir"
-date: ""
+subtitle: "Scientometric Analysis of Renewable Energy Research-Capacity in Africa | Preliminary Report"
+author: "Author: Utku B. Demir"
+date: "ZSI-Team: Dietmar Lampert, Elke Dall, Utku B. Demir | MESRS-Team: Mokthar Sellami, Lassassi Moundir, Benyoussef El-Hadi, Souami Feriel"
 output:
-  pdf_document:
-    always_allow_html: true
-  word_document: default
-  html_document:
+  gitbook:
     toc: yes
     tof: yes
-  html_book:
-    theme: cosmo
 documentclass: book
 header-includes:
   - \let\oldhref\href 
@@ -44,12 +39,12 @@ library(htmltools)
 
 # Abstract {-}
 
-The present report displays the results of the scientometric study on the renewable energy 
+The present report displays the preliminary results ^[The final report of the scientometric analysis will include the inputs of both co-leading organisations of the Task 5.3   MESRS and ZSI. The preliminary report only includes ZSI’s work so far.] of the scientometric study on the renewable energy 
 research-capacity in African countries by focusing on the publications in the 10 years range between 2011-2020. In order to deliver a comprehensive overview, after the analysis of the African countries in their respective African Union regions and international co-publication networks, the study has been broadened into organisational co-publication networks of the selected countries as well as the analysis of the most visible research areas and keywords/ keyword pairs from the selected organisations. Moreover, as a further point of view, renewable energy related publications from the African countries are also categorised under distinct research domains to show the most visible organisational pairings as well as most visible and trending keywords/ keyword pairs in different clusters of scientific areas. 
   
 ```{r echo=FALSE, out.width="100%"}
 
-knitr::include_graphics("../01_bookdown/leapre.png")
+knitr::include_graphics("./leapre.png")
 ```
 
 

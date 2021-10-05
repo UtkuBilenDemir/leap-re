@@ -1,20 +1,8 @@
 bookdown::gitbook:
-  split_by: none
-  self_contained: true
   css: style.css
   toc_depth: 4
   config:
     toc:
       before: |
         <li><a href="./">RE research-capacity in Africa</a></li>
-    download: ["pdf"]
-bookdown::pdf_book:
-  includes:
-    documentclass: report
-    classoption:
-      - landscape
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+    download: []

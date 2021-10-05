@@ -15,7 +15,7 @@ sa_net
 ```
 In alignment with the total number of publications, South Africa is the centre of mass in the co-publication network of Southern Africa. All the other visible South African countries have collaborations with South Africa with more than 25 co-publications. South Africa also has strong interregional collaboration with other African countries, which includes Egypt (~30 co-pub.) from Northern Africa; Nigeria (277 co-pub.) and Ghana (27 co-pub.) from Western Africa; Ethiopia (44 co-pub.), Tanzania (38 co-pub.), Uganda (32 co-pub.) and Kenya (68 co-pub.) from Eastern Africa, which makes South Africa the most visible African country also in interregional collaborations. None of the Southern African countries has a collaboration link with more than 25 co-pub. without the involvement of South Africa. 
 
-The most visible EU-27 country in the region is Germany with involvement in 373 co-publications. Germany is followed by France with 290 co-pub. and Spain 150 co-publications. However, South Africa's most visible collaborations are with the United Kingdom and the United States 533 and 701 co-pub. respectively out of United States' 812 and UK's 614 co-publications in the region. 
+The most visible EU-27 country in the region is Germany with involvement in 373 co-publications. Germany is followed by France with 290 co-pub. and Spain 150 co-publications. However, South Africa’s most visible collaborations are with the United Kingdom and the United States. Those collaborations constitute 533 out of UK’s 614 and 701 out of US’ 812 co-publications in the region.
 
 #### South Africa
 
@@ -25,7 +25,7 @@ sa_org_table
 ```
 The most visible 5 organisations in the region are all from South Africa.  *University of KwaZulu-Natal* is the organisation with the highest output of RE-related publications (934 publications). However, the organisation's RE-related publication output is stagnating since 2017.
 
-*University of Cape Town* is steadily increasing its RE-related publications since 2011 with a total output of ~860 publications. *Stellennosch University* is closely following with ~850 RE-related publications between 2011-2020 which despite the decline after 2019 only 1 publication behind *University of KwaZulu-Natal*. *University of Pretoria* and *University of Johannesburg* are following with ~800 and ~620 publications respectively.
+*University of Cape Town* is steadily increasing its RE-related publications since 2011 with a total output of ~860 publications. *Stellenbosch University* is closely following with ~850 RE-related publications between 2011-2020 which despite the decline after 2019 only 1 publication behind *University of KwaZulu-Natal*. *University of Pretoria* and *University of Johannesburg* are following with ~800 and ~620 publications respectively.
 
 
 
@@ -33,7 +33,7 @@ The most visible 5 organisations in the region are all from South Africa.  *Univ
 south_a_net <- readRDS(file = "../../04_visualisation/03_networks/01_outputs/south_a_net.Rds")
 south_a_net
 ```
-The Organisation network of South Africa displays a relatively well interconnected co-publication structure with a number of intercontinental collaborators. None of the organisations seems to be the centre of mass in the network. 
+The organisation network of South Africa displays a relatively well interconnected co-publication structure with a number of intercontinental collaborators. None of the organisations seems to be the centre of mass in the network. 
 
 Some of the notable international collaborations are between China's *Northwest Normal University* and *University of Western Cape* (36 co-pub.), Denmark's *Aalborg University* and *University of Johannesburg* (23 co-pub,), UAE's *Uni. of Sharjah* and *University of Pretoria* (22 co-pub.), New Zealand's *Victoria University of Wellington* and *Stellenbosch University* (~30 co-pub.), France's *University of Montpellier* and *University of Cape Town* (20 co-pub.) and Canada's *Uni. of British Columbia* and *University of Cape Town* (23 co-pub.). Also, as an interregional collaboration between African organisations, Nigeria's *Covenant University* has 34 RE-related co-publications with *University of Johannesburg*. 
 
