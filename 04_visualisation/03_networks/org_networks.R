@@ -520,3 +520,10 @@ visExport(
   style = NULL,
   loadDependencies = TRUE,
 )
+
+egypt_net             <- readRDS("./04_visualisation/03_networks/01_outputs/egypt_net.Rds")
+morocco_net           <- readRDS("./04_visualisation/03_networks/01_outputs/morocco_net.Rds")
+algeria_net           <- readRDS("./04_visualisation/03_networks/01_outputs/algeria_net.Rds")
+west_east_central_net <- readRDS("./04_visualisation/03_networks/01_outputs/west_east_central_net.Rds")
+sa_net                <- readRDS("./04_visualisation/03_networks/01_outputs/south_a_net.Rds")
+

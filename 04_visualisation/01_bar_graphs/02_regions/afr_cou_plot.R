@@ -25,5 +25,12 @@ afr_cou_plot <- plot_ly( cou_table
     config(displayModeBar = T)  %>% 
     layout(legend = list(x = 0.1, y = 0.9))
   
-afr_cou_plot
 saveRDS(afr_cou_plot, "./04_visualisation/01_bar_graphs/02_regions/afr_cou_plot.Rds")
+
+
+afr_cou_plot %>%
+  config(
+    toImageButtonOptions = list(
+      format = "svg"
+    )
+  )

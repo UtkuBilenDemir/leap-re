@@ -160,6 +160,15 @@ saveRDS(ca_net, "./04_visualisation/03_networks/01_outputs/ca_net.Rds")
 saveRDS(ea_net, "./04_visualisation/03_networks/01_outputs/ea_net.Rds")
 saveRDS(sa_net, "./04_visualisation/03_networks/01_outputs/san_net.Rds")
 
+na_net <- readRDS("./04_visualisation/03_networks/01_outputs/na_net.Rds")
+wa_net <- readRDS("./04_visualisation/03_networks/01_outputs/wa_net.Rds")
+ca_net <- readRDS("./04_visualisation/03_networks/01_outputs/ca_net.Rds")
+ea_net <- readRDS("./04_visualisation/03_networks/01_outputs/ea_net.Rds")
+sa_net <- readRDS("./04_visualisation/03_networks/01_outputs/san_net.Rds")
+
+
+
+
 visExport(
   na_net,
   type = "png",
@@ -172,4 +181,5 @@ visExport(
 )
 
 
-visSave(na_net, "./04_visualisation/03_networks/test_net.hmtl", selfcontained = TRUE, background = "white")
+visSave(na_net, "./04_visualisation/03_networks/na_net.hmtl", selfcontained = TRUE, background = "white")
+htmlwidgets::saveWidget(na_net, "na_net.html")

@@ -147,3 +147,35 @@ saveRDS(wa_table, "./04_visualisation/04_tables/wa_table.Rds")
 saveRDS(ca_table, "./04_visualisation/04_tables/ca_table.Rds")
 saveRDS(ea_table, "./04_visualisation/04_tables/ea_table.Rds")
 saveRDS(sa_table, "./04_visualisation/04_tables/sa_table.Rds")
+
+na_table <- readRDS( "./04_visualisation/04_tables/na_table.Rds")
+wa_table <- readRDS( "./04_visualisation/04_tables/wa_table.Rds")
+ca_table <- readRDS( "./04_visualisation/04_tables/ca_table.Rds")
+ea_table <- readRDS( "./04_visualisation/04_tables/ea_table.Rds")
+sa_table <- readRDS( "./04_visualisation/04_tables/sa_table.Rds")
+
+
+library("htmltools")
+library("webshot")    
+library(formattable)
+export_formattable <- function(f, file, width = "100%", height = NULL, 
+                               background = "white", delay = 0.2){
+      w <- f
+      path <- html_print(w, background = background, viewer = NULL)
+      url <- paste0("file:///", gsub("\\\\", "/", normalizePath(path)))
+      webshot(url,
+              file = file,
+              selector = ".formattable_widget",
+              delay = delay)
+    }
+
+export_formattable(na_table,"./05_report/05_pdf/vis/na_table.png")
+export_formattable(wa_table,"./05_report/05_pdf/vis/wa_table.png")
+export_formattable(ca_table,"./05_report/05_pdf/vis/ca_table.png")
+export_formattable(ea_table,"./05_report/05_pdf/vis/ea_table.png")
+export_formattable(sa_table,"./05_report/05_pdf/vis/sa_table.png")
+
+
+
+
+

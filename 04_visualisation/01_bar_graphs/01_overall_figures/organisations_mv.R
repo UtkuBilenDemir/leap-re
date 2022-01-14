@@ -77,7 +77,6 @@ org_mv_barplot <- plot_ly( org_df_so_red
     config(displayModeBar = T)  %>% 
     layout(legend = list(x = 0.9, y = 0.1))
   
-org_mv_barplot
 
 
 saveRDS(org_mv_barplot, "./04_visualisation/01_bar_graphs/01_overall_figures/org_mv_barplot.Rds")
@@ -88,3 +87,10 @@ saveRDS(org_mv_barplot, "./04_visualisation/01_bar_graphs/01_overall_figures/org
 M_06_ex <- readRDS("./01_data/02_bibliometrix/res_area_exp_07_ngrams.Rds")
 colnames(M_06_ex)
 M_06_ex$org_freq_prop
+
+org_mv_barplot  %>%
+  config(
+    toImageButtonOptions = list(
+      format = "svg"
+    )
+  )

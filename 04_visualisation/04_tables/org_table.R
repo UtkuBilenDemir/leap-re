@@ -322,3 +322,23 @@ saveRDS(sen_gha_ni_out, "./04_visualisation/04_tables/sen_gha_ni_org_table.Rds")
 saveRDS(eth_ken_tan_out, "./04_visualisation/04_tables/eth_ken_tan_org_table.Rds")
 saveRDS(con_cam_gab_out, "./04_visualisation/04_tables/con_cam_gab_org_table.Rds")
 saveRDS(sa_out, "./04_visualisation/04_tables/sa_org_table.Rds")
+
+export_formattable <- readRDS("~/Projects/zsi/bibliometry_module/88_supplementary_methods/formattable_output.Rds")
+
+egypt_out       <- readRDS("./04_visualisation/04_tables/egypt_org_table.Rds")
+morocco_out     <- readRDS("./04_visualisation/04_tables/morocco_org_table.Rds")
+algeria_out     <- readRDS("./04_visualisation/04_tables/algeria_org_table.Rds")
+sen_gha_ni_out  <- readRDS("./04_visualisation/04_tables/sen_gha_ni_org_table.Rds")
+eth_ken_tan_out <- readRDS("./04_visualisation/04_tables/eth_ken_tan_org_table.Rds")
+con_cam_gab_out <- readRDS("./04_visualisation/04_tables/con_cam_gab_org_table.Rds")
+sa_out          <- readRDS("./04_visualisation/04_tables/sa_org_table.Rds")
+
+export_formattable(egypt_out      ,"./05_report/05_pdf/vis/egypt.png")
+export_formattable(morocco_out    ,"./05_report/05_pdf/vis/morocco.png")
+export_formattable(algeria_out    ,"./05_report/05_pdf/vis/algeria.png")
+export_formattable(sen_gha_ni_out ,"./05_report/05_pdf/vis/sen_gha.png")
+export_formattable(eth_ken_tan_out,"./05_report/05_pdf/vis/eth_ken.png")
+export_formattable(con_cam_gab_out,"./05_report/05_pdf/vis/con_cam.png")
+export_formattable(sa_out         ,"./05_report/05_pdf/vis/sa_out.png")
+
+

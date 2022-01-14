@@ -5,6 +5,8 @@ author: "Author: Utku B. Demir"
 date: "ZSI-Team: Dietmar Lampert, Elke Dall, Utku B. Demir | MESRS-Team: Mokthar Sellami, Lassassi Moundir, Benyoussef El-Hadi, Souami Feriel"
 output:
   gitbook:
+    split_by: none
+    self_contained: true
     toc: yes
     tof: yes
 documentclass: book

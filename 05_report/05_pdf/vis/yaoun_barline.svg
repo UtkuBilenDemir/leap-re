@@ -1,0 +1,2096 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="main-svg"
+   width="960"
+   height="470"
+   style=""
+   viewBox="0 0 960 470"
+   version="1.1"
+   id="svg816"
+   sodipodi:docname="yaoun_barline.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview818"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.3447917"
+     inkscape:cx="260.26336"
+     inkscape:cy="19.33385"
+     inkscape:window-width="1920"
+     inkscape:window-height="1026"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg816" />
+  <defs
+     id="defs-7cde1b">
+    <g
+       class="clips"
+       id="g25">
+      <clipPath
+         id="clip7cde1bxyplot"
+         class="plotclip">
+        <rect
+           width="890"
+           height="194.4"
+           id="rect4" />
+      </clipPath>
+      <clipPath
+         id="clip7cde1bxy2plot"
+         class="plotclip">
+        <rect
+           width="890"
+           height="194.4"
+           id="rect7" />
+      </clipPath>
+      <clipPath
+         class="axesclip"
+         id="clip7cde1bx">
+        <rect
+           x="60"
+           y="0"
+           width="890"
+           height="470"
+           id="rect10" />
+      </clipPath>
+      <clipPath
+         class="axesclip"
+         id="clip7cde1by">
+        <rect
+           x="0"
+           y="25"
+           width="960"
+           height="194.4"
+           id="rect13" />
+      </clipPath>
+      <clipPath
+         class="axesclip"
+         id="clip7cde1bxy">
+        <rect
+           x="60"
+           y="25"
+           width="890"
+           height="194.4"
+           id="rect16" />
+      </clipPath>
+      <clipPath
+         class="axesclip"
+         id="clip7cde1by2">
+        <rect
+           x="0"
+           y="235.6"
+           width="960"
+           height="194.4"
+           id="rect19" />
+      </clipPath>
+      <clipPath
+         class="axesclip"
+         id="clip7cde1bxy2">
+        <rect
+           x="60"
+           y="235.6"
+           width="890"
+           height="194.4"
+           id="rect22" />
+      </clipPath>
+    </g>
+    <g
+       class="gradients"
+       id="g27" />
+  </defs>
+  <defs
+     id="topdefs-7cde1b">
+    <g
+       class="clips"
+       id="g692" />
+    <clipPath
+       id="legend7cde1b">
+      <rect
+         width="285"
+         height="105"
+         x="0"
+         y="0"
+         id="rect694" />
+    </clipPath>
+  </defs>
+  <g
+     id="g2233">
+    <rect
+       x="0"
+       y="0"
+       width="960"
+       height="470"
+       style="fill: rgb(255, 255, 255); fill-opacity: 1;"
+       id="rect2" />
+    <g
+       class="bglayer"
+       id="g30" />
+    <g
+       class="layer-below"
+       id="g36">
+      <g
+         class="imagelayer"
+         id="g32" />
+      <g
+         class="shapelayer"
+         id="g34" />
+    </g>
+    <g
+       class="cartesianlayer"
+       id="g674">
+      <g
+         class="subplot xy"
+         id="g426">
+        <g
+           class="layer-subplot"
+           id="g42">
+          <g
+             class="shapelayer"
+             id="g38" />
+          <g
+             class="imagelayer"
+             id="g40" />
+        </g>
+        <g
+           class="gridlayer"
+           id="g54">
+          <g
+             class="x"
+             id="g44" />
+          <g
+             class="y"
+             id="g52">
+            <path
+               class="ygrid crisp"
+               transform="translate(0,157.84)"
+               d="M60,0h890"
+               style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"
+               id="path46" />
+            <path
+               class="ygrid crisp"
+               transform="translate(0,96.28)"
+               d="M60,0h890"
+               style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"
+               id="path48" />
+            <path
+               class="ygrid crisp"
+               transform="translate(0,34.72)"
+               d="M60,0h890"
+               style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"
+               id="path50" />
+          </g>
+        </g>
+        <g
+           class="zerolinelayer"
+           id="g58">
+          <path
+             class="yzl zl crisp"
+             transform="translate(0,219.4)"
+             d="M60,0h890"
+             style="stroke: rgb(68, 68, 68); stroke-opacity: 1; stroke-width: 1px;"
+             id="path56" />
+        </g>
+        <path
+           class="xlines-below"
+           id="path60" />
+        <path
+           class="ylines-below"
+           id="path62" />
+        <g
+           class="overlines-below"
+           id="g64" />
+        <g
+           class="xaxislayer-below"
+           id="g66" />
+        <g
+           class="yaxislayer-below"
+           id="g68" />
+        <g
+           class="overaxes-below"
+           id="g70" />
+        <g
+           class="plot"
+           transform="translate(60, 25)"
+           clip-path="url('#clip7cde1bxyplot')"
+           id="g394">
+          <g
+             class="barlayer mlayer"
+             id="g392">
+            <g
+               class="trace bars"
+               style="opacity: 1;"
+               id="g134">
+              <g
+                 class="points"
+                 id="g132">
+                <g
+                   class="point"
+                   id="g76">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M12.98,194.4V194.4H27.09V194.4Z"
+                     id="path72" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(20.035198364257813,186.4)"
+                     id="text74">0</text>
+                </g>
+                <g
+                   class="point"
+                   id="g82">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M101.15,194.4V71.28H115.26V194.4Z"
+                     id="path78" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(108.20519836425783,63.28)"
+                     id="text80">4</text>
+                </g>
+                <g
+                   class="point"
+                   id="g88">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M189.32,194.4V102.06H203.42V194.4Z"
+                     id="path84" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(196.37019836425782,94.06)"
+                     id="text86">3</text>
+                </g>
+                <g
+                   class="point"
+                   id="g94">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M277.48,194.4V132.84H291.59V194.4Z"
+                     id="path90" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(284.5351983642578,124.84)"
+                     id="text92">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g100">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M365.65,194.4V40.5H379.76V194.4Z"
+                     id="path96" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(372.7051983642578,32.5)"
+                     id="text98">5</text>
+                </g>
+                <g
+                   class="point"
+                   id="g106">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M453.82,194.4V9.72H467.92V194.4Z"
+                     id="path102" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(460.8701983642578,1.7200000000000006)"
+                     id="text104">6</text>
+                </g>
+                <g
+                   class="point"
+                   id="g112">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M541.98,194.4V9.72H556.09V194.4Z"
+                     id="path108" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(549.0351983642579,1.7200000000000006)"
+                     id="text110">6</text>
+                </g>
+                <g
+                   class="point"
+                   id="g118">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M630.15,194.4V71.28H644.26V194.4Z"
+                     id="path114" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(637.2051983642577,63.28)"
+                     id="text116">4</text>
+                </g>
+                <g
+                   class="point"
+                   id="g124">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M718.32,194.4V9.72H732.42V194.4Z"
+                     id="path120" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(725.3701983642578,1.7200000000000006)"
+                     id="text122">6</text>
+                </g>
+                <g
+                   class="point"
+                   id="g130">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                     d="M806.48,194.4V71.28H820.59V194.4Z"
+                     id="path126" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(813.5351983642579,63.28)"
+                     id="text128">4</text>
+                </g>
+              </g>
+            </g>
+            <g
+               class="trace bars"
+               style="opacity: 1;"
+               id="g198">
+              <g
+                 class="points"
+                 id="g196">
+                <g
+                   class="point"
+                   id="g140">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M27.09,194.4V194.4H41.2V194.4Z"
+                     id="path136" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(34.145198364257816,186.4)"
+                     id="text138">0</text>
+                </g>
+                <g
+                   class="point"
+                   id="g146">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M115.26,194.4V132.84H129.36V194.4Z"
+                     id="path142" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(122.31019836425781,124.84)"
+                     id="text144">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g152">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M203.42,194.4V194.4H217.53V194.4Z"
+                     id="path148" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(210.4751983642578,186.4)"
+                     id="text150">0</text>
+                </g>
+                <g
+                   class="point"
+                   id="g158">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M291.59,194.4V132.84H305.7V194.4Z"
+                     id="path154" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(298.6451983642578,124.84)"
+                     id="text156">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g164">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M379.76,194.4V9.72H393.86V194.4Z"
+                     id="path160" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(386.8101983642578,1.7200000000000006)"
+                     id="text162">6</text>
+                </g>
+                <g
+                   class="point"
+                   id="g170">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M467.92,194.4V71.28H482.03V194.4Z"
+                     id="path166" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(474.97519836425784,63.28)"
+                     id="text168">4</text>
+                </g>
+                <g
+                   class="point"
+                   id="g176">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M556.09,194.4V102.06H570.2V194.4Z"
+                     id="path172" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(563.1451983642578,94.06)"
+                     id="text174">3</text>
+                </g>
+                <g
+                   class="point"
+                   id="g182">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M644.26,194.4V132.84H658.36V194.4Z"
+                     id="path178" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(651.3101983642578,124.84)"
+                     id="text180">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g188">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M732.42,194.4V132.84H746.53V194.4Z"
+                     id="path184" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(739.4751983642577,124.84)"
+                     id="text186">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g194">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                     d="M820.59,194.4V163.62H834.7V194.4Z"
+                     id="path190" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(827.6451983642578,155.62)"
+                     id="text192">1</text>
+                </g>
+              </g>
+            </g>
+            <g
+               class="trace bars"
+               style="opacity: 1;"
+               id="g262">
+              <g
+                 class="points"
+                 id="g260">
+                <g
+                   class="point"
+                   id="g204">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M41.2,194.4V194.4H55.3V194.4Z"
+                     id="path200" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(48.25019836425781,186.4)"
+                     id="text202">0</text>
+                </g>
+                <g
+                   class="point"
+                   id="g210">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M129.36,194.4V194.4H143.47V194.4Z"
+                     id="path206" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(136.41519836425783,186.4)"
+                     id="text208">0</text>
+                </g>
+                <g
+                   class="point"
+                   id="g216">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M217.53,194.4V163.62H231.64V194.4Z"
+                     id="path212" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(224.5851983642578,155.62)"
+                     id="text214">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g222">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M305.7,194.4V163.62H319.8V194.4Z"
+                     id="path218" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(312.7501983642578,155.62)"
+                     id="text220">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g228">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M393.86,194.4V132.84H407.97V194.4Z"
+                     id="path224" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(400.91519836425783,124.84)"
+                     id="text226">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g234">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M482.03,194.4V71.28H496.14V194.4Z"
+                     id="path230" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(489.0851983642578,63.28)"
+                     id="text232">4</text>
+                </g>
+                <g
+                   class="point"
+                   id="g240">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M570.2,194.4V71.28H584.3V194.4Z"
+                     id="path236" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(577.2501983642578,63.28)"
+                     id="text238">4</text>
+                </g>
+                <g
+                   class="point"
+                   id="g246">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M658.36,194.4V71.28H672.47V194.4Z"
+                     id="path242" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(665.4151983642578,63.28)"
+                     id="text244">4</text>
+                </g>
+                <g
+                   class="point"
+                   id="g252">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M746.53,194.4V132.84H760.64V194.4Z"
+                     id="path248" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(753.5851983642578,124.84)"
+                     id="text250">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g258">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                     d="M834.7,194.4V102.06H848.8V194.4Z"
+                     id="path254" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(841.7501983642578,94.06)"
+                     id="text256">3</text>
+                </g>
+              </g>
+            </g>
+            <g
+               class="trace bars"
+               style="opacity: 1;"
+               id="g326">
+              <g
+                 class="points"
+                 id="g324">
+                <g
+                   class="point"
+                   id="g268">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M55.3,194.4V163.62H69.41V194.4Z"
+                     id="path264" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(62.35519836425781,155.62)"
+                     id="text266">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g274">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M143.47,194.4V102.06H157.58V194.4Z"
+                     id="path270" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(150.52519836425782,94.06)"
+                     id="text272">3</text>
+                </g>
+                <g
+                   class="point"
+                   id="g280">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M231.64,194.4V163.62H245.74V194.4Z"
+                     id="path276" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(238.6901983642578,155.62)"
+                     id="text278">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g286">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M319.8,194.4V194.4H333.91V194.4Z"
+                     id="path282" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(326.85519836425783,186.4)"
+                     id="text284">0</text>
+                </g>
+                <g
+                   class="point"
+                   id="g292">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M407.97,194.4V132.84H422.08V194.4Z"
+                     id="path288" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(415.0251983642578,124.84)"
+                     id="text290">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g298">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M496.14,194.4V163.62H510.24V194.4Z"
+                     id="path294" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(503.1901983642578,155.62)"
+                     id="text296">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g304">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M584.3,194.4V132.84H598.41V194.4Z"
+                     id="path300" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(591.3551983642578,124.84)"
+                     id="text302">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g310">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M672.47,194.4V71.28H686.58V194.4Z"
+                     id="path306" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(679.5251983642579,63.28)"
+                     id="text308">4</text>
+                </g>
+                <g
+                   class="point"
+                   id="g316">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M760.64,194.4V132.84H774.74V194.4Z"
+                     id="path312" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(767.6901983642579,124.84)"
+                     id="text314">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g322">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                     d="M848.8,194.4V71.28H862.91V194.4Z"
+                     id="path318" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(855.8551983642578,63.28)"
+                     id="text320">4</text>
+                </g>
+              </g>
+            </g>
+            <g
+               class="trace bars"
+               style="opacity: 1;"
+               id="g390">
+              <g
+                 class="points"
+                 id="g388">
+                <g
+                   class="point"
+                   id="g332">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M69.41,194.4V163.62H83.52V194.4Z"
+                     id="path328" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(76.46519836425782,155.62)"
+                     id="text330">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g338">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M157.58,194.4V132.84H171.68V194.4Z"
+                     id="path334" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(164.6301983642578,124.84)"
+                     id="text336">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g344">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M245.74,194.4V163.62H259.85V194.4Z"
+                     id="path340" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(252.79519836425783,155.62)"
+                     id="text342">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g350">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M333.91,194.4V163.62H348.02V194.4Z"
+                     id="path346" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(340.96519836425784,155.62)"
+                     id="text348">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g356">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M422.08,194.4V132.84H436.18V194.4Z"
+                     id="path352" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(429.1301983642578,124.84)"
+                     id="text354">2</text>
+                </g>
+                <g
+                   class="point"
+                   id="g362">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M510.24,194.4V163.62H524.35V194.4Z"
+                     id="path358" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(517.2951983642579,155.62)"
+                     id="text360">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g368">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M598.41,194.4V71.28H612.52V194.4Z"
+                     id="path364" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(605.4651983642577,63.28)"
+                     id="text366">4</text>
+                </g>
+                <g
+                   class="point"
+                   id="g374">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M686.58,194.4V163.62H700.68V194.4Z"
+                     id="path370" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(693.6301983642578,155.62)"
+                     id="text372">1</text>
+                </g>
+                <g
+                   class="point"
+                   id="g380">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M774.74,194.4V102.06H788.85V194.4Z"
+                     id="path376" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(781.7951983642579,94.06)"
+                     id="text378">3</text>
+                </g>
+                <g
+                   class="point"
+                   id="g386">
+                  <path
+                     style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                     d="M862.91,194.4V132.84H877.02V194.4Z"
+                     id="path382" />
+                  <text
+                     class="bartext bartext-outside"
+                     text-anchor="middle"
+                     data-notex="1"
+                     style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1; white-space: pre;"
+                     x="0"
+                     y="0"
+                     transform="translate(869.9651983642577,124.84)"
+                     id="text384">2</text>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g
+           class="overplot"
+           id="g396" />
+        <path
+           class="xlines-above crisp"
+           style="fill: none;"
+           d="M0,0"
+           id="path398" />
+        <path
+           class="ylines-above crisp"
+           style="fill: none;"
+           d="M0,0"
+           id="path400" />
+        <g
+           class="overlines-above"
+           id="g402" />
+        <g
+           class="xaxislayer-above"
+           id="g404" />
+        <g
+           class="yaxislayer-above"
+           id="g422">
+          <g
+             class="ytick"
+             id="g408">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,219.4)"
+               id="text406">0</text>
+          </g>
+          <g
+             class="ytick"
+             id="g412">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,157.84)"
+               id="text410">2</text>
+          </g>
+          <g
+             class="ytick"
+             id="g416">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,96.28)"
+               id="text414">4</text>
+          </g>
+          <g
+             class="ytick"
+             id="g420">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,34.72)"
+               id="text418">6</text>
+          </g>
+        </g>
+        <g
+           class="overaxes-above"
+           id="g424" />
+      </g>
+      <g
+         class="subplot xy2"
+         id="g672">
+        <g
+           class="layer-subplot"
+           id="g432">
+          <g
+             class="shapelayer"
+             id="g428" />
+          <g
+             class="imagelayer"
+             id="g430" />
+        </g>
+        <g
+           class="gridlayer"
+           id="g446">
+          <g
+             class="x"
+             id="g434" />
+          <g
+             class="y2"
+             id="g444">
+            <path
+               class="y2grid crisp"
+               transform="translate(0,374.66999999999996)"
+               d="M60,0h890"
+               style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"
+               id="path436" />
+            <path
+               class="y2grid crisp"
+               transform="translate(0,332.8)"
+               d="M60,0h890"
+               style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"
+               id="path438" />
+            <path
+               class="y2grid crisp"
+               transform="translate(0,290.94)"
+               d="M60,0h890"
+               style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"
+               id="path440" />
+            <path
+               class="y2grid crisp"
+               transform="translate(0,249.07)"
+               d="M60,0h890"
+               style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"
+               id="path442" />
+          </g>
+        </g>
+        <g
+           class="zerolinelayer"
+           id="g450">
+          <path
+             class="y2zl zl crisp"
+             transform="translate(0,416.53)"
+             d="M60,0h890"
+             style="stroke: rgb(68, 68, 68); stroke-opacity: 1; stroke-width: 1px;"
+             id="path448" />
+        </g>
+        <path
+           class="xlines-below"
+           id="path452" />
+        <path
+           class="ylines-below"
+           id="path454" />
+        <g
+           class="overlines-below"
+           id="g456" />
+        <g
+           class="xaxislayer-below"
+           id="g458" />
+        <g
+           class="yaxislayer-below"
+           id="g460" />
+        <g
+           class="overaxes-below"
+           id="g462" />
+        <g
+           class="plot"
+           transform="translate(60, 235.6)"
+           clip-path="url('#clip7cde1bxy2plot')"
+           id="g616">
+          <g
+             class="scatterlayer mlayer"
+             id="g614">
+            <g
+               class="trace scatter tracedd06fa"
+               style="stroke-miterlimit: 2; opacity: 1;"
+               id="g476">
+              <g
+                 class="fills"
+                 id="g464" />
+              <g
+                 class="errorbars"
+                 id="g466" />
+              <g
+                 class="lines"
+                 id="g468" />
+              <g
+                 class="points"
+                 id="g472">
+                <path
+                   class="point"
+                   transform="translate(48.25,180.93)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(102, 194, 165); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path470" />
+              </g>
+              <g
+                 class="text"
+                 id="g474" />
+            </g>
+            <g
+               class="trace scatter trace58c572"
+               style="stroke-miterlimit: 2; opacity: 1;"
+               id="g510">
+              <g
+                 class="fills"
+                 id="g478" />
+              <g
+                 class="errorbars"
+                 id="g480" />
+              <g
+                 class="lines"
+                 id="g484">
+                <path
+                   class="js-line"
+                   style="vector-effect: non-scaling-stroke; fill: none; stroke: rgb(166, 216, 84); stroke-opacity: 1; stroke-width: 3px; opacity: 1;"
+                   d="M48.25,180.93L136.42,139.07L224.58,180.93L312.75,139.07L400.92,55.34L489.08,97.2L577.25,118.13L665.42,139.07L753.58,139.07L841.75,160"
+                   id="path482" />
+              </g>
+              <g
+                 class="points"
+                 id="g506">
+                <path
+                   class="point"
+                   transform="translate(48.25,180.93)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path486" />
+                <path
+                   class="point"
+                   transform="translate(136.42,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path488" />
+                <path
+                   class="point"
+                   transform="translate(224.58,180.93)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path490" />
+                <path
+                   class="point"
+                   transform="translate(312.75,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path492" />
+                <path
+                   class="point"
+                   transform="translate(400.92,55.34)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path494" />
+                <path
+                   class="point"
+                   transform="translate(489.08,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path496" />
+                <path
+                   class="point"
+                   transform="translate(577.25,118.13)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path498" />
+                <path
+                   class="point"
+                   transform="translate(665.42,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path500" />
+                <path
+                   class="point"
+                   transform="translate(753.58,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path502" />
+                <path
+                   class="point"
+                   transform="translate(841.75,160)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(166, 216, 84); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path504" />
+              </g>
+              <g
+                 class="text"
+                 id="g508" />
+            </g>
+            <g
+               class="trace scatter trace68e2d1"
+               style="stroke-miterlimit: 2; opacity: 1;"
+               id="g544">
+              <g
+                 class="fills"
+                 id="g512" />
+              <g
+                 class="errorbars"
+                 id="g514" />
+              <g
+                 class="lines"
+                 id="g518">
+                <path
+                   class="js-line"
+                   style="vector-effect: non-scaling-stroke; fill: none; stroke: rgb(255, 217, 47); stroke-opacity: 1; stroke-width: 3px; opacity: 1;"
+                   d="M48.25,180.93L136.42,180.93L224.58,139.07L312.75,139.07L400.92,97.2L489.08,13.47L577.25,13.47L665.42,13.47L753.58,97.2L841.75,55.34"
+                   id="path516" />
+              </g>
+              <g
+                 class="points"
+                 id="g540">
+                <path
+                   class="point"
+                   transform="translate(48.25,180.93)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path520" />
+                <path
+                   class="point"
+                   transform="translate(136.42,180.93)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path522" />
+                <path
+                   class="point"
+                   transform="translate(224.58,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path524" />
+                <path
+                   class="point"
+                   transform="translate(312.75,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path526" />
+                <path
+                   class="point"
+                   transform="translate(400.92,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path528" />
+                <path
+                   class="point"
+                   transform="translate(489.08,13.47)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path530" />
+                <path
+                   class="point"
+                   transform="translate(577.25,13.47)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path532" />
+                <path
+                   class="point"
+                   transform="translate(665.42,13.47)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path534" />
+                <path
+                   class="point"
+                   transform="translate(753.58,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path536" />
+                <path
+                   class="point"
+                   transform="translate(841.75,55.34)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(255, 217, 47); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path538" />
+              </g>
+              <g
+                 class="text"
+                 id="g542" />
+            </g>
+            <g
+               class="trace scatter tracee26ac6"
+               style="stroke-miterlimit: 2; opacity: 1;"
+               id="g578">
+              <g
+                 class="fills"
+                 id="g546" />
+              <g
+                 class="errorbars"
+                 id="g548" />
+              <g
+                 class="lines"
+                 id="g552">
+                <path
+                   class="js-line"
+                   style="vector-effect: non-scaling-stroke; fill: none; stroke: rgb(179, 179, 179); stroke-opacity: 1; stroke-width: 3px; opacity: 1;"
+                   d="M48.25,139.07L136.42,55.34L224.58,139.07L312.75,180.93L400.92,97.2L489.08,139.07L577.25,97.2L665.42,13.47L753.58,97.2L841.75,13.47"
+                   id="path550" />
+              </g>
+              <g
+                 class="points"
+                 id="g574">
+                <path
+                   class="point"
+                   transform="translate(48.25,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path554" />
+                <path
+                   class="point"
+                   transform="translate(136.42,55.34)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path556" />
+                <path
+                   class="point"
+                   transform="translate(224.58,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path558" />
+                <path
+                   class="point"
+                   transform="translate(312.75,180.93)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path560" />
+                <path
+                   class="point"
+                   transform="translate(400.92,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path562" />
+                <path
+                   class="point"
+                   transform="translate(489.08,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path564" />
+                <path
+                   class="point"
+                   transform="translate(577.25,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path566" />
+                <path
+                   class="point"
+                   transform="translate(665.42,13.47)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path568" />
+                <path
+                   class="point"
+                   transform="translate(753.58,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path570" />
+                <path
+                   class="point"
+                   transform="translate(841.75,13.47)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(179, 179, 179); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path572" />
+              </g>
+              <g
+                 class="text"
+                 id="g576" />
+            </g>
+            <g
+               class="trace scatter traceeea33f"
+               style="stroke-miterlimit: 2; opacity: 1;"
+               id="g612">
+              <g
+                 class="fills"
+                 id="g580" />
+              <g
+                 class="errorbars"
+                 id="g582" />
+              <g
+                 class="lines"
+                 id="g586">
+                <path
+                   class="js-line"
+                   style="vector-effect: non-scaling-stroke; fill: none; stroke: rgb(229, 196, 148); stroke-opacity: 1; stroke-width: 3px; opacity: 1;"
+                   d="M48.25,139.07L136.42,97.2L224.58,139.07L312.75,139.07L400.92,97.2L489.08,139.07L577.25,13.47L665.42,139.07L753.58,55.34L841.75,97.2"
+                   id="path584" />
+              </g>
+              <g
+                 class="points"
+                 id="g608">
+                <path
+                   class="point"
+                   transform="translate(48.25,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path588" />
+                <path
+                   class="point"
+                   transform="translate(136.42,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path590" />
+                <path
+                   class="point"
+                   transform="translate(224.58,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path592" />
+                <path
+                   class="point"
+                   transform="translate(312.75,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path594" />
+                <path
+                   class="point"
+                   transform="translate(400.92,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path596" />
+                <path
+                   class="point"
+                   transform="translate(489.08,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path598" />
+                <path
+                   class="point"
+                   transform="translate(577.25,13.47)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path600" />
+                <path
+                   class="point"
+                   transform="translate(665.42,139.07)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path602" />
+                <path
+                   class="point"
+                   transform="translate(753.58,55.34)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path604" />
+                <path
+                   class="point"
+                   transform="translate(841.75,97.2)"
+                   style="opacity: 1; stroke-width: 0px; fill: rgb(229, 196, 148); fill-opacity: 1;"
+                   d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z"
+                   id="path606" />
+              </g>
+              <g
+                 class="text"
+                 id="g610" />
+            </g>
+          </g>
+        </g>
+        <g
+           class="overplot"
+           id="g618" />
+        <path
+           class="xlines-above crisp"
+           style="fill: none;"
+           d="M0,0"
+           id="path620" />
+        <path
+           class="ylines-above crisp"
+           style="fill: none;"
+           d="M0,0"
+           id="path622" />
+        <g
+           class="overlines-above"
+           id="g624" />
+        <g
+           class="xaxislayer-above"
+           id="g646">
+          <g
+             class="xtick"
+             id="g628">
+            <text
+               text-anchor="middle"
+               x="0"
+               y="443"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(196.42,0)"
+               id="text626">2012</text>
+          </g>
+          <g
+             class="xtick"
+             id="g632">
+            <text
+               text-anchor="middle"
+               x="0"
+               y="443"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(372.75,0)"
+               id="text630">2014</text>
+          </g>
+          <g
+             class="xtick"
+             id="g636">
+            <text
+               text-anchor="middle"
+               x="0"
+               y="443"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(549.0799999999999,0)"
+               id="text634">2016</text>
+          </g>
+          <g
+             class="xtick"
+             id="g640">
+            <text
+               text-anchor="middle"
+               x="0"
+               y="443"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(725.42,0)"
+               id="text638">2018</text>
+          </g>
+          <g
+             class="xtick"
+             id="g644">
+            <text
+               text-anchor="middle"
+               x="0"
+               y="443"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(901.75,0)"
+               id="text642">2020</text>
+          </g>
+        </g>
+        <g
+           class="yaxislayer-above"
+           id="g668">
+          <g
+             class="y2tick"
+             id="g650">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,416.53)"
+               id="text648">0</text>
+          </g>
+          <g
+             class="y2tick"
+             id="g654">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,374.66999999999996)"
+               id="text652">1</text>
+          </g>
+          <g
+             class="y2tick"
+             id="g658">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,332.8)"
+               id="text656">2</text>
+          </g>
+          <g
+             class="y2tick"
+             id="g662">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,290.94)"
+               id="text660">3</text>
+          </g>
+          <g
+             class="y2tick"
+             id="g666">
+            <text
+               text-anchor="end"
+               x="59"
+               y="4.199999999999999"
+               style="font-family: TOBESTRIPPEDOpen SansTOBESTRIPPED, verdana, arial, sans-serif; font-size: 12px; fill: rgb(68, 68, 68); fill-opacity: 1; white-space: pre;"
+               transform="translate(0,249.07)"
+               id="text664">4</text>
+          </g>
+        </g>
+        <g
+           class="overaxes-above"
+           id="g670" />
+      </g>
+    </g>
+    <g
+       class="polarlayer"
+       id="g676" />
+    <g
+       class="ternarylayer"
+       id="g678" />
+    <g
+       class="geolayer"
+       id="g680" />
+    <g
+       class="funnelarealayer"
+       id="g682" />
+    <g
+       class="pielayer"
+       id="g684" />
+    <g
+       class="treemaplayer"
+       id="g686" />
+    <g
+       class="sunburstlayer"
+       id="g688" />
+    <g
+       class="glimages"
+       id="g690" />
+    <g
+       class="layer-above"
+       id="g702">
+      <g
+         class="imagelayer"
+         id="g698" />
+      <g
+         class="shapelayer"
+         id="g700" />
+    </g>
+    <rect
+       class="bg"
+       shape-rendering="crispEdges"
+       style="fill:#000000;fill-opacity:0;stroke:#444444;stroke-width:0px;stroke-opacity:1"
+       width="285"
+       height="105"
+       x="60"
+       y="25"
+       id="rect704" />
+    <g
+       class="traces"
+       transform="translate(60,39.5)"
+       id="g722">
+      <text
+         class="legendtext"
+         text-anchor="start"
+         style="font-size:12px;font-family:'TOBESTRIPPEDOpen SansTOBESTRIPPED', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+         x="40"
+         y="4.6799998"
+         id="text706">Energy &amp; Fuels</text>
+      <g
+         class="layers"
+         style="opacity:1"
+         id="g718">
+        <g
+           class="legendfill"
+           id="g708" />
+        <g
+           class="legendlines"
+           id="g710" />
+        <g
+           class="legendsymbols"
+           id="g716">
+          <g
+             class="legendpoints"
+             id="g714">
+            <path
+               class="legendundefined"
+               d="M 6,6 H -6 V -6 H 6 Z"
+               transform="translate(20)"
+               style="fill:#66c2a5;fill-opacity:1;stroke-width:0px"
+               id="path712" />
+          </g>
+        </g>
+      </g>
+      <rect
+         class="legendtoggle"
+         style="fill:#000000;fill-opacity:0"
+         x="0"
+         y="-9.5"
+         width="279.13333"
+         height="19"
+         id="rect720" />
+    </g>
+    <g
+       class="traces"
+       transform="translate(60,58.5)"
+       id="g740">
+      <text
+         class="legendtext"
+         text-anchor="start"
+         style="font-size:12px;font-family:'TOBESTRIPPEDOpen SansTOBESTRIPPED', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+         x="40"
+         y="4.6799998"
+         id="text724">Green &amp; Sustainable Science &amp; Technology</text>
+      <g
+         class="layers"
+         style="opacity:1"
+         id="g736">
+        <g
+           class="legendfill"
+           id="g726" />
+        <g
+           class="legendlines"
+           id="g728" />
+        <g
+           class="legendsymbols"
+           id="g734">
+          <g
+             class="legendpoints"
+             id="g732">
+            <path
+               class="legendundefined"
+               d="M 6,6 H -6 V -6 H 6 Z"
+               transform="translate(20)"
+               style="fill:#a6d854;fill-opacity:1;stroke-width:0px"
+               id="path730" />
+          </g>
+        </g>
+      </g>
+      <rect
+         class="legendtoggle"
+         style="fill:#000000;fill-opacity:0"
+         x="0"
+         y="-9.5"
+         width="279.13333"
+         height="19"
+         id="rect738" />
+    </g>
+    <g
+       class="traces"
+       transform="translate(60,77.5)"
+       id="g758">
+      <text
+         class="legendtext"
+         text-anchor="start"
+         style="font-size:12px;font-family:'TOBESTRIPPEDOpen SansTOBESTRIPPED', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+         x="40"
+         y="4.6799998"
+         id="text742">Forestry</text>
+      <g
+         class="layers"
+         style="opacity:1"
+         id="g754">
+        <g
+           class="legendfill"
+           id="g744" />
+        <g
+           class="legendlines"
+           id="g746" />
+        <g
+           class="legendsymbols"
+           id="g752">
+          <g
+             class="legendpoints"
+             id="g750">
+            <path
+               class="legendundefined"
+               d="M 6,6 H -6 V -6 H 6 Z"
+               transform="translate(20)"
+               style="fill:#ffd92f;fill-opacity:1;stroke-width:0px"
+               id="path748" />
+          </g>
+        </g>
+      </g>
+      <rect
+         class="legendtoggle"
+         style="fill:#000000;fill-opacity:0"
+         x="0"
+         y="-9.5"
+         width="279.13333"
+         height="19"
+         id="rect756" />
+    </g>
+    <g
+       class="traces"
+       transform="translate(60,96.5)"
+       id="g776">
+      <text
+         class="legendtext"
+         text-anchor="start"
+         style="font-size:12px;font-family:'TOBESTRIPPEDOpen SansTOBESTRIPPED', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+         x="40"
+         y="4.6799998"
+         id="text760">Ecology</text>
+      <g
+         class="layers"
+         style="opacity:1"
+         id="g772">
+        <g
+           class="legendfill"
+           id="g762" />
+        <g
+           class="legendlines"
+           id="g764" />
+        <g
+           class="legendsymbols"
+           id="g770">
+          <g
+             class="legendpoints"
+             id="g768">
+            <path
+               class="legendundefined"
+               d="M 6,6 H -6 V -6 H 6 Z"
+               transform="translate(20)"
+               style="fill:#b3b3b3;fill-opacity:1;stroke-width:0px"
+               id="path766" />
+          </g>
+        </g>
+      </g>
+      <rect
+         class="legendtoggle"
+         style="fill:#000000;fill-opacity:0"
+         x="0"
+         y="-9.5"
+         width="279.13333"
+         height="19"
+         id="rect774" />
+    </g>
+    <g
+       class="traces"
+       transform="translate(190.41925,40.311193)"
+       id="g794">
+      <text
+         class="legendtext"
+         text-anchor="start"
+         style="font-size:12px;font-family:'TOBESTRIPPEDOpen SansTOBESTRIPPED', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+         x="40"
+         y="4.6799998"
+         id="text778">Environmental Sciences</text>
+      <g
+         class="layers"
+         style="opacity:1"
+         id="g790">
+        <g
+           class="legendfill"
+           id="g780" />
+        <g
+           class="legendlines"
+           id="g782" />
+        <g
+           class="legendsymbols"
+           id="g788">
+          <g
+             class="legendpoints"
+             id="g786">
+            <path
+               class="legendundefined"
+               d="M 6,6 H -6 V -6 H 6 Z"
+               transform="translate(20)"
+               style="fill:#e5c494;fill-opacity:1;stroke-width:0px"
+               id="path784" />
+          </g>
+        </g>
+      </g>
+      <rect
+         class="legendtoggle"
+         style="fill:#000000;fill-opacity:0"
+         x="0"
+         y="-9.5"
+         width="279.13333"
+         height="19"
+         id="rect792" />
+    </g>
+    <rect
+       class="scrollbar"
+       rx="20"
+       ry="3"
+       width="0"
+       height="0"
+       style="fill:#808ba4;fill-opacity:1"
+       x="60"
+       y="25"
+       id="rect800" />
+    <g
+       class="g-gtitle"
+       id="g804" />
+    <g
+       class="g-xtitle"
+       transform="translate(0,-18)"
+       id="g808">
+      <text
+         class="xtitle"
+         style="font-weight:normal;font-size:14px;font-family:'TOBESTRIPPEDOpen SansTOBESTRIPPED', verdana, arial, sans-serif;white-space:pre;opacity:1;fill:#444444"
+         x="505"
+         y="482"
+         text-anchor="middle"
+         id="text806">Years</text>
+    </g>
+    <g
+       class="g-ytitle"
+       id="g810" />
+    <g
+       class="g-y2title"
+       id="g812" />
+  </g>
+</svg>

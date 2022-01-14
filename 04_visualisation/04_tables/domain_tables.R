@@ -426,3 +426,14 @@ saveRDS(ps_pair_table, "./04_visualisation/04_tables/ps_pair_table.Rds")
 saveRDS(te_pair_table, "./04_visualisation/04_tables/te_pair_table.Rds")
 saveRDS(ls_pair_table, "./04_visualisation/04_tables/ls_pair_table.Rds")
 saveRDS(ss_pair_table, "./04_visualisation/04_tables/ss_pair_table.Rds")
+
+
+
+
+export_formattable <- readRDS("~/Projects/zsi/bibliometry_module/88_supplementary_methods/formattable_output.Rds")
+
+M_06_ex <- readRDS("./01_data/02_bibliometrix/res_area_exp_07_ngrams.Rds")
+ps_pair_table <- readRDS("./04_visualisation/04_tables/ps_pair_table.Rds")
+te_pair_table <- readRDS("./04_visualisation/04_tables/te_pair_table.Rds")
+ls_pair_table <- readRDS("./04_visualisation/04_tables/ls_pair_table.Rds")
+ss_pair_table <- readRDS("./04_visualisation/04_tables/ss_pair_table.Rds")

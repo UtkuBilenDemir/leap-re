@@ -82,6 +82,7 @@ map_pub_freq
 
 
 saveWidget(map_pub_freq, file="./04_visualisation/02_maps/03_results/choropleth.html")
+saveWidget(map_pub_freq, selfcontained = TRUE, file="./05_report/05_pdf/vis/map.html")
 saveRDS(map_pub_freq, file = "./04_visualisation/02_maps/03_results/choropleth.Rds")
 
 #---------------------------------------------------------------------------------------------------------------------------------------
@@ -128,7 +129,7 @@ map_cou_reg <- r %>% addLegend(colors = reg_color, labels=names(reg_color), titl
 
 ## saveWidget(map_cou_reg, file="01_data/03_visualisations/map_cou_reg_-_2.html")
 saveRDS(map_cou_reg, file = "./04_visualisation/02_maps/03_results/au_regions.Rds")
-
+saveWidget(map_cou_reg, selfcontained = TRUE, file="./05_report/05_pdf/vis/map_cou.html")
 
 length(unique(na_df$ID)) / length(unique(M_06$ID))
 unique(M_06[order(M_06$Country_relative, decreasing = TRUE), c("au_off_country")])[1:10]
@@ -149,6 +150,15 @@ mapshot(
     "drawToolbar", "easyButton")
 )
 
+
+
+
+mapshot(
+  map_pub_freq,
+  file = "./05_report/01_bookdown/static_output/map_pub_freq.pdf",
+  remove_controls = c("zoomControl", "layersControl", "homeButton", "scaleBar",
+    "drawToolbar", "easyButton")
+)
 
 
 

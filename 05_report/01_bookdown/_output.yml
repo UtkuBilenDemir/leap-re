@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  split_by: none
+  self_contained: true
   css: style.css
   toc_depth: 4
   config:
@@ -6,3 +8,6 @@ bookdown::gitbook:
       before: |
         <li><a href="./">RE research-capacity in Africa</a></li>
     download: []
+bookdown::pdf_book:
+  latex_engine: xelatex
+  keep_tex: true

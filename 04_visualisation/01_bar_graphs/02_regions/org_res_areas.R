@@ -269,3 +269,16 @@ saveRDS(mekel_ra_barline, "./04_visualisation/01_bar_graphs/02_regions/mekel_ra_
 saveRDS(kwazu_ra_barline, "./04_visualisation/01_bar_graphs/02_regions/kwazu_ra_barline.Rds")
 saveRDS(capet_ra_barline, "./04_visualisation/01_bar_graphs/02_regions/capet_ra_barline.Rds")
 saveRDS(stell_ra_barline, "./04_visualisation/01_bar_graphs/02_regions/stell_ra_barline.Rds")
+
+
+cairo_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/cairo_ra_barline.Rds")
+redec_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/redec_ra_barline.Rds")
+moham_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/moham_ra_barline.Rds")
+coven_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/coven_ra_barline.Rds")
+unini_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/unini_ra_barline.Rds")
+yaoun_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/yaoun_ra_barline.Rds")
+addis_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/addis_ra_barline.Rds")
+mekel_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/mekel_ra_barline.Rds")
+kwazu_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/kwazu_ra_barline.Rds")
+capet_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/capet_ra_barline.Rds")
+stell_ra_barline <- readRDS( "./04_visualisation/01_bar_graphs/02_regions/stell_ra_barline.Rds")

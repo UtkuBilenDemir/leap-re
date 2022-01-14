@@ -1,6 +1,6 @@
 #### Algeria
 
-```{r algeriaorgtable,  fig.show="hold", out.width="0%", fig.cap="Re-related publication output of the most visible Algerian organisations"}
+```{r algeriaorgtable,  fig.show="hold", out.width="100%", fig.cap="Re-related publication output of the most visible Algerian organisations"}
 algeria_org_table <- readRDS(file = "../../04_visualisation/04_tables/algeria_org_table.Rds")
 algeria_org_table
 ```

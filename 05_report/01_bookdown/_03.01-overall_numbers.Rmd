@@ -12,7 +12,12 @@
 
 ```{r puboty, echo=FALSE, out.width="100%", out.height="50%", fig.cap="Number of RE-related publications in African countries over the years between 2011-2020"}
 abs_rel_plt <- readRDS(file = "../../01_data/03_visualisations/abs_rel_plt.Rds")
-abs_rel_plt
+abs_rel_plt %>%
+  config(
+    toImageButtonOptions = list(
+      format = "svg"
+    )
+  )
 ```
 
 

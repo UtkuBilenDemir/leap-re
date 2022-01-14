@@ -152,7 +152,18 @@ saveRDS(stell_ngram_network_plot, "./04_visualisation/06_ngrams/stell_ngram_netw
 
 
 
+cairo_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/cairo_ngram_network_plot.Rds")
+redec_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/redec_ngram_network_plot.Rds")
+moham_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/moham_ngram_network_plot.Rds")
+coven_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/coven_ngram_network_plot.Rds")
+unini_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/unini_ngram_network_plot.Rds")
+yaoun_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/yaoun_ngram_network_plot.Rds")
+addis_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/addis_ngram_network_plot.Rds")
+mekel_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/mekel_ngram_network_plot.Rds")
+kwazu_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/kwazu_ngram_network_plot.Rds")
+capet_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/capet_ngram_network_plot.Rds")
+stell_ngram_network_plot <-  readRDS("./04_visualisation/06_ngrams/stell_ngram_network_plot.Rds")
 
 
 
-sum(is.na(yaoun_df$un_bigrams))
+

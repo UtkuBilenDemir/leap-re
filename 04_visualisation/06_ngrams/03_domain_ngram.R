@@ -440,3 +440,23 @@ for (i in 5:20) {
 }
 fig 
 
+
+ps_domain_barplot <- readRDS("./04_visualisation/06_ngrams/ps_domain_barplot.Rds")
+te_domain_barplot <- readRDS("./04_visualisation/06_ngrams/te_domain_barplot.Rds")
+ls_domain_barplot <- readRDS("./04_visualisation/06_ngrams/ls_domain_barplot.Rds")
+ss_domain_barplot <- readRDS("./04_visualisation/06_ngrams/ss_domain_barplot.Rds")
+ps_domain_lineplot <- readRDS( "./04_visualisation/06_ngrams/ps_domain_lineplot.Rds")
+te_domain_lineplot <- readRDS( "./04_visualisation/06_ngrams/te_domain_lineplot.Rds")
+ls_domain_lineplot <- readRDS( "./04_visualisation/06_ngrams/ls_domain_lineplot.Rds")
+ss_domain_lineplot <- readRDS( "./04_visualisation/06_ngrams/ss_domain_lineplot.Rds")
+
+ss_domain_lineplot%>%
+  config(
+    toImageButtonOptions = list(
+      format = "svg"
+    )
+  )
+
+te_domain_lineplot
+ls_domain_lineplot
+ss_domain_lineplot
