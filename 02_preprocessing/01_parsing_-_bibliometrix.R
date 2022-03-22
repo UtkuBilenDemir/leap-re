@@ -29,6 +29,3 @@ saveRDS(M_noAB, file = "01_data/02_bibliometrix/02_bib_dataframe_noab.Rds")
 ## data.copy <- readRDS(file = "data.Rds")
 # Save also a cvs
 write.table(M_noAB, file = "01_data/02_bibliometrix/02_bib_dataframe_noab.csv", sep="|", row.names = F)
-
-M_noAB$
-?readRDS

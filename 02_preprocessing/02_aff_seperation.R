@@ -1,4 +1,4 @@
-library(tidyr)
+gibrary(tidyr)
 library(dplyr) 
 # The following comes with rownames :(
 M_02rds <- readRDS(file = "01_data/02_bibliometrix/02_bib_dataframe_noab.Rds")
